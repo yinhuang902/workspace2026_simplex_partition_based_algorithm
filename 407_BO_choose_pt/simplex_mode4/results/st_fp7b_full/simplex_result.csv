@@ -1,0 +1,2 @@
+Time (s),# Nodes,LB,UB,Rel. Gap,Abs. Gap,best_LB_ever,best_UB_ever,LB_in_split,UB_in_split,cs_status_choosen,cs_status_all
+10.696,32,-636.563929424,-636.652005718,-0.0138343%,-0.08808,-636.563929424,-636.652005718,N/A,N/A,0/100,none

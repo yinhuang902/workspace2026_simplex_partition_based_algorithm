@@ -1,0 +1,2188 @@
+# simplex_debug.txt — ms/cs/Q subproblem failures
+# Fields: simp, scen, type, issue, ok, status, term, val, dual, time
+
+=== ITER-0 BOX-CS PROVENANCE START ===
+
+================================================================================
+[Iter 0] BOX-CS PROVENANCE TRACE  (MS_AGG=sum)
+================================================================================
+   scen       status               term       dual_bound       primal_obj         selected           source valid_lb
+  ----- ------------ ------------------ ---------------- ---------------- ---------------- ---------------- --------
+      0      optimal            optimal  15638.999725623  15638.999725623  15638.999725623       dual_bound     True
+      1      optimal            optimal   5288.289806309   5288.289806309   5288.289806309       dual_bound     True
+      2      optimal            optimal   2641.343218209   2641.343218209   2641.343218209       dual_bound     True
+      3      optimal            optimal   5336.385039849   5336.385039849   5336.385039849       dual_bound     True
+      4      optimal            optimal   4918.557247546   4918.557247546   4918.557247546       dual_bound     True
+      5      optimal            optimal   5109.893885356   5109.893885356   5109.893885356       dual_bound     True
+      6      optimal            optimal   4642.987587998   4642.987587998   4642.987587998       dual_bound     True
+      7      optimal            optimal   6099.512468586   6099.512468586   6099.512468586       dual_bound     True
+      8      optimal            optimal   5385.566176264   5385.566176264   5385.566176264       dual_bound     True
+      9      optimal            optimal   4999.791666302   4999.791666302   4999.791666302       dual_bound     True
+     10      optimal            optimal   5109.302975444   5109.302975444   5109.302975444       dual_bound     True
+     11      optimal            optimal   4034.810434886   4034.810434886   4034.810434886       dual_bound     True
+     12      optimal            optimal   2480.000000000   2480.000000000   2480.000000000       dual_bound     True
+     13      optimal            optimal   4514.731959966   4514.731959966   4514.731959966       dual_bound     True
+     14      optimal            optimal   6206.684031507   6206.684031507   6206.684031507       dual_bound     True
+     15      optimal            optimal   8118.984305732   8118.984305732   8118.984305732       dual_bound     True
+     16      optimal            optimal   4065.859806552   4065.859806552   4065.859806552       dual_bound     True
+     17      optimal            optimal   3748.774892088   3748.774892088   3748.774892088       dual_bound     True
+     18      optimal            optimal   5335.146913331   5335.146913331   5335.146913331       dual_bound     True
+     19      optimal            optimal   3853.748945596   3853.748945596   3853.748945596       dual_bound     True
+     20      optimal            optimal   6819.690640011   6819.690640011   6819.690640011       dual_bound     True
+     21      optimal            optimal   2627.000000000   2627.000000000   2627.000000000       dual_bound     True
+     22      optimal            optimal   3876.221533385   3876.221533385   3876.221533385       dual_bound     True
+     23      optimal            optimal   2857.245556923   2857.245556923   2857.245556923       dual_bound     True
+     24      optimal            optimal   4984.476383019   4984.476383019   4984.476383019       dual_bound     True
+     25      optimal            optimal  10231.635414070  10231.635414070  10231.635414070       dual_bound     True
+     26      optimal            optimal   3769.977854532   3769.977854532   3769.977854532       dual_bound     True
+     27      optimal            optimal   2876.999954941   2876.999954941   2876.999954941       dual_bound     True
+     28      optimal            optimal   3393.019977983   3393.019977983   3393.019977983       dual_bound     True
+     29      optimal            optimal   2352.481727614   2352.481727614   2352.481727614       dual_bound     True
+     30      optimal            optimal   4956.718351937   4956.718351937   4956.718351937       dual_bound     True
+     31      optimal            optimal   1864.746861622   1864.746861622   1864.746861622       dual_bound     True
+     32      optimal            optimal   4711.556330690   4711.556330690   4711.556330690       dual_bound     True
+     33      optimal            optimal   2627.000000000   2627.000000000   2627.000000000       dual_bound     True
+     34      optimal            optimal   6692.797782703   6692.797782703   6692.797782703       dual_bound     True
+     35      optimal            optimal   5094.000000000   5094.000000000   5094.000000000       dual_bound     True
+     36      optimal            optimal   9788.702362323   9788.702362323   9788.702362323       dual_bound     True
+     37      optimal            optimal   3470.000000000   3470.000000000   3470.000000000       dual_bound     True
+     38      optimal            optimal   3245.753299418   3245.753299418   3245.753299418       dual_bound     True
+     39      optimal            optimal   4734.987899764   4734.987899764   4734.987899764       dual_bound     True
+     40      optimal            optimal   5323.013969575   5323.013969575   5323.013969575       dual_bound     True
+     41      optimal            optimal   3676.322908477   3676.322908477   3676.322908477       dual_bound     True
+     42      optimal            optimal   5023.437677591   5023.437677591   5023.437677591       dual_bound     True
+     43      optimal            optimal   7267.126528223   7267.126528223   7267.126528223       dual_bound     True
+     44      optimal            optimal   1278.000000000   1278.000000000   1278.000000000       dual_bound     True
+     45      optimal            optimal   2315.614468767   2315.614468767   2315.614468767       dual_bound     True
+     46      optimal            optimal   4760.535027660   4760.535027660   4760.535027660       dual_bound     True
+     47      optimal            optimal   5393.678872420   5393.678872420   5393.678872420       dual_bound     True
+     48      optimal            optimal   6355.745054399   6355.745054399   6355.745054399       dual_bound     True
+     49      optimal            optimal   4401.151152685   4401.151152685   4401.151152685       dual_bound     True
+     50      optimal            optimal   6040.314356642   6040.314356642   6040.314356642       dual_bound     True
+     51      optimal            optimal   8358.455935066   8358.455935066   8358.455935066       dual_bound     True
+     52      optimal            optimal  10825.491611177  10825.491611177  10825.491611177       dual_bound     True
+     53      optimal            optimal   1381.549974048   1381.549974048   1381.549974048       dual_bound     True
+     54      optimal            optimal   4628.117071269   4628.117071269   4628.117071269       dual_bound     True
+     55      optimal            optimal   7444.413325067   7444.413325067   7444.413325067       dual_bound     True
+     56      optimal            optimal   4620.932010958   4620.932010958   4620.932010958       dual_bound     True
+     57      optimal            optimal   2632.252955598   2632.252955598   2632.252955598       dual_bound     True
+     58      optimal            optimal   2627.000000000   2627.000000000   2627.000000000       dual_bound     True
+     59      optimal            optimal   2901.999959246   2901.999959246   2901.999959246       dual_bound     True
+     60      optimal            optimal   4017.256020214   4017.256020214   4017.256020214       dual_bound     True
+     61      optimal            optimal  10861.538279815  10861.538279815  10861.538279815       dual_bound     True
+     62      optimal            optimal   6597.889146545   6597.889146545   6597.889146545       dual_bound     True
+     63      optimal            optimal   2627.000000000   2627.000000000   2627.000000000       dual_bound     True
+     64      optimal            optimal   2627.000000000   2627.000000000   2627.000000000       dual_bound     True
+     65      optimal            optimal   5219.570733412   5219.570733412   5219.570733412       dual_bound     True
+     66      optimal            optimal   2630.000000000   2630.000000000   2630.000000000       dual_bound     True
+     67      optimal            optimal   8604.942286173   8604.942286173   8604.942286173       dual_bound     True
+     68      optimal            optimal   8642.970735415   8642.970735415   8642.970735415       dual_bound     True
+     69      optimal            optimal   4947.000000000   4947.000000000   4947.000000000       dual_bound     True
+     70      optimal            optimal   5880.008464082   5880.008464082   5880.008464082       dual_bound     True
+     71      optimal            optimal   6814.411810610   6814.411810610   6814.411810610       dual_bound     True
+     72      optimal            optimal   5854.366897345   5854.366897345   5854.366897345       dual_bound     True
+     73      optimal            optimal   6360.275506225   6360.275506225   6360.275506225       dual_bound     True
+     74      optimal            optimal   3181.050671779   3181.050671779   3181.050671779       dual_bound     True
+     75      optimal            optimal   5596.439088350   5596.439088350   5596.439088350       dual_bound     True
+     76      optimal            optimal   4965.901978920   4965.901978920   4965.901978920       dual_bound     True
+     77      optimal            optimal   4970.722878230   4970.722878230   4970.722878230       dual_bound     True
+     78      optimal            optimal   4434.858975059   4434.858975059   4434.858975059       dual_bound     True
+     79      optimal            optimal   4641.696931455   4641.696931455   4641.696931455       dual_bound     True
+     80      optimal            optimal   4184.488525917   4184.488525917   4184.488525917       dual_bound     True
+     81      optimal            optimal   2627.000000000   2627.000000000   2627.000000000       dual_bound     True
+     82      optimal            optimal   5764.959113289   5764.959113289   5764.959113289       dual_bound     True
+     83      optimal            optimal   5642.769189300   5642.769189300   5642.769189300       dual_bound     True
+     84      optimal            optimal   1003.000000000   1003.000000000   1003.000000000       dual_bound     True
+     85      optimal            optimal   2876.999954942   2876.999954942   2876.999954942       dual_bound     True
+     86      optimal            optimal   2448.826071939   2448.826071939   2448.826071939       dual_bound     True
+     87      optimal            optimal   7141.953337687   7141.953337687   7141.953337687       dual_bound     True
+     88      optimal            optimal   1183.890688222   1183.890688222   1183.890688222       dual_bound     True
+     89      optimal            optimal   6979.214301768   6979.214301768   6979.214301768       dual_bound     True
+     90      optimal            optimal   8333.233017899   8333.233017899   8333.233017899       dual_bound     True
+     91      optimal            optimal   5375.774715788   5375.774715788   5375.774715788       dual_bound     True
+     92      optimal            optimal   3381.203207843   3381.203207843   3381.203207843       dual_bound     True
+     93      optimal            optimal   2627.000000000   2627.000000000   2627.000000000       dual_bound     True
+     94      optimal            optimal   4892.128503220   4892.128503220   4892.128503220       dual_bound     True
+     95      optimal            optimal   5198.282975894   5198.282975894   5198.282975894       dual_bound     True
+     96      optimal            optimal   2730.000000000   2730.000000000   2730.000000000       dual_bound     True
+     97      optimal            optimal   6401.552433539   6401.552433539   6401.552433539       dual_bound     True
+     98      optimal            optimal   4301.595357701   4301.595357701   4301.595357701       dual_bound     True
+     99      optimal            optimal   2901.999959241   2901.999959241   2901.999959241       dual_bound     True
+
+  --- Aggregation ---
+  Finite CS values:    100/100
+  Non-finite (skipped): 0
+  Aggregation mode:    MS_AGG = 'sum'
+  Formula:             box_LB = sum(finite_cs_vals)
+  box_LB (sum):        491230.307634769764
+  box_LB (per-scen):   4912.303076347697
+  NOTE: box_LB = sum of per-scenario dual bounds from solve_const_cut_box.
+         Vertex Q-values (fverts) are NOT included in this LB.
+================================================================================
+
+=== ITER-0 BOX-CS PROVENANCE END ===
+
+================================================================================
+=== ITER0 BOX-CS LOWER-BOUND CHECK START ===
+
+--- Scenario 0 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (5.9999999770111305, 2.000000040747628, 0.0, 0.0, 0.0)
+dual_bound: 15638.99972562263
+primal_obj: 15638.999725622627
+selected c_s: 15638.99972562263
+true_Q_at_cand = Q_s(cand_pt) = 15639.000011125467
+selected_minus_trueQ: -0.00028550283605000004
+dual_minus_trueQ: -0.00028550283605000004
+primal_minus_trueQ: -0.00028550283968797885
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 1 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 3.340090524868247, 4.659909489253223, 0.0)
+dual_bound: 5288.2898063089615
+primal_obj: 5288.289806308959
+selected c_s: 5288.2898063089615
+true_Q_at_cand = Q_s(cand_pt) = 5288.289886435622
+selected_minus_trueQ: -8.012666057766182e-05
+dual_minus_trueQ: -8.012666057766182e-05
+primal_minus_trueQ: -8.012666330614593e-05
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 2 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 2641.343218209433
+primal_obj: 2641.3432182094307
+selected c_s: 2641.343218209433
+true_Q_at_cand = Q_s(cand_pt) = 2641.3432178209177
+selected_minus_trueQ: 3.8851521821925417e-07
+dual_minus_trueQ: 3.8851521821925417e-07
+primal_minus_trueQ: 3.8851294448249973e-07
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 3 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (8.0, 0.0, 0.0, 0.0, 0.0)
+dual_bound: 5336.385039848705
+primal_obj: 5336.385039848706
+selected c_s: 5336.385039848705
+true_Q_at_cand = Q_s(cand_pt) = 5336.385039833377
+selected_minus_trueQ: 1.532771420897916e-08
+dual_minus_trueQ: 1.532771420897916e-08
+primal_minus_trueQ: 1.5328623703680933e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 4 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (8.0, 0.0, 0.0, 0.0, 0.0)
+dual_bound: 4918.55724754609
+primal_obj: 4918.557247546091
+selected c_s: 4918.55724754609
+true_Q_at_cand = Q_s(cand_pt) = 4918.557247546091
+selected_minus_trueQ: -9.094947017729282e-13
+dual_minus_trueQ: -9.094947017729282e-13
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 5 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (8.0, 0.0, 0.0, 0.0, 0.0)
+dual_bound: 5109.893885356024
+primal_obj: 5109.893885356021
+selected c_s: 5109.893885356024
+true_Q_at_cand = Q_s(cand_pt) = 5109.893907807778
+selected_minus_trueQ: -2.2451754375651944e-05
+dual_minus_trueQ: -2.2451754375651944e-05
+primal_minus_trueQ: -2.245175710413605e-05
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 6 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 0.0, 8.0, 0.0)
+dual_bound: 4642.987587998417
+primal_obj: 4642.987587998417
+selected c_s: 4642.987587998417
+true_Q_at_cand = Q_s(cand_pt) = 4642.987587985175
+selected_minus_trueQ: 1.3242242857813835e-08
+dual_minus_trueQ: 1.3242242857813835e-08
+primal_minus_trueQ: 1.3242242857813835e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 7 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (8.0, 0.0, 0.0, 0.0, 0.0)
+dual_bound: 6099.512468586247
+primal_obj: 6099.512468586241
+selected c_s: 6099.512468586247
+true_Q_at_cand = Q_s(cand_pt) = 6099.512468592542
+selected_minus_trueQ: -6.294612830970436e-09
+dual_minus_trueQ: -6.294612830970436e-09
+primal_minus_trueQ: -6.300979293882847e-09
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 8 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 5.997508322361331, 2.0024916926880367, 0.0, 0.0)
+dual_bound: 5385.566176264112
+primal_obj: 5385.566176264108
+selected c_s: 5385.566176264112
+true_Q_at_cand = Q_s(cand_pt) = 5385.56643180661
+selected_minus_trueQ: -0.0002555424980528187
+dual_minus_trueQ: -0.0002555424980528187
+primal_minus_trueQ: -0.0002555425016907975
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 9 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 2.4077767918378634, 5.592222927250954, 0.0)
+dual_bound: 4999.791666302241
+primal_obj: 4999.791666302244
+selected c_s: 4999.791666302241
+true_Q_at_cand = Q_s(cand_pt) = 4999.791557439617
+selected_minus_trueQ: 0.00010886262407439062
+dual_minus_trueQ: 0.00010886262407439062
+primal_minus_trueQ: 0.00010886262771236943
+selected_le_trueQ: False
+dual_le_trueQ: False
+primal_matches_trueQ: False
+WARNING: selected_c_s > true_Q_at_cand by 0.00010886262407439062! Lower bound invalid.
+
+--- Scenario 10 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 2.7855338884428638, 5.214466111454408, 0.0)
+dual_bound: 5109.302975444085
+primal_obj: 5109.302975444083
+selected c_s: 5109.302975444085
+true_Q_at_cand = Q_s(cand_pt) = 5109.3029754555755
+selected_minus_trueQ: -1.1490556062199175e-08
+dual_minus_trueQ: -1.1490556062199175e-08
+primal_minus_trueQ: -1.1492375051602721e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 11 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 4034.8104348856687
+primal_obj: 4034.8104348856723
+selected c_s: 4034.8104348856687
+true_Q_at_cand = Q_s(cand_pt) = 4034.810472597526
+selected_minus_trueQ: -3.7711857203248655e-05
+dual_minus_trueQ: -3.7711857203248655e-05
+primal_minus_trueQ: -3.771185356526985e-05
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 12 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 2480.0
+primal_obj: 2480.0
+selected c_s: 2480.0
+true_Q_at_cand = Q_s(cand_pt) = 2480.0
+selected_minus_trueQ: 0.0
+dual_minus_trueQ: 0.0
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 13 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 3.0259879175859385, 4.974012099173857, 0.0, 0.0)
+dual_bound: 4514.731959966173
+primal_obj: 4514.731959966169
+selected c_s: 4514.731959966173
+true_Q_at_cand = Q_s(cand_pt) = 4514.732256132133
+selected_minus_trueQ: -0.00029616596020787256
+dual_minus_trueQ: -0.00029616596020787256
+primal_minus_trueQ: -0.00029616596475534607
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 14 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 8.0, 0.0, 0.0, 0.0)
+dual_bound: 6206.684031506524
+primal_obj: 6206.68403150652
+selected c_s: 6206.684031506524
+true_Q_at_cand = Q_s(cand_pt) = 6206.6841925334165
+selected_minus_trueQ: -0.0001610268927834113
+dual_minus_trueQ: -0.0001610268927834113
+primal_minus_trueQ: -0.00016102689642139012
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 15 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (3.740745515452653, 0.0, 4.259254484497016, 0.0, 0.0)
+dual_bound: 8118.984305731974
+primal_obj: 8118.984305731974
+selected c_s: 8118.984305731974
+true_Q_at_cand = Q_s(cand_pt) = 8118.984305700033
+selected_minus_trueQ: 3.194145392626524e-08
+dual_minus_trueQ: 3.194145392626524e-08
+primal_minus_trueQ: 3.194145392626524e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 16 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.9321535890544618, 0.0, 0.0, 7.067846410868998, 0.0)
+dual_bound: 4065.8598065517986
+primal_obj: 4065.859806551798
+selected c_s: 4065.8598065517986
+true_Q_at_cand = Q_s(cand_pt) = 4065.85980655025
+selected_minus_trueQ: 1.5484147297684103e-09
+dual_minus_trueQ: 1.5484147297684103e-09
+primal_minus_trueQ: 1.5479599824175239e-09
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 17 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 3748.7748920883787
+primal_obj: 3748.7748920883823
+selected c_s: 3748.7748920883787
+true_Q_at_cand = Q_s(cand_pt) = 3748.774892093628
+selected_minus_trueQ: -5.249148671282455e-09
+dual_minus_trueQ: -5.249148671282455e-09
+primal_minus_trueQ: -5.245510692475364e-09
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 18 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 6.649564925427981, 1.3504350745720188, 0.0, 0.0)
+dual_bound: 5335.14691333062
+primal_obj: 5335.14691333062
+selected c_s: 5335.14691333062
+true_Q_at_cand = Q_s(cand_pt) = 5335.146913353078
+selected_minus_trueQ: -2.2458152670878917e-08
+dual_minus_trueQ: -2.2458152670878917e-08
+primal_minus_trueQ: -2.2458152670878917e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 19 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 5.616902704238897, 2.383097295585916, 0.0)
+dual_bound: 3853.7489455962386
+primal_obj: 3853.748945596233
+selected c_s: 3853.7489455962386
+true_Q_at_cand = Q_s(cand_pt) = 3853.748945595452
+selected_minus_trueQ: 7.867129170335829e-10
+dual_minus_trueQ: 7.867129170335829e-10
+primal_minus_trueQ: 7.812559488229454e-10
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 20 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 8.0, 0.0, 0.0, 0.0)
+dual_bound: 6819.690640011293
+primal_obj: 6819.690640011297
+selected c_s: 6819.690640011293
+true_Q_at_cand = Q_s(cand_pt) = 6819.690640011299
+selected_minus_trueQ: -6.366462912410498e-12
+dual_minus_trueQ: -6.366462912410498e-12
+primal_minus_trueQ: -2.7284841053187847e-12
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 21 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 2627.0
+primal_obj: 2627.0
+selected c_s: 2627.0
+true_Q_at_cand = Q_s(cand_pt) = 2627.0
+selected_minus_trueQ: 0.0
+dual_minus_trueQ: 0.0
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 22 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 3876.221533384727
+primal_obj: 3876.221533384723
+selected c_s: 3876.221533384727
+true_Q_at_cand = Q_s(cand_pt) = 3876.2215333951976
+selected_minus_trueQ: -1.0470557754160836e-08
+dual_minus_trueQ: -1.0470557754160836e-08
+primal_minus_trueQ: -1.0474650480318815e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 23 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.11615248518392463, 7.883847514816075, 0.0, 0.0)
+dual_bound: 2857.245556922655
+primal_obj: 2857.245556922655
+selected c_s: 2857.245556922655
+true_Q_at_cand = Q_s(cand_pt) = 2857.2455568890055
+selected_minus_trueQ: 3.36494849761948e-08
+dual_minus_trueQ: 3.36494849761948e-08
+primal_minus_trueQ: 3.36494849761948e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 24 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 2.513620440551505, 5.486379559319568, 0.0)
+dual_bound: 4984.476383018682
+primal_obj: 4984.476383018686
+selected c_s: 4984.476383018682
+true_Q_at_cand = Q_s(cand_pt) = 4984.476383038708
+selected_minus_trueQ: -2.0026163838338107e-08
+dual_minus_trueQ: -2.0026163838338107e-08
+primal_minus_trueQ: -2.0022525859531015e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 25 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (3.3285045078507736, 4.6714955075713425, 0.0, 0.0, 0.0)
+dual_bound: 10231.635414069948
+primal_obj: 10231.635414069946
+selected c_s: 10231.635414069948
+true_Q_at_cand = Q_s(cand_pt) = 10231.635648059753
+selected_minus_trueQ: -0.00023398980556521565
+dual_minus_trueQ: -0.00023398980556521565
+primal_minus_trueQ: -0.00023398980738420505
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 26 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (2.3031816962816847, 0.0, 3.4828381087288736, 2.213980194854802, 0.0)
+dual_bound: 3769.9778545321237
+primal_obj: 3769.977854532126
+selected c_s: 3769.9778545321237
+true_Q_at_cand = Q_s(cand_pt) = 3769.9778544746787
+selected_minus_trueQ: 5.744504960603081e-08
+dual_minus_trueQ: 5.744504960603081e-08
+primal_minus_trueQ: 5.744732334278524e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 27 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 2876.999954941437
+primal_obj: 2876.999954941444
+selected c_s: 2876.999954941437
+true_Q_at_cand = Q_s(cand_pt) = 2877.0
+selected_minus_trueQ: -4.5058563046040945e-05
+dual_minus_trueQ: -4.5058563046040945e-05
+primal_minus_trueQ: -4.505855622483068e-05
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 28 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (1.4917153630230179e-09, 0.0, 7.1446784532488525, 0.8553215444275699, 0.0)
+dual_bound: 3393.0199779829964
+primal_obj: 3393.019977982997
+selected c_s: 3393.0199779829964
+true_Q_at_cand = Q_s(cand_pt) = 3393.019985998312
+selected_minus_trueQ: -8.015315870579798e-06
+dual_minus_trueQ: -8.015315870579798e-06
+primal_minus_trueQ: -8.015315415832447e-06
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 29 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 5.948888123156515, 2.051111876658657, 0.0)
+dual_bound: 2352.4817276139606
+primal_obj: 2352.4817276139474
+selected c_s: 2352.4817276139606
+true_Q_at_cand = Q_s(cand_pt) = 2352.4817276381364
+selected_minus_trueQ: -2.4175733415177092e-08
+dual_minus_trueQ: -2.4175733415177092e-08
+primal_minus_trueQ: -2.41889210883528e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 30 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 2.6908868933050627, 5.309113106694937, 0.0)
+dual_bound: 4956.718351937361
+primal_obj: 4956.718351937356
+selected c_s: 4956.718351937361
+true_Q_at_cand = Q_s(cand_pt) = 4956.718351912972
+selected_minus_trueQ: 2.4389009922742844e-08
+dual_minus_trueQ: 2.4389009922742844e-08
+primal_minus_trueQ: 2.4383552954532206e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 31 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.3332430312798525, 7.666756968660623, 0.0, 0.0)
+dual_bound: 1864.7468616218503
+primal_obj: 1864.746861621852
+selected c_s: 1864.7468616218503
+true_Q_at_cand = Q_s(cand_pt) = 1864.7468617912255
+selected_minus_trueQ: -1.6937519831117243e-07
+dual_minus_trueQ: -1.6937519831117243e-07
+primal_minus_trueQ: -1.6937337932176888e-07
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 32 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 8.0, 0.0, 0.0, 0.0)
+dual_bound: 4711.556330690057
+primal_obj: 4711.556330690062
+selected c_s: 4711.556330690057
+true_Q_at_cand = Q_s(cand_pt) = 4711.556330671602
+selected_minus_trueQ: 1.8454556993674487e-08
+dual_minus_trueQ: 1.8454556993674487e-08
+primal_minus_trueQ: 1.8460013961885124e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 33 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 2627.0
+primal_obj: 2627.0
+selected c_s: 2627.0
+true_Q_at_cand = Q_s(cand_pt) = 2627.0
+selected_minus_trueQ: 0.0
+dual_minus_trueQ: 0.0
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 34 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 7.799941653984086, 0.20005834592383134, 0.0, 0.0)
+dual_bound: 6692.797782703237
+primal_obj: 6692.797782703237
+selected c_s: 6692.797782703237
+true_Q_at_cand = Q_s(cand_pt) = 6692.797782551248
+selected_minus_trueQ: 1.5198929759208113e-07
+dual_minus_trueQ: 1.5198929759208113e-07
+primal_minus_trueQ: 1.5198929759208113e-07
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 35 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (8.0, 0.0, 0.0, 0.0, 0.0)
+dual_bound: 5094.0
+primal_obj: 5094.0
+selected c_s: 5094.0
+true_Q_at_cand = Q_s(cand_pt) = 5094.0
+selected_minus_trueQ: 0.0
+dual_minus_trueQ: 0.0
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 36 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 8.0, 0.0, 0.0, 0.0)
+dual_bound: 9788.702362323163
+primal_obj: 9788.702362323163
+selected c_s: 9788.702362323163
+true_Q_at_cand = Q_s(cand_pt) = 9788.702362305048
+selected_minus_trueQ: 1.8115315469913185e-08
+dual_minus_trueQ: 1.8115315469913185e-08
+primal_minus_trueQ: 1.8115315469913185e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 37 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 0.0, 8.0, 0.0)
+dual_bound: 3470.0
+primal_obj: 3470.0
+selected c_s: 3470.0
+true_Q_at_cand = Q_s(cand_pt) = 3470.0
+selected_minus_trueQ: 0.0
+dual_minus_trueQ: 0.0
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 38 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (2.924503842209006, 0.0, 5.075496157790994, 0.0, 0.0)
+dual_bound: 3245.753299417942
+primal_obj: 3245.7532994179455
+selected c_s: 3245.753299417942
+true_Q_at_cand = Q_s(cand_pt) = 3245.7532994179455
+selected_minus_trueQ: -3.637978807091713e-12
+dual_minus_trueQ: -3.637978807091713e-12
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 39 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 4.011956941630876, 3.988043058312091, 0.0, 0.0)
+dual_bound: 4734.987899764174
+primal_obj: 4734.9878997641745
+selected c_s: 4734.987899764174
+true_Q_at_cand = Q_s(cand_pt) = 4734.987899758789
+selected_minus_trueQ: 5.384208634495735e-09
+dual_minus_trueQ: 5.384208634495735e-09
+primal_minus_trueQ: 5.385118129197508e-09
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 40 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (8.0, 0.0, 0.0, 0.0, 0.0)
+dual_bound: 5323.013969575277
+primal_obj: 5323.013969575276
+selected c_s: 5323.013969575277
+true_Q_at_cand = Q_s(cand_pt) = 5323.014094367145
+selected_minus_trueQ: -0.00012479186807468068
+dual_minus_trueQ: -0.00012479186807468068
+primal_minus_trueQ: -0.00012479186898417538
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 41 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (4.609455045498542, 0.0, 3.3905449545014577, 0.0, 0.0)
+dual_bound: 3676.322908477139
+primal_obj: 3676.3229084771356
+selected c_s: 3676.322908477139
+true_Q_at_cand = Q_s(cand_pt) = 3676.3229084771356
+selected_minus_trueQ: 3.637978807091713e-12
+dual_minus_trueQ: 3.637978807091713e-12
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 42 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 4.46088065872012, 3.539119357391319, 0.0, 0.0)
+dual_bound: 5023.437677591362
+primal_obj: 5023.437677591365
+selected c_s: 5023.437677591362
+true_Q_at_cand = Q_s(cand_pt) = 5023.4379539760885
+selected_minus_trueQ: -0.000276384726021206
+dual_minus_trueQ: -0.000276384726021206
+primal_minus_trueQ: -0.0002763847232927219
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 43 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (8.0, 0.0, 0.0, 0.0, 0.0)
+dual_bound: 7267.126528223462
+primal_obj: 7267.126528223464
+selected c_s: 7267.126528223462
+true_Q_at_cand = Q_s(cand_pt) = 7267.126528262604
+selected_minus_trueQ: -3.914192348020151e-08
+dual_minus_trueQ: -3.914192348020151e-08
+primal_minus_trueQ: -3.9139194996096194e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 44 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 1278.0
+primal_obj: 1278.0
+selected c_s: 1278.0
+true_Q_at_cand = Q_s(cand_pt) = 1278.0
+selected_minus_trueQ: 0.0
+dual_minus_trueQ: 0.0
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 45 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (1.8578035863321922, 0.0, 6.142196413667808, 0.0, 0.0)
+dual_bound: 2315.6144687672127
+primal_obj: 2315.614468767215
+selected c_s: 2315.6144687672127
+true_Q_at_cand = Q_s(cand_pt) = 2315.614468767215
+selected_minus_trueQ: -2.2737367544323206e-12
+dual_minus_trueQ: -2.2737367544323206e-12
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 46 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (8.0, 0.0, 0.0, 0.0, 0.0)
+dual_bound: 4760.535027660004
+primal_obj: 4760.535027660007
+selected c_s: 4760.535027660004
+true_Q_at_cand = Q_s(cand_pt) = 4760.535027660007
+selected_minus_trueQ: -2.7284841053187847e-12
+dual_minus_trueQ: -2.7284841053187847e-12
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 47 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 7.24567056997806, 0.7543294300219401, 0.0, 0.0)
+dual_bound: 5393.678872419801
+primal_obj: 5393.678872419803
+selected c_s: 5393.678872419801
+true_Q_at_cand = Q_s(cand_pt) = 5393.678872419803
+selected_minus_trueQ: -1.8189894035458565e-12
+dual_minus_trueQ: -1.8189894035458565e-12
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 48 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (7.905208701302414, 0.09479131502372441, 0.0, 0.0, 0.0)
+dual_bound: 6355.745054399413
+primal_obj: 6355.745054399411
+selected c_s: 6355.745054399413
+true_Q_at_cand = Q_s(cand_pt) = 6355.7453783437095
+selected_minus_trueQ: -0.0003239442967242212
+dual_minus_trueQ: -0.0003239442967242212
+primal_minus_trueQ: -0.0003239442985432106
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 49 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (1.6551885101310264, 0.0, 6.344811507856088, 0.0, 0.0)
+dual_bound: 4401.151152685359
+primal_obj: 4401.151152685358
+selected c_s: 4401.151152685359
+true_Q_at_cand = Q_s(cand_pt) = 4401.151414067141
+selected_minus_trueQ: -0.00026138178145629354
+dual_minus_trueQ: -0.00026138178145629354
+primal_minus_trueQ: -0.00026138178236578824
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 50 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 6.005433907279037, 1.9945661072113452, 0.0, 0.0)
+dual_bound: 6040.314356641624
+primal_obj: 6040.314356641624
+selected c_s: 6040.314356641624
+true_Q_at_cand = Q_s(cand_pt) = 6040.314562752036
+selected_minus_trueQ: -0.0002061104123640689
+dual_minus_trueQ: -0.0002061104123640689
+primal_minus_trueQ: -0.0002061104123640689
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 51 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 8.0, 0.0, 0.0, 0.0)
+dual_bound: 8358.455935065771
+primal_obj: 8358.455935065775
+selected c_s: 8358.455935065771
+true_Q_at_cand = Q_s(cand_pt) = 8358.455935065775
+selected_minus_trueQ: -3.637978807091713e-12
+dual_minus_trueQ: -3.637978807091713e-12
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 52 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (2.2294202112125516, 5.770579803342366, 0.0, 0.0, 0.0)
+dual_bound: 10825.491611177353
+primal_obj: 10825.491611177358
+selected c_s: 10825.491611177353
+true_Q_at_cand = Q_s(cand_pt) = 10825.491817861057
+selected_minus_trueQ: -0.00020668370416387916
+dual_minus_trueQ: -0.00020668370416387916
+primal_minus_trueQ: -0.00020668369870691095
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 53 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 1381.5499740479681
+primal_obj: 1381.5499740479718
+selected c_s: 1381.5499740479681
+true_Q_at_cand = Q_s(cand_pt) = 1381.5499740479718
+selected_minus_trueQ: -3.637978807091713e-12
+dual_minus_trueQ: -3.637978807091713e-12
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 54 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 8.0, 0.0, 0.0, 0.0)
+dual_bound: 4628.117071268684
+primal_obj: 4628.117071268679
+selected c_s: 4628.117071268684
+true_Q_at_cand = Q_s(cand_pt) = 4628.117071268684
+selected_minus_trueQ: 0.0
+dual_minus_trueQ: 0.0
+primal_minus_trueQ: -5.4569682106375694e-12
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 55 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 8.0, 0.0, 0.0, 0.0)
+dual_bound: 7444.413325067271
+primal_obj: 7444.413325067277
+selected c_s: 7444.413325067271
+true_Q_at_cand = Q_s(cand_pt) = 7444.413325054049
+selected_minus_trueQ: 1.322223397437483e-08
+dual_minus_trueQ: 1.322223397437483e-08
+primal_minus_trueQ: 1.3227690942585468e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 56 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 2.510509452375473, 5.489490547624527, 0.0)
+dual_bound: 4620.93201095808
+primal_obj: 4620.932010958085
+selected c_s: 4620.93201095808
+true_Q_at_cand = Q_s(cand_pt) = 4620.932010933192
+selected_minus_trueQ: 2.488832251401618e-08
+dual_minus_trueQ: 2.488832251401618e-08
+primal_minus_trueQ: 2.4892869987525046e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 57 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 2632.252955597889
+primal_obj: 2632.252955597886
+selected c_s: 2632.252955597889
+true_Q_at_cand = Q_s(cand_pt) = 2632.252955597886
+selected_minus_trueQ: 3.183231456205249e-12
+dual_minus_trueQ: 3.183231456205249e-12
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 58 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 2627.0
+primal_obj: 2627.0
+selected c_s: 2627.0
+true_Q_at_cand = Q_s(cand_pt) = 2627.0
+selected_minus_trueQ: 0.0
+dual_minus_trueQ: 0.0
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 59 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 2901.9999592455097
+primal_obj: 2901.9999592455074
+selected c_s: 2901.9999592455097
+true_Q_at_cand = Q_s(cand_pt) = 2902.0
+selected_minus_trueQ: -4.075449032825418e-05
+dual_minus_trueQ: -4.075449032825418e-05
+primal_minus_trueQ: -4.075449260199093e-05
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 60 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.9012204196489092, 7.098779580294494, 0.0, 0.0)
+dual_bound: 4017.2560202137356
+primal_obj: 4017.25602021373
+selected c_s: 4017.2560202137356
+true_Q_at_cand = Q_s(cand_pt) = 4017.256020157465
+selected_minus_trueQ: 5.627043719869107e-08
+dual_minus_trueQ: 5.627043719869107e-08
+primal_minus_trueQ: 5.626498023048043e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 61 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (2.174732178796141, 5.8252678381366545, 0.0, 0.0, 0.0)
+dual_bound: 10861.538279814637
+primal_obj: 10861.538279814642
+selected c_s: 10861.538279814637
+true_Q_at_cand = Q_s(cand_pt) = 10861.538535206773
+selected_minus_trueQ: -0.0002553921367507428
+dual_minus_trueQ: -0.0002553921367507428
+primal_minus_trueQ: -0.0002553921312937746
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 62 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (8.0, 0.0, 0.0, 0.0, 0.0)
+dual_bound: 6597.8891465450815
+primal_obj: 6597.889146545082
+selected c_s: 6597.8891465450815
+true_Q_at_cand = Q_s(cand_pt) = 6597.889146548389
+selected_minus_trueQ: -3.30783223034814e-09
+dual_minus_trueQ: -3.30783223034814e-09
+primal_minus_trueQ: -3.306922735646367e-09
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 63 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 2627.0
+primal_obj: 2627.0
+selected c_s: 2627.0
+true_Q_at_cand = Q_s(cand_pt) = 2627.0
+selected_minus_trueQ: 0.0
+dual_minus_trueQ: 0.0
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 64 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 2627.0
+primal_obj: 2627.0
+selected c_s: 2627.0
+true_Q_at_cand = Q_s(cand_pt) = 2627.0
+selected_minus_trueQ: 0.0
+dual_minus_trueQ: 0.0
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 65 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 5.8910655296852426, 2.1089344703147574, 0.0, 0.0)
+dual_bound: 5219.570733412322
+primal_obj: 5219.5707334123235
+selected c_s: 5219.570733412322
+true_Q_at_cand = Q_s(cand_pt) = 5219.5707334123235
+selected_minus_trueQ: -1.8189894035458565e-12
+dual_minus_trueQ: -1.8189894035458565e-12
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 66 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 2630.0
+primal_obj: 2630.0
+selected c_s: 2630.0
+true_Q_at_cand = Q_s(cand_pt) = 2630.0
+selected_minus_trueQ: 0.0
+dual_minus_trueQ: 0.0
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 67 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 8.0, 0.0, 0.0, 0.0)
+dual_bound: 8604.94228617349
+primal_obj: 8604.942286173486
+selected c_s: 8604.94228617349
+true_Q_at_cand = Q_s(cand_pt) = 8604.942434971847
+selected_minus_trueQ: -0.00014879835725878365
+dual_minus_trueQ: -0.00014879835725878365
+primal_minus_trueQ: -0.00014879836089676246
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 68 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 8.0, 0.0, 0.0, 0.0)
+dual_bound: 8642.970735415245
+primal_obj: 8642.97073541524
+selected c_s: 8642.970735415245
+true_Q_at_cand = Q_s(cand_pt) = 8642.971002868633
+selected_minus_trueQ: -0.00026745338800537866
+dual_minus_trueQ: -0.00026745338800537866
+primal_minus_trueQ: -0.00026745339346234687
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 69 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (8.0, 0.0, 0.0, 0.0, 0.0)
+dual_bound: 4947.0
+primal_obj: 4947.0
+selected c_s: 4947.0
+true_Q_at_cand = Q_s(cand_pt) = 4947.0
+selected_minus_trueQ: 0.0
+dual_minus_trueQ: 0.0
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 70 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 8.0, 0.0, 0.0, 0.0)
+dual_bound: 5880.008464082015
+primal_obj: 5880.008464082018
+selected c_s: 5880.008464082015
+true_Q_at_cand = Q_s(cand_pt) = 5880.008702608216
+selected_minus_trueQ: -0.000238526200519118
+dual_minus_trueQ: -0.000238526200519118
+primal_minus_trueQ: -0.0002385261977906339
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 71 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 8.0, 0.0, 0.0, 0.0)
+dual_bound: 6814.411810610298
+primal_obj: 6814.411810610294
+selected c_s: 6814.411810610298
+true_Q_at_cand = Q_s(cand_pt) = 6814.411810610294
+selected_minus_trueQ: 3.637978807091713e-12
+dual_minus_trueQ: 3.637978807091713e-12
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 72 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.06892096181606897, 0.0, 7.931079038148915, 0.0, 0.0)
+dual_bound: 5854.366897345426
+primal_obj: 5854.366897345426
+selected c_s: 5854.366897345426
+true_Q_at_cand = Q_s(cand_pt) = 5854.366897200553
+selected_minus_trueQ: 1.4487341104540974e-07
+dual_minus_trueQ: 1.4487341104540974e-07
+primal_minus_trueQ: 1.4487341104540974e-07
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 73 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 8.0, 0.0, 0.0, 0.0)
+dual_bound: 6360.275506224779
+primal_obj: 6360.275506224779
+selected c_s: 6360.275506224779
+true_Q_at_cand = Q_s(cand_pt) = 6360.275506224769
+selected_minus_trueQ: 1.000444171950221e-11
+dual_minus_trueQ: 1.000444171950221e-11
+primal_minus_trueQ: 1.000444171950221e-11
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 74 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 7.257155926902252, 0.7428440730977481, 0.0)
+dual_bound: 3181.050671778808
+primal_obj: 3181.0506717788085
+selected c_s: 3181.050671778808
+true_Q_at_cand = Q_s(cand_pt) = 3181.0506717788085
+selected_minus_trueQ: -4.547473508864641e-13
+dual_minus_trueQ: -4.547473508864641e-13
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 75 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (8.0, 0.0, 0.0, 0.0, 0.0)
+dual_bound: 5596.4390883502565
+primal_obj: 5596.4390883502565
+selected c_s: 5596.4390883502565
+true_Q_at_cand = Q_s(cand_pt) = 5596.439088371856
+selected_minus_trueQ: -2.1599589672405273e-08
+dual_minus_trueQ: -2.1599589672405273e-08
+primal_minus_trueQ: -2.1599589672405273e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 76 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 0.0, 8.0, 0.0)
+dual_bound: 4965.9019789202575
+primal_obj: 4965.90197892026
+selected c_s: 4965.9019789202575
+true_Q_at_cand = Q_s(cand_pt) = 4965.901978880185
+selected_minus_trueQ: 4.007233656011522e-08
+dual_minus_trueQ: 4.007233656011522e-08
+primal_minus_trueQ: 4.007506504422054e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 77 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 0.0, 8.0, 0.0)
+dual_bound: 4970.7228782299535
+primal_obj: 4970.72287822996
+selected c_s: 4970.7228782299535
+true_Q_at_cand = Q_s(cand_pt) = 4970.722878206824
+selected_minus_trueQ: 2.3129359760787338e-08
+dual_minus_trueQ: 2.3129359760787338e-08
+primal_minus_trueQ: 2.313572622369975e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 78 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (4.564181758613302, 0.0, 3.435818241326586, 0.0, 0.0)
+dual_bound: 4434.8589750590245
+primal_obj: 4434.858975059024
+selected c_s: 4434.8589750590245
+true_Q_at_cand = Q_s(cand_pt) = 4434.858975034433
+selected_minus_trueQ: 2.4591827241238207e-08
+dual_minus_trueQ: 2.4591827241238207e-08
+primal_minus_trueQ: 2.4590917746536434e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 79 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 0.0, 8.0, 0.0)
+dual_bound: 4641.696931455275
+primal_obj: 4641.696931455277
+selected c_s: 4641.696931455275
+true_Q_at_cand = Q_s(cand_pt) = 4641.696931427949
+selected_minus_trueQ: 2.7326677809469402e-08
+dual_minus_trueQ: 2.7326677809469402e-08
+primal_minus_trueQ: 2.7328496798872948e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 80 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 5.579112119812018, 2.420887880153135, 0.0, 0.0)
+dual_bound: 4184.488525917215
+primal_obj: 4184.4885259172115
+selected c_s: 4184.488525917215
+true_Q_at_cand = Q_s(cand_pt) = 4184.488525916087
+selected_minus_trueQ: 1.127773430198431e-09
+dual_minus_trueQ: 1.127773430198431e-09
+primal_minus_trueQ: 1.1241354513913393e-09
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 81 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 2627.0
+primal_obj: 2627.0
+selected c_s: 2627.0
+true_Q_at_cand = Q_s(cand_pt) = 2627.0
+selected_minus_trueQ: 0.0
+dual_minus_trueQ: 0.0
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 82 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (8.0, 0.0, 0.0, 0.0, 0.0)
+dual_bound: 5764.959113288591
+primal_obj: 5764.959113288591
+selected c_s: 5764.959113288591
+true_Q_at_cand = Q_s(cand_pt) = 5764.959113298037
+selected_minus_trueQ: -9.446011972613633e-09
+dual_minus_trueQ: -9.446011972613633e-09
+primal_minus_trueQ: -9.446011972613633e-09
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 83 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (5.303113248920557, 0.0, 2.6968867683446036, 0.0, 0.0)
+dual_bound: 5642.769189299504
+primal_obj: 5642.769189299502
+selected c_s: 5642.769189299504
+true_Q_at_cand = Q_s(cand_pt) = 5642.769437396346
+selected_minus_trueQ: -0.00024809684146021027
+dual_minus_trueQ: -0.00024809684146021027
+primal_minus_trueQ: -0.0002480968441886944
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 84 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 1003.0
+primal_obj: 1003.0
+selected c_s: 1003.0
+true_Q_at_cand = Q_s(cand_pt) = 1003.0
+selected_minus_trueQ: 0.0
+dual_minus_trueQ: 0.0
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 85 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 2876.99995494231
+primal_obj: 2876.9999549423123
+selected c_s: 2876.99995494231
+true_Q_at_cand = Q_s(cand_pt) = 2877.0
+selected_minus_trueQ: -4.505768993112724e-05
+dual_minus_trueQ: -4.505768993112724e-05
+primal_minus_trueQ: -4.505768765739049e-05
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 86 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 5.723920097743159, 2.2760799020823486, 0.0)
+dual_bound: 2448.8260719392415
+primal_obj: 2448.8260719392492
+selected c_s: 2448.8260719392415
+true_Q_at_cand = Q_s(cand_pt) = 2448.826071962787
+selected_minus_trueQ: -2.3545453586848453e-08
+dual_minus_trueQ: -2.3545453586848453e-08
+primal_minus_trueQ: -2.3537722881883383e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 87 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (8.0, 0.0, 0.0, 0.0, 0.0)
+dual_bound: 7141.953337686794
+primal_obj: 7141.953337686795
+selected c_s: 7141.953337686794
+true_Q_at_cand = Q_s(cand_pt) = 7141.953337685267
+selected_minus_trueQ: 1.5270416042767465e-09
+dual_minus_trueQ: 1.5270416042767465e-09
+primal_minus_trueQ: 1.5279510989785194e-09
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 88 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 1183.8906882219626
+primal_obj: 1183.8906882219635
+selected c_s: 1183.8906882219626
+true_Q_at_cand = Q_s(cand_pt) = 1183.8906882219635
+selected_minus_trueQ: -9.094947017729282e-13
+dual_minus_trueQ: -9.094947017729282e-13
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 89 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 8.0, 0.0, 0.0, 0.0)
+dual_bound: 6979.2143017682465
+primal_obj: 6979.214301768245
+selected c_s: 6979.2143017682465
+true_Q_at_cand = Q_s(cand_pt) = 6979.214505474735
+selected_minus_trueQ: -0.0002037064887190354
+dual_minus_trueQ: -0.0002037064887190354
+primal_minus_trueQ: -0.0002037064905380248
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 90 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (8.0, 0.0, 0.0, 0.0, 0.0)
+dual_bound: 8333.233017899158
+primal_obj: 8333.233017899152
+selected c_s: 8333.233017899158
+true_Q_at_cand = Q_s(cand_pt) = 8333.233017905253
+selected_minus_trueQ: -6.095433491282165e-09
+dual_minus_trueQ: -6.095433491282165e-09
+primal_minus_trueQ: -6.100890459492803e-09
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 91 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 0.0, 8.0, 0.0)
+dual_bound: 5375.774715788117
+primal_obj: 5375.774715788118
+selected c_s: 5375.774715788117
+true_Q_at_cand = Q_s(cand_pt) = 5375.774715769441
+selected_minus_trueQ: 1.867556420620531e-08
+dual_minus_trueQ: 1.867556420620531e-08
+primal_minus_trueQ: 1.867647370090708e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 92 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 2.36873741707135, 5.631262582833685, 0.0)
+dual_bound: 3381.203207843297
+primal_obj: 3381.2032078433003
+selected c_s: 3381.203207843297
+true_Q_at_cand = Q_s(cand_pt) = 3381.20320786324
+selected_minus_trueQ: -1.9942945073125884e-08
+dual_minus_trueQ: -1.9942945073125884e-08
+primal_minus_trueQ: -1.993976184166968e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 93 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 2627.0
+primal_obj: 2627.0
+selected c_s: 2627.0
+true_Q_at_cand = Q_s(cand_pt) = 2627.0
+selected_minus_trueQ: 0.0
+dual_minus_trueQ: 0.0
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 94 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (6.64147484861401, 0.0, 1.3585251513859902, 0.0, 0.0)
+dual_bound: 4892.128503220239
+primal_obj: 4892.128503220241
+selected c_s: 4892.128503220239
+true_Q_at_cand = Q_s(cand_pt) = 4892.128503237842
+selected_minus_trueQ: -1.7603269952815026e-08
+dual_minus_trueQ: -1.7603269952815026e-08
+primal_minus_trueQ: -1.7600541468709707e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 95 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (1.165177962419162, 0.0, 0.0, 6.834822037502214, 0.0)
+dual_bound: 5198.282975893519
+primal_obj: 5198.28297589352
+selected c_s: 5198.282975893519
+true_Q_at_cand = Q_s(cand_pt) = 5198.282975886685
+selected_minus_trueQ: 6.833943189121783e-09
+dual_minus_trueQ: 6.833943189121783e-09
+primal_minus_trueQ: 6.835762178525329e-09
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 96 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 2730.0
+primal_obj: 2730.0
+selected c_s: 2730.0
+true_Q_at_cand = Q_s(cand_pt) = 2730.0
+selected_minus_trueQ: 0.0
+dual_minus_trueQ: 0.0
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 97 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (6.617111524071962, 0.0, 1.3828884921142257, 0.0, 0.0)
+dual_bound: 6401.552433538962
+primal_obj: 6401.552433538967
+selected c_s: 6401.552433538962
+true_Q_at_cand = Q_s(cand_pt) = 6401.552663361099
+selected_minus_trueQ: -0.00022982213704381138
+dual_minus_trueQ: -0.00022982213704381138
+primal_minus_trueQ: -0.00022982213158684317
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+
+--- Scenario 98 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (3.053615392351773, 0.0, 4.946384607648227, 0.0, 0.0)
+dual_bound: 4301.595357701492
+primal_obj: 4301.595357701492
+selected c_s: 4301.595357701492
+true_Q_at_cand = Q_s(cand_pt) = 4301.595357701492
+selected_minus_trueQ: 0.0
+dual_minus_trueQ: 0.0
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 99 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 8.0), (0.0, 24.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 300*x1 - 7*x1**2 + 270*x2 - 4*x2**2 + 460*x3 - 6*x3**2 + 800*x4 - 8*x4**2 + 740*x5 - 12*x5**2 + 600*x6 - 9*x6**2 + 540*x7 - 14*x7**2 + 380*x8 - 7*x8**
+cand_pt returned: (0.0, 0.0, 8.0, 0.0, 0.0)
+dual_bound: 2901.999959241426
+primal_obj: 2901.99995924143
+selected c_s: 2901.999959241426
+true_Q_at_cand = Q_s(cand_pt) = 2902.0
+selected_minus_trueQ: -4.075857395946514e-05
+dual_minus_trueQ: -4.075857395946514e-05
+primal_minus_trueQ: -4.075856986673898e-05
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: False
+=== ITER0 BOX-CS LOWER-BOUND CHECK END ===
+================================================================================
+
+=== Iter 0 (box-CS provenance) ===
+
+================================================================================
+[Iter 0] ITER-0 LB vs UB PROVENANCE CHECK
+================================================================================
+  box_LB (sum):        491230.307634769764
+  box_LB (per-scen):   4912.303076347697
+  LB_global (sum):     491230.307634769764
+  LB_global (per-scen):4912.303076347697
+
+  UB_global (sum):     598497.296775904833
+  UB_global (per-scen):5984.972967759049
+  UB source:           init
+  UB point:            (0.0000, 0.0000, 8.0000, 0.0000, 0.0000)
+  UB origin iter:      -1
+
+  --- Per-scenario UB (vertex Q-values at UB point) ---
+   scen            Q_val
+      0  18679.000000000
+      1   5691.455954692
+      2   2641.343217821
+      3   6418.329183512
+      4   6123.439324769
+      5   6498.858802553
+      6   5351.693324029
+      7   6920.687330956
+      8   6920.599754725
+      9   5598.321623027
+  ... (90 more scenarios)
+
+  --- Consistency Check ---
+  box_LB - UB_global (sum):     -107266.989141135069
+  box_LB - UB_global (per-scen):-1072.669891411351
+  OK: box_LB <= UB_global (valid lower bound)
+  active_tol:          1.000000e-08
+  Threshold (UB+tol):  598497.296775914845
+  box_LB <= threshold: True
+
+================================================================================
+[Iter 0] BOX-CS vs TRUE Q COMPARISON  (evaluate_Q_at on original models)
+================================================================================
+   scen         dual_bnd       primal_obj         selected       trueQ(cpt)    sel-trueQ   dual-trueQ sel<=trueQ dual<=trueQ prim~trueQ
+  ----- ---------------- ---------------- ---------------- ---------------- ------------ ------------ ---------- ----------- ----------
+      0  15638.999725623  15638.999725623  15638.999725623  15639.000011125    -0.000286    -0.000286       True        True      False
+      1   5288.289806309   5288.289806309   5288.289806309   5288.289886436    -0.000080    -0.000080       True        True      False
+      2   2641.343218209   2641.343218209   2641.343218209   2641.343217821     0.000000     0.000000       True        True       True
+      3   5336.385039849   5336.385039849   5336.385039849   5336.385039833     0.000000     0.000000       True        True       True
+      4   4918.557247546   4918.557247546   4918.557247546   4918.557247546    -0.000000    -0.000000       True        True       True
+      5   5109.893885356   5109.893885356   5109.893885356   5109.893907808    -0.000022    -0.000022       True        True      False
+      6   4642.987587998   4642.987587998   4642.987587998   4642.987587985     0.000000     0.000000       True        True       True
+      7   6099.512468586   6099.512468586   6099.512468586   6099.512468593    -0.000000    -0.000000       True        True       True
+      8   5385.566176264   5385.566176264   5385.566176264   5385.566431807    -0.000256    -0.000256       True        True      False
+      9   4999.791666302   4999.791666302   4999.791666302   4999.791557440     0.000109     0.000109      False       False      False
+     10   5109.302975444   5109.302975444   5109.302975444   5109.302975456    -0.000000    -0.000000       True        True       True
+     11   4034.810434886   4034.810434886   4034.810434886   4034.810472598    -0.000038    -0.000038       True        True      False
+     12   2480.000000000   2480.000000000   2480.000000000   2480.000000000     0.000000     0.000000       True        True       True
+     13   4514.731959966   4514.731959966   4514.731959966   4514.732256132    -0.000296    -0.000296       True        True      False
+     14   6206.684031507   6206.684031507   6206.684031507   6206.684192533    -0.000161    -0.000161       True        True      False
+     15   8118.984305732   8118.984305732   8118.984305732   8118.984305700     0.000000     0.000000       True        True       True
+     16   4065.859806552   4065.859806552   4065.859806552   4065.859806550     0.000000     0.000000       True        True       True
+     17   3748.774892088   3748.774892088   3748.774892088   3748.774892094    -0.000000    -0.000000       True        True       True
+     18   5335.146913331   5335.146913331   5335.146913331   5335.146913353    -0.000000    -0.000000       True        True       True
+     19   3853.748945596   3853.748945596   3853.748945596   3853.748945595     0.000000     0.000000       True        True       True
+     20   6819.690640011   6819.690640011   6819.690640011   6819.690640011    -0.000000    -0.000000       True        True       True
+     21   2627.000000000   2627.000000000   2627.000000000   2627.000000000     0.000000     0.000000       True        True       True
+     22   3876.221533385   3876.221533385   3876.221533385   3876.221533395    -0.000000    -0.000000       True        True       True
+     23   2857.245556923   2857.245556923   2857.245556923   2857.245556889     0.000000     0.000000       True        True       True
+     24   4984.476383019   4984.476383019   4984.476383019   4984.476383039    -0.000000    -0.000000       True        True       True
+     25  10231.635414070  10231.635414070  10231.635414070  10231.635648060    -0.000234    -0.000234       True        True      False
+     26   3769.977854532   3769.977854532   3769.977854532   3769.977854475     0.000000     0.000000       True        True       True
+     27   2876.999954941   2876.999954941   2876.999954941   2877.000000000    -0.000045    -0.000045       True        True      False
+     28   3393.019977983   3393.019977983   3393.019977983   3393.019985998    -0.000008    -0.000008       True        True      False
+     29   2352.481727614   2352.481727614   2352.481727614   2352.481727638    -0.000000    -0.000000       True        True       True
+     30   4956.718351937   4956.718351937   4956.718351937   4956.718351913     0.000000     0.000000       True        True       True
+     31   1864.746861622   1864.746861622   1864.746861622   1864.746861574     0.000000     0.000000       True        True       True
+     32   4711.556330690   4711.556330690   4711.556330690   4711.556330672     0.000000     0.000000       True        True       True
+     33   2627.000000000   2627.000000000   2627.000000000   2627.000000000     0.000000     0.000000       True        True       True
+     34   6692.797782703   6692.797782703   6692.797782703   6692.797782551     0.000000     0.000000       True        True       True
+     35   5094.000000000   5094.000000000   5094.000000000   5094.000000000     0.000000     0.000000       True        True       True
+     36   9788.702362323   9788.702362323   9788.702362323   9788.702362305     0.000000     0.000000       True        True       True
+     37   3470.000000000   3470.000000000   3470.000000000   3470.000000000     0.000000     0.000000       True        True       True
+     38   3245.753299418   3245.753299418   3245.753299418   3245.753299418    -0.000000    -0.000000       True        True       True
+     39   4734.987899764   4734.987899764   4734.987899764   4734.987899759     0.000000     0.000000       True        True       True
+     40   5323.013969575   5323.013969575   5323.013969575   5323.014094367    -0.000125    -0.000125       True        True      False
+     41   3676.322908477   3676.322908477   3676.322908477   3676.322908477     0.000000     0.000000       True        True       True
+     42   5023.437677591   5023.437677591   5023.437677591   5023.437953976    -0.000276    -0.000276       True        True      False
+     43   7267.126528223   7267.126528223   7267.126528223   7267.126528263    -0.000000    -0.000000       True        True       True
+     44   1278.000000000   1278.000000000   1278.000000000   1278.000000000     0.000000     0.000000       True        True       True
+     45   2315.614468767   2315.614468767   2315.614468767   2315.614468767    -0.000000    -0.000000       True        True       True
+     46   4760.535027660   4760.535027660   4760.535027660   4760.535027660    -0.000000    -0.000000       True        True       True
+     47   5393.678872420   5393.678872420   5393.678872420   5393.678872420    -0.000000    -0.000000       True        True       True
+     48   6355.745054399   6355.745054399   6355.745054399   6355.745378344    -0.000324    -0.000324       True        True      False
+     49   4401.151152685   4401.151152685   4401.151152685   4401.151414067    -0.000261    -0.000261       True        True      False
+     50   6040.314356642   6040.314356642   6040.314356642   6040.314562752    -0.000206    -0.000206       True        True      False
+     51   8358.455935066   8358.455935066   8358.455935066   8358.455935066    -0.000000    -0.000000       True        True       True
+     52  10825.491611177  10825.491611177  10825.491611177  10825.491817861    -0.000207    -0.000207       True        True      False
+     53   1381.549974048   1381.549974048   1381.549974048   1381.549974048    -0.000000    -0.000000       True        True       True
+     54   4628.117071269   4628.117071269   4628.117071269   4628.117071269     0.000000     0.000000       True        True       True
+     55   7444.413325067   7444.413325067   7444.413325067   7444.413325054     0.000000     0.000000       True        True       True
+     56   4620.932010958   4620.932010958   4620.932010958   4620.932010933     0.000000     0.000000       True        True       True
+     57   2632.252955598   2632.252955598   2632.252955598   2632.252955598     0.000000     0.000000       True        True       True
+     58   2627.000000000   2627.000000000   2627.000000000   2627.000000000     0.000000     0.000000       True        True       True
+     59   2901.999959246   2901.999959246   2901.999959246   2902.000000000    -0.000041    -0.000041       True        True      False
+     60   4017.256020214   4017.256020214   4017.256020214   4017.256020157     0.000000     0.000000       True        True       True
+     61  10861.538279815  10861.538279815  10861.538279815  10861.538535207    -0.000255    -0.000255       True        True      False
+     62   6597.889146545   6597.889146545   6597.889146545   6597.889146548    -0.000000    -0.000000       True        True       True
+     63   2627.000000000   2627.000000000   2627.000000000   2627.000000000     0.000000     0.000000       True        True       True
+     64   2627.000000000   2627.000000000   2627.000000000   2627.000000000     0.000000     0.000000       True        True       True
+     65   5219.570733412   5219.570733412   5219.570733412   5219.570733412    -0.000000    -0.000000       True        True       True
+     66   2630.000000000   2630.000000000   2630.000000000   2630.000000000     0.000000     0.000000       True        True       True
+     67   8604.942286173   8604.942286173   8604.942286173   8604.942434972    -0.000149    -0.000149       True        True      False
+     68   8642.970735415   8642.970735415   8642.970735415   8642.971002869    -0.000267    -0.000267       True        True      False
+     69   4947.000000000   4947.000000000   4947.000000000   4947.000000000     0.000000     0.000000       True        True       True
+     70   5880.008464082   5880.008464082   5880.008464082   5880.008702608    -0.000239    -0.000239       True        True      False
+     71   6814.411810610   6814.411810610   6814.411810610   6814.411810610     0.000000     0.000000       True        True       True
+     72   5854.366897345   5854.366897345   5854.366897345   5854.366897201     0.000000     0.000000       True        True       True
+     73   6360.275506225   6360.275506225   6360.275506225   6360.275506225     0.000000     0.000000       True        True       True
+     74   3181.050671779   3181.050671779   3181.050671779   3181.050671779    -0.000000    -0.000000       True        True       True
+     75   5596.439088350   5596.439088350   5596.439088350   5596.439088372    -0.000000    -0.000000       True        True       True
+     76   4965.901978920   4965.901978920   4965.901978920   4965.901978880     0.000000     0.000000       True        True       True
+     77   4970.722878230   4970.722878230   4970.722878230   4970.722878207     0.000000     0.000000       True        True       True
+     78   4434.858975059   4434.858975059   4434.858975059   4434.858975034     0.000000     0.000000       True        True       True
+     79   4641.696931455   4641.696931455   4641.696931455   4641.696931428     0.000000     0.000000       True        True       True
+     80   4184.488525917   4184.488525917   4184.488525917   4184.488525916     0.000000     0.000000       True        True       True
+     81   2627.000000000   2627.000000000   2627.000000000   2627.000000000     0.000000     0.000000       True        True       True
+     82   5764.959113289   5764.959113289   5764.959113289   5764.959113298    -0.000000    -0.000000       True        True       True
+     83   5642.769189300   5642.769189300   5642.769189300   5642.769437396    -0.000248    -0.000248       True        True      False
+     84   1003.000000000   1003.000000000   1003.000000000   1003.000000000     0.000000     0.000000       True        True       True
+     85   2876.999954942   2876.999954942   2876.999954942   2877.000000000    -0.000045    -0.000045       True        True      False
+     86   2448.826071939   2448.826071939   2448.826071939   2448.826071963    -0.000000    -0.000000       True        True       True
+     87   7141.953337687   7141.953337687   7141.953337687   7141.953337685     0.000000     0.000000       True        True       True
+     88   1183.890688222   1183.890688222   1183.890688222   1183.890688222    -0.000000    -0.000000       True        True       True
+     89   6979.214301768   6979.214301768   6979.214301768   6979.214505475    -0.000204    -0.000204       True        True      False
+     90   8333.233017899   8333.233017899   8333.233017899   8333.233017905    -0.000000    -0.000000       True        True       True
+     91   5375.774715788   5375.774715788   5375.774715788   5375.774715769     0.000000     0.000000       True        True       True
+     92   3381.203207843   3381.203207843   3381.203207843   3381.203207863    -0.000000    -0.000000       True        True       True
+     93   2627.000000000   2627.000000000   2627.000000000   2627.000000000     0.000000     0.000000       True        True       True
+     94   4892.128503220   4892.128503220   4892.128503220   4892.128503238    -0.000000    -0.000000       True        True       True
+     95   5198.282975894   5198.282975894   5198.282975894   5198.282975887     0.000000     0.000000       True        True       True
+     96   2730.000000000   2730.000000000   2730.000000000   2730.000000000     0.000000     0.000000       True        True       True
+     97   6401.552433539   6401.552433539   6401.552433539   6401.552663361    -0.000230    -0.000230       True        True      False
+     98   4301.595357701   4301.595357701   4301.595357701   4301.595357701     0.000000     0.000000       True        True       True
+     99   2901.999959241   2901.999959241   2901.999959241   2902.000000000    -0.000041    -0.000041       True        True      False
+
+  --- Box-CS vs True Q Aggregation Summary ---
+  sum(selected)   = 491230.307634769822  (per-scen: 4912.303076347698)
+  sum(trueQ)      = 491230.312068211962  (per-scen: 4912.303120682120)  [100/100 finite]
+  UB_global       = 598497.296775904833  (per-scen: 5984.972967759049)
+  box_LB          = 491230.307634769764  (per-scen: 4912.303076347697)
+  box_LB - UB     = -107266.989141135069  (per-scen: -1072.669891411351)
+  sum(sel) - sum(trueQ) = -0.004433442140
+  # scenarios where selected > trueQ (by > 1e-06): 1/100
+  # scenarios where dual_bnd > trueQ (by > 1e-06): 1/100
+  *** WARNING: 1 scenario(s) have selected > trueQ(cand_pt) ***
+      The box-CS 'dual bound' is NOT a valid lower bound for those scenarios.
+      This explains why box_LB > UB_global.
+================================================================================
+

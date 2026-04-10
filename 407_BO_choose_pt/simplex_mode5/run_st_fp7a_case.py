@@ -108,7 +108,8 @@ def create_model_st_fp7a() -> pyo.ConcreteModel:
     # Variables: xi >= 0, UB from Julia SNGO feasibility reduction for first-stage
     m.x1 = pyo.Var(bounds=(0, 18.22), initialize=0)
     m.x2 = pyo.Var(bounds=(0, 17.41), initialize=0)
-    m.x3 = pyo.Var(bounds=(0, 28.82), initialize=0)
+    #m.x3 = pyo.Var(bounds=(0, 28.82), initialize=0)
+    m.x3 = pyo.Var(bounds=(0, 35), initialize=0)
     m.x4 = pyo.Var(bounds=(0, 25.79), initialize=0)
     m.x5 = pyo.Var(bounds=(0, 19.15), initialize=0)
     m.x6  = pyo.Var(bounds=(0, None), initialize=0)
@@ -222,10 +223,10 @@ def build_models_st_fp7a(
 
 MODE_PARAMS = {
     "smoke": {
-        "nscen": 10,
+        "nscen": 5,
         "target_nodes": 100,
         "gap_stop_tol": 1e-5,
-        "time_limit": 60*20,
+        "time_limit": 60*2,
         "enable_ef_ub": True,
         "ef_time_ub": 30.0,
         "plot_every": None,

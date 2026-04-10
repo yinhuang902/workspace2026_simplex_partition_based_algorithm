@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "c:\Users\pc\Desktop\323_simplex_obbtfbbt\311_test_simplex_method_first_round_lazy_fbbtobbt\run_pid_case.py", line 362, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "c:\Users\pc\Desktop\323_simplex_obbtfbbt\311_test_simplex_method_first_round_lazy_fbbtobbt\run_pid_case.py", line 214, in main
+    result = run_pid_simplex_3d(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pc\Desktop\323_simplex_obbtfbbt\311_test_simplex_method_first_round_lazy_fbbtobbt\simplex_specialstart.py", line 3291, in run_pid_simplex_3d
+    c_scene = [float(x) for x in lb_simp_rec.get("c_per_scene", [])]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pc\Desktop\323_simplex_obbtfbbt\311_test_simplex_method_first_round_lazy_fbbtobbt\simplex_specialstart.py", line 3291, in <listcomp>
+    c_scene = [float(x) for x in lb_simp_rec.get("c_per_scene", [])]
+               ^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'

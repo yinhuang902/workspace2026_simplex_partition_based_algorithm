@@ -1,0 +1,49 @@
+{
+  "mode": "smoke",
+  "timestamp": "2026-03-24 14:29:50",
+  "scenarios": 10,
+  "random_seed": 42,
+  "params": {
+    "max_scenarios": 10,
+    "skip": 0,
+    "target_nodes": 200,
+    "gap_stop_tol": 1e-08,
+    "time_limit": 300,
+    "enable_3d_plot": false,
+    "enable_ef_ub": true,
+    "ef_time_ub": 60.0,
+    "use_exact_opt": false,
+    "use_fbbt": true,
+    "use_obbt": true,
+    "obbt_tol": 0.01,
+    "max_obbt_rounds": 3,
+    "obbt_solver_name": "gurobi",
+    "obbt_solver_opts": {
+      "TimeLimit": 5
+    }
+  },
+  "results": {
+    "iterations": 2,
+    "final_nodes": 8,
+    "final_LB_avg": 0.9795095778119073,
+    "final_UB_avg": 0.9790023051953444,
+    "gap_abs_avg": -0.0005072726165629149,
+    "gap_rel": -0.0005181526272930447,
+    "total_runtime_s": 55.05773239998962,
+    "build_time_s": 2.053876300022239
+  },
+  "histories": {
+    "LB_per_iter": [
+      0.9795095778119073,
+      0.9795095778119073
+    ],
+    "UB_per_iter": [
+      2.2113892346007193,
+      0.9790023051953444
+    ],
+    "node_count": [
+      8,
+      8
+    ]
+  }
+}

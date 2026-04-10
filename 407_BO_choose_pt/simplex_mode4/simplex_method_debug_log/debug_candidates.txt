@@ -1,0 +1,3 @@
+# debug_candidates.txt — per-iteration ms/c_s candidate details
+# Records: simplex vertices, ms points, c_s points, distances to existing nodes
+

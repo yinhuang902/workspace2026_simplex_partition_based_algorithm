@@ -1,0 +1,33 @@
+# simplex_record_split.txt — per-iteration split record
+# selected_simplex LB_pre, UB_pre, children LBs, end LB/UB
+
+=== Iter 1 ===
+selected_simplex: T0  LB_pre=14423.862586120
+  v3: (0.0000, 0.0000, 0.0000, 8.0000, 24.0000)
+  v2: (0.0000, 0.0000, 0.0000, 8.0000, 0.0000)
+  v4: (0.0000, 0.0000, 8.0000, 0.0000, 0.0000)
+  v8: (0.0000, 8.0000, 0.0000, 0.0000, 0.0000)
+  v16: (8.0000, 0.0000, 0.0000, 0.0000, 0.0000)
+  v0: (0.0000, 0.0000, 0.0000, 0.0000, 0.0000)
+UB_pre=14489.857980200  LB_global_pre=14423.862543334
+children (created 6):
+  child T107 (0, 2, 4, 8, 16, 32) LB=14423.862586120 sum_cs=14423.862586120 vol=0.000000e+00
+  child T108 (0, 3, 4, 8, 16, 32) LB=14423.862586120 sum_cs=14423.862586120 vol=0.000000e+00
+  child T109 (0, 2, 3, 8, 16, 32) LB=14428.657990356 sum_cs=14428.657990356 vol=3.824438e+00
+  child T110 (0, 2, 3, 4, 16, 32) LB=14485.037924730 sum_cs=14485.037924730 vol=7.539356e+02
+  child T111 (0, 2, 3, 4, 8, 32) LB=14485.062586120 sum_cs=14485.062586120 vol=6.144000e+01
+  child T112 (2, 3, 4, 8, 16, 32) LB=14423.862586120 sum_cs=14423.862586120 vol=1.591616e-13
+next_node: (0.6000, 7.3627, 0.0373, 0.0000, 0.0000)
+selection: source=mode4_avg_cs  rank=N/A  snap=sub_face
+barycentric: (0.000000, -0.000000, 0.004669, 0.920331, 0.075000, -0.000000)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 6 children, 60 checks, 0 inactive, 6 active
+  child T107: active  checks=10/10
+  child T108: active  checks=10/10
+  child T109: active  checks=10/10
+  child T110: active  checks=10/10
+  child T111: active  checks=10/10
+  child T112: active  checks=10/10
+cumulative_inactive: 0/113 simplices
+end: UB=14489.857980200  LB=14423.862543334
+

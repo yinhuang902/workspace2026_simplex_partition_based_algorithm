@@ -1,0 +1,33 @@
+# debug_lb_after_split.txt — LB analysis after simplex split
+# Shows: selected simplex LB, all child LBs, new global LB, INSIDE/OUTSIDE
+
+[Iter 0] Shape check: triggered=0, inactivated=0, passed=0
+[Iter 0] TERMINATED: all_simplices_filtered_by_active_gap_test
+
+======================================================================
+[Iter 0] TERMINATION: all_simplices_filtered_by_active_gap_test
+  Total simplices:          108
+  Permanently inactive:     0
+  Bad-quality cut:          0
+  Bad-shape cut:            0
+  Failed active-gap test:   108
+  UB_global (sum):          -3184.498095375906
+  UB_global (per-scen):     -636.899619075181
+  active_tol:               1.000000e-08
+  Threshold (UB + tol):     -3184.498095365906
+  Threshold (per-scen):     -636.899619073181
+
+  --- Per-simplex detail (first 10 by LB) ---
+    idx inactive             LB/S LB<=thresh                   reason
+  T   0    False   -636.822922811      False                 gap_fail
+  T   1    False   -636.822922811      False                 gap_fail
+  T   2    False   -636.822922811      False                 gap_fail
+  T   3    False   -636.822922811      False                 gap_fail
+  T   4    False   -636.822922811      False                 gap_fail
+  T   5    False   -636.822922811      False                 gap_fail
+  T   6    False   -636.822922811      False                 gap_fail
+  T   7    False   -636.822922811      False                 gap_fail
+  T   8    False   -636.822922811      False                 gap_fail
+  T   9    False   -636.822922811      False                 gap_fail
+======================================================================
+

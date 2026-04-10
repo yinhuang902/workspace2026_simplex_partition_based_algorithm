@@ -1,0 +1,198 @@
+# simplex_record_subproblem_runtime.txt — per-iteration subproblem runtime
+# ms/cs/Q timing, non-optimal subproblem detection
+
+=== Iter 1 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=17.8056, calls=545, avg=0.0327
+Q:  total_time=0.0470, calls=5, avg=0.0094
+
+=== Iter 2 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=18.1216, calls=550, avg=0.0329
+Q:  total_time=0.0716, calls=5, avg=0.0143
+
+=== Iter 3 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=21.5111, calls=555, avg=0.0388
+Q:  total_time=0.1039, calls=5, avg=0.0208
+
+=== Iter 4 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=21.7383, calls=560, avg=0.0388
+Q:  total_time=0.0274, calls=5, avg=0.0055
+
+=== Iter 5 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=21.9679, calls=565, avg=0.0389
+Q:  total_time=0.1270, calls=5, avg=0.0254
+
+=== Iter 6 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=22.1743, calls=570, avg=0.0389
+Q:  total_time=0.1327, calls=5, avg=0.0265
+
+=== Iter 7 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=22.3458, calls=575, avg=0.0389
+Q:  total_time=0.1458, calls=5, avg=0.0292
+
+=== Iter 8 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=22.5415, calls=580, avg=0.0389
+Q:  total_time=0.0340, calls=5, avg=0.0068
+
+=== Iter 9 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=22.7464, calls=585, avg=0.0389
+Q:  total_time=0.1093, calls=5, avg=0.0219
+
+=== Iter 10 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=22.9423, calls=590, avg=0.0389
+Q:  total_time=0.1245, calls=5, avg=0.0249
+
+=== Iter 11 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=23.1221, calls=595, avg=0.0389
+Q:  total_time=0.1332, calls=5, avg=0.0266
+
+=== Iter 12 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=23.3180, calls=600, avg=0.0389
+Q:  total_time=0.0710, calls=5, avg=0.0142
+
+=== Iter 13 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=23.5178, calls=605, avg=0.0389
+Q:  total_time=0.1231, calls=5, avg=0.0246
+
+=== Iter 14 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=23.7132, calls=610, avg=0.0389
+Q:  total_time=0.1394, calls=5, avg=0.0279
+
+=== Iter 15 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=23.8991, calls=615, avg=0.0389
+Q:  total_time=0.1449, calls=5, avg=0.0290
+
+=== Iter 16 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=24.0625, calls=620, avg=0.0388
+Q:  total_time=0.0988, calls=5, avg=0.0198
+
+=== Iter 17 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=24.2588, calls=625, avg=0.0388
+Q:  total_time=0.1259, calls=5, avg=0.0252
+
+=== Iter 18 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=24.4182, calls=630, avg=0.0388
+Q:  total_time=0.1371, calls=5, avg=0.0274
+
+=== Iter 19 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=24.5808, calls=635, avg=0.0387
+Q:  total_time=0.1193, calls=5, avg=0.0239
+
+=== Iter 20 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=24.7624, calls=640, avg=0.0387
+Q:  total_time=0.0749, calls=5, avg=0.0150
+
+=== Iter 21 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=24.9375, calls=645, avg=0.0387
+Q:  total_time=0.0826, calls=5, avg=0.0165
+
+=== Iter 22 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=25.0793, calls=650, avg=0.0386
+Q:  total_time=0.1005, calls=5, avg=0.0201
+
+=== Iter 23 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=25.2237, calls=655, avg=0.0385
+Q:  total_time=0.0976, calls=5, avg=0.0195
+
+=== Iter 24 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=25.3768, calls=660, avg=0.0384
+Q:  total_time=0.0455, calls=5, avg=0.0091
+
+=== Iter 25 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=25.5175, calls=665, avg=0.0384
+Q:  total_time=0.0782, calls=5, avg=0.0156
+
+=== Iter 26 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=25.6740, calls=670, avg=0.0383
+Q:  total_time=0.0744, calls=5, avg=0.0149
+
+=== Iter 27 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=25.8074, calls=675, avg=0.0382
+Q:  total_time=0.0783, calls=5, avg=0.0157
+
+=== Iter 28 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=25.9332, calls=680, avg=0.0381
+Q:  total_time=0.0536, calls=5, avg=0.0107
+
+=== Iter 29 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=26.0592, calls=685, avg=0.0380
+Q:  total_time=0.0643, calls=5, avg=0.0129
+
+=== Iter 30 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=26.1911, calls=690, avg=0.0380
+Q:  total_time=0.0842, calls=5, avg=0.0168
+
+=== Iter 31 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=26.3209, calls=695, avg=0.0379
+Q:  total_time=0.0810, calls=5, avg=0.0162
+
+=== Iter 32 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=26.3411, calls=695, avg=0.0379
+Q:  total_time=0.0753, calls=5, avg=0.0151
+
+=== Iter 33 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=26.6366, calls=700, avg=0.0381
+Q:  total_time=0.0245, calls=5, avg=0.0049
+
+=== Iter 34 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=26.7920, calls=705, avg=0.0380
+Q:  total_time=0.1176, calls=5, avg=0.0235
+
+=== Iter 35 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=27.0162, calls=710, avg=0.0381
+Q:  total_time=0.0915, calls=5, avg=0.0183
+
+=== Iter 36 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=27.2109, calls=715, avg=0.0381
+Q:  total_time=0.1232, calls=5, avg=0.0246
+
+=== Iter 37 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=27.4150, calls=720, avg=0.0381
+Q:  total_time=0.1192, calls=5, avg=0.0238
+
+=== Iter 38 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=27.6243, calls=725, avg=0.0381
+Q:  total_time=0.1457, calls=5, avg=0.0291
+
+=== Iter 39 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=27.8212, calls=730, avg=0.0381
+Q:  total_time=0.1309, calls=5, avg=0.0262
+

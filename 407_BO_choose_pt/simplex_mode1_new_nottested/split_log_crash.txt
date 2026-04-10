@@ -1,0 +1,36 @@
+=== Iter 0 ===
+simplex_id: 1
+error: float() argument must be a string or a real number, not 'NoneType'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\OneDrive\Desktop\318\311_test_simplex_method_first_round_lazy--recoverfromantigravity\simplex_specialstart.py", line 4561, in run_pid_simplex_3d
+    _c_sum = sum(float(x) for x in _cr.get("c_per_scene", []) if np.isfinite(float(x)))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\OneDrive\Desktop\318\311_test_simplex_method_first_round_lazy--recoverfromantigravity\simplex_specialstart.py", line 4561, in <genexpr>
+    _c_sum = sum(float(x) for x in _cr.get("c_per_scene", []) if np.isfinite(float(x)))
+                                                                             ^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+=== Iter 1 ===
+simplex_id: 5
+error: float() argument must be a string or a real number, not 'NoneType'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\OneDrive\Desktop\318\311_test_simplex_method_first_round_lazy--recoverfromantigravity\simplex_specialstart.py", line 4561, in run_pid_simplex_3d
+    _c_sum = sum(float(x) for x in _cr.get("c_per_scene", []) if np.isfinite(float(x)))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\OneDrive\Desktop\318\311_test_simplex_method_first_round_lazy--recoverfromantigravity\simplex_specialstart.py", line 4561, in <genexpr>
+    _c_sum = sum(float(x) for x in _cr.get("c_per_scene", []) if np.isfinite(float(x)))
+                                                                             ^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+=== Iter 2 ===
+simplex_id: 7
+error: float() argument must be a string or a real number, not 'NoneType'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\OneDrive\Desktop\318\311_test_simplex_method_first_round_lazy--recoverfromantigravity\simplex_specialstart.py", line 4561, in run_pid_simplex_3d
+    _c_sum = sum(float(x) for x in _cr.get("c_per_scene", []) if np.isfinite(float(x)))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\OneDrive\Desktop\318\311_test_simplex_method_first_round_lazy--recoverfromantigravity\simplex_specialstart.py", line 4561, in <genexpr>
+    _c_sum = sum(float(x) for x in _cr.get("c_per_scene", []) if np.isfinite(float(x)))
+                                                                             ^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+

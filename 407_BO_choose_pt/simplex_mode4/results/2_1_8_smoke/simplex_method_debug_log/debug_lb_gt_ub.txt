@@ -1,0 +1,3 @@
+# debug_lb_gt_ub.txt — per-simplex LB decomposition for simplices where LB > UB
+# Written after post-split evaluate_all_tetra passes
+

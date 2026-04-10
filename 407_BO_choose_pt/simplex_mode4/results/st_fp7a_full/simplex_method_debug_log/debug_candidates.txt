@@ -1,0 +1,149 @@
+# debug_candidates.txt — per-iteration ms/c_s candidate details
+# Records: simplex vertices, ms points, c_s points, distances to existing nodes
+
+================================================================================
+[Iter 1] LB simplex = T1
+  LB simplex vertices:
+    v0 (node #3): (0.0, 0.0, 0.0, 25.79, 19.15)
+    v1 (node #1): (0.0, 0.0, 0.0, 0.0, 19.15)
+    v2 (node #4): (0.0, 0.0, 35.0, 0.0, 0.0)
+    v3 (node #8): (0.0, 17.41, 0.0, 0.0, 0.0)
+    v4 (node #16): (18.22, 0.0, 0.0, 0.0, 0.0)
+    v5 (node #0): (0.0, 0.0, 0.0, 0.0, 0.0)
+  Existing nodes (32 total):
+    node #0: (0.0, 0.0, 0.0, 0.0, 0.0)
+    node #1: (0.0, 0.0, 0.0, 0.0, 19.15)
+    node #2: (0.0, 0.0, 0.0, 25.79, 0.0)
+    node #3: (0.0, 0.0, 0.0, 25.79, 19.15)
+    node #4: (0.0, 0.0, 35.0, 0.0, 0.0)
+    node #5: (0.0, 0.0, 35.0, 0.0, 19.15)
+    node #6: (0.0, 0.0, 35.0, 25.79, 0.0)
+    node #7: (0.0, 0.0, 35.0, 25.79, 19.15)
+    node #8: (0.0, 17.41, 0.0, 0.0, 0.0)
+    node #9: (0.0, 17.41, 0.0, 0.0, 19.15)
+    node #10: (0.0, 17.41, 0.0, 25.79, 0.0)
+    node #11: (0.0, 17.41, 0.0, 25.79, 19.15)
+    node #12: (0.0, 17.41, 35.0, 0.0, 0.0)
+    node #13: (0.0, 17.41, 35.0, 0.0, 19.15)
+    node #14: (0.0, 17.41, 35.0, 25.79, 0.0)
+    node #15: (0.0, 17.41, 35.0, 25.79, 19.15)
+    node #16: (18.22, 0.0, 0.0, 0.0, 0.0)
+    node #17: (18.22, 0.0, 0.0, 0.0, 19.15)
+    node #18: (18.22, 0.0, 0.0, 25.79, 0.0)
+    node #19: (18.22, 0.0, 0.0, 25.79, 19.15)
+    node #20: (18.22, 0.0, 35.0, 0.0, 0.0)
+    node #21: (18.22, 0.0, 35.0, 0.0, 19.15)
+    node #22: (18.22, 0.0, 35.0, 25.79, 0.0)
+    node #23: (18.22, 0.0, 35.0, 25.79, 19.15)
+    node #24: (18.22, 17.41, 0.0, 0.0, 0.0)
+    node #25: (18.22, 17.41, 0.0, 0.0, 19.15)
+    node #26: (18.22, 17.41, 0.0, 25.79, 0.0)
+    node #27: (18.22, 17.41, 0.0, 25.79, 19.15)
+    node #28: (18.22, 17.41, 35.0, 0.0, 0.0)
+    node #29: (18.22, 17.41, 35.0, 0.0, 19.15)
+    node #30: (18.22, 17.41, 35.0, 25.79, 0.0)
+    node #31: (18.22, 17.41, 35.0, 25.79, 19.15)
+
+  Candidates (101 total):
+    [0] simp=T1, scene=0, source=c_s_fallback, val=-3.547506e+02, pt=(6.94254533837639e-11, 5.3648602443831174e-11, 28.80239734089655, 3.934672976060275e-11, 1.592344173874426e-10), dist_to_nodes=6.197603e+00, ok
+    [1] simp=T1, scene=1, source=c_s_fallback, val=-3.654977e+02, pt=(0.0, 0.0, 29.152773051117723, 0.0, 0.0), dist_to_nodes=5.847227e+00, ok
+    [2] simp=T1, scene=2, source=c_s_fallback, val=-3.687179e+02, pt=(0.0, 0.0, 29.26151711132179, 0.0, 0.0), dist_to_nodes=5.738483e+00, ok
+    [3] simp=T1, scene=3, source=c_s_fallback, val=-3.652777e+02, pt=(7.19485297005505e-11, 5.263398869064448e-11, 29.15419254204055, 3.8299965567943875e-11, 1.508763388036301e-10), dist_to_nodes=5.845807e+00, ok
+    [4] simp=T1, scene=4, source=c_s_fallback, val=-3.641540e+02, pt=(0.0, 0.0, 29.097893409547968, 0.0, 0.0), dist_to_nodes=5.902107e+00, ok
+    [5] simp=T1, scene=5, source=c_s_fallback, val=-3.593366e+02, pt=(0.0, 0.0, 28.951553741619175, 0.0, 0.0), dist_to_nodes=6.048446e+00, ok
+    [6] simp=T1, scene=6, source=c_s_fallback, val=-3.607279e+02, pt=(0.0, 0.0, 29.01610706833786, 0.0, 0.0), dist_to_nodes=5.983893e+00, ok
+    [7] simp=T1, scene=7, source=c_s_fallback, val=-3.587097e+02, pt=(0.0, 0.0, 28.95188321361612, 0.0, 0.0), dist_to_nodes=6.048117e+00, ok
+    [8] simp=T1, scene=8, source=c_s_fallback, val=-3.626281e+02, pt=(0.0, 0.0, 29.079846562713627, 0.0, 0.0), dist_to_nodes=5.920153e+00, ok
+    [9] simp=T1, scene=9, source=c_s_fallback, val=-3.630188e+02, pt=(0.0, 0.0, 29.06461955649788, 0.0, 0.0), dist_to_nodes=5.935380e+00, ok
+    [10] simp=T1, scene=10, source=c_s_fallback, val=-3.602360e+02, pt=(0.0, 0.0, 28.994118803863987, 0.0, 0.0), dist_to_nodes=6.005881e+00, ok
+    [11] simp=T1, scene=11, source=c_s_fallback, val=-3.564341e+02, pt=(0.0, 0.0, 28.871867188406892, 0.0, 0.0), dist_to_nodes=6.128133e+00, ok
+    [12] simp=T1, scene=12, source=c_s_fallback, val=-3.692637e+02, pt=(7.281237742027465e-11, 5.2299765623741024e-11, 29.284252788406597, 3.79515793673651e-11, 1.4828106640555845e-10), dist_to_nodes=5.715747e+00, ok
+    [13] simp=T1, scene=13, source=c_s_fallback, val=-3.584002e+02, pt=(0.0, 0.0, 28.933316484065873, 0.0, 0.0), dist_to_nodes=6.066684e+00, ok
+    [14] simp=T1, scene=14, source=c_s_fallback, val=-3.589915e+02, pt=(6.930269258486615e-11, 5.3559183242659295e-11, 28.965605166249972, 3.916865450753832e-11, 1.5886534399029882e-10), dist_to_nodes=6.034395e+00, ok
+    [15] simp=T1, scene=15, source=c_s_fallback, val=-3.573373e+02, pt=(6.955797491409201e-11, 5.353179671116253e-11, 28.898882070395338, 3.9189603911154495e-11, 1.5840869174641343e-10), dist_to_nodes=6.101118e+00, ok
+    [16] simp=T1, scene=16, source=c_s_fallback, val=-3.563419e+02, pt=(6.91124628582166e-11, 5.3694816949528935e-11, 28.868098779873797, 3.934269095695189e-11, 1.5987619629281152e-10), dist_to_nodes=6.131901e+00, ok
+    [17] simp=T1, scene=17, source=c_s_fallback, val=-3.648606e+02, pt=(0.0, 0.0, 29.148870825086483, 0.0, 0.0), dist_to_nodes=5.851129e+00, ok
+    [18] simp=T1, scene=18, source=c_s_fallback, val=-3.647121e+02, pt=(7.15096527392092e-11, 5.2767068509815196e-11, 29.141602221325684, 3.841539033529528e-11, 1.520305257349662e-10), dist_to_nodes=5.858398e+00, ok
+    [19] simp=T1, scene=19, source=c_s_fallback, val=-3.678624e+02, pt=(7.310389012402751e-11, 5.2264589386825445e-11, 29.226618696012714, 3.795770653013209e-11, 1.478311134332401e-10), dist_to_nodes=5.773381e+00, ok
+    [20] simp=T1, scene=20, source=c_s_fallback, val=-3.577432e+02, pt=(0.0, 0.0, 28.920949889360056, 0.0, 0.0), dist_to_nodes=6.079050e+00, ok
+    [21] simp=T1, scene=21, source=c_s_fallback, val=-3.636773e+02, pt=(0.0, 0.0, 29.10868091768454, 0.0, 0.0), dist_to_nodes=5.891319e+00, ok
+    [22] simp=T1, scene=22, source=c_s_fallback, val=-3.577665e+02, pt=(6.950855919592202e-11, 5.3533942322863465e-11, 28.91597251397174, 3.917993845267347e-11, 1.58478418400435e-10), dist_to_nodes=6.084027e+00, ok
+    [23] simp=T1, scene=23, source=c_s_fallback, val=-3.672680e+02, pt=(0.0, 0.0, 29.20649777128383, 0.0, 0.0), dist_to_nodes=5.793502e+00, ok
+    [24] simp=T1, scene=24, source=c_s_fallback, val=-3.662609e+02, pt=(0.0, 0.0, 29.166889737176, 0.0, 0.0), dist_to_nodes=5.833110e+00, ok
+    [25] simp=T1, scene=25, source=c_s_fallback, val=-3.641374e+02, pt=(0.0, 0.0, 29.122328395990575, 0.0, 0.0), dist_to_nodes=5.877672e+00, ok
+    [26] simp=T1, scene=26, source=c_s_fallback, val=-3.574708e+02, pt=(0.0, 0.0, 28.908012232087966, 0.0, 0.0), dist_to_nodes=6.091988e+00, ok
+    [27] simp=T1, scene=27, source=c_s_fallback, val=-3.605572e+02, pt=(0.0, 0.0, 29.012488842316166, 0.0, 0.0), dist_to_nodes=5.987511e+00, ok
+    [28] simp=T1, scene=28, source=c_s_fallback, val=-3.590111e+02, pt=(7.060907247520669e-11, 5.317880291871594e-11, 28.944362675333323, 3.887256254995683e-11, 1.552346461585198e-10), dist_to_nodes=6.055637e+00, ok
+    [29] simp=T1, scene=29, source=c_s_fallback, val=-3.641794e+02, pt=(7.108601372470333e-11, 5.2897455428688347e-11, 29.12967279795414, 3.852833365258575e-11, 1.5317466354642467e-10), dist_to_nodes=5.870327e+00, ok
+    [30] simp=T1, scene=30, source=c_s_fallback, val=-3.617665e+02, pt=(0.0, 0.0, 29.029311192121334, 0.0, 0.0), dist_to_nodes=5.970689e+00, ok
+    [31] simp=T1, scene=31, source=c_s_fallback, val=-3.567389e+02, pt=(0.0, 0.0, 28.873802600029776, 0.0, 0.0), dist_to_nodes=6.126197e+00, ok
+    [32] simp=T1, scene=32, source=c_s_fallback, val=-3.652577e+02, pt=(0.0, 0.0, 29.1609272368805, 0.0, 0.0), dist_to_nodes=5.839073e+00, ok
+    [33] simp=T1, scene=33, source=c_s_fallback, val=-3.681341e+02, pt=(0.0, 0.0, 29.254772001301497, 0.0, 0.0), dist_to_nodes=5.745228e+00, ok
+    [34] simp=T1, scene=34, source=c_s_fallback, val=-3.668688e+02, pt=(0.0, 0.0, 29.19437387485635, 0.0, 0.0), dist_to_nodes=5.805626e+00, ok
+    [35] simp=T1, scene=35, source=c_s_fallback, val=-3.661303e+02, pt=(0.0, 0.0, 29.172748907278475, 0.0, 9.926935824168537e-06), dist_to_nodes=5.827251e+00, ok
+    [36] simp=T1, scene=36, source=c_s_fallback, val=-3.664900e+02, pt=(7.21715205293465e-11, 5.254148181996297e-11, 29.19478768159042, 3.8200469824090486e-11, 1.501644553576021e-10), dist_to_nodes=5.805212e+00, ok
+    [37] simp=T1, scene=37, source=c_s_fallback, val=-3.657144e+02, pt=(7.183929323960342e-11, 5.265069644688728e-11, 29.17252958505271, 3.83022962638977e-11, 1.510732919297172e-10), dist_to_nodes=5.827470e+00, ok
+    [38] simp=T1, scene=38, source=c_s_fallback, val=-3.624829e+02, pt=(7.09070208125336e-11, 5.299522291930074e-11, 29.0696076653899, 3.864484603703257e-11, 1.538992264779718e-10), dist_to_nodes=5.930392e+00, ok
+    [39] simp=T1, scene=39, source=c_s_fallback, val=-3.641444e+02, pt=(0.0, 0.0, 29.102943808127954, 0.0, 0.0), dist_to_nodes=5.897056e+00, ok
+    [40] simp=T1, scene=40, source=c_s_fallback, val=-3.647761e+02, pt=(0.0, 0.0, 29.11968892560313, 0.0, 0.0), dist_to_nodes=5.880311e+00, ok
+    [41] simp=T1, scene=41, source=c_s_fallback, val=-3.678737e+02, pt=(7.294102218981235e-11, 5.2305312906407745e-11, 29.23041182478788, 3.7988295078372824e-11, 1.4819255961656075e-10), dist_to_nodes=5.769588e+00, ok
+    [42] simp=T1, scene=42, source=c_s_fallback, val=-3.593197e+02, pt=(7.029262228090262e-11, 5.325968528280677e-11, 28.961604014279875, 3.8927645450708426e-11, 1.560326823583195e-10), dist_to_nodes=6.038396e+00, ok
+    [43] simp=T1, scene=43, source=c_s_fallback, val=-3.641420e+02, pt=(7.184390322480977e-11, 5.2693650531307906e-11, 29.11396051175127, 3.8372866459114016e-11, 1.5130027749229122e-10), dist_to_nodes=5.886039e+00, ok
+    [44] simp=T1, scene=44, source=c_s_fallback, val=-3.616488e+02, pt=(7.113640264783524e-11, 5.2955770211560507e-11, 29.03413393903692, 3.863484177703051e-11, 1.5344239307810236e-10), dist_to_nodes=5.965866e+00, ok
+    [45] simp=T1, scene=45, source=c_s_fallback, val=-3.679748e+02, pt=(7.248423517332979e-11, 5.241913301281871e-11, 29.24343606089857, 3.807229007029021e-11, 1.4921610996552835e-10), dist_to_nodes=5.756564e+00, ok
+    [46] simp=T1, scene=46, source=c_s_fallback, val=-3.579780e+02, pt=(7.01975231427912e-11, 5.332623014302565e-11, 28.912471330225795, 3.901302210865964e-11, 1.5651224334227244e-10), dist_to_nodes=6.087529e+00, ok
+    [47] simp=T1, scene=47, source=c_s_fallback, val=-3.682546e+02, pt=(0.0, 0.0, 29.246156623995137, 0.0, 0.0), dist_to_nodes=5.753843e+00, ok
+    [48] simp=T1, scene=48, source=c_s_fallback, val=-3.680628e+02, pt=(7.267192240609138e-11, 5.2368525197713683e-11, 29.24289575736139, 3.803179629703673e-11, 1.487731136224676e-10), dist_to_nodes=5.757104e+00, ok
+    [49] simp=T1, scene=49, source=c_s_fallback, val=-3.623300e+02, pt=(0.0, 0.0, 29.046638044268924, 0.0, 0.0), dist_to_nodes=5.953362e+00, ok
+    [50] simp=T1, scene=50, source=c_s_fallback, val=-3.567769e+02, pt=(0.0, 0.0, 28.884465676873, 0.0, 0.0), dist_to_nodes=6.115534e+00, ok
+    [51] simp=T1, scene=51, source=c_s_fallback, val=-3.567916e+02, pt=(0.0, 0.0, 28.883491577030266, 0.0, 0.0), dist_to_nodes=6.116508e+00, ok
+    [52] simp=T1, scene=52, source=c_s_fallback, val=-3.643524e+02, pt=(0.0, 0.0, 29.129509483434777, 0.0, 0.0), dist_to_nodes=5.870491e+00, ok
+    [53] simp=T1, scene=53, source=c_s_fallback, val=-3.649771e+02, pt=(0.0, 0.0, 29.13042269766349, 0.0, 0.0), dist_to_nodes=5.869577e+00, ok
+    [54] simp=T1, scene=54, source=c_s_fallback, val=-3.664996e+02, pt=(0.0, 0.0, 29.184059155836827, 0.0, 0.0), dist_to_nodes=5.815941e+00, ok
+    [55] simp=T1, scene=55, source=c_s_fallback, val=-3.562291e+02, pt=(0.0, 0.0, 28.86085838335819, 0.0, 0.0), dist_to_nodes=6.139142e+00, ok
+    [56] simp=T1, scene=56, source=c_s_fallback, val=-3.575763e+02, pt=(0.0, 0.0, 28.912090159941016, 0.0, 0.0), dist_to_nodes=6.087910e+00, ok
+    [57] simp=T1, scene=57, source=c_s_fallback, val=-3.583785e+02, pt=(6.9764779645983e-11, 5.3440349419834834e-11, 28.934973143397876, 3.909137804149528e-11, 1.576471037107807e-10), dist_to_nodes=6.065027e+00, ok
+    [58] simp=T1, scene=58, source=c_s_fallback, val=-3.677912e+02, pt=(0.0, 0.0, 29.231138443596315, 0.0, 0.0), dist_to_nodes=5.768862e+00, ok
+    [59] simp=T1, scene=59, source=c_s_fallback, val=-3.693269e+02, pt=(0.0, 0.0, 29.28301837383934, 0.0, 0.0), dist_to_nodes=5.716982e+00, ok
+    [60] simp=T1, scene=60, source=c_s_fallback, val=-3.646156e+02, pt=(7.149101000651351e-11, 5.2774818510726945e-11, 29.138365917241693, 3.8423653184653096e-11, 1.5209139554555803e-10), dist_to_nodes=5.861634e+00, ok
+    [61] simp=T1, scene=61, source=c_s_fallback, val=-3.628480e+02, pt=(0.0, 0.0, 29.071792155300262, 0.0, 0.0), dist_to_nodes=5.928208e+00, ok
+    [62] simp=T1, scene=62, source=c_s_fallback, val=-3.682839e+02, pt=(7.329650318574578e-11, 5.2204873232483144e-11, 29.238143876085147, 3.790264807610028e-11, 1.4734622477199133e-10), dist_to_nodes=5.761856e+00, ok
+    [63] simp=T1, scene=63, source=c_s_fallback, val=-3.567979e+02, pt=(0.0, 0.0, 28.87069045211993, 0.0, 0.0), dist_to_nodes=6.129310e+00, ok
+    [64] simp=T1, scene=64, source=c_s_fallback, val=-3.674892e+02, pt=(0.0, 0.0, 29.223144442605193, 0.0, 0.0), dist_to_nodes=5.776856e+00, ok
+    [65] simp=T1, scene=65, source=c_s_fallback, val=-3.631323e+02, pt=(0.0, 0.0, 29.08867616112007, 0.0, 0.0), dist_to_nodes=5.911324e+00, ok
+    [66] simp=T1, scene=66, source=c_s_fallback, val=-3.558449e+02, pt=(0.0, 0.0, 28.841877799099933, 0.0, 0.0), dist_to_nodes=6.158122e+00, ok
+    [67] simp=T1, scene=67, source=c_s_fallback, val=-3.681367e+02, pt=(0.0, 0.0, 29.230388502892755, 0.0, 0.0), dist_to_nodes=5.769611e+00, ok
+    [68] simp=T1, scene=68, source=c_s_fallback, val=-3.666363e+02, pt=(0.0, 0.0, 29.185701130238428, 0.0, 0.0), dist_to_nodes=5.814299e+00, ok
+    [69] simp=T1, scene=69, source=c_s_fallback, val=-3.573343e+02, pt=(0.0, 0.0, 28.906608293492603, 0.0, 0.0), dist_to_nodes=6.093392e+00, ok
+    [70] simp=T1, scene=70, source=c_s_fallback, val=-3.598684e+02, pt=(0.0, 0.0, 28.991072724066207, 0.0, 0.0), dist_to_nodes=6.008927e+00, ok
+    [71] simp=T1, scene=71, source=c_s_fallback, val=-3.615548e+02, pt=(0.0, 0.0, 29.03482942425944, 0.0, 0.0), dist_to_nodes=5.965171e+00, ok
+    [72] simp=T1, scene=72, source=c_s_fallback, val=-3.688265e+02, pt=(0.0, 0.0, 29.27041697340411, 0.0, 0.0), dist_to_nodes=5.729583e+00, ok
+    [73] simp=T1, scene=73, source=c_s_fallback, val=-3.562040e+02, pt=(0.0, 0.0, 28.859231519675927, 0.0, 0.0), dist_to_nodes=6.140768e+00, ok
+    [74] simp=T1, scene=74, source=c_s_fallback, val=-3.667281e+02, pt=(0.0, 0.0, 29.204775040895957, 0.0, 0.0), dist_to_nodes=5.795225e+00, ok
+    [75] simp=T1, scene=75, source=c_s_fallback, val=-3.599697e+02, pt=(7.120028564789816e-11, 5.298650496966344e-11, 28.96974985118225, 3.8699912758070584e-11, 1.5354489754629753e-10), dist_to_nodes=6.030250e+00, ok
+    [76] simp=T1, scene=76, source=c_s_fallback, val=-3.638834e+02, pt=(7.13661877366646e-11, 5.282931435079377e-11, 29.11344218503852, 3.848313448853775e-11, 1.5251437700467188e-10), dist_to_nodes=5.886558e+00, ok
+    [77] simp=T1, scene=77, source=c_s_fallback, val=-3.655681e+02, pt=(7.217908193332053e-11, 5.2565215149857355e-11, 29.160449220767806, 3.8240510479142676e-11, 1.5028408051319236e-10), dist_to_nodes=5.839551e+00, ok
+    [78] simp=T1, scene=78, source=c_s_fallback, val=-3.675234e+02, pt=(7.267565733370066e-11, 5.2382441094680784e-11, 29.222911011020518, 3.805504164662843e-11, 1.48843171545036e-10), dist_to_nodes=5.777089e+00, ok
+    [79] simp=T1, scene=79, source=c_s_fallback, val=-3.602307e+02, pt=(0.0, 0.0, 28.977613863700107, 0.0, 0.0), dist_to_nodes=6.022386e+00, ok
+    [80] simp=T1, scene=80, source=c_s_fallback, val=-3.599687e+02, pt=(6.976484162338561e-11, 5.3393427378310746e-11, 28.995019518994642, 3.9015458296203025e-11, 1.5738087483441416e-10), dist_to_nodes=6.004980e+00, ok
+    [81] simp=T1, scene=81, source=c_s_fallback, val=-3.581778e+02, pt=(7.058232006607289e-11, 5.3210669357221574e-11, 28.913285890366485, 3.891814456091373e-11, 1.5544129736819588e-10), dist_to_nodes=6.086714e+00, ok
+    [82] simp=T1, scene=82, source=c_s_fallback, val=-3.612586e+02, pt=(0.0, 0.0, 29.012905356792857, 0.0, 0.0), dist_to_nodes=5.987095e+00, ok
+    [83] simp=T1, scene=83, source=c_s_fallback, val=-3.666070e+02, pt=(7.203894740258088e-11, 5.257299946918567e-11, 29.201723793512198, 3.822172346861637e-11, 1.504610200740549e-10), dist_to_nodes=5.798276e+00, ok
+    [84] simp=T1, scene=84, source=c_s_fallback, val=-3.679519e+02, pt=(0.0, 0.0, 29.23677420493755, 0.0, 0.0), dist_to_nodes=5.763226e+00, ok
+    [85] simp=T1, scene=85, source=c_s_fallback, val=-3.648999e+02, pt=(0.0, 0.0, 29.160009043975176, 0.0, 0.0), dist_to_nodes=5.839991e+00, ok
+    [86] simp=T1, scene=86, source=c_s_fallback, val=-3.614944e+02, pt=(0.0, 0.0, 29.041605459211354, 0.0, 0.0), dist_to_nodes=5.958395e+00, ok
+    [87] simp=T1, scene=87, source=c_s_fallback, val=-3.576933e+02, pt=(0.0, 0.0, 28.922875282166736, 0.0, 0.0), dist_to_nodes=6.077125e+00, ok
+    [88] simp=T1, scene=88, source=c_s_fallback, val=-3.684251e+02, pt=(0.0, 0.0, 29.254069922021483, 0.0, 0.0), dist_to_nodes=5.745930e+00, ok
+    [89] simp=T1, scene=89, source=c_s_fallback, val=-3.576846e+02, pt=(0.0, 0.0, 28.901020505508388, 0.0, 0.0), dist_to_nodes=6.098979e+00, ok
+    [90] simp=T1, scene=90, source=c_s_fallback, val=-3.628444e+02, pt=(0.0, 0.0, 29.063666110211784, 0.0, 0.0), dist_to_nodes=5.936334e+00, ok
+    [91] simp=T1, scene=91, source=c_s_fallback, val=-3.596808e+02, pt=(0.0, 0.0, 28.986741928488975, 0.0, 0.0), dist_to_nodes=6.013258e+00, ok
+    [92] simp=T1, scene=92, source=c_s_fallback, val=-3.637033e+02, pt=(0.0, 0.0, 29.113080964590928, 0.0, 0.0), dist_to_nodes=5.886919e+00, ok
+    [93] simp=T1, scene=93, source=c_s_fallback, val=-3.676655e+02, pt=(0.0, 0.0, 29.213874422328153, 0.0, 0.0), dist_to_nodes=5.786126e+00, ok
+    [94] simp=T1, scene=94, source=c_s_fallback, val=-3.613945e+02, pt=(7.164514245881228e-11, 5.2824747412588964e-11, 29.01495616651191, 3.854020653702993e-11, 1.5220753550985522e-10), dist_to_nodes=5.985044e+00, ok
+    [95] simp=T1, scene=95, source=c_s_fallback, val=-3.664308e+02, pt=(0.0, 0.0, 29.17639674455272, 0.0, 0.0), dist_to_nodes=5.823603e+00, ok
+    [96] simp=T1, scene=96, source=c_s_fallback, val=-3.600290e+02, pt=(0.0, 0.0, 28.974835358376932, 0.0, 0.0), dist_to_nodes=6.025165e+00, ok
+    [97] simp=T1, scene=97, source=c_s_fallback, val=-3.644624e+02, pt=(0.0, 0.0, 29.112873685624685, 0.0, 0.0), dist_to_nodes=5.887126e+00, ok
+    [98] simp=T1, scene=98, source=c_s_fallback, val=-3.603168e+02, pt=(0.0, 0.0, 28.980387807550354, 0.0, 0.0), dist_to_nodes=6.019612e+00, ok
+    [99] simp=T1, scene=99, source=c_s_fallback, val=-3.628210e+02, pt=(0.0, 0.0, 29.06823792242988, 0.0, 0.0), dist_to_nodes=5.931762e+00, ok
+    [100] simp=T1, scene=-1, source=avg_cs, val=-3.627511e+02, pt=(2.280466901808566e-11, 1.692711081045615e-11, 29.07057321706725, 1.234033336495824e-11, 9.9318344839221e-08), dist_to_nodes=5.929427e+00, ok
+

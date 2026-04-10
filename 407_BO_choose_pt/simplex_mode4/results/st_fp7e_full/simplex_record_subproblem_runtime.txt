@@ -1,0 +1,288 @@
+# simplex_record_subproblem_runtime.txt — per-iteration subproblem runtime
+# ms/cs/Q timing, non-optimal subproblem detection
+
+=== Iter 1 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=380.5349, calls=10700, avg=0.0356
+Q:  total_time=7.2916, calls=100, avg=0.0729
+
+=== Iter 2 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=376.9785, calls=10600, avg=0.0356
+Q:  total_time=7.2567, calls=100, avg=0.0726
+
+=== Iter 3 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=373.4221, calls=10500, avg=0.0356
+Q:  total_time=0.5776, calls=100, avg=0.0058
+
+=== Iter 4 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=369.8657, calls=10400, avg=0.0356
+Q:  total_time=0.6685, calls=100, avg=0.0067
+
+=== Iter 5 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=366.3093, calls=10300, avg=0.0356
+Q:  total_time=0.5704, calls=100, avg=0.0057
+
+=== Iter 6 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=362.7529, calls=10200, avg=0.0356
+Q:  total_time=5.7559, calls=100, avg=0.0576
+
+=== Iter 7 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=359.1965, calls=10100, avg=0.0356
+Q:  total_time=0.5830, calls=100, avg=0.0058
+
+=== Iter 8 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=355.6401, calls=10000, avg=0.0356
+Q:  total_time=0.6109, calls=100, avg=0.0061
+
+=== Iter 9 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=352.0837, calls=9900, avg=0.0356
+Q:  total_time=0.7085, calls=100, avg=0.0071
+
+=== Iter 10 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=348.5273, calls=9800, avg=0.0356
+Q:  total_time=7.1071, calls=100, avg=0.0711
+
+=== Iter 11 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=344.9709, calls=9700, avg=0.0356
+Q:  total_time=0.5847, calls=100, avg=0.0058
+
+=== Iter 12 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=341.4145, calls=9600, avg=0.0356
+Q:  total_time=0.6589, calls=100, avg=0.0066
+
+=== Iter 13 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=337.8581, calls=9500, avg=0.0356
+Q:  total_time=0.7378, calls=100, avg=0.0074
+
+=== Iter 14 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=334.3017, calls=9400, avg=0.0356
+Q:  total_time=0.9810, calls=100, avg=0.0098
+
+=== Iter 15 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=330.7453, calls=9300, avg=0.0356
+Q:  total_time=0.9105, calls=100, avg=0.0091
+
+=== Iter 16 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=327.1889, calls=9200, avg=0.0356
+Q:  total_time=0.5795, calls=100, avg=0.0058
+
+=== Iter 17 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=323.6325, calls=9100, avg=0.0356
+Q:  total_time=0.5760, calls=100, avg=0.0058
+
+=== Iter 18 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=320.0761, calls=9000, avg=0.0356
+Q:  total_time=0.6108, calls=100, avg=0.0061
+
+=== Iter 19 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=316.5197, calls=8900, avg=0.0356
+Q:  total_time=0.5968, calls=100, avg=0.0060
+
+=== Iter 20 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=312.9633, calls=8800, avg=0.0356
+Q:  total_time=0.6004, calls=100, avg=0.0060
+
+=== Iter 21 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=309.4069, calls=8700, avg=0.0356
+Q:  total_time=5.1480, calls=100, avg=0.0515
+
+=== Iter 22 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=305.8505, calls=8600, avg=0.0356
+Q:  total_time=4.9198, calls=100, avg=0.0492
+
+=== Iter 23 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=302.2941, calls=8500, avg=0.0356
+Q:  total_time=0.9201, calls=100, avg=0.0092
+
+=== Iter 24 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=298.7377, calls=8400, avg=0.0356
+Q:  total_time=0.6955, calls=100, avg=0.0070
+
+=== Iter 25 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=295.1813, calls=8300, avg=0.0356
+Q:  total_time=0.5824, calls=100, avg=0.0058
+
+=== Iter 26 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=291.6249, calls=8200, avg=0.0356
+Q:  total_time=0.6011, calls=100, avg=0.0060
+
+=== Iter 27 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=288.0685, calls=8100, avg=0.0356
+Q:  total_time=0.5969, calls=100, avg=0.0060
+
+=== Iter 28 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=284.5121, calls=8000, avg=0.0356
+Q:  total_time=0.6074, calls=100, avg=0.0061
+
+=== Iter 29 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=280.9557, calls=7900, avg=0.0356
+Q:  total_time=5.1859, calls=100, avg=0.0519
+
+=== Iter 30 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=277.3993, calls=7800, avg=0.0356
+Q:  total_time=0.6170, calls=100, avg=0.0062
+
+=== Iter 31 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=273.8429, calls=7700, avg=0.0356
+Q:  total_time=0.5794, calls=100, avg=0.0058
+
+=== Iter 32 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=270.2865, calls=7600, avg=0.0356
+Q:  total_time=0.6326, calls=100, avg=0.0063
+
+=== Iter 33 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=266.7301, calls=7500, avg=0.0356
+Q:  total_time=0.6974, calls=100, avg=0.0070
+
+=== Iter 34 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=263.1737, calls=7400, avg=0.0356
+Q:  total_time=0.6093, calls=100, avg=0.0061
+
+=== Iter 35 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=259.6173, calls=7300, avg=0.0356
+Q:  total_time=7.0452, calls=100, avg=0.0705
+
+=== Iter 36 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=256.0609, calls=7200, avg=0.0356
+Q:  total_time=0.7105, calls=100, avg=0.0071
+
+=== Iter 37 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=252.5045, calls=7100, avg=0.0356
+Q:  total_time=0.7098, calls=100, avg=0.0071
+
+=== Iter 38 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=248.9481, calls=7000, avg=0.0356
+Q:  total_time=0.8386, calls=100, avg=0.0084
+
+=== Iter 39 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=245.3917, calls=6900, avg=0.0356
+Q:  total_time=0.6524, calls=100, avg=0.0065
+
+=== Iter 40 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=241.8353, calls=6800, avg=0.0356
+Q:  total_time=0.8666, calls=100, avg=0.0087
+
+=== Iter 41 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=238.2789, calls=6700, avg=0.0356
+Q:  total_time=0.5967, calls=100, avg=0.0060
+
+=== Iter 42 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=234.7225, calls=6600, avg=0.0356
+Q:  total_time=0.8383, calls=100, avg=0.0084
+
+=== Iter 43 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=231.1661, calls=6500, avg=0.0356
+Q:  total_time=0.7637, calls=100, avg=0.0076
+
+=== Iter 44 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=227.6097, calls=6400, avg=0.0356
+Q:  total_time=5.1294, calls=100, avg=0.0513
+
+=== Iter 45 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=224.0533, calls=6300, avg=0.0356
+Q:  total_time=0.7065, calls=100, avg=0.0071
+
+=== Iter 46 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=220.4969, calls=6200, avg=0.0356
+Q:  total_time=0.6949, calls=100, avg=0.0069
+
+=== Iter 47 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=216.9405, calls=6100, avg=0.0356
+Q:  total_time=0.6441, calls=100, avg=0.0064
+
+=== Iter 48 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=213.3841, calls=6000, avg=0.0356
+Q:  total_time=0.5980, calls=100, avg=0.0060
+
+=== Iter 49 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=209.8277, calls=5900, avg=0.0356
+Q:  total_time=0.5964, calls=100, avg=0.0060
+
+=== Iter 50 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=206.2713, calls=5800, avg=0.0356
+Q:  total_time=6.0624, calls=100, avg=0.0606
+
+=== Iter 51 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=202.7149, calls=5700, avg=0.0356
+Q:  total_time=0.6996, calls=100, avg=0.0070
+
+=== Iter 52 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=199.1585, calls=5600, avg=0.0356
+Q:  total_time=0.8156, calls=100, avg=0.0082
+
+=== Iter 53 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=195.6021, calls=5500, avg=0.0356
+Q:  total_time=0.6124, calls=100, avg=0.0061
+
+=== Iter 54 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=192.0457, calls=5400, avg=0.0356
+Q:  total_time=0.6709, calls=100, avg=0.0067
+
+=== Iter 55 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=188.4893, calls=5300, avg=0.0356
+Q:  total_time=0.6024, calls=100, avg=0.0060
+
+=== Iter 56 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=184.9329, calls=5200, avg=0.0356
+Q:  total_time=0.4745, calls=100, avg=0.0047
+
+=== Iter 57 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=181.3765, calls=5100, avg=0.0356
+Q:  total_time=0.4151, calls=100, avg=0.0042
+

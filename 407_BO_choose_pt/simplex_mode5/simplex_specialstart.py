@@ -869,6 +869,78 @@ def _find_simplex_containing_point(point, per_tet, tol=1e-8):
     return -1
 
 
+def _build_active_mask(records, ub_global, active_tol, q_cut,
+                       return_diagnostics=False):
+    """Build the active-simplex mask for a set of simplex records.
+
+    INVARIANT: after any in-place LB/status update, the LB simplex must be
+    re-selected from a freshly rebuilt active set.
+
+    A simplex is active iff ALL of the following hold:
+      1. not permanently inactive (``inactive`` flag)
+      2. passes the active-gap test  (LB <= ub_global + active_tol)
+      3. passes the quality filter   (tet_quality >= q_cut)
+      4. passes the bad-shape filter  (not small-vol + high-aspect)
+
+    When *return_diagnostics* is False (default), returns ``dict {sid: bool}``.
+    When True, returns ``(mask, diag)`` where *diag* is a dict with:
+      - bad_quality_count:  int
+      - bad_shape_count:    int
+      - shape_checked:      int   (simplices with vol < threshold)
+      - bad_shape_details:  list of dicts with per-simplex shape info
+    This is a PURE function — no logging, no side-effects on records.
+    """
+    mask = {
+        r["simplex_index"]: (not r.get("inactive", False)
+                             and r["LB"] <= ub_global + active_tol)
+        for r in records
+    }
+
+    bad_quality_count = 0
+    # Quality filter
+    for r in records:
+        sid = r["simplex_index"]
+        if not mask.get(sid, False):
+            continue
+        q = tet_quality(r["verts"])
+        if q < q_cut:
+            mask[sid] = False
+            bad_quality_count += 1
+
+    # Bad-shape filter: small volume + high aspect ratio
+    bad_shape_count = 0
+    shape_checked = 0
+    bad_shape_details = []  # [{sid, vol, max_e, min_e, aspect}, ...]
+    for r in records:
+        sid = r["simplex_index"]
+        if not mask.get(sid, False):
+            continue
+        vol = r.get("volume")
+        if vol is None or vol >= SMALL_VOL_TOL_ABS:
+            continue
+        shape_checked += 1
+        try:
+            max_e, min_e, aspect = compute_edge_aspect(r["verts"])
+            if aspect >= ASPECT_BAD_TOL:
+                mask[sid] = False
+                bad_shape_count += 1
+                bad_shape_details.append({
+                    "sid": sid, "vol": vol,
+                    "max_e": max_e, "min_e": min_e, "aspect": aspect,
+                })
+        except Exception:
+            pass
+
+    if not return_diagnostics:
+        return mask
+    return mask, {
+        "bad_quality_count": bad_quality_count,
+        "bad_shape_count": bad_shape_count,
+        "shape_checked": shape_checked,
+        "bad_shape_details": bad_shape_details,
+    }
+
+
 # ---- Iteration-0 box-level CS-only evaluator ----
 def evaluate_iter0_box_cs_only(nodes, scen_values, ms_bundles, first_vars_list,
                                ms_cache=None, cache_on=True, tracker=None,
@@ -2983,66 +3055,42 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
         # 3) active mask (Filter by UB + Shape Quality)
         #    Inactive simplices (from FBBT/OBBT) are ALWAYS excluded.
         _t_phase = perf_counter()
-        active_mask = {
-            r["simplex_index"]: (not r.get("inactive", False) and r["LB"] <= UB_global + active_tol)
-            for r in per_tet
-        }
         q_cut = 0
-        bad_quality_count = 0      # Number of simplices removed due to quality this round
+        active_mask, _mask_diag = _build_active_mask(
+            per_tet, UB_global, active_tol, q_cut, return_diagnostics=True)
+        bad_quality_count = _mask_diag["bad_quality_count"]
+        bad_shape_count   = _mask_diag["bad_shape_count"]
+        _shape_checked    = _mask_diag["shape_checked"]
 
+        # Store per-record quality values for downstream diagnostics
         for r in per_tet:
             sid = r["simplex_index"]
-            if not active_mask.get(sid, False):
-                continue
-            q = tet_quality(r["verts"])
-            r["quality"] = q      
-            if q < q_cut:
-                active_mask[sid] = False
-                bad_quality_count += 1
+            r["quality"] = tet_quality(r["verts"])
 
-        # --- Bad-shape filter: small volume + high aspect ratio => inactive ---
-        bad_shape_count = 0
-        _shape_checked = 0   # how many simplices had vol < threshold (shape check triggered)
-        for r in per_tet:
-            sid = r["simplex_index"]
-            if not active_mask.get(sid, False):
-                continue
-            vol = r.get("volume")
-            if vol is None:
-                continue  # skip if volume not available
-            if vol < SMALL_VOL_TOL_ABS:
-                _shape_checked += 1
-                verts = r.get("verts")
-                if verts is None or len(verts) < 2:
-                    if verbose:
-                        print(f"[Iter {it}] WARNING: simplex {sid} missing verts, "
-                              f"cannot check aspect ratio")
-                    continue
-                try:
-                    max_e, min_e, aspect = compute_edge_aspect(verts)
-                except Exception:
-                    continue
-                if aspect >= ASPECT_BAD_TOL:
-                    active_mask[sid] = False
-                    bad_shape_count += 1
-                    # Store diagnostics on the record
+        # --- Bad-shape filter diagnostics: store per-record info and log ---
+        for _bsd in _mask_diag["bad_shape_details"]:
+            _bsd_sid = _bsd["sid"]
+            # Find the matching record and store diagnostics on it
+            for r in per_tet:
+                if r["simplex_index"] == _bsd_sid:
                     r["inactive_reason"] = "bad_shape_aspect"
-                    r["max_edge"] = max_e
-                    r["min_edge"] = min_e
-                    r["aspect"] = aspect
-                    # Log per-simplex detail to debug_lb_after_split.txt
-                    _inact_line = (
-                        f"  Inactivate simplex {sid}: vol={vol:.3e} < 1e-4, "
-                        f"max_edge={max_e:.3e}, min_edge={min_e:.3e}, "
-                        f"aspect={aspect:.3e}\n"
-                    )
-                    try:
-                        with open(dbg_lb_split_path, "a", encoding="utf-8") as _fbs:
-                            _fbs.write(_inact_line)
-                    except Exception:
-                        pass
-                    if verbose:
-                        print(f"[Iter {it}] {_inact_line.strip()}")
+                    r["max_edge"] = _bsd["max_e"]
+                    r["min_edge"] = _bsd["min_e"]
+                    r["aspect"]   = _bsd["aspect"]
+                    break
+            # Log per-simplex detail to debug_lb_after_split.txt
+            _inact_line = (
+                f"  Inactivate simplex {_bsd_sid}: vol={_bsd['vol']:.3e} < 1e-4, "
+                f"max_edge={_bsd['max_e']:.3e}, min_edge={_bsd['min_e']:.3e}, "
+                f"aspect={_bsd['aspect']:.3e}\n"
+            )
+            try:
+                with open(dbg_lb_split_path, "a", encoding="utf-8") as _fbs:
+                    _fbs.write(_inact_line)
+            except Exception:
+                pass
+            if verbose:
+                print(f"[Iter {it}] {_inact_line.strip()}")
 
         # --- Write per-round shape-check summary to debug_lb_after_split.txt ---
         try:
@@ -3556,18 +3604,20 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                     print(f"[Iter {it}] Averaged c_s point = {_avg_str} "
                           f"({len(valid_box_pts)}/{S} valid points)")
 
-                # Find the simplex containing this averaged point
-                contain_idx = _find_simplex_containing_point(avg_cs_pt, per_tet, tol=1e-8)
+                # INVARIANT: the LB simplex must be selected from the active set.
+                # Search only active simplices for containment.
+                _active_per_tet_iter0 = [r for r in per_tet if active_mask.get(r["simplex_index"], False)]
+                contain_idx = _find_simplex_containing_point(avg_cs_pt, _active_per_tet_iter0, tol=1e-8)
                 if contain_idx >= 0:
-                    lb_simp_rec = per_tet[contain_idx]
+                    lb_simp_rec = _active_per_tet_iter0[contain_idx]
                     if verbose:
                         print(f"[Iter {it}] Selected simplex T{lb_simp_rec['simplex_index']} "
                               f"(contains averaged c_s point)")
                 else:
                     # Try with looser tolerance
-                    contain_idx = _find_simplex_containing_point(avg_cs_pt, per_tet, tol=1e-4)
+                    contain_idx = _find_simplex_containing_point(avg_cs_pt, _active_per_tet_iter0, tol=1e-4)
                     if contain_idx >= 0:
-                        lb_simp_rec = per_tet[contain_idx]
+                        lb_simp_rec = _active_per_tet_iter0[contain_idx]
                         if verbose:
                             print(f"[Iter {it}] Selected simplex T{lb_simp_rec['simplex_index']} "
                                   f"(contains averaged c_s point, loose tol)")
@@ -3682,8 +3732,12 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                               f"LB/S={lb_simp_rec['LB']/S:.9f}, "
                               f"ms_status={lb_simp_rec['ms_status']}")
 
-                    # Re-check global min-LB (excluding inactive)
-                    _active_per_tet = [r for r in per_tet if not r.get("inactive", False)]
+                    # INVARIANT: after any in-place LB/status update, the LB
+                    # simplex must be re-selected from a FRESHLY REBUILT active
+                    # set, because ensure_ms_for_simplex() may have changed LB,
+                    # ms_status, cs_status, or inactive fields.
+                    active_mask = _build_active_mask(per_tet, UB_global, active_tol, q_cut)
+                    _active_per_tet = [r for r in per_tet if active_mask.get(r["simplex_index"], False)]
                     _new_min_rec = min(_active_per_tet, key=lambda r: r["LB"]) if _active_per_tet else lb_simp_rec
                     if _new_min_rec["simplex_index"] != lb_simp_idx:
                         if verbose:
@@ -4215,6 +4269,52 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                             "_rec": rec
                         })
 
+        # --- Aggregate candidate points (avg_cs, avg_ms) ---
+        # Always add the average of all valid per-scenario c_s and ms points
+        # for the selected simplex, when they are well-defined.
+        for rec in pool_records:
+            sid = rec["simplex_index"]
+
+            # avg_cs: mean of all valid c_point_per_scene
+            _cs_pts_raw = rec.get("c_point_per_scene", [])
+            _valid_cs = [pt for pt in _cs_pts_raw
+                         if pt is not None and all(math.isfinite(v) for v in pt)]
+            if _valid_cs:
+                _avg_cs_pt = tuple(float(x) for x in np.mean(_valid_cs, axis=0))
+                # Use the average of valid c_per_scene values as the surrogate score
+                _cs_vals_raw = rec.get("c_per_scene", [])
+                _valid_cs_vals = [float(v) for v in _cs_vals_raw
+                                  if v is not None and math.isfinite(float(v))]
+                _avg_cs_val = float(np.mean(_valid_cs_vals)) if _valid_cs_vals else 0.0
+                cand_items.append({
+                    "simplex_index": sid,
+                    "scene": -1,
+                    "cand_ms": _avg_cs_val,
+                    "cand_pt": _avg_cs_pt,
+                    "pt_source": "avg_cs",
+                    "_rec": rec
+                })
+
+            # avg_ms: mean of all valid xms_per_scene (only in non-fallback branch)
+            if not use_c_fallback:
+                _ms_pts_raw = rec.get("xms_per_scene", [])
+                _valid_ms = [pt for pt in _ms_pts_raw
+                             if pt is not None and all(math.isfinite(v) for v in pt)]
+                if _valid_ms:
+                    _avg_ms_pt = tuple(float(x) for x in np.mean(_valid_ms, axis=0))
+                    _ms_vals_raw = rec.get("ms_per_scene", [])
+                    _valid_ms_vals = [float(v) for v in _ms_vals_raw
+                                      if v is not None and math.isfinite(float(v))]
+                    _avg_ms_val = float(np.mean(_valid_ms_vals)) if _valid_ms_vals else 0.0
+                    cand_items.append({
+                        "simplex_index": sid,
+                        "scene": -1,
+                        "cand_ms": _avg_ms_val,
+                        "cand_pt": _avg_ms_pt,
+                        "pt_source": "avg_ms",
+                        "_rec": rec
+                    })
+
         # (Mode 2 note: when split_mode==2, the user supplies custom initial_nodes
         #  which are already Delaunay-tessellated at init. No special in-loop logic
         #  is needed — Mode 1 candidate selection runs normally from here.)
@@ -4247,8 +4347,13 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                     f"dist_to_nodes={dist:.6e}, {collision}\n"
                 )
             _dbf.write("\n")
-        # --- POINT_SELECT_MODE: 1=ms-first, 2=weighted composite (LB-best), 3=weighted avg all ms ---
-        POINT_SELECT_MODE = 1
+        # --- POINT_SELECT_MODE: 1=ms-first, 2=weighted composite, 3=weighted avg ms,
+        #     5=pseudo-Bayesian (mu - lambda*sigma) ---
+        POINT_SELECT_MODE = 5
+
+        # --- Mode 5 tuning parameters ---
+        MODE5_LAMBDA = 1.0          # exploration weight: higher = more variance reward
+        MODE5_VTOL_FRAC = 0.05      # vertex-nearness threshold as fraction of simplex diameter
 
         new_node = None
         chosen_ms = None
@@ -4417,13 +4522,152 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                     handle_collision(candidate_pt, dummy_ci, stage_note="mode3")
 
 
+        # ---------- Mode 5: pseudo-Bayesian (mu - lambda * sigma) ----------
+        if POINT_SELECT_MODE == 5 and (not stop_due_to_collision):
+            rec = lb_simp_rec
+            _m5_verts = np.array(rec["verts"], dtype=float)
+
+            # Compute simplex diameter (max edge length) for vertex-nearness threshold
+            _m5_diam = 0.0
+            for _vi in range(len(_m5_verts)):
+                for _vj in range(_vi + 1, len(_m5_verts)):
+                    _m5_diam = max(_m5_diam, float(np.linalg.norm(_m5_verts[_vi] - _m5_verts[_vj])))
+            _m5_vtol = MODE5_VTOL_FRAC * _m5_diam
+
+            # Helper: is a point too close to any simplex vertex?
+            def _m5_near_vertex(pt, verts, tol):
+                p = np.asarray(pt, float)
+                for v in verts:
+                    if np.linalg.norm(p - np.asarray(v, float)) < tol:
+                        return True
+                return False
+
+            # Filter candidates: must have valid point and not be None
+            _m5_pool = [ci for ci in cand_items if ci["cand_pt"] is not None]
+
+            # Step B: separate into non-vertex and vertex-near sets
+            _m5_filtered = [ci for ci in _m5_pool
+                            if not _m5_near_vertex(ci["cand_pt"], _m5_verts, _m5_vtol)]
+            _m5_vtx_removed = len(_m5_pool) - len(_m5_filtered)
+
+            # Fallback: if all candidates filtered, use unfiltered pool
+            _m5_use_fallback = (len(_m5_filtered) == 0 and len(_m5_pool) > 0)
+            _m5_working = _m5_filtered if _m5_filtered else _m5_pool
+
+            if verbose:
+                print(f"[mode5] pool={len(_m5_pool)}, vtx_removed={_m5_vtx_removed}, "
+                      f"remaining={len(_m5_filtered)}, fallback={_m5_use_fallback}, "
+                      f"vtol={_m5_vtol:.3e}, diam={_m5_diam:.3e}")
+
+            # Step C: evaluate Q_s(x) for each candidate across all scenarios
+            # Uniform weights (equal probability per scenario)
+            _m5_w = np.ones(S, dtype=float) / S
+
+            _m5_scored = []  # list of (ci, q_vals, mu, sigma, score, near_vtx)
+            for ci in _m5_working:
+                cand_pt = ci["cand_pt"]
+                q_vals = []
+                _q_ok = True
+                for s in range(S):
+                    try:
+                        qv = evaluate_Q_at(base_bundles[s], first_vars_list[s], cand_pt)
+                        if not math.isfinite(qv):
+                            _q_ok = False
+                            break
+                        q_vals.append(float(qv))
+                    except Exception:
+                        _q_ok = False
+                        break
+                if not _q_ok or len(q_vals) != S:
+                    continue  # skip candidates with failed Q evaluation
+
+                q_arr = np.array(q_vals, dtype=float)
+                mu = float(np.dot(_m5_w, q_arr))
+                # Weighted std: sqrt(sum(w_i * (q_i - mu)^2))
+                sigma = float(np.sqrt(np.dot(_m5_w, (q_arr - mu) ** 2)))
+                score = mu - MODE5_LAMBDA * sigma
+
+                _near_vtx = _m5_near_vertex(cand_pt, _m5_verts, _m5_vtol)
+                _m5_scored.append((ci, q_vals, mu, sigma, score, _near_vtx))
+
+            # --- Debug: write mode5 scoring to debug_candidates.txt ---
+            try:
+                with open(dbg_candidates_path, "a", encoding="utf-8") as _dbf:
+                    _dbf.write(f"\n--- [Iter {it}] MODE5 scoring (lambda={MODE5_LAMBDA}, "
+                               f"vtol={_m5_vtol:.3e}, fallback={_m5_use_fallback}) ---\n")
+                    _dbf.write(f"  {len(_m5_scored)} candidates scored "
+                               f"(of {len(_m5_working)} working, {len(_m5_pool)} total):\n")
+                    for _rank, (_ci, _qv, _mu, _sig, _sc, _nv) in enumerate(
+                            sorted(_m5_scored, key=lambda x: x[4]), start=1):
+                        _pt_str = tuple(map(float, _ci["cand_pt"]))
+                        _src = _ci.get("pt_source", "?")
+                        _scn = _ci.get("scene", -1)
+                        _dbf.write(
+                            f"    [{_rank}] source={_src}, scene={_scn}, "
+                            f"pt={_pt_str}\n"
+                            f"         Q_s={[f'{v:.6e}' for v in _qv]}\n"
+                            f"         mu={_mu:.6e}, sigma={_sig:.6e}, "
+                            f"score={_sc:.6e}, near_vtx={_nv}\n")
+                    _dbf.write("\n")
+            except Exception:
+                pass
+
+            # Step E: select candidate with minimum score
+            if _m5_scored:
+                _m5_scored.sort(key=lambda x: x[4])  # sort by score ascending
+                _best_ci, _best_qv, _best_mu, _best_sig, _best_score, _ = _m5_scored[0]
+                _best_pt = _best_ci["cand_pt"]
+
+                if min_dist_to_nodes(_best_pt, nodes) >= min_dist:
+                    cand_pt_pert, loc_type, loc_info = _snap_feature(_best_pt, rec)
+                    new_node = cand_pt_pert
+                    chosen_ms = _best_score
+                    _best_ci["loc_type"] = loc_type
+                    _best_ci["loc_info"] = loc_info
+                    chosen_cand = _best_ci
+                    if verbose:
+                        print(f"Chosen node (MODE5) {tuple(map(float, cand_pt_pert))} "
+                              f"score={_best_score:.6e} (mu={_best_mu:.6e}, "
+                              f"sigma={_best_sig:.6e}, lam={MODE5_LAMBDA}), "
+                              f"source={_best_ci.get('pt_source','?')}, "
+                              f"simp T{rec['simplex_index']}")
+                else:
+                    # All mode5 candidates collide — try remaining scored candidates
+                    _m5_selected = False
+                    for _ci, _qv, _mu, _sig, _sc, _ in _m5_scored[1:]:
+                        _pt = _ci["cand_pt"]
+                        if min_dist_to_nodes(_pt, nodes) >= min_dist:
+                            cand_pt_pert, loc_type, loc_info = _snap_feature(_pt, rec)
+                            new_node = cand_pt_pert
+                            chosen_ms = _sc
+                            _ci["loc_type"] = loc_type
+                            _ci["loc_info"] = loc_info
+                            chosen_cand = _ci
+                            _m5_selected = True
+                            if verbose:
+                                print(f"Chosen node (MODE5 fallback) "
+                                      f"{tuple(map(float, cand_pt_pert))} "
+                                      f"score={_sc:.6e}, "
+                                      f"source={_ci.get('pt_source','?')}")
+                            break
+                    if not _m5_selected:
+                        # All scored candidates collide
+                        handle_collision(_best_pt, _best_ci, stage_note="mode5")
+            else:
+                if verbose:
+                    print(f"[mode5] WARNING: no candidates could be scored")
+
+
         # ---------- Mode 1: try ms candidates, then c_s, then edge midpoint ----------
         if POINT_SELECT_MODE == 1 and (not stop_due_to_collision):
             # Separate ms-sourced and c_s-sourced candidates, filtering out None points
-            ms_cands_raw = [ci for ci in cand_items if ci.get("pt_source", "ms") != "c_s"]
+            # ms group: "ms", "avg_ms", "c_s_fallback", and any unrecognized source
+            # cs group: "c_s", "avg_cs"
+            _cs_sources = {"c_s", "avg_cs"}
+            ms_cands_raw = [ci for ci in cand_items if ci.get("pt_source", "ms") not in _cs_sources]
             _ms_none_count = sum(1 for ci in ms_cands_raw if ci["cand_pt"] is None)
             ms_cands = [ci for ci in ms_cands_raw if ci["cand_pt"] is not None]
-            cs_cands_raw = [ci for ci in cand_items if ci.get("pt_source", "") == "c_s"]
+            cs_cands_raw = [ci for ci in cand_items if ci.get("pt_source", "") in _cs_sources]
             _cs_none_count = sum(1 for ci in cs_cands_raw if ci["cand_pt"] is None)
             cs_cands = [ci for ci in cs_cands_raw if ci["cand_pt"] is not None]
 
@@ -5202,7 +5446,11 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                   f"{len(_new_child_indices)} new children")
 
         per_tet_dict = {r["simplex_index"]: r for r in per_tet_end}
-        _active_per_tet_end = [r for r in per_tet_end if not r.get("inactive", False)]
+        # INVARIANT: the LB simplex must be selected from the current active set.
+        # Rebuild active mask for the post-split mesh (per_tet_end) using the
+        # shared helper so the same gap/quality/shape logic is applied.
+        _active_mask_end = _build_active_mask(per_tet_end, UB_global, active_tol, q_cut)
+        _active_per_tet_end = [r for r in per_tet_end if _active_mask_end.get(r["simplex_index"], False)]
         LB_global_end = float(min(r["LB"] for r in _active_per_tet_end)) if _active_per_tet_end else float('inf')
         lb_simp_rec_end = min(_active_per_tet_end, key=lambda r: r["LB"]) if _active_per_tet_end else per_tet_end[0]
 
