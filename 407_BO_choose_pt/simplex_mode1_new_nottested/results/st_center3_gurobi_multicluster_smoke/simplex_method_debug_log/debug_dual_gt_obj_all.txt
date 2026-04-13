@@ -1,0 +1,681 @@
+# debug_dual_gt_obj_all.txt — dual > primal violations for ALL simplices and scenarios
+# Scans every simplex after full evaluation, not just the selected one
+
+[Iter 1] CS  T6 (3, 4, 7, 8) scen=1  dual=1.184974369e+02 primal=1.184974316e+02 diff=5.338223431e-06  status=optimal term=optimal
+
+[Iter 3] CS  T9 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 3] CS  T10 (3, 4, 7, 10) scen=1  dual=1.245375417e+02 primal=1.245375387e+02 diff=2.931088176e-06  status=optimal term=optimal
+
+[Iter 4] CS  T9 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 4] CS  T12 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+
+[Iter 5] CS  T9 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 5] CS  T11 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 5] CS  T12 (3, 4, 7, 12) scen=1  dual=1.276102069e+02 primal=1.276102056e+02 diff=1.350265251e-06  status=optimal term=optimal
+[Iter 5] CS  T13 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+
+[Iter 6] CS  T9 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 6] CS  T11 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 6] CS  T12 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+
+[Iter 7] CS  T9 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 7] CS  T11 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 7] CS  T12 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 7] CS  T16 (3, 4, 7, 14) scen=1  dual=1.285394704e+02 primal=1.285394688e+02 diff=1.614220508e-06  status=optimal term=optimal
+
+[Iter 8] CS  T9 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 8] CS  T11 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 8] CS  T12 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 8] CS  T18 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+
+[Iter 9] CS  T9 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 9] CS  T11 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 9] CS  T12 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 9] CS  T17 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 9] CS  T18 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+
+[Iter 10] CS  T9 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 10] CS  T11 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 10] CS  T12 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 10] CS  T17 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 10] CS  T18 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+
+[Iter 11] CS  T9 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 11] CS  T11 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 11] CS  T12 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 11] CS  T17 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 11] CS  T18 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+
+[Iter 12] CS  T9 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 12] CS  T11 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 12] CS  T12 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 12] CS  T17 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 12] CS  T18 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+
+[Iter 13] CS  T9 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 13] CS  T11 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 13] CS  T12 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 13] CS  T17 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 13] CS  T18 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+
+[Iter 14] CS  T8 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 14] CS  T10 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 14] CS  T11 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 14] CS  T16 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 14] CS  T17 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 14] CS  T25 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 14] CS  T26 (3, 4, 8, 21) scen=1  dual=1.184974358e+02 primal=1.184974332e+02 diff=2.641309933e-06  status=optimal term=optimal
+
+[Iter 15] CS  T8 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 15] CS  T10 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 15] CS  T11 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 15] CS  T16 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 15] CS  T17 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 15] CS  T25 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 15] CS  T28 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+
+[Iter 16] CS  T8 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 16] CS  T10 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 16] CS  T11 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 16] CS  T16 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 16] CS  T17 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 16] CS  T25 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 16] CS  T27 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+
+[Iter 17] CS  T8 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 17] CS  T10 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 17] CS  T11 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 17] CS  T16 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 17] CS  T17 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 17] CS  T25 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 17] CS  T27 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+
+[Iter 18] CS  T8 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 18] CS  T10 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 18] CS  T11 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 18] CS  T16 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 18] CS  T17 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 18] CS  T25 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 18] CS  T27 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+
+[Iter 19] CS  T8 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 19] CS  T10 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 19] CS  T11 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 19] CS  T16 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 19] CS  T17 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 19] CS  T25 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 19] CS  T27 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+
+[Iter 20] CS  T8 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 20] CS  T10 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 20] CS  T11 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 20] CS  T16 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 20] CS  T17 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 20] CS  T25 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 20] CS  T27 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+
+[Iter 21] CS  T8 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 21] CS  T10 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 21] CS  T11 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 21] CS  T16 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 21] CS  T17 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 21] CS  T25 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 21] CS  T27 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+
+[Iter 22] CS  T8 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 22] CS  T10 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 22] CS  T11 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 22] CS  T16 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 22] CS  T17 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 22] CS  T25 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 22] CS  T26 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+
+[Iter 23] CS  T8 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 23] CS  T10 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 23] CS  T11 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 23] CS  T16 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 23] CS  T17 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 23] CS  T25 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 23] CS  T26 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 23] CS  T42 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 24] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 24] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 24] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 24] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 24] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 24] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 24] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 24] CS  T41 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 25] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 25] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 25] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 25] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 25] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 25] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 25] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 25] CS  T41 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 26] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 26] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 26] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 26] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 26] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 26] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 26] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 26] CS  T41 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 27] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 27] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 27] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 27] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 27] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 27] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 27] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 27] CS  T41 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 28] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 28] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 28] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 28] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 28] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 28] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 28] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 28] CS  T41 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 29] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 29] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 29] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 29] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 29] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 29] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 29] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 29] CS  T41 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 30] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 30] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 30] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 30] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 30] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 30] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 30] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 30] CS  T41 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 31] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 31] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 31] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 31] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 31] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 31] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 31] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 31] CS  T41 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 32] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 32] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 32] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 32] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 32] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 32] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 32] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 32] CS  T41 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 33] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 33] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 33] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 33] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 33] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 33] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 33] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 33] CS  T41 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 34] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 34] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 34] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 34] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 34] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 34] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 34] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 34] CS  T41 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 35] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 35] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 35] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 35] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 35] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 35] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 35] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 35] CS  T41 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 36] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 36] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 36] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 36] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 36] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 36] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 36] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 36] CS  T41 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 37] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 37] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 37] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 37] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 37] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 37] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 37] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 37] CS  T41 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 38] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 38] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 38] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 38] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 38] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 38] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 38] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 38] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 39] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 39] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 39] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 39] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 39] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 39] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 39] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 39] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 40] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 40] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 40] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 40] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 40] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 40] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 40] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 40] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 41] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 41] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 41] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 41] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 41] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 41] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 41] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 41] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 42] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 42] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 42] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 42] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 42] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 42] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 42] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 42] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 43] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 43] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 43] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 43] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 43] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 43] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 43] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 43] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 44] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 44] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 44] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 44] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 44] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 44] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 44] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 44] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 45] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 45] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 45] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 45] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 45] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 45] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 45] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 45] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 46] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 46] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 46] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 46] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 46] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 46] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 46] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 46] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 47] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 47] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 47] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 47] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 47] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 47] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 47] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 47] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 48] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 48] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 48] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 48] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 48] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 48] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 48] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 48] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 49] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 49] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 49] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 49] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 49] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 49] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 49] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 49] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 50] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 50] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 50] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 50] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 50] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 50] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 50] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 50] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 51] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 51] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 51] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 51] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 51] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 51] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 51] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 51] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 52] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 52] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 52] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 52] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 52] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 52] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 52] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 52] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 53] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 53] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 53] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 53] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 53] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 53] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 53] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 53] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 54] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 54] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 54] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 54] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 54] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 54] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 54] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 54] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 55] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 55] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 55] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 55] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 55] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 55] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 55] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 55] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 56] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 56] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 56] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 56] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 56] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 56] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 56] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 56] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 57] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 57] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 57] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 57] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 57] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 57] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 57] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 57] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 58] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 58] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 58] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 58] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 58] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 58] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 58] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 58] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 59] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 59] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 59] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 59] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 59] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 59] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 59] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 59] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 60] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 60] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 60] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 60] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 60] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 60] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 60] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 60] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 61] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 61] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 61] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 61] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 61] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 61] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 61] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 61] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 62] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 62] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 62] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 62] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 62] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 62] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 62] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 62] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 63] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 63] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 63] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 63] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 63] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 63] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 63] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 63] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 64] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 64] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 64] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 64] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 64] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 64] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 64] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 64] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 65] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 65] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 65] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 65] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 65] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 65] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 65] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 65] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 66] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 66] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 66] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 66] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 66] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 66] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 66] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 66] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 67] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 67] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 67] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 67] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 67] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 67] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 67] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 67] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 68] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 68] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 68] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 68] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 68] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 68] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 68] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 68] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 69] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 69] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 69] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 69] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 69] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 69] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 69] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 69] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 70] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 70] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 70] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 70] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 70] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 70] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 70] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 70] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 71] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 71] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 71] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 71] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 71] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 71] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 71] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 71] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 72] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 72] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 72] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 72] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 72] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 72] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 72] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 72] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 73] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 73] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 73] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 73] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 73] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 73] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 73] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 73] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 74] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 74] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 74] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 74] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 74] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 74] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 74] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 74] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 75] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 75] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 75] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 75] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 75] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 75] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 75] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 75] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 76] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 76] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 76] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 76] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 76] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 76] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 76] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 76] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 77] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 77] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 77] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 77] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 77] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 77] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 77] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 77] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 78] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 78] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 78] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 78] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 78] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 78] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 78] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 78] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 79] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 79] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 79] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 79] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 79] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 79] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 79] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 79] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 80] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 80] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 80] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 80] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 80] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 80] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 80] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 80] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 81] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 81] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 81] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 81] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 81] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 81] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 81] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 81] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 82] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 82] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 82] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 82] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 82] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 82] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 82] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 82] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+
+[Iter 83] CS  T7 (4, 7, 9, 10) scen=4  dual=2.562154431e+02 primal=2.562154411e+02 diff=2.027621747e-06  status=optimal term=optimal
+[Iter 83] CS  T9 (3, 4, 10, 11) scen=1  dual=1.245375442e+02 primal=1.245375388e+02 diff=5.445135173e-06  status=optimal term=optimal
+[Iter 83] CS  T10 (3, 7, 11, 12) scen=1  dual=1.276102060e+02 primal=1.276102046e+02 diff=1.420056805e-06  status=optimal term=optimal
+[Iter 83] CS  T15 (3, 7, 14, 15) scen=0  dual=4.132684672e+02 primal=4.132684621e+02 diff=5.158347619e-06  status=optimal term=optimal
+[Iter 83] CS  T16 (4, 7, 14, 16) scen=4  dual=2.697504229e+02 primal=2.697504210e+02 diff=1.883232244e-06  status=optimal term=optimal
+[Iter 83] CS  T24 (4, 5, 8, 21) scen=1  dual=1.184974348e+02 primal=1.184974332e+02 diff=1.653562194e-06  status=optimal term=optimal
+[Iter 83] CS  T25 (3, 8, 21, 22) scen=3  dual=7.851363500e+02 primal=7.851363490e+02 diff=1.037612378e-06  status=optimal term=optimal
+[Iter 83] CS  T40 (3, 5, 21, 30) scen=4  dual=1.399113273e+02 primal=1.399113253e+02 diff=2.031162211e-06  status=optimal term=optimal
+

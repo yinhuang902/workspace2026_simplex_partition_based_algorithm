@@ -3,3 +3,8 @@
 # ms_val, ms_pt (coordinates), ms_bary (barycentric)
 # cs_val, cs_pt (coordinates), cs_bary (barycentric)
 
+=== Iter 1 (early exit: mode4_too_close_to_existing_node) ===
+simplex: T0  verts=(0, 2, 3, 4, 8, 16)  cs_status=full  ms_status=none
+  LB (per-scen): -357.181306426
+  UB (per-scen): -356.930406371
+

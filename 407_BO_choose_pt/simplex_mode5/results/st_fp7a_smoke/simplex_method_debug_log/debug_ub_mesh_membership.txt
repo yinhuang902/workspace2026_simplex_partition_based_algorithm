@@ -11,7 +11,8 @@
   simplex_index  = 0
   tol_used       = 1e-08
   n_simplices    = 109
-  lambdas        = [0.         0.         0.82324186 0.         0.         0.17675814]
+  lambdas        = [1.11022302e-16 0.00000000e+00 9.99773251e-01 0.00000000e+00
+ 0.00000000e+00 2.26749276e-04]
 
 ============================================================
 [Iter 2] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
@@ -19,10 +20,11 @@
   UB_node        = (0.000000, 0.000000, 28.813465, 0.000000, 0.000000)
   ub_source      = init
   inside_mesh    = True
-  simplex_index  = 106
+  simplex_index  = 0
   tol_used       = 1e-08
   n_simplices    = 110
-  lambdas        = [ 0.         -0.          0.99022512 -0.         -0.          0.00977488]
+  lambdas        = [1.11022302e-16 0.00000000e+00 9.99773251e-01 0.00000000e+00
+ 0.00000000e+00 2.26749276e-04]
 
 ============================================================
 [Iter 3] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
@@ -30,10 +32,11 @@
   UB_node        = (0.000000, 0.000000, 28.813465, 0.000000, 0.000000)
   ub_source      = init
   inside_mesh    = True
-  simplex_index  = 106
+  simplex_index  = 107
   tol_used       = 1e-08
   n_simplices    = 111
-  lambdas        = [ 0.         -0.          0.99022512 -0.         -0.          0.00977488]
+  lambdas        = [-2.22044605e-16 -0.00000000e+00  9.99773251e-01 -0.00000000e+00
+ -0.00000000e+00  2.26749276e-04]
 
 ============================================================
 [Iter 4] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
@@ -44,185 +47,114 @@
   simplex_index  = 106
   tol_used       = 1e-08
   n_simplices    = 112
-  lambdas        = [ 0.         -0.          0.99022512 -0.         -0.          0.00977488]
+  lambdas        = [-2.22044605e-16 -0.00000000e+00  9.99773251e-01 -0.00000000e+00
+ -0.00000000e+00  2.26749276e-04]
 
 ============================================================
 [Iter 5] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
-  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406373)
+  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406371)
   UB_node        = (0.000000, 0.000000, 28.813465, 0.000000, 0.000000)
   ub_source      = init
   inside_mesh    = True
   simplex_index  = 106
   tol_used       = 1e-08
   n_simplices    = 113
-  lambdas        = [ 1.11022302e-16 -0.00000000e+00  9.90225123e-01 -0.00000000e+00
- -0.00000000e+00  9.77487681e-03]
+  lambdas        = [-2.22044605e-16 -0.00000000e+00  9.99773251e-01 -0.00000000e+00
+ -0.00000000e+00  2.26749276e-04]
 
 ============================================================
 [Iter 6] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
-  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406373)
+  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406371)
   UB_node        = (0.000000, 0.000000, 28.813465, 0.000000, 0.000000)
   ub_source      = init
   inside_mesh    = True
   simplex_index  = 106
   tol_used       = 1e-08
   n_simplices    = 114
-  lambdas        = [ 1.11022302e-16 -0.00000000e+00  9.90225123e-01 -0.00000000e+00
- -0.00000000e+00  9.77487681e-03]
+  lambdas        = [-2.22044605e-16 -0.00000000e+00  9.99773251e-01 -0.00000000e+00
+ -0.00000000e+00  2.26749276e-04]
 
 ============================================================
 [Iter 7] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
-  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406373)
+  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406371)
   UB_node        = (0.000000, 0.000000, 28.813465, 0.000000, 0.000000)
   ub_source      = init
   inside_mesh    = True
   simplex_index  = 106
   tol_used       = 1e-08
   n_simplices    = 115
-  lambdas        = [ 1.11022302e-16 -0.00000000e+00  9.90225123e-01 -0.00000000e+00
- -0.00000000e+00  9.77487681e-03]
+  lambdas        = [-2.22044605e-16 -0.00000000e+00  9.99773251e-01 -0.00000000e+00
+ -0.00000000e+00  2.26749276e-04]
 
 ============================================================
 [Iter 8] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
-  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406373)
+  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406371)
   UB_node        = (0.000000, 0.000000, 28.813465, 0.000000, 0.000000)
   ub_source      = init
   inside_mesh    = True
   simplex_index  = 106
   tol_used       = 1e-08
   n_simplices    = 116
-  lambdas        = [ 1.11022302e-16 -0.00000000e+00  9.90225123e-01 -0.00000000e+00
- -0.00000000e+00  9.77487681e-03]
+  lambdas        = [-2.22044605e-16 -0.00000000e+00  9.99773251e-01 -0.00000000e+00
+ -0.00000000e+00  2.26749276e-04]
 
 ============================================================
 [Iter 9] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
-  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406373)
+  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406371)
   UB_node        = (0.000000, 0.000000, 28.813465, 0.000000, 0.000000)
   ub_source      = init
   inside_mesh    = True
   simplex_index  = 106
   tol_used       = 1e-08
   n_simplices    = 117
-  lambdas        = [ 1.11022302e-16 -0.00000000e+00  9.90225123e-01 -0.00000000e+00
- -0.00000000e+00  9.77487681e-03]
+  lambdas        = [-2.22044605e-16 -0.00000000e+00  9.99773251e-01 -0.00000000e+00
+ -0.00000000e+00  2.26749276e-04]
 
 ============================================================
 [Iter 10] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
-  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406373)
+  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406371)
   UB_node        = (0.000000, 0.000000, 28.813465, 0.000000, 0.000000)
   ub_source      = init
   inside_mesh    = True
   simplex_index  = 106
   tol_used       = 1e-08
   n_simplices    = 118
-  lambdas        = [ 1.11022302e-16 -0.00000000e+00  9.90225123e-01 -0.00000000e+00
- -0.00000000e+00  9.77487681e-03]
+  lambdas        = [-2.22044605e-16 -0.00000000e+00  9.99773251e-01 -0.00000000e+00
+ -0.00000000e+00  2.26749276e-04]
 
 ============================================================
 [Iter 11] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
-  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406373)
+  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406371)
   UB_node        = (0.000000, 0.000000, 28.813465, 0.000000, 0.000000)
   ub_source      = init
   inside_mesh    = True
   simplex_index  = 106
   tol_used       = 1e-08
   n_simplices    = 119
-  lambdas        = [ 1.11022302e-16 -0.00000000e+00  9.90225123e-01 -0.00000000e+00
- -0.00000000e+00  9.77487681e-03]
+  lambdas        = [-2.22044605e-16 -0.00000000e+00  9.99773251e-01 -0.00000000e+00
+ -0.00000000e+00  2.26749276e-04]
 
 ============================================================
 [Iter 12] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
-  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406373)
+  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406371)
   UB_node        = (0.000000, 0.000000, 28.813465, 0.000000, 0.000000)
   ub_source      = init
   inside_mesh    = True
   simplex_index  = 106
   tol_used       = 1e-08
   n_simplices    = 120
-  lambdas        = [ 1.11022302e-16 -0.00000000e+00  9.90225123e-01 -0.00000000e+00
- -0.00000000e+00  9.77487681e-03]
+  lambdas        = [-2.22044605e-16 -0.00000000e+00  9.99773251e-01 -0.00000000e+00
+ -0.00000000e+00  2.26749276e-04]
 
 ============================================================
 [Iter 13] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
-  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406373)
+  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406371)
   UB_node        = (0.000000, 0.000000, 28.813465, 0.000000, 0.000000)
   ub_source      = init
   inside_mesh    = True
   simplex_index  = 106
   tol_used       = 1e-08
   n_simplices    = 121
-  lambdas        = [ 1.11022302e-16 -0.00000000e+00  9.90225123e-01 -0.00000000e+00
- -0.00000000e+00  9.77487681e-03]
-
-============================================================
-[Iter 14] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
-  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406373)
-  UB_node        = (0.000000, 0.000000, 28.813465, 0.000000, 0.000000)
-  ub_source      = init
-  inside_mesh    = True
-  simplex_index  = 106
-  tol_used       = 1e-08
-  n_simplices    = 122
-  lambdas        = [ 1.11022302e-16 -0.00000000e+00  9.90225123e-01 -0.00000000e+00
- -0.00000000e+00  9.77487681e-03]
-
-============================================================
-[Iter 15] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
-  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406373)
-  UB_node        = (0.000000, 0.000000, 28.813465, 0.000000, 0.000000)
-  ub_source      = init
-  inside_mesh    = True
-  simplex_index  = 106
-  tol_used       = 1e-08
-  n_simplices    = 123
-  lambdas        = [ 1.11022302e-16 -0.00000000e+00  9.90225123e-01 -0.00000000e+00
- -0.00000000e+00  9.77487681e-03]
-
-============================================================
-[Iter 16] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
-  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406373)
-  UB_node        = (0.000000, 0.000000, 28.813465, 0.000000, 0.000000)
-  ub_source      = init
-  inside_mesh    = True
-  simplex_index  = 106
-  tol_used       = 1e-08
-  n_simplices    = 124
-  lambdas        = [ 1.11022302e-16 -0.00000000e+00  9.90225123e-01 -0.00000000e+00
- -0.00000000e+00  9.77487681e-03]
-
-============================================================
-[Iter 17] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
-  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406373)
-  UB_node        = (0.000000, 0.000000, 28.813465, 0.000000, 0.000000)
-  ub_source      = init
-  inside_mesh    = True
-  simplex_index  = 106
-  tol_used       = 1e-08
-  n_simplices    = 125
-  lambdas        = [ 1.11022302e-16 -0.00000000e+00  9.90225123e-01 -0.00000000e+00
- -0.00000000e+00  9.77487681e-03]
-
-============================================================
-[Iter 18] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
-  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406373)
-  UB_node        = (0.000000, 0.000000, 28.813465, 0.000000, 0.000000)
-  ub_source      = init
-  inside_mesh    = True
-  simplex_index  = 106
-  tol_used       = 1e-08
-  n_simplices    = 126
-  lambdas        = [ 1.11022302e-16 -0.00000000e+00  9.90225123e-01 -0.00000000e+00
- -0.00000000e+00  9.77487681e-03]
-
-============================================================
-[Iter 19] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
-  UB_global_end  = -1.784652032e+03 (per-scen: -356.930406373)
-  UB_node        = (0.000000, 0.000000, 28.813465, 0.000000, 0.000000)
-  ub_source      = init
-  inside_mesh    = True
-  simplex_index  = 106
-  tol_used       = 1e-08
-  n_simplices    = 127
-  lambdas        = [ 1.11022302e-16 -0.00000000e+00  9.90225123e-01 -0.00000000e+00
- -0.00000000e+00  9.77487681e-03]
+  lambdas        = [-2.22044605e-16 -0.00000000e+00  9.99773251e-01 -0.00000000e+00
+ -0.00000000e+00  2.26749276e-04]
 

@@ -1,0 +1,1767 @@
+# simplex_record_ms_cs_detail.txt — per-scenario ms/cs values and points
+# For the selected (LB) simplex each iteration
+# ms_val, ms_pt (coordinates), ms_bary (barycentric)
+# cs_val, cs_pt (coordinates), cs_bary (barycentric)
+
+=== Iter 1 ===
+simplex: T2  verts=(3, 4, 5, 7)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637830, -0.000000, 0.000000, 0.362170)
+    s=1  cs=1.184974e+02  pt=(25.174528, -15.680709, 31.767547)  bary=(0.332170, 0.316322, 0.063292, 0.288216)
+    s=2  cs=3.203423e+03  pt=(11.129425, 4.215469, 4.215469)  bary=(0.425804, 0.000000, 0.102299, 0.471897)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, 0.000000, 0.000000, 0.359523)
+    s=4  cs=1.227911e+02  pt=(30.679700, -17.822879, 38.561766)  bary=(0.295469, 0.375898, 0.085712, 0.242922)
+  UB candidates (avg MS/CS points from new children):
+    child T5  type=avgCS  pt=(31.304511, -14.570468, 29.832103)  Q_sum=3.470271e+04  Q_per_scen=6940.541735892
+    child T6  type=avgCS  pt=(4.150411, 3.291165, 22.076183)  Q_sum=1.784473e+04  Q_per_scen=3568.946686078
+    child T7  type=avgCS  pt=(2.676407, 0.863875, 21.906798)  Q_sum=1.803597e+04  Q_per_scen=3607.193810974
+    child T8  type=avgCS  pt=(8.260128, 0.945070, 41.257147)  Q_sum=2.666951e+04  Q_per_scen=5333.901591776
+  current UB (per-scen): 3312.370888248
+
+=== Iter 2 ===
+simplex: T6  verts=(3, 4, 7, 8)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637830, 0.000000, 0.000000, 0.362170)
+    s=1  cs=1.184974e+02  pt=(25.174665, -15.680302, 31.767338)  bary=(0.000003, 0.999987, 0.000004, 0.000005)
+    s=2  cs=3.203423e+03  pt=(11.129425, 4.215469, 4.215469)  bary=(0.425804, 0.000000, 0.102299, 0.471897)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, 0.000000, 0.000000, 0.359523)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(0.000000, 0.979540, 0.020460, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T8  type=avgCS  pt=(4.398571, 3.590838, 22.079376)  Q_sum=1.783467e+04  Q_per_scen=3566.933698234
+    child T9  type=avgCS  pt=(2.244084, 2.128281, 20.913216)  Q_sum=1.767207e+04  Q_per_scen=3534.414057652
+  current UB (per-scen): 3312.370888248
+
+=== Iter 3 ===
+simplex: T8  verts=(3, 4, 7, 9)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637830, 0.000000, 0.000000, 0.362170)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782961)  bary=(0.002109, 0.988988, 0.000000, 0.008903)
+    s=2  cs=3.203423e+03  pt=(11.129425, 4.215469, 4.215469)  bary=(0.425804, 0.000000, 0.102299, 0.471897)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, 0.000000, 0.000000, 0.359523)
+    s=4  cs=2.562154e+02  pt=(26.194370, -13.824630, 32.652441)  bary=(0.000000, 0.999992, 0.000008, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T9  type=avgCS  pt=(30.828108, -12.721301, 29.251187)  Q_sum=3.335126e+04  Q_per_scen=6670.252435027
+    child T10  type=avgCS  pt=(4.489094, 3.604569, 21.946679)  Q_sum=1.781426e+04  Q_per_scen=3562.851150148
+    child T11  type=avgCS  pt=(7.882016, 2.430224, 39.972610)  Q_sum=2.562842e+04  Q_per_scen=5125.683411606
+  current UB (per-scen): 3312.370888248
+
+=== Iter 4 ===
+simplex: T10  verts=(3, 4, 7, 10)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637830, 0.000000, 0.000000, 0.362170)
+    s=1  cs=1.245375e+02  pt=(26.414640, -14.182463, 31.782281)  bary=(0.000009, 0.999981, 0.000000, 0.000010)
+    s=2  cs=3.203423e+03  pt=(11.129425, 4.215469, 4.215469)  bary=(0.425804, 0.000000, 0.102299, 0.471897)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, 0.000000, 0.000000, 0.359523)
+    s=4  cs=2.657485e+02  pt=(26.647414, -13.756170, 31.989634)  bary=(-0.000000, 0.995218, 0.004782, -0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T11  type=avgCS  pt=(4.543669, 3.674095, 21.943885)  Q_sum=1.781159e+04  Q_per_scen=3562.318219070
+    child T12  type=avgCS  pt=(2.582848, 2.441689, 20.783841)  Q_sum=1.762201e+04  Q_per_scen=3524.402223628
+  current UB (per-scen): 3312.370888248
+
+=== Iter 5 ===
+simplex: T11  verts=(3, 4, 7, 11)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637830, 0.000000, -0.000000, 0.362170)
+    s=1  cs=1.276102e+02  pt=(26.686987, -13.835803, 31.767841)  bary=(0.000738, 0.996892, 0.000000, 0.002370)
+    s=2  cs=3.203423e+03  pt=(11.129425, 4.215469, 4.215469)  bary=(0.425804, 0.000000, 0.102299, 0.471897)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, 0.000000, 0.000000, 0.359523)
+    s=4  cs=2.657485e+02  pt=(26.647943, -13.755201, 31.990104)  bary=(-0.000000, 0.999989, 0.000011, -0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T12  type=avgCS  pt=(4.581318, 3.672316, 21.906193)  Q_sum=1.780735e+04  Q_per_scen=3561.469557729
+    child T13  type=avgCS  pt=(8.087197, 2.601817, 39.804013)  Q_sum=2.554270e+04  Q_per_scen=5108.539050849
+  current UB (per-scen): 3312.370888248
+
+=== Iter 6 ===
+simplex: T12  verts=(3, 4, 7, 12)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637830, 0.000000, 0.000000, 0.362170)
+    s=1  cs=1.276102e+02  pt=(26.686618, -13.835751, 31.766772)  bary=(0.000748, 0.999238, 0.000000, 0.000014)
+    s=2  cs=3.203423e+03  pt=(11.129425, 4.215469, 4.215469)  bary=(0.425804, 0.000000, 0.102299, 0.471897)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, 0.000000, 0.000000, 0.359523)
+    s=4  cs=2.676014e+02  pt=(26.836554, -13.764150, 31.802711)  bary=(0.000000, 0.998456, 0.001544, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T13  type=avgCS  pt=(31.203347, -12.643507, 28.720149)  Q_sum=3.339048e+04  Q_per_scen=6678.096841554
+    child T14  type=avgCS  pt=(4.561454, 3.687280, 21.904593)  Q_sum=1.780418e+04  Q_per_scen=3560.835486803
+    child T15  type=avgCS  pt=(2.660264, 2.482078, 20.730167)  Q_sum=1.761096e+04  Q_per_scen=3522.192116306
+    child T16  type=avgCS  pt=(8.128040, 2.603790, 39.759761)  Q_sum=2.552207e+04  Q_per_scen=5104.414204239
+  current UB (per-scen): 3312.370888248
+
+=== Iter 7 ===
+simplex: T14  verts=(3, 4, 7, 13)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637830, 0.000000, 0.000000, 0.362170)
+    s=1  cs=1.277880e+02  pt=(26.688406, -13.810485, 31.754979)  bary=(0.000000, 0.999937, 0.000000, 0.000063)
+    s=2  cs=3.203423e+03  pt=(11.129425, 4.215469, 4.215469)  bary=(0.425804, 0.000000, 0.102299, 0.471897)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, 0.000000, 0.000000, 0.359523)
+    s=4  cs=2.697504e+02  pt=(26.735450, -13.714594, 31.806505)  bary=(-0.000000, 0.998964, 0.001036, -0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T16  type=avgCS  pt=(4.575144, 3.701338, 21.905712)  Q_sum=1.780420e+04  Q_per_scen=3560.839283835
+    child T17  type=avgCS  pt=(2.655175, 2.524349, 20.741738)  Q_sum=1.760776e+04  Q_per_scen=3521.551846513
+  current UB (per-scen): 3312.370888248
+
+=== Iter 8 ===
+simplex: T16  verts=(3, 4, 7, 14)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637830, 0.000000, 0.000000, 0.362170)
+    s=1  cs=1.285395e+02  pt=(26.756335, -13.741153, 31.760110)  bary=(0.000001, 0.999564, 0.000000, 0.000435)
+    s=2  cs=3.203423e+03  pt=(11.129425, 4.215469, 4.215469)  bary=(0.425804, 0.000000, 0.102299, 0.471897)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, 0.000000, 0.000000, 0.359523)
+    s=4  cs=2.697504e+02  pt=(26.735970, -13.713637, 31.806971)  bary=(0.000000, 0.999989, 0.000011, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T17  type=avgCS  pt=(4.654551, 3.621825, 21.826189)  Q_sum=1.780220e+04  Q_per_scen=3560.440369228
+    child T18  type=avgCS  pt=(0.724404, 7.064933, 26.283965)  Q_sum=1.851786e+04  Q_per_scen=3703.571937927
+  current UB (per-scen): 3312.370888248
+
+=== Iter 9 ===
+simplex: T17  verts=(4, 7, 14, 15)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674183, 20.674183, 20.674183)  bary=(0.999997, 0.000000, -0.000000, 0.000003)
+    s=1  cs=1.285395e+02  pt=(26.756197, -13.741074, 31.759981)  bary=(0.000005, 0.999560, -0.000000, 0.000435)
+    s=2  cs=3.203423e+03  pt=(11.129426, 4.215469, 4.215469)  bary=(0.667582, 0.000000, 0.102299, 0.230119)
+    s=3  cs=7.860474e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(1.000000, 0.000000, -0.000000, 0.000000)
+    s=4  cs=2.697504e+02  pt=(26.735804, -13.713943, 31.806822)  bary=(-0.000000, 0.999993, 0.000007, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T18  type=avgCS  pt=(17.376261, -2.961802, 15.242637)  Q_sum=2.064092e+04  Q_per_scen=4128.184217998
+    child T19  type=avgCS  pt=(4.654396, 3.621538, 21.826013)  Q_sum=1.780218e+04  Q_per_scen=3560.436392095
+    child T20  type=avgCS  pt=(4.650329, 3.627341, 21.835708)  Q_sum=1.780320e+04  Q_per_scen=3560.639096339
+  current UB (per-scen): 3312.370888248
+
+=== Iter 10 ===
+simplex: T19  verts=(4, 14, 15, 16)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674058, 20.674058, 20.674058)  bary=(0.999995, 0.000000, 0.000000, 0.000005)
+    s=1  cs=1.285395e+02  pt=(26.756344, -13.741157, 31.760120)  bary=(0.000001, 0.999565, 0.000000, 0.000434)
+    s=2  cs=3.203423e+03  pt=(11.128734, 4.214893, 4.214893)  bary=(0.000062, 0.000000, 0.999917, 0.000020)
+    s=3  cs=7.860474e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(1.000000, -0.000000, 0.000000, 0.000000)
+    s=4  cs=2.697504e+02  pt=(26.735450, -13.714594, 31.806505)  bary=(0.000000, 1.000000, -0.000000, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T20  type=avgCS  pt=(14.952325, -3.181337, 21.831330)  Q_sum=2.074880e+04  Q_per_scen=4149.760268875
+    child T21  type=avgCS  pt=(-1.339565, 7.384241, 13.930391)  Q_sum=1.665592e+04  Q_per_scen=3331.183232316
+    child T22  type=avgCS  pt=(2.748339, 2.458862, 20.663309)  Q_sum=1.760580e+04  Q_per_scen=3521.159829714
+  current UB (per-scen): 3312.370888248
+
+=== Iter 11 ===
+simplex: T19  verts=(7, 14, 15, 16)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(1.000000, -0.000000, 0.000000, 0.000000)
+    s=1  cs=1.285455e+02  pt=(26.735450, -13.714594, 31.806505)  bary=(0.000000, 1.000000, -0.000000, -0.000000)
+    s=2  cs=3.203423e+03  pt=(11.129343, 4.216207, 4.216207)  bary=(0.000016, -0.000000, 0.000007, 0.999977)
+    s=3  cs=7.860474e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(1.000000, 0.000000, 0.000000, 0.000000)
+    s=4  cs=2.697504e+02  pt=(26.735833, -13.713890, 31.806848)  bary=(0.000000, 0.999992, 0.000008, -0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T22  type=avgCS  pt=(17.910663, -1.490720, 16.717652)  Q_sum=2.062180e+04  Q_per_scen=4124.359776438
+    child T23  type=avgCS  pt=(4.650289, 3.627213, 21.835652)  Q_sum=1.780319e+04  Q_per_scen=3560.638631132
+  current UB (per-scen): 3312.370888248
+
+=== Iter 12 ===
+simplex: T23  verts=(14, 15, 16, 18)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(1.000000, 0.000000, 0.000000, 0.000000)
+    s=1  cs=1.285455e+02  pt=(26.735449, -13.714593, 31.806505)  bary=(0.000000, 1.000000, 0.000000, -0.000000)
+    s=2  cs=3.203423e+03  pt=(11.129525, 4.216271, 4.216271)  bary=(0.000005, 0.000000, 0.000016, 0.999978)
+    s=3  cs=7.860474e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(1.000000, 0.000000, 0.000000, 0.000000)
+    s=4  cs=2.697504e+02  pt=(26.735450, -13.714593, 31.806505)  bary=(0.000000, 1.000000, 0.000000, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T23  type=avgCS  pt=(4.650213, 3.627115, 21.835555)  Q_sum=1.780318e+04  Q_per_scen=3560.635475654
+    child T24  type=avgCS  pt=(3.742277, 7.651709, 25.860148)  Q_sum=1.849747e+04  Q_per_scen=3699.494379544
+  current UB (per-scen): 3312.370888248
+
+=== Iter 13 ===
+simplex: T23  verts=(14, 15, 16, 19)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(1.000000, 0.000000, -0.000000, 0.000000)
+    s=1  cs=1.285455e+02  pt=(26.735450, -13.714593, 31.806505)  bary=(0.000000, 1.000000, 0.000000, -0.000000)
+    s=2  cs=3.203423e+03  pt=(11.129145, 4.215784, 4.215784)  bary=(0.000010, 0.000000, 0.000007, 0.999983)
+    s=3  cs=7.860474e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(1.000000, 0.000000, 0.000000, 0.000000)
+    s=4  cs=2.697504e+02  pt=(26.735450, -13.714594, 31.806505)  bary=(0.000000, 1.000000, 0.000000, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T24  type=avgCS  pt=(14.922719, -3.178859, 21.912482)  Q_sum=2.075562e+04  Q_per_scen=4151.123315657
+    child T25  type=avgCS  pt=(-4.666000, 10.520048, 19.158467)  Q_sum=1.735899e+04  Q_per_scen=3471.798705343
+  current UB (per-scen): 3312.370888248
+
+=== Iter 14 ===
+simplex: T6  verts=(3, 4, 5, 8)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637830, -0.000000, 0.000000, 0.362170)
+    s=1  cs=1.184974e+02  pt=(25.173902, -15.681326, 31.767365)  bary=(0.000048, 0.000044, 0.999869, 0.000039)
+    s=2  cs=3.430699e+03  pt=(1.598435, -1.598435, -1.598435)  bary=(0.489344, 0.000000, -0.000000, 0.510656)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, -0.000000, 0.000000, 0.359523)
+    s=4  cs=1.399113e+02  pt=(28.355706, -20.146873, 37.619050)  bary=(0.023751, 0.111599, 0.864650, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T25  type=avgCS  pt=(27.001107, -17.991066, 30.387361)  Q_sum=3.389485e+04  Q_per_scen=6778.969358575
+    child T26  type=avgCS  pt=(2.676279, 0.863935, 21.906761)  Q_sum=1.803595e+04  Q_per_scen=3607.189764746
+    child T27  type=avgCS  pt=(2.432307, 0.592721, 21.880298)  Q_sum=1.806521e+04  Q_per_scen=3613.041108319
+  current UB (per-scen): 3312.370888248
+
+=== Iter 15 ===
+simplex: T26  verts=(3, 4, 8, 21)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637830, -0.000000, 0.000000, 0.362170)
+    s=1  cs=1.184974e+02  pt=(25.173717, -15.681518, 31.767349)  bary=(0.000050, 0.000520, 0.999380, 0.000050)
+    s=2  cs=3.430699e+03  pt=(1.598435, -1.598435, -1.598435)  bary=(0.489344, -0.000000, 0.000000, 0.510656)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, -0.000000, 0.000000, 0.359523)
+    s=4  cs=1.399113e+02  pt=(28.355253, -20.146384, 37.618880)  bary=(0.000003, 0.999949, 0.000048, -0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T27  type=avgCS  pt=(2.676395, 0.863972, 21.906552)  Q_sum=1.803591e+04  Q_per_scen=3607.181603201
+    child T28  type=avgCS  pt=(-0.357016, 4.221884, 26.885935)  Q_sum=1.883856e+04  Q_per_scen=3767.711892912
+  current UB (per-scen): 3312.370888248
+
+=== Iter 16 ===
+simplex: T27  verts=(4, 8, 21, 22)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.995867, 0.000000, -0.000000, 0.004133)
+    s=1  cs=1.184974e+02  pt=(25.174056, -15.681254, 31.767311)  bary=(0.000049, 0.000322, 0.999614, 0.000015)
+    s=2  cs=3.430699e+03  pt=(1.598435, -1.598435, -1.598435)  bary=(0.764030, 0.000000, -0.000000, 0.235970)
+    s=3  cs=7.851363e+02  pt=(-21.071245, 21.071245, 21.071245)  bary=(0.999997, 0.000000, -0.000000, 0.000003)
+    s=4  cs=1.399113e+02  pt=(28.355217, -20.146188, 37.618151)  bary=(0.000000, 0.999846, 0.000154, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T28  type=avgCS  pt=(11.665121, -8.124646, 12.917964)  Q_sum=2.045851e+04  Q_per_scen=4091.702261024
+    child T29  type=avgCS  pt=(2.676297, 0.864015, 21.906836)  Q_sum=1.803595e+04  Q_per_scen=3607.190292141
+  current UB (per-scen): 3312.370888248
+
+=== Iter 17 ===
+simplex: T29  verts=(8, 21, 22, 23)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.982486, 0.000000, -0.000000, 0.017514)
+    s=1  cs=1.184974e+02  pt=(25.173578, -15.680927, 31.767882)  bary=(0.000021, 0.000382, 0.999547, 0.000050)
+    s=2  cs=3.430699e+03  pt=(1.597909, -1.597909, -1.597909)  bary=(0.000023, 0.000000, -0.000000, 0.999977)
+    s=3  cs=7.851363e+02  pt=(-21.071025, 21.071025, 21.071025)  bary=(0.999978, 0.000000, -0.000000, 0.000022)
+    s=4  cs=1.399113e+02  pt=(28.355513, -20.146602, 37.618694)  bary=(0.000000, 0.999939, 0.000061, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T29  type=avgCS  pt=(11.874768, -7.645080, 17.495513)  Q_sum=2.056812e+04  Q_per_scen=4113.624163352
+    child T30  type=avgCS  pt=(2.040205, 1.757303, 20.736505)  Q_sum=1.768673e+04  Q_per_scen=3537.346796998
+    child T31  type=avgCS  pt=(2.429928, 0.597674, 21.885050)  Q_sum=1.806525e+04  Q_per_scen=3613.049198804
+    child T32  type=avgCS  pt=(0.534459, 3.374492, 26.607087)  Q_sum=1.881852e+04  Q_per_scen=3763.704866232
+  current UB (per-scen): 3312.370888248
+
+=== Iter 18 ===
+simplex: T31  verts=(21, 22, 23, 24)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.982486, 0.000000, -0.000000, 0.017514)
+    s=1  cs=1.236716e+02  pt=(23.941392, -17.012215, 31.658744)  bary=(0.000000, 0.834087, 0.023245, 0.142668)
+    s=2  cs=3.430699e+03  pt=(1.598090, -1.598090, -1.598090)  bary=(0.000015, -0.000000, 0.000000, 0.999985)
+    s=3  cs=7.851363e+02  pt=(-21.071056, 21.071056, 21.071056)  bary=(0.999980, 0.000000, -0.000000, 0.000020)
+    s=4  cs=1.399113e+02  pt=(28.355706, -20.146873, 37.619050)  bary=(0.000000, 1.000000, 0.000000, -0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T32  type=avgCS  pt=(1.546917, 1.224722, 20.692880)  Q_sum=1.774784e+04  Q_per_scen=3549.567610722
+    child T33  type=avgCS  pt=(2.430043, 0.597549, 21.884898)  Q_sum=1.806524e+04  Q_per_scen=3613.048099583
+    child T34  type=avgCS  pt=(0.287974, 3.108096, 26.585543)  Q_sum=1.883941e+04  Q_per_scen=3767.881802915
+  current UB (per-scen): 3312.370888248
+
+=== Iter 19 ===
+simplex: T33  verts=(21, 22, 23, 25)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674489, 20.674489, 20.674489)  bary=(0.982486, -0.000000, 0.000000, 0.017514)
+    s=1  cs=1.236716e+02  pt=(23.941787, -17.012659, 31.658165)  bary=(0.000000, 0.001915, 0.997725, 0.000361)
+    s=2  cs=3.430699e+03  pt=(1.598058, -1.598058, -1.598058)  bary=(0.000017, -0.000000, 0.000000, 0.999983)
+    s=3  cs=7.851364e+02  pt=(-21.070847, 21.070847, 21.070847)  bary=(0.999970, -0.000000, 0.000000, 0.000030)
+    s=4  cs=1.399113e+02  pt=(28.355706, -20.146873, 37.619050)  bary=(0.000000, 1.000000, -0.000000, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T34  type=avgCS  pt=(11.581660, -7.960219, 17.502541)  Q_sum=2.061030e+04  Q_per_scen=4122.060962535
+    child T35  type=avgCS  pt=(1.546943, 1.224697, 20.692866)  Q_sum=1.774784e+04  Q_per_scen=3549.567930951
+    child T36  type=avgCS  pt=(2.432339, 0.592727, 21.880178)  Q_sum=1.806518e+04  Q_per_scen=3613.036647666
+    child T37  type=avgCS  pt=(0.215259, 3.121380, 26.581629)  Q_sum=1.883757e+04  Q_per_scen=3767.514648204
+  current UB (per-scen): 3312.370888248
+
+=== Iter 20 ===
+simplex: T36  verts=(21, 22, 23, 26)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.982486, -0.000000, 0.000000, 0.017514)
+    s=1  cs=1.237175e+02  pt=(23.953451, -17.036953, 31.634377)  bary=(0.000017, 0.834838, 0.020959, 0.144186)
+    s=2  cs=3.430699e+03  pt=(1.598085, -1.598085, -1.598085)  bary=(0.000016, 0.000000, -0.000000, 0.999985)
+    s=3  cs=7.851363e+02  pt=(-21.071058, 21.071058, 21.071058)  bary=(0.999981, 0.000001, -0.000003, 0.000021)
+    s=4  cs=1.399113e+02  pt=(28.355706, -20.146873, 37.619050)  bary=(0.000000, 1.000000, -0.000000, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T37  type=avgCS  pt=(-1.872374, 4.119659, 19.930314)  Q_sum=1.737960e+04  Q_per_scen=3475.920837190
+    child T38  type=avgCS  pt=(2.432301, 0.592765, 21.880216)  Q_sum=1.806518e+04  Q_per_scen=3613.036656053
+  current UB (per-scen): 3312.370888248
+
+=== Iter 21 ===
+simplex: T38  verts=(21, 22, 23, 27)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.982486, 0.000000, -0.000000, 0.017514)
+    s=1  cs=1.237175e+02  pt=(23.953451, -17.036953, 31.634377)  bary=(0.000000, 0.813820, 0.042004, 0.144176)
+    s=2  cs=3.430699e+03  pt=(1.598069, -1.598069, -1.598069)  bary=(0.000016, -0.000000, 0.000001, 0.999984)
+    s=3  cs=7.851363e+02  pt=(-21.071231, 21.071231, 21.071231)  bary=(0.999988, 0.000004, -0.000006, 0.000013)
+    s=4  cs=1.399113e+02  pt=(28.355706, -20.146873, 37.619050)  bary=(0.000000, 1.000000, -0.000000, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T38  type=avgCS  pt=(11.676972, -8.137604, 16.769010)  Q_sum=2.062395e+04  Q_per_scen=4124.789856628
+    child T39  type=avgCS  pt=(-1.872361, 4.119646, 19.930301)  Q_sum=1.737960e+04  Q_per_scen=3475.920534746
+  current UB (per-scen): 3312.370888248
+
+=== Iter 22 ===
+simplex: T26  verts=(3, 4, 5, 21)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637830, -0.000000, 0.000000, 0.362170)
+    s=1  cs=1.237177e+02  pt=(23.953510, -17.037066, 31.634263)  bary=(0.078305, 0.000000, 0.842561, 0.079133)
+    s=2  cs=3.430699e+03  pt=(1.598435, -1.598435, -1.598435)  bary=(0.489344, -0.000000, 0.000000, 0.510656)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, 0.000000, -0.000000, 0.359523)
+    s=4  cs=1.399113e+02  pt=(28.355602, -20.146902, 37.619650)  bary=(0.000006, 0.000010, 0.999984, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T39  type=avgCS  pt=(10.781604, -7.756562, 13.531034)  Q_sum=2.016652e+04  Q_per_scen=4033.304111788
+    child T40  type=avgCS  pt=(2.102405, 0.923254, 22.215477)  Q_sum=1.806987e+04  Q_per_scen=3613.974145392
+  current UB (per-scen): 3312.370888248
+
+=== Iter 23 ===
+simplex: T40  verts=(3, 5, 21, 29)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.275660, 0.000000, -0.000000, 0.724340)
+    s=1  cs=1.237392e+02  pt=(23.902655, -16.982958, 31.711261)  bary=(0.000000, 0.000000, 0.842958, 0.157042)
+    s=2  cs=3.445466e+03  pt=(-0.000000, 0.000000, 0.000000)  bary=(0.000000, 0.000000, -0.000000, 1.000000)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.280954, -0.000000, 0.000000, 0.719046)
+    s=4  cs=1.399113e+02  pt=(28.355380, -20.146781, 37.620113)  bary=(0.000011, 0.000017, 0.999972, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T40  type=avgCS  pt=(10.695887, -7.318778, 16.446284)  Q_sum=2.013660e+04  Q_per_scen=4027.320207549
+    child T41  type=avgCS  pt=(0.835705, -0.128900, 22.232593)  Q_sum=1.823430e+04  Q_per_scen=3646.859479645
+    child T42  type=avgCS  pt=(4.466727, 0.151290, 32.648835)  Q_sum=2.158497e+04  Q_per_scen=4316.994960378
+  current UB (per-scen): 3312.370888248
+
+=== Iter 24 ===
+simplex: T7  verts=(3, 4, 8, 9)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637830, -0.000000, 0.000000, 0.362170)
+    s=1  cs=1.184974e+02  pt=(25.174372, -15.680176, 31.766713)  bary=(0.000011, 0.999763, 0.000212, 0.000014)
+    s=2  cs=3.430699e+03  pt=(1.598435, -1.598435, -1.598435)  bary=(0.489344, -0.000000, 0.000000, 0.510656)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, -0.000000, 0.000000, 0.359523)
+    s=4  cs=2.562154e+02  pt=(26.193621, -13.825993, 32.651791)  bary=(-0.000000, 0.000345, 0.999655, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T42  type=avgCS  pt=(13.531108, -6.650212, 22.912398)  Q_sum=2.148288e+04  Q_per_scen=4296.576071323
+    child T43  type=avgCS  pt=(2.489064, 2.429230, 20.913801)  Q_sum=1.764227e+04  Q_per_scen=3528.453466146
+    child T44  type=avgCS  pt=(2.040203, 1.757283, 20.736372)  Q_sum=1.768671e+04  Q_per_scen=3537.342978022
+    child T45  type=avgCS  pt=(4.579392, 2.017869, 30.361718)  Q_sum=2.040231e+04  Q_per_scen=4080.462690022
+  current UB (per-scen): 3312.370888248
+
+=== Iter 25 ===
+simplex: T43  verts=(3, 4, 9, 31)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637830, 0.000000, -0.000000, 0.362170)
+    s=1  cs=1.245223e+02  pt=(26.398924, -14.176073, 31.769336)  bary=(0.000000, 0.006671, 0.985857, 0.007473)
+    s=2  cs=3.430699e+03  pt=(1.598435, -1.598435, -1.598435)  bary=(0.489344, -0.000000, 0.000000, 0.510656)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, 0.000000, -0.000000, 0.359523)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825354, 32.652096)  bary=(-0.000000, 0.000000, 1.000000, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T45  type=avgCS  pt=(13.810157, -6.287870, 22.924226)  Q_sum=2.145186e+04  Q_per_scen=4290.372083266
+    child T46  type=avgCS  pt=(2.492289, 2.427914, 20.916523)  Q_sum=1.764298e+04  Q_per_scen=3528.596569725
+    child T47  type=avgCS  pt=(-4.206937, 5.982507, 12.655686)  Q_sum=1.693593e+04  Q_per_scen=3387.186419659
+    child T48  type=avgCS  pt=(4.832469, 2.449055, 30.538731)  Q_sum=2.044618e+04  Q_per_scen=4089.235064827
+  current UB (per-scen): 3312.370888248
+
+=== Iter 26 ===
+simplex: T46  verts=(3, 4, 9, 32)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637830, 0.000000, -0.000000, 0.362170)
+    s=1  cs=1.245375e+02  pt=(26.415049, -14.182651, 31.782942)  bary=(0.000001, 0.005955, 0.986619, 0.007425)
+    s=2  cs=3.430699e+03  pt=(1.598435, -1.598435, -1.598435)  bary=(0.489344, 0.000000, -0.000000, 0.510656)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, -0.000000, 0.000000, 0.359523)
+    s=4  cs=2.562154e+02  pt=(26.193973, -13.825354, 32.652096)  bary=(-0.000000, 0.000000, 1.000000, -0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T48  type=avgCS  pt=(2.492289, 2.427914, 20.916523)  Q_sum=1.764298e+04  Q_per_scen=3528.596569880
+    child T49  type=avgCS  pt=(3.727011, 2.017077, 23.602122)  Q_sum=1.828018e+04  Q_per_scen=3656.035910562
+  current UB (per-scen): 3312.370888248
+
+=== Iter 27 ===
+simplex: T48  verts=(3, 4, 9, 33)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637830, -0.000001, 0.000000, 0.362171)
+    s=1  cs=1.245375e+02  pt=(26.415050, -14.182651, 31.782942)  bary=(0.000007, 0.011878, 0.986625, 0.001490)
+    s=2  cs=3.430699e+03  pt=(1.598435, -1.598435, -1.598435)  bary=(0.489344, -0.000000, 0.000000, 0.510656)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, 0.000000, -0.000000, 0.359523)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-0.000000, 0.000000, 1.000000, -0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T49  type=avgCS  pt=(4.063170, 1.536446, 22.578512)  Q_sum=1.814216e+04  Q_per_scen=3628.432527084
+    child T50  type=avgCS  pt=(2.492293, 2.427913, 20.916526)  Q_sum=1.764298e+04  Q_per_scen=3528.596731948
+  current UB (per-scen): 3312.370888248
+
+=== Iter 28 ===
+simplex: T50  verts=(3, 4, 9, 34)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637831, -0.000002, 0.000000, 0.362171)
+    s=1  cs=1.245375e+02  pt=(26.415067, -14.182658, 31.782958)  bary=(0.001394, 0.001215, 0.988867, 0.008524)
+    s=2  cs=3.430699e+03  pt=(1.598435, -1.598435, -1.598435)  bary=(0.489344, -0.000000, 0.000000, 0.510656)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, -0.000000, 0.000000, 0.359523)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(0.000000, -0.000000, 1.000000, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T50  type=avgCS  pt=(2.492293, 2.427913, 20.916526)  Q_sum=1.764298e+04  Q_per_scen=3528.596741710
+    child T51  type=avgCS  pt=(2.773384, 2.358467, 21.642521)  Q_sum=1.778956e+04  Q_per_scen=3557.912546124
+  current UB (per-scen): 3312.370888248
+
+=== Iter 29 ===
+simplex: T50  verts=(3, 4, 9, 35)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637832, -0.000006, 0.000000, 0.362174)
+    s=1  cs=1.245375e+02  pt=(26.415068, -14.182659, 31.782959)  bary=(0.001899, 0.000715, 0.988952, 0.008435)
+    s=2  cs=3.430699e+03  pt=(1.598435, -1.598435, -1.598435)  bary=(0.489344, -0.000002, 0.000000, 0.510658)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, 0.000000, -0.000000, 0.359523)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(0.000000, -0.000000, 1.000000, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T51  type=avgCS  pt=(2.828210, 2.256804, 21.364820)  Q_sum=1.775325e+04  Q_per_scen=3550.650908825
+    child T52  type=avgCS  pt=(2.492294, 2.427912, 20.916526)  Q_sum=1.764298e+04  Q_per_scen=3528.596763616
+  current UB (per-scen): 3312.370888248
+
+=== Iter 30 ===
+simplex: T52  verts=(3, 4, 9, 36)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637824, 0.000009, -0.000000, 0.362167)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782961)  bary=(0.001905, 0.000316, 0.988980, 0.008800)
+    s=2  cs=3.430699e+03  pt=(1.598435, -1.598435, -1.598435)  bary=(0.489344, -0.000000, 0.000000, 0.510656)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640478, -0.000003, 0.000000, 0.359524)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-0.000001, 0.000001, 1.000000, -0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T52  type=avgCS  pt=(2.492294, 2.427912, 20.916526)  Q_sum=1.764298e+04  Q_per_scen=3528.596760322
+    child T53  type=avgCS  pt=(2.528381, 2.436843, 21.094656)  Q_sum=1.767352e+04  Q_per_scen=3534.704088710
+  current UB (per-scen): 3312.370888248
+
+=== Iter 31 ===
+simplex: T52  verts=(3, 4, 9, 37)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637817, 0.000040, -0.000001, 0.362143)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782961)  bary=(0.001920, 0.000584, 0.988980, 0.008516)
+    s=2  cs=3.430699e+03  pt=(1.598435, -1.598435, -1.598435)  bary=(0.489344, 0.000000, -0.000000, 0.510656)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, -0.000001, 0.000000, 0.359524)
+    s=4  cs=2.562154e+02  pt=(26.193973, -13.825354, 32.652095)  bary=(0.000004, -0.000012, 1.000000, 0.000008)
+  UB candidates (avg MS/CS points from new children):
+    child T53  type=avgCS  pt=(2.575213, 2.385857, 21.028052)  Q_sum=1.766962e+04  Q_per_scen=3533.923468502
+    child T54  type=avgCS  pt=(2.492294, 2.427912, 20.916526)  Q_sum=1.764298e+04  Q_per_scen=3528.596760528
+  current UB (per-scen): 3312.370888248
+
+=== Iter 32 ===
+simplex: T54  verts=(3, 4, 9, 38)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637861, -0.000046, 0.000000, 0.362185)
+    s=1  cs=1.245375e+02  pt=(26.415070, -14.182660, 31.782960)  bary=(0.001652, 0.000691, 0.988983, 0.008674)
+    s=2  cs=3.430699e+03  pt=(1.598435, -1.598435, -1.598435)  bary=(0.489343, 0.000002, -0.000000, 0.510656)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640480, -0.000005, 0.000000, 0.359525)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(0.000002, -0.000003, 1.000000, 0.000001)
+  UB candidates (avg MS/CS points from new children):
+    child T54  type=avgCS  pt=(2.492294, 2.427912, 20.916526)  Q_sum=1.764298e+04  Q_per_scen=3528.596769238
+    child T55  type=avgCS  pt=(2.465479, 2.457146, 20.954863)  Q_sum=1.764519e+04  Q_per_scen=3529.038848592
+  current UB (per-scen): 3312.370888248
+
+=== Iter 33 ===
+simplex: T54  verts=(3, 4, 9, 39)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637834, -0.000014, 0.000000, 0.362179)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782961)  bary=(0.001983, 0.000382, 0.988986, 0.008649)
+    s=2  cs=3.430699e+03  pt=(1.598435, -1.598435, -1.598435)  bary=(0.489344, -0.000002, 0.000000, 0.510658)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640479, -0.000006, 0.000000, 0.359527)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(0.000024, -0.000072, 1.000000, 0.000048)
+  UB candidates (avg MS/CS points from new children):
+    child T55  type=avgCS  pt=(2.512958, 2.417443, 20.944373)  Q_sum=1.764958e+04  Q_per_scen=3529.916961434
+    child T56  type=avgCS  pt=(2.492294, 2.427912, 20.916526)  Q_sum=1.764298e+04  Q_per_scen=3528.596761159
+  current UB (per-scen): 3312.370888248
+
+=== Iter 34 ===
+simplex: T56  verts=(3, 4, 9, 40)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637700, 0.000196, -0.000000, 0.362105)
+    s=1  cs=1.245375e+02  pt=(26.415070, -14.182660, 31.782960)  bary=(0.001603, 0.000761, 0.988986, 0.008650)
+    s=2  cs=3.430699e+03  pt=(1.598435, -1.598435, -1.598435)  bary=(0.489344, -0.000000, 0.000000, 0.510656)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640465, 0.000018, -0.000000, 0.359517)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(0.000015, -0.000023, 1.000000, 0.000008)
+  UB candidates (avg MS/CS points from new children):
+    child T56  type=avgCS  pt=(2.492294, 2.427912, 20.916527)  Q_sum=1.764298e+04  Q_per_scen=3528.596770454
+    child T57  type=avgCS  pt=(2.449604, 2.462312, 20.919779)  Q_sum=1.763816e+04  Q_per_scen=3527.632128283
+  current UB (per-scen): 3312.370888248
+
+=== Iter 35 ===
+simplex: T56  verts=(3, 4, 9, 41)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637852, -0.000065, 0.000000, 0.362213)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782961)  bary=(0.002727, -0.001856, 0.988989, 0.010140)
+    s=2  cs=3.430699e+03  pt=(1.598435, -1.598435, -1.598435)  bary=(0.489346, -0.000005, 0.000000, 0.510660)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, -0.000001, 0.000000, 0.359524)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-0.000004, 0.000012, 1.000000, -0.000008)
+  UB candidates (avg MS/CS points from new children):
+    child T57  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926098356
+    child T58  type=avgCS  pt=(2.492294, 2.427912, 20.916526)  Q_sum=1.764298e+04  Q_per_scen=3528.596761293
+  current UB (per-scen): 3312.370888248
+
+=== Iter 36 ===
+simplex: T58  verts=(3, 4, 9, 42)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637722, 0.000162, -0.000000, 0.362116)
+    s=1  cs=1.245375e+02  pt=(26.415070, -14.182660, 31.782960)  bary=(0.001666, 0.000666, 0.988987, 0.008681)
+    s=2  cs=3.430699e+03  pt=(1.598435, -1.598435, -1.598435)  bary=(0.489355, -0.000017, -0.000000, 0.510662)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640475, 0.000003, -0.000000, 0.359522)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-0.000004, 0.000006, 1.000000, -0.000002)
+  UB candidates (avg MS/CS points from new children):
+    child T58  type=avgCS  pt=(2.497455, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926078237
+    child T59  type=avgCS  pt=(-4.471720, 6.116809, 12.298544)  Q_sum=1.696222e+04  Q_per_scen=3392.443005450
+  current UB (per-scen): 3312.370888248
+
+=== Iter 37 ===
+simplex: T43  verts=(3, 4, 8, 31)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637830, -0.000000, 0.000000, 0.362170)
+    s=1  cs=1.184974e+02  pt=(25.174060, -15.680451, 31.766738)  bary=(0.000008, 0.999975, 0.000007, 0.000010)
+    s=2  cs=3.430699e+03  pt=(1.598435, -1.598435, -1.598435)  bary=(0.489344, -0.000000, 0.000000, 0.510656)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, 0.000000, -0.000000, 0.359523)
+    s=4  cs=2.639127e+02  pt=(25.174528, -15.680709, 31.767547)  bary=(-0.000000, 1.000000, 0.000000, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T59  type=avgCS  pt=(13.253187, -7.156080, 22.671161)  Q_sum=2.151434e+04  Q_per_scen=4302.868315390
+    child T60  type=avgCS  pt=(-4.316331, 5.896073, 12.683097)  Q_sum=1.695327e+04  Q_per_scen=3390.654325265
+    child T61  type=avgCS  pt=(4.279146, 1.564057, 30.153786)  Q_sum=2.035221e+04  Q_per_scen=4070.441283643
+  current UB (per-scen): 3312.370888248
+
+=== Iter 38 ===
+simplex: T28  verts=(8, 22, 23, 24)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674489, 20.674489, 20.674489)  bary=(0.982486, -0.000000, 0.000000, 0.017514)
+    s=1  cs=1.184974e+02  pt=(25.174122, -15.680404, 31.767354)  bary=(0.000006, 0.000002, 0.999989, 0.000003)
+    s=2  cs=3.430699e+03  pt=(1.597840, -1.597840, -1.597840)  bary=(0.000026, 0.000000, -0.000000, 0.999974)
+    s=3  cs=7.851364e+02  pt=(-21.070976, 21.070976, 21.070976)  bary=(0.999976, -0.000000, 0.000000, 0.000024)
+    s=4  cs=2.639127e+02  pt=(25.174528, -15.680709, 31.767547)  bary=(0.000000, 0.000000, 1.000000, 0.000000)
+  UB candidates (avg MS/CS points from new children):
+    child T61  type=avgCS  pt=(11.117509, -6.390099, 17.236584)  Q_sum=1.999722e+04  Q_per_scen=3999.444783699
+    child T62  type=avgCS  pt=(-7.011214, 8.528173, 17.169377)  Q_sum=1.743207e+04  Q_per_scen=3486.414988671
+  current UB (per-scen): 3312.370888248
+
+=== Iter 39 ===
+simplex: T56  verts=(4, 9, 42, 43)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(0.000073, 0.956858, -0.000037, 0.043105)
+    s=1  cs=1.245375e+02  pt=(26.415069, -14.182659, 31.782959)  bary=(0.004058, 0.000120, 0.986958, 0.008863)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(-0.000014, 0.734147, 0.000007, 0.265861)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.000021, 0.960865, -0.000010, 0.039124)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-0.000049, 0.000037, 1.000025, -0.000012)
+  UB candidates (avg MS/CS points from new children):
+    child T62  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926098402
+    child T63  type=avgCS  pt=(2.219907, 3.104627, 23.112583)  Q_sum=1.798336e+04  Q_per_scen=3596.671497195
+  current UB (per-scen): 3312.370888248
+
+=== Iter 40 ===
+simplex: T62  verts=(4, 9, 42, 46)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(0.000100, 0.956876, -0.000025, 0.043050)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782960)  bary=(0.002453, 0.002245, 0.988373, 0.006929)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(0.000073, 0.734108, -0.000018, 0.265837)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(-0.000014, 0.960886, 0.000003, 0.039125)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-0.000075, 0.000028, 1.000019, 0.000028)
+  UB candidates (avg MS/CS points from new children):
+    child T63  type=avgCS  pt=(-2.908287, 4.147946, 8.806202)  Q_sum=1.712345e+04  Q_per_scen=3424.689234633
+    child T64  type=avgCS  pt=(2.267902, 3.068497, 23.121037)  Q_sum=1.799028e+04  Q_per_scen=3598.055591883
+  current UB (per-scen): 3312.370888248
+
+=== Iter 41 ===
+simplex: T55  verts=(4, 9, 41, 42)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(0.956916, -0.000007, 0.000000, 0.043090)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782960)  bary=(0.002337, 0.001659, 0.988985, 0.007019)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(0.734132, 0.000009, -0.000000, 0.265860)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.960880, 0.000001, 0.000000, 0.039119)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(0.000016, -0.000033, 1.000000, 0.000016)
+  UB candidates (avg MS/CS points from new children):
+    child T64  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926098681
+    child T65  type=avgCS  pt=(2.497445, 2.425642, 20.925084)  Q_sum=1.764486e+04  Q_per_scen=3528.971902441
+  current UB (per-scen): 3312.370888248
+
+=== Iter 42 ===
+simplex: T64  verts=(4, 9, 42, 48)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(0.956913, -0.000000, 0.000000, 0.043087)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782961)  bary=(0.002555, 0.002445, 0.988986, 0.006014)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(0.734135, 0.000002, 0.000000, 0.265863)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.960880, 0.000001, -0.000000, 0.039119)
+    s=4  cs=2.562154e+02  pt=(26.193973, -13.825354, 32.652095)  bary=(-0.000010, 0.000041, 1.000000, -0.000031)
+  UB candidates (avg MS/CS points from new children):
+    child T65  type=avgCS  pt=(18.617286, -13.170077, 7.298853)  Q_sum=2.467355e+04  Q_per_scen=4934.709402128
+    child T66  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926098122
+  current UB (per-scen): 3312.370888248
+
+=== Iter 43 ===
+simplex: T66  verts=(4, 9, 42, 49)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(0.956908, 0.000009, 0.000000, 0.043084)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782961)  bary=(0.001775, 0.002225, 0.988986, 0.007014)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(0.734139, -0.000005, 0.000000, 0.265866)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.960881, -0.000000, 0.000000, 0.039119)
+    s=4  cs=2.562154e+02  pt=(26.193973, -13.825354, 32.652095)  bary=(0.000202, -0.000323, 1.000000, 0.000121)
+  UB candidates (avg MS/CS points from new children):
+    child T66  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926096563
+    child T67  type=avgCS  pt=(2.493719, 2.427872, 20.921691)  Q_sum=1.764391e+04  Q_per_scen=3528.781112341
+  current UB (per-scen): 3312.370888248
+
+=== Iter 44 ===
+simplex: T66  verts=(4, 9, 42, 50)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(0.956942, -0.000094, 0.000000, 0.043152)
+    s=1  cs=1.245375e+02  pt=(26.415070, -14.182660, 31.782960)  bary=(0.004026, -0.002755, 0.988986, 0.009742)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(0.734141, -0.000017, 0.000000, 0.265876)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.960881, -0.000000, 0.000000, 0.039120)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-0.000018, 0.000058, 1.000000, -0.000040)
+  UB candidates (avg MS/CS points from new children):
+    child T67  type=avgCS  pt=(16.158889, -11.236522, 7.260216)  Q_sum=2.305636e+04  Q_per_scen=4611.271483442
+    child T68  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926095926
+  current UB (per-scen): 3312.370888248
+
+=== Iter 45 ===
+simplex: T68  verts=(4, 9, 42, 51)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(0.956900, 0.000020, 0.000000, 0.043080)
+    s=1  cs=1.245375e+02  pt=(26.415070, -14.182660, 31.782961)  bary=(-0.003445, 0.010074, 0.988986, 0.004386)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(0.733771, 0.000556, -0.000000, 0.265673)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.960876, 0.000008, 0.000000, 0.039117)
+    s=4  cs=2.562154e+02  pt=(26.193973, -13.825354, 32.652096)  bary=(-0.000858, 0.001308, 1.000000, -0.000450)
+  UB candidates (avg MS/CS points from new children):
+    child T68  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926095863
+    child T69  type=avgCS  pt=(2.491173, 2.429528, 20.920005)  Q_sum=1.764335e+04  Q_per_scen=3528.669078311
+  current UB (per-scen): 3312.370888248
+
+=== Iter 46 ===
+simplex: T68  verts=(4, 9, 42, 52)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(0.956910, 0.000009, -0.000000, 0.043081)
+    s=1  cs=1.245375e+02  pt=(26.415070, -14.182660, 31.782960)  bary=(-0.006264, 0.028739, 0.988986, -0.011461)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(0.734176, -0.000122, -0.000000, 0.265946)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.960839, 0.000126, 0.000000, 0.039034)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-0.000118, 0.000360, 1.000000, -0.000242)
+  UB candidates (avg MS/CS points from new children):
+    child T69  type=avgCS  pt=(15.689132, -10.766945, 7.729115)  Q_sum=2.268060e+04  Q_per_scen=4536.120537744
+    child T70  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926099903
+  current UB (per-scen): 3312.370888248
+
+=== Iter 47 ===
+simplex: T70  verts=(4, 9, 42, 53)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(0.954740, 0.003272, -0.000000, 0.041988)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782961)  bary=(-0.002364, 0.008327, 0.988986, 0.005051)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(0.735787, -0.002486, -0.000000, 0.266699)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.960854, 0.000040, -0.000000, 0.039106)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(0.003156, -0.004752, 1.000000, 0.001597)
+  UB candidates (avg MS/CS points from new children):
+    child T70  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926096192
+    child T71  type=avgCS  pt=(2.490510, 2.429964, 20.919588)  Q_sum=1.764320e+04  Q_per_scen=3528.640527584
+  current UB (per-scen): 3312.370888248
+
+=== Iter 48 ===
+simplex: T70  verts=(4, 9, 42, 54)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(0.956724, 0.000571, -0.000000, 0.042706)
+    s=1  cs=1.245375e+02  pt=(26.415070, -14.182660, 31.782960)  bary=(-0.021904, 0.075503, 0.988986, -0.042585)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(0.733811, 0.000979, -0.000000, 0.265210)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.960517, 0.001096, 0.000000, 0.038387)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-0.000805, 0.002422, 1.000001, -0.001618)
+  UB candidates (avg MS/CS points from new children):
+    child T71  type=avgCS  pt=(15.571693, -10.649551, 7.846340)  Q_sum=2.258882e+04  Q_per_scen=4517.763926212
+    child T72  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926100156
+  current UB (per-scen): 3312.370888248
+
+=== Iter 49 ===
+simplex: T72  verts=(4, 9, 42, 55)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(0.960750, -0.005760, -0.000000, 0.045011)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782961)  bary=(-0.275570, 0.418513, 0.988984, -0.131928)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(0.733833, 0.000455, 0.000000, 0.265711)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.962390, -0.002266, -0.000000, 0.039876)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(0.012562, -0.018860, 0.999999, 0.006300)
+  UB candidates (avg MS/CS points from new children):
+    child T72  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926096263
+    child T73  type=avgCS  pt=(2.490342, 2.430075, 20.919485)  Q_sum=1.764317e+04  Q_per_scen=3528.633356248
+  current UB (per-scen): 3312.370888248
+
+=== Iter 50 ===
+simplex: T72  verts=(4, 9, 42, 56)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(0.971717, -0.044454, -0.000001, 0.072738)
+    s=1  cs=1.245375e+02  pt=(26.415070, -14.182660, 31.782960)  bary=(0.039515, -0.109153, 0.988984, 0.080654)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(0.732974, 0.003488, 0.000000, 0.263538)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.962083, -0.003612, 0.000000, 0.041528)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-0.003935, 0.011810, 1.000000, -0.007874)
+  UB candidates (avg MS/CS points from new children):
+    child T73  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926103888
+    child T74  type=avgCS  pt=(-1.534390, 3.267294, 9.779014)  Q_sum=1.703897e+04  Q_per_scen=3407.794585289
+  current UB (per-scen): 3312.370888248
+
+=== Iter 51 ===
+simplex: T73  verts=(4, 9, 42, 57)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(0.959293, -0.014292, 0.007146, 0.047853)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782961)  bary=(0.001135, 0.012210, 0.982875, 0.003780)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(0.725760, 0.050305, -0.025151, 0.249086)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.962010, -0.006776, 0.003387, 0.041379)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-0.004091, 0.024653, 0.987660, -0.008222)
+  UB candidates (avg MS/CS points from new children):
+    child T74  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926106753
+    child T75  type=avgCS  pt=(2.404887, 2.785084, 22.287394)  Q_sum=1.785181e+04  Q_per_scen=3570.362995322
+  current UB (per-scen): 3312.370888248
+
+=== Iter 52 ===
+simplex: T74  verts=(4, 9, 42, 58)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(0.965415, -0.102137, 0.025537, 0.111186)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782961)  bary=(-0.026732, 0.359014, 0.899246, -0.231529)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(0.737891, -0.045084, 0.011271, 0.295921)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.961151, -0.003254, 0.000815, 0.041288)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(0.015332, -0.184232, 1.046073, 0.122827)
+  UB candidates (avg MS/CS points from new children):
+    child T75  type=avgCS  pt=(19.583040, -13.534572, 9.193703)  Q_sum=2.502419e+04  Q_per_scen=5004.837436413
+    child T76  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926097834
+  current UB (per-scen): 3312.370888248
+
+=== Iter 53 ===
+simplex: T76  verts=(4, 9, 42, 59)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(1.089657, -0.245086, 0.030638, 0.124791)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782961)  bary=(-0.441030, 0.820129, 0.886471, -0.265571)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(0.621099, 0.208681, -0.026073, 0.196293)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.962294, -0.002607, 0.000326, 0.039988)
+    s=4  cs=2.562154e+02  pt=(26.193973, -13.825354, 32.652096)  bary=(0.038747, -0.071543, 1.008942, 0.023853)
+  UB candidates (avg MS/CS points from new children):
+    child T76  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926096331
+    child T77  type=avgCS  pt=(2.489010, 2.510583, 21.297510)  Q_sum=1.769919e+04  Q_per_scen=3539.837704869
+  current UB (per-scen): 3312.370888248
+
+=== Iter 54 ===
+simplex: T76  verts=(4, 9, 42, 60)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(0.858512, 0.363329, -0.022707, -0.199134)
+    s=1  cs=1.245375e+02  pt=(26.415070, -14.182660, 31.782960)  bary=(2.470568, -9.111600, 1.558599, 6.082433)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(0.798992, -0.239654, 0.014990, 0.425672)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.960577, 0.001115, -0.000071, 0.038379)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(0.137624, -0.508906, 1.032001, 0.339281)
+  UB candidates (avg MS/CS points from new children):
+    child T77  type=avgCS  pt=(16.492542, -11.338593, 8.028356)  Q_sum=2.311728e+04  Q_per_scen=4623.455780547
+    child T78  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926092630
+  current UB (per-scen): 3312.370888248
+
+=== Iter 55 ===
+simplex: T78  verts=(4, 9, 42, 61)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(0.870638, 0.135765, -0.004235, -0.002168)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782960)  bary=(-3.070677, 4.837536, 0.837899, -1.604758)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(1.348720, -0.967287, 0.030249, 0.588318)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.972260, -0.017917, 0.000561, 0.045096)
+    s=4  cs=2.562154e+02  pt=(26.193973, -13.825354, 32.652095)  bary=(1.096042, -1.725011, 1.053950, 0.575019)
+  UB candidates (avg MS/CS points from new children):
+    child T78  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926096313
+    child T79  type=avgCS  pt=(2.491156, 2.449740, 21.016104)  Q_sum=1.765730e+04  Q_per_scen=3531.460311500
+  current UB (per-scen): 3312.370888248
+
+=== Iter 56 ===
+simplex: T78  verts=(4, 9, 42, 62)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(0.927683, 0.091991, -0.001451, -0.018222)
+    s=1  cs=1.245375e+02  pt=(26.415070, -14.182660, 31.782960)  bary=(4.976764, -15.656054, 1.233914, 10.445375)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(0.606614, 0.400888, -0.006162, -0.001340)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.961160, -0.000943, 0.000008, 0.039775)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-0.262467, 0.824967, 0.987265, -0.549765)
+  UB candidates (avg MS/CS points from new children):
+    child T79  type=avgCS  pt=(15.772545, -10.792463, 7.921151)  Q_sum=2.269512e+04  Q_per_scen=4539.023419816
+    child T80  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926096696
+  current UB (per-scen): 3312.370888248
+
+=== Iter 57 ===
+simplex: T80  verts=(4, 9, 42, 63)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(-1.229748, 3.318909, -0.025939, -1.063223)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782960)  bary=(-2.730149, 4.148715, 0.956434, -1.375000)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(-0.207425, 1.429122, -0.011241, -0.210456)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.998786, -0.057515, 0.000418, 0.058311)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(1.690899, -2.566402, 1.019772, 0.855731)
+  UB candidates (avg MS/CS points from new children):
+    child T80  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926096281
+    child T81  type=avgCS  pt=(2.490582, 2.434986, 20.943749)  Q_sum=1.764670e+04  Q_per_scen=3529.339966213
+  current UB (per-scen): 3312.370888248
+
+=== Iter 58 ===
+simplex: T80  verts=(4, 9, 42, 64)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(1.420385, -1.406963, 0.005454, 0.981124)
+    s=1  cs=1.245375e+02  pt=(26.415070, -14.182660, 31.782960)  bary=(-52.983651, 160.843383, 0.362416, -107.222148)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(-0.643223, 4.179866, -0.016173, -2.520470)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.962189, -0.004195, 0.000060, 0.041946)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(0.717035, -2.177437, 1.008054, 1.452349)
+  UB candidates (avg MS/CS points from new children):
+    child T81  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926103865
+    child T82  type=avgCS  pt=(-1.518988, 3.257802, 9.791731)  Q_sum=1.703828e+04  Q_per_scen=3407.656417057
+  current UB (per-scen): 3312.370888248
+
+=== Iter 59 ===
+simplex: T81  verts=(4, 9, 42, 65)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(-1.138819, 12.723790, -6.386761, -4.198211)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782961)  bary=(-10.360761, 62.902428, -30.583333, -20.958333)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(-3.105511, 23.310484, -11.700941, -7.504032)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(1.133611, -1.048723, 0.526462, 0.388651)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-1.324446, 8.036140, -3.033602, -2.678091)
+  UB candidates (avg MS/CS points from new children):
+    child T82  type=avgCS  pt=(14.029134, -7.279490, 18.083588)  Q_sum=2.102434e+04  Q_per_scen=4204.867488810
+    child T83  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926104839
+  current UB (per-scen): 3312.370888248
+
+=== Iter 60 ===
+simplex: T83  verts=(4, 9, 42, 66)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(69.034904, -116.901210, 29.339550, 19.526756)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782961)  bary=(-211.248866, 362.751554, -90.052419, -60.450269)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(-18.151882, 32.428763, -8.137769, -5.139113)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.126218, 1.433132, -0.359711, -0.199639)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(15.370443, -26.396653, 7.626344, 4.399866)
+  UB candidates (avg MS/CS points from new children):
+    child T83  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926106774
+    child T84  type=avgCS  pt=(2.455276, 2.631128, 21.744263)  Q_sum=1.776581e+04  Q_per_scen=3553.162561307
+  current UB (per-scen): 3312.370888248
+
+=== Iter 61 ===
+simplex: T83  verts=(4, 9, 42, 67)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(-19.044079, 68.689474, -8.619737, -40.025658)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782961)  bary=(166.485197, -571.690461, 72.705263, 333.500000)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(10.188816, -32.457895, 4.069079, 19.200000)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.231908, 2.503289, -0.314145, -1.421053)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(18.329668, -62.919141, 8.884211, 36.705263)
+  UB candidates (avg MS/CS points from new children):
+    child T84  type=avgCS  pt=(14.959485, -9.571784, 10.673535)  Q_sum=2.180416e+04  Q_per_scen=4360.831657405
+    child T85  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926094282
+  current UB (per-scen): 3312.370888248
+
+=== Iter 62 ===
+simplex: T85  verts=(4, 9, 42, 68)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(-109.850493, 171.638158, -10.769901, -50.017763)
+    s=1  cs=1.245375e+02  pt=(26.415070, -14.182660, 31.782960)  bary=(-201.910691, 312.763322, -18.652632, -91.200000)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(36.475987, -55.357895, 3.471382, 16.410526)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(-29.081250, 46.535526, -2.920395, -13.533882)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825354, 32.652096)  bary=(-36.202853, 56.087063, -2.526316, -16.357895)
+  UB candidates (avg MS/CS points from new children):
+    child T85  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926097536
+    child T86  type=avgCS  pt=(2.487548, 2.473642, 21.116263)  Q_sum=1.767164e+04  Q_per_scen=3534.327702139
+  current UB (per-scen): 3312.370888248
+
+=== Iter 63 ===
+simplex: T85  verts=(4, 9, 42, 69)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(5.935971, -15.426630, 0.485224, 10.005435)
+    s=1  cs=1.245375e+02  pt=(26.415070, -14.182660, 31.782960)  bary=(-34.296875, 106.405571, -2.391304, -68.717391)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(18.335258, -54.543478, 1.729959, 35.478261)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(1.206182, -0.760870, 0.026155, 0.528533)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-29.013564, 89.904868, -1.826087, -58.065217)
+  UB candidates (avg MS/CS points from new children):
+    child T86  type=avgCS  pt=(15.389281, -10.350760, 8.582445)  Q_sum=2.235188e+04  Q_per_scen=4470.375918428
+    child T87  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926098040
+  current UB (per-scen): 3312.370888248
+
+=== Iter 64 ===
+simplex: T87  verts=(4, 9, 42, 70)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(336.368291, -507.125000, 7.957796, 163.798913)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782960)  bary=(-1019.240489, 1541.088315, -23.217391, -497.630435)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(-21.784647, 34.043478, -0.530571, -10.728261)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(-5.734120, 10.125000, -0.159901, -3.230978)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(381.183804, -576.292500, 10.043478, 186.065217)
+  UB candidates (avg MS/CS points from new children):
+    child T87  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926095922
+    child T88  type=avgCS  pt=(2.489931, 2.440613, 20.968079)  Q_sum=1.765015e+04  Q_per_scen=3530.029134347
+  current UB (per-scen): 3312.370888248
+
+=== Iter 65 ===
+simplex: T87  verts=(4, 9, 42, 71)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(10.126709, -27.739583, 0.217041, 18.395833)
+    s=1  cs=1.245375e+02  pt=(26.415070, -14.182660, 31.782960)  bary=(7182.852865, -21720.269531, 171.333333, 14367.083333)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(440.016602, -1328.250000, 10.525065, 878.708333)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(0.996338, -0.083333, 0.008870, 0.078125)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(162.836468, -491.753135, 4.666667, 325.250000)
+  UB candidates (avg MS/CS points from new children):
+    child T88  type=avgCS  pt=(15.496730, -10.545505, 8.059673)  Q_sum=2.250566e+04  Q_per_scen=4501.131846005
+    child T89  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926096542
+  current UB (per-scen): 3312.370888248
+
+=== Iter 66 ===
+simplex: T89  verts=(4, 9, 42, 72)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(-662.636800, 997.375000, -3.920492, -329.817708)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782960)  bary=(-2500.809896, 3758.809896, -13.833333, -1243.166667)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(305.865885, -458.583333, 1.884115, 151.833333)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(-11.420654, 18.625000, -0.074137, -6.130208)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-2328.460290, 3499.960290, -13.000000, -1157.500000)
+  UB candidates (avg MS/CS points from new children):
+    child T89  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926096361
+    child T90  type=avgCS  pt=(2.490218, 2.432714, 20.931572)  Q_sum=1.764489e+04  Q_per_scen=3528.978912080
+  current UB (per-scen): 3312.370888248
+
+=== Iter 67 ===
+simplex: T89  verts=(4, 9, 42, 73)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(-65.639038, 200.125000, -0.392212, -133.093750)
+    s=1  cs=1.245375e+02  pt=(26.415070, -14.182660, 31.782960)  bary=(-3672.375000, 11036.875000, -20.000000, -7343.500000)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(-643.021484, 1935.750000, -4.478516, -1287.250000)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(1.072510, -0.312500, -0.072510, 0.312500)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(987.489312, -2965.989312, 6.000000, 1973.500000)
+  UB candidates (avg MS/CS points from new children):
+    child T90  type=avgCS  pt=(15.523593, -10.594191, 7.928980)  Q_sum=2.254516e+04  Q_per_scen=4509.031446024
+    child T91  type=avgCS  pt=(2.497456, 2.425298, 20.923486)  Q_sum=1.764463e+04  Q_per_scen=3528.926099856
+  current UB (per-scen): 3312.370888248
+
+=== Iter 68 ===
+simplex: T91  verts=(4, 9, 42, 74)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139922e+02  pt=(-20.665616, 20.670212, 20.687485)  bary=(-640.143921, 962.125000, -0.949829, -320.031250)
+    s=1  cs=1.245375e+02  pt=(26.415071, -14.182660, 31.782961)  bary=(-155536.296875, 233419.796875, -228.000000, -77654.500000)
+    s=2  cs=3.431871e+03  pt=(1.606122, -1.602596, -1.589343)  bary=(-976.913574, 1467.000000, -1.336426, -487.750000)
+    s=3  cs=7.862421e+02  pt=(-21.062271, 21.066886, 21.084231)  bary=(116.521729, -173.375000, 0.103271, 57.750000)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-25411.222590, 38134.722590, -36.000000, -12686.500000)
+  UB candidates (avg MS/CS points from new children):
+    child T91  type=avgCS  pt=(12.937443, -5.942247, 20.343543)  Q_sum=2.065249e+04  Q_per_scen=4130.498496279
+    child T92  type=avgCS  pt=(-3.483786, 5.603702, 13.569692)  Q_sum=1.688694e+04  Q_per_scen=3377.388337587
+  current UB (per-scen): 3312.370888248
+
+=== Iter 69 ===
+simplex: T72  verts=(9, 42, 55, 56)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139924e+02  pt=(-20.665617, 20.670214, 20.687491)  bary=(0.935444, -0.000086, 0.000000, 0.064641)
+    s=1  cs=1.245418e+02  pt=(26.379504, -14.158782, 31.762918)  bary=(0.051280, -0.102711, 0.988043, 0.063388)
+    s=2  cs=3.431872e+03  pt=(1.606126, -1.602594, -1.589321)  bary=(0.601196, 0.000408, -0.000000, 0.398396)
+    s=3  cs=7.862423e+02  pt=(-21.062274, 21.066890, 21.084238)  bary=(0.944131, -0.005571, 0.000000, 0.061440)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-0.000516, 0.001033, 0.999999, -0.000516)
+  UB candidates (avg MS/CS points from new children):
+    child T92  type=avgCS  pt=(7.524589, -2.604406, 15.884121)  Q_sum=1.832044e+04  Q_per_scen=3664.087118316
+    child T93  type=avgCS  pt=(2.490342, 2.430075, 20.919484)  Q_sum=1.764317e+04  Q_per_scen=3528.633338373
+  current UB (per-scen): 3312.370888248
+
+=== Iter 70 ===
+simplex: T93  verts=(9, 42, 56, 76)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139924e+02  pt=(-20.665617, 20.670214, 20.687491)  bary=(0.939984, -0.006113, -0.000000, 0.066129)
+    s=1  cs=1.245418e+02  pt=(26.379502, -14.158780, 31.762917)  bary=(-0.338663, 0.451773, 0.988042, -0.101151)
+    s=2  cs=3.431872e+03  pt=(1.606125, -1.602594, -1.589321)  bary=(0.617476, -0.021447, 0.000000, 0.403971)
+    s=3  cs=7.862423e+02  pt=(-21.062274, 21.066890, 21.084238)  bary=(0.928037, 0.017759, -0.000000, 0.054204)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(0.000261, -0.000344, 0.999999, 0.000084)
+  UB candidates (avg MS/CS points from new children):
+    child T93  type=avgCS  pt=(2.490342, 2.430075, 20.919484)  Q_sum=1.764317e+04  Q_per_scen=3528.633337879
+    child T94  type=avgCS  pt=(2.421867, 2.487208, 20.934000)  Q_sum=1.763681e+04  Q_per_scen=3527.361682003
+  current UB (per-scen): 3312.370888248
+
+=== Iter 71 ===
+simplex: T93  verts=(9, 42, 56, 77)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139924e+02  pt=(-20.665617, 20.670214, 20.687491)  bary=(0.935504, -0.000277, -0.000000, 0.064773)
+    s=1  cs=1.245418e+02  pt=(26.379502, -14.158780, 31.762917)  bary=(0.535928, -1.429846, 0.988052, 0.905865)
+    s=2  cs=3.431872e+03  pt=(1.606126, -1.602594, -1.589321)  bary=(0.601609, -0.000555, -0.000005, 0.398951)
+    s=3  cs=7.862423e+02  pt=(-21.062274, 21.066890, 21.084238)  bary=(0.946099, -0.012669, -0.000001, 0.066572)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-0.001861, 0.004966, 1.000010, -0.003115)
+  UB candidates (avg MS/CS points from new children):
+    child T94  type=avgCS  pt=(9.184279, -4.264181, 14.224030)  Q_sum=1.887884e+04  Q_per_scen=3775.768590618
+    child T95  type=avgCS  pt=(2.490343, 2.430075, 20.919485)  Q_sum=1.764317e+04  Q_per_scen=3528.633368648
+  current UB (per-scen): 3312.370888248
+
+=== Iter 72 ===
+simplex: T95  verts=(9, 42, 56, 78)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139924e+02  pt=(-20.665617, 20.670214, 20.687491)  bary=(1.071653, -0.198210, -0.000000, 0.126558)
+    s=1  cs=1.245418e+02  pt=(26.379506, -14.158783, 31.762919)  bary=(3.172933, -4.615808, 0.988058, 1.454817)
+    s=2  cs=3.431872e+03  pt=(1.606126, -1.602594, -1.589321)  bary=(0.746790, -0.211506, -0.000005, 0.464720)
+    s=3  cs=7.862423e+02  pt=(-21.062274, 21.066890, 21.084238)  bary=(0.971283, -0.043545, -0.000000, 0.072263)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-0.015576, 0.022659, 1.000010, -0.007094)
+  UB candidates (avg MS/CS points from new children):
+    child T95  type=avgCS  pt=(2.490341, 2.430076, 20.919484)  Q_sum=1.764317e+04  Q_per_scen=3528.633319432
+    child T96  type=avgCS  pt=(2.428686, 2.480310, 20.926803)  Q_sum=1.763660e+04  Q_per_scen=3527.320641495
+  current UB (per-scen): 3312.370888248
+
+=== Iter 73 ===
+simplex: T95  verts=(9, 42, 56, 79)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139924e+02  pt=(-20.665617, 20.670214, 20.687491)  bary=(0.935174, 0.000670, -0.000001, 0.064157)
+    s=1  cs=1.245418e+02  pt=(26.379500, -14.158779, 31.762916)  bary=(-1.642416, 4.778668, 0.988063, -3.124314)
+    s=2  cs=3.431872e+03  pt=(1.606126, -1.602594, -1.589321)  bary=(0.600772, 0.001822, 0.000003, 0.397403)
+    s=3  cs=7.862423e+02  pt=(-21.062274, 21.066890, 21.084238)  bary=(0.964364, -0.066955, -0.000001, 0.102593)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-0.016332, 0.047453, 1.000084, -0.031204)
+  UB candidates (avg MS/CS points from new children):
+    child T96  type=avgCS  pt=(9.599203, -4.679126, 13.809008)  Q_sum=1.904453e+04  Q_per_scen=3808.906165072
+    child T97  type=avgCS  pt=(2.490343, 2.430075, 20.919485)  Q_sum=1.764317e+04  Q_per_scen=3528.633368070
+  current UB (per-scen): 3312.370888248
+
+=== Iter 74 ===
+simplex: T97  verts=(9, 42, 56, 80)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139924e+02  pt=(-20.665617, 20.670214, 20.687491)  bary=(0.993028, -0.085775, -0.000002, 0.092749)
+    s=1  cs=1.245418e+02  pt=(26.379505, -14.158783, 31.762919)  bary=(1.962970, -2.921755, 0.988063, 0.970723)
+    s=2  cs=3.431872e+03  pt=(1.606126, -1.602594, -1.589321)  bary=(0.877483, -0.410932, -0.000007, 0.533455)
+    s=3  cs=7.862423e+02  pt=(-21.062274, 21.066890, 21.084238)  bary=(0.793243, 0.220445, 0.000002, -0.013690)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-0.001110, 0.001654, 1.000042, -0.000586)
+  UB candidates (avg MS/CS points from new children):
+    child T97  type=avgCS  pt=(2.490341, 2.430076, 20.919484)  Q_sum=1.764317e+04  Q_per_scen=3528.633314458
+    child T98  type=avgCS  pt=(2.430433, 2.478613, 20.925292)  Q_sum=1.763660e+04  Q_per_scen=3527.319828815
+  current UB (per-scen): 3312.370888248
+
+=== Iter 75 ===
+simplex: T97  verts=(9, 42, 56, 81)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139924e+02  pt=(-20.665617, 20.670214, 20.687491)  bary=(1.890017, -2.841750, 0.000007, 1.951727)
+    s=1  cs=1.245418e+02  pt=(26.379499, -14.158778, 31.762915)  bary=(-6.108666, 18.185215, 0.987772, -12.064322)
+    s=2  cs=3.431872e+03  pt=(1.606126, -1.602594, -1.589321)  bary=(0.603707, -0.006616, -0.000106, 0.403015)
+    s=3  cs=7.862423e+02  pt=(-21.062274, 21.066890, 21.084238)  bary=(0.980920, -0.117787, -0.000011, 0.136877)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-0.009929, 0.029527, 1.000000, -0.019598)
+  UB candidates (avg MS/CS points from new children):
+    child T98  type=avgCS  pt=(9.702934, -4.782861, 13.705252)  Q_sum=1.908758e+04  Q_per_scen=3817.516576044
+    child T99  type=avgCS  pt=(2.490343, 2.430075, 20.919485)  Q_sum=1.764317e+04  Q_per_scen=3528.633367739
+  current UB (per-scen): 3312.370888248
+
+=== Iter 76 ===
+simplex: T99  verts=(9, 42, 56, 82)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139924e+02  pt=(-20.665617, 20.670214, 20.687491)  bary=(-2.648552, 5.365494, -0.000014, -1.716928)
+    s=1  cs=1.245418e+02  pt=(26.379505, -14.158783, 31.762919)  bary=(-35.919389, 53.774330, 0.988107, -17.843049)
+    s=2  cs=3.431872e+03  pt=(1.606126, -1.602594, -1.589321)  bary=(3.152575, -3.819263, -0.000021, 1.666709)
+    s=3  cs=7.862423e+02  pt=(-21.062274, 21.066890, 21.084238)  bary=(0.708488, 0.348618, 0.000002, -0.057108)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(0.071794, -0.107724, 1.000168, 0.035762)
+  UB candidates (avg MS/CS points from new children):
+    child T99  type=avgCS  pt=(2.490341, 2.430076, 20.919484)  Q_sum=1.764317e+04  Q_per_scen=3528.633313158
+    child T100  type=avgCS  pt=(2.430871, 2.478191, 20.924931)  Q_sum=1.763660e+04  Q_per_scen=3527.320159425
+  current UB (per-scen): 3312.370888248
+
+=== Iter 77 ===
+simplex: T99  verts=(9, 42, 56, 83)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139924e+02  pt=(-20.665617, 20.670214, 20.687491)  bary=(-1.851257, 8.343603, -0.000059, -5.492287)
+    s=1  cs=1.245418e+02  pt=(26.379499, -14.158778, 31.762915)  bary=(13.719997, -41.079487, 0.987928, 27.371563)
+    s=2  cs=3.431872e+03  pt=(1.606126, -1.602594, -1.589321)  bary=(0.602080, -0.002347, -0.000135, 0.400402)
+    s=3  cs=7.862423e+02  pt=(-21.062274, 21.066890, 21.084238)  bary=(1.400403, -1.374581, 0.000020, 0.974157)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(0.060416, -0.180805, 1.000000, 0.120389)
+  UB candidates (avg MS/CS points from new children):
+    child T100  type=avgCS  pt=(9.728867, -4.808796, 13.679313)  Q_sum=1.909845e+04  Q_per_scen=3819.689586281
+    child T101  type=avgCS  pt=(2.490343, 2.430075, 20.919485)  Q_sum=1.764317e+04  Q_per_scen=3528.633367555
+  current UB (per-scen): 3312.370888248
+
+=== Iter 78 ===
+simplex: T101  verts=(9, 42, 56, 84)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139924e+02  pt=(-20.665617, 20.670214, 20.687491)  bary=(23.268900, -33.484071, -0.000079, 11.215250)
+    s=1  cs=1.245418e+02  pt=(26.379505, -14.158783, 31.762919)  bary=(193.650109, -290.334884, 0.989269, 96.695506)
+    s=2  cs=3.431872e+03  pt=(1.606126, -1.602594, -1.589321)  bary=(7.578521, -10.460765, -0.000385, 3.882629)
+    s=3  cs=7.862423e+02  pt=(-21.062274, 21.066890, 21.084238)  bary=(0.322863, 0.927230, 0.000011, -0.250105)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(0.661597, -0.991912, 1.001341, 0.328974)
+  UB candidates (avg MS/CS points from new children):
+    child T101  type=avgCS  pt=(2.490342, 2.430075, 20.919485)  Q_sum=1.764317e+04  Q_per_scen=3528.633359466
+    child T102  type=avgCS  pt=(-3.283528, 5.749094, 15.013931)  Q_sum=1.690053e+04  Q_per_scen=3380.106270578
+  current UB (per-scen): 3312.370888248
+
+=== Iter 79 ===
+simplex: T101  verts=(9, 42, 56, 85)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139924e+02  pt=(-20.665617, 20.670214, 20.687491)  bary=(40.232753, -117.834394, 58.917197, 19.684444)
+    s=1  cs=1.245418e+02  pt=(26.379504, -14.158782, 31.762918)  bary=(15.518084, -46.530141, 24.252847, 7.759210)
+    s=2  cs=3.431872e+03  pt=(1.606126, -1.602594, -1.589321)  bary=(9.746651, -27.423979, 13.713329, 4.963999)
+    s=3  cs=7.862423e+02  pt=(-21.062274, 21.066890, 21.084238)  bary=(-3.139108, 12.235432, -6.117800, -1.978525)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(-0.675188, 2.029843, -0.016075, -0.338580)
+  UB candidates (avg MS/CS points from new children):
+    child T102  type=avgCS  pt=(2.490343, 2.430075, 20.919485)  Q_sum=1.764317e+04  Q_per_scen=3528.633370431
+    child T103  type=avgCS  pt=(2.238669, 3.076524, 23.049377)  Q_sum=1.797318e+04  Q_per_scen=3594.636821752
+  current UB (per-scen): 3312.370888248
+
+=== Iter 80 ===
+simplex: T102  verts=(9, 42, 56, 86)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139924e+02  pt=(-20.665617, 20.670214, 20.687491)  bary=(15.297500, -86.130000, 21.532833, 50.299667)
+    s=1  cs=1.245418e+02  pt=(26.379506, -14.158783, 31.762919)  bary=(-115.648333, 693.573667, -172.408000, -404.517333)
+    s=2  cs=3.431872e+03  pt=(1.606126, -1.602594, -1.589321)  bary=(7.909333, -43.829333, 10.957333, 25.962667)
+    s=3  cs=7.862423e+02  pt=(-21.062274, 21.066890, 21.084238)  bary=(2.643750, -10.210333, 2.552250, 6.014333)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(0.140711, -0.826045, 1.202667, 0.482667)
+  UB candidates (avg MS/CS points from new children):
+    child T103  type=avgCS  pt=(11.917629, -6.103564, 15.743896)  Q_sum=1.996402e+04  Q_per_scen=3992.804605725
+    child T104  type=avgCS  pt=(2.490343, 2.430075, 20.919485)  Q_sum=1.764317e+04  Q_per_scen=3528.633371555
+  current UB (per-scen): 3312.370888248
+
+=== Iter 81 ===
+simplex: T104  verts=(9, 42, 56, 87)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139924e+02  pt=(-20.665617, 20.670214, 20.687491)  bary=(67.798417, -114.613333, 14.326583, 33.488333)
+    s=1  cs=1.245418e+02  pt=(26.379506, -14.158783, 31.762919)  bary=(-410.377667, 703.455000, -86.944000, -205.133333)
+    s=2  cs=3.431872e+03  pt=(1.606126, -1.602594, -1.589321)  bary=(76.563333, -130.208000, 16.275333, 38.369333)
+    s=3  cs=7.862423e+02  pt=(-21.062274, 21.066890, 21.084238)  bary=(8.381333, -12.753333, 1.594333, 3.777667)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(1.710415, -2.926415, 1.365333, 0.850667)
+  UB candidates (avg MS/CS points from new children):
+    child T104  type=avgCS  pt=(2.490342, 2.430075, 20.919485)  Q_sum=1.764317e+04  Q_per_scen=3528.633354074
+    child T105  type=avgCS  pt=(2.418502, 2.606839, 21.490521)  Q_sum=1.772061e+04  Q_per_scen=3544.121716359
+  current UB (per-scen): 3312.370888248
+
+=== Iter 82 ===
+simplex: T104  verts=(9, 42, 56, 88)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139924e+02  pt=(-20.665617, 20.670214, 20.687491)  bary=(-83.487177, 289.426630, -18.090268, -186.849185)
+    s=1  cs=1.245418e+02  pt=(26.379504, -14.158781, 31.762918)  bary=(-583.721128, 2001.188519, -124.086957, -1292.380435)
+    s=2  cs=3.431872e+03  pt=(1.606125, -1.602594, -1.589321)  bary=(47.264946, -160.010870, 10.001359, 103.744565)
+    s=3  cs=7.862423e+02  pt=(-21.062274, 21.066890, 21.084238)  bary=(1.347741, -1.391304, 0.086362, 0.957201)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(0.175114, -0.522940, 1.021739, 0.326087)
+  UB candidates (avg MS/CS points from new children):
+    child T105  type=avgCS  pt=(10.275963, -5.131742, 14.198656)  Q_sum=1.929406e+04  Q_per_scen=3858.811758515
+    child T106  type=avgCS  pt=(2.490342, 2.430075, 20.919485)  Q_sum=1.764317e+04  Q_per_scen=3528.633365033
+  current UB (per-scen): 3312.370888248
+
+=== Iter 83 ===
+simplex: T106  verts=(9, 42, 56, 89)  cs_status=full  ms_status=none
+
+  MS per scenario (5 scenarios):
+    s=0  ms=inf  pt=None  bary=N/A
+    s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
+
+  CS per scenario (5 scenarios):
+    s=0  cs=4.139924e+02  pt=(-20.665617, 20.670214, 20.687491)  bary=(-11.375764, 19.062500, -0.595703, -6.091033)
+    s=1  cs=1.245418e+02  pt=(26.379505, -14.158782, 31.762919)  bary=(-1022.661005, 1583.454484, -48.500000, -511.293478)
+    s=2  cs=3.431872e+03  pt=(1.606126, -1.602594, -1.589321)  bary=(286.754076, -443.065217, 13.838315, 143.472826)
+    s=3  cs=7.862423e+02  pt=(-21.062274, 21.066890, 21.084238)  bary=(-79.710343, 124.877717, -3.902429, -40.264946)
+    s=4  cs=2.562154e+02  pt=(26.193972, -13.825353, 32.652096)  bary=(15.319077, -23.699512, 1.717391, 7.663043)
+  UB candidates (avg MS/CS points from new children):
+    child T106  type=avgCS  pt=(2.490342, 2.430075, 20.919484)  Q_sum=1.764317e+04  Q_per_scen=3528.633326015
+    child T107  type=avgCS  pt=(2.430535, 2.508524, 21.067986)  Q_sum=1.765746e+04  Q_per_scen=3531.491954026
+  current UB (per-scen): 3312.370888248
+

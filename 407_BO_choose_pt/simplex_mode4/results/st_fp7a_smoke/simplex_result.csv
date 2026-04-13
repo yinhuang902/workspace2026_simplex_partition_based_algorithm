@@ -1,2 +1,3 @@
 Time (s),# Nodes,LB,UB,Rel. Gap,Abs. Gap,best_LB_ever,best_UB_ever,LB_in_split,UB_in_split,UB_status,cs_status_choosen,cs_status_all,cs_fallback
-0.718,32,-357.181306426,-306.239522933,16.6346208%,50.94178,-357.181306426,-306.239522933,N/A,N/A,N/A,0/5,none,none
+0.761,32,-357.181306426,-306.239522933,16.6346208%,50.94178,-357.181306426,-306.239522933,N/A,N/A,N/A,0/5,none,none
+2.083,32,-357.181306426,-356.930406371,0.0702938%,0.25090,-357.181306426,-356.930406371,N/A,N/A,early_exit:mode4_too_close_to_existing_node,0/5,none,none

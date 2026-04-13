@@ -1,0 +1,198 @@
+# simplex_record_split.txt — per-iteration split record
+# selected_simplex LB_pre, UB_pre, children LBs, end LB/UB
+
+=== Iter 1 ===
+selected_simplex: T2  LB_pre=928.623357118
+  v3: (-75.0000, 75.0000, 75.0000)
+  v5: (75.0000, -75.0000, 75.0000)
+  v7: (75.0000, 75.0000, 75.0000)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=113.227603847
+children (created 4):
+  child T5 (4, 5, 7, 8) LB=2651.400654530 sum_cs=2651.400654530 vol=2.623218e+05
+  child T6 (3, 4, 7, 8) LB=1485.386011055 sum_cs=1485.386011055 vol=7.787468e+04
+  child T7 (3, 4, 5, 8) LB=985.569510950 sum_cs=985.569510950 vol=2.827165e+04
+  child T8 (3, 5, 7, 8) LB=2177.900955655 sum_cs=2177.900955655 vol=1.940319e+05
+next_node: (5.0475, 2.4916, 23.2582)
+selection: source=mode4_avg_cs  rank=N/A  snap=interior
+barycentric: (0.466350, 0.138444, 0.050261, 0.344946)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 4 children, 20 checks, 0 inactive, 4 active
+  child T5: active  checks=5/5
+  child T6: active  checks=5/5
+  child T7: active  checks=5/5
+  child T8: active  checks=5/5
+cumulative_inactive: 0/9 simplices
+end: UB=3312.370888248  LB=113.227603847
+
+=== Iter 2 ===
+selected_simplex: T7  LB_pre=985.569510950
+  v3: (-75.0000, 75.0000, 75.0000)
+  v5: (75.0000, -75.0000, 75.0000)
+  v8: (5.0475, 2.4916, 23.2582)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=985.569510950
+children (created 4):
+  child T8 (4, 5, 8, 9) LB=2580.564647670 sum_cs=2580.564647670 vol=9.994880e+03
+  child T9 (3, 4, 8, 9) LB=1622.148460144 sum_cs=1622.148460144 vol=2.954460e+03
+  child T10 (3, 4, 5, 9) LB=1003.905602089 sum_cs=1003.905602089 vol=8.095590e+03
+  child T11 (3, 5, 8, 9) LB=2076.415969506 sum_cs=2076.415969506 vol=7.226721e+03
+next_node: (1.9396, 0.2192, 21.8411)
+selection: source=mode4_avg_cs  rank=N/A  snap=interior
+barycentric: (0.353530, 0.104503, 0.286350, 0.255617)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 4 children, 20 checks, 0 inactive, 4 active
+  child T8: active  checks=5/5
+  child T9: active  checks=5/5
+  child T10: active  checks=5/5
+  child T11: active  checks=5/5
+cumulative_inactive: 0/12 simplices
+end: UB=3312.370888248  LB=1003.905602089
+
+=== Iter 3 ===
+selected_simplex: T10  LB_pre=1003.905602089
+  v3: (-75.0000, 75.0000, 75.0000)
+  v5: (75.0000, -75.0000, 75.0000)
+  v9: (1.9396, 0.2192, 21.8411)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1003.905602089
+children (created 4):
+  child T11 (4, 5, 9, 10) LB=2614.348243672 sum_cs=2614.348243672 vol=2.862035e+03
+  child T12 (3, 4, 9, 10) LB=1703.825428197 sum_cs=1703.825428197 vol=8.688777e+02
+  child T13 (3, 4, 5, 10) LB=1010.817214899 sum_cs=1010.817214899 vol=2.302467e+03
+  child T14 (3, 5, 9, 10) LB=2103.464304829 sum_cs=2103.464304829 vol=2.062210e+03
+next_node: (1.1914, -0.5774, 21.6712)
+selection: source=mode4_avg_cs  rank=N/A  snap=interior
+barycentric: (0.353530, 0.107327, 0.284410, 0.254733)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 4 children, 20 checks, 0 inactive, 4 active
+  child T11: active  checks=5/5
+  child T12: active  checks=5/5
+  child T13: active  checks=5/5
+  child T14: active  checks=5/5
+cumulative_inactive: 0/15 simplices
+end: UB=3312.370888248  LB=1010.817214899
+
+=== Iter 4 ===
+selected_simplex: T13  LB_pre=1010.817214899
+  v3: (-75.0000, 75.0000, 75.0000)
+  v5: (75.0000, -75.0000, 75.0000)
+  v10: (1.1914, -0.5774, 21.6712)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1010.817214899
+children (created 4):
+  child T14 (4, 5, 10, 11) LB=2637.828205429 sum_cs=2637.828205429 vol=8.139916e+02
+  child T15 (3, 4, 10, 11) LB=1719.782693932 sum_cs=1719.782693932 vol=2.472791e+02
+  child T16 (3, 4, 5, 11) LB=1012.920102495 sum_cs=1012.920102495 vol=6.545941e+02
+  child T17 (3, 5, 10, 11) LB=2126.759162517 sum_cs=2126.759162517 vol=5.866027e+02
+next_node: (0.9866, -0.8120, 21.6229)
+selection: source=mode4_avg_cs  rank=N/A  snap=interior
+barycentric: (0.353530, 0.107397, 0.284301, 0.254771)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 4 children, 20 checks, 0 inactive, 4 active
+  child T14: active  checks=5/5
+  child T15: active  checks=5/5
+  child T16: active  checks=5/5
+  child T17: active  checks=5/5
+cumulative_inactive: 0/18 simplices
+end: UB=3312.370888248  LB=1012.920102495
+
+=== Iter 5 ===
+selected_simplex: T16  LB_pre=1012.920102495
+  v3: (-75.0000, 75.0000, 75.0000)
+  v5: (75.0000, -75.0000, 75.0000)
+  v11: (0.9866, -0.8120, 21.6229)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1012.920102495
+children (created 4):
+  child T17 (4, 5, 11, 12) LB=2645.064927833 sum_cs=2645.064927833 vol=2.314187e+02
+  child T18 (3, 4, 11, 12) LB=1724.421170539 sum_cs=1724.421170539 vol=7.030547e+01
+  child T19 (3, 4, 5, 12) LB=1013.529105991 sum_cs=1013.529105991 vol=1.860961e+02
+  child T20 (3, 5, 11, 12) LB=2133.835565402 sum_cs=2133.835565402 vol=1.667739e+02
+next_node: (0.9290, -0.8794, 21.6091)
+selection: source=mode4_avg_cs  rank=N/A  snap=interior
+barycentric: (0.353530, 0.107403, 0.284292, 0.254774)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 4 children, 20 checks, 0 inactive, 4 active
+  child T17: active  checks=5/5
+  child T18: active  checks=5/5
+  child T19: active  checks=5/5
+  child T20: active  checks=5/5
+cumulative_inactive: 0/21 simplices
+end: UB=3312.370888248  LB=1013.529105991
+
+=== Iter 6 ===
+selected_simplex: T19  LB_pre=1013.529105991
+  v3: (-75.0000, 75.0000, 75.0000)
+  v5: (75.0000, -75.0000, 75.0000)
+  v12: (0.9290, -0.8794, 21.6091)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1013.529105991
+children (created 4):
+  child T20 (4, 5, 12, 13) LB=2647.167314994 sum_cs=2647.167314994 vol=6.579056e+01
+  child T21 (3, 4, 12, 13) LB=1725.747621699 sum_cs=1725.747621699 vol=1.998739e+01
+  child T22 (3, 4, 5, 13) LB=1013.703143861 sum_cs=1013.703143861 vol=5.290554e+01
+  child T23 (3, 5, 12, 13) LB=2135.883965942 sum_cs=2135.883965942 vol=4.741257e+01
+next_node: (0.9127, -0.8986, 21.6052)
+selection: source=mode4_avg_cs  rank=N/A  snap=interior
+barycentric: (0.353530, 0.107404, 0.284292, 0.254775)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 4 children, 20 checks, 0 inactive, 4 active
+  child T20: active  checks=5/5
+  child T21: active  checks=5/5
+  child T22: active  checks=5/5
+  child T23: active  checks=5/5
+cumulative_inactive: 0/24 simplices
+end: UB=3312.370888248  LB=1013.703143861
+
+=== Iter 7 ===
+selected_simplex: T22  LB_pre=1013.703143861
+  v3: (-75.0000, 75.0000, 75.0000)
+  v5: (75.0000, -75.0000, 75.0000)
+  v13: (0.9127, -0.8986, 21.6052)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1013.703143861
+children (created 4):
+  child T23 (4, 5, 13, 14) LB=2647.768649048 sum_cs=2647.768649048 vol=1.870371e+01
+  child T24 (3, 4, 13, 14) LB=1726.125337289 sum_cs=1726.125337289 vol=5.682251e+00
+  child T25 (3, 4, 5, 14) LB=1013.752694362 sum_cs=1013.752694362 vol=1.504057e+01
+  child T26 (3, 5, 13, 14) LB=2136.469270278 sum_cs=2136.469270278 vol=1.347900e+01
+next_node: (0.9081, -0.9041, 21.6041)
+selection: source=mode4_avg_cs  rank=N/A  snap=interior
+barycentric: (0.353530, 0.107404, 0.284291, 0.254775)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 4 children, 20 checks, 0 inactive, 4 active
+  child T23: active  checks=5/5
+  child T24: active  checks=5/5
+  child T25: active  checks=5/5
+  child T26: active  checks=5/5
+cumulative_inactive: 0/27 simplices
+end: UB=3312.370888248  LB=1013.752694362
+
+=== Iter 8 ===
+selected_simplex: T25  LB_pre=1013.752694362
+  v3: (-75.0000, 75.0000, 75.0000)
+  v5: (75.0000, -75.0000, 75.0000)
+  v14: (0.9081, -0.9041, 21.6041)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1013.752694362
+children (created 4):
+  child T26 (4, 5, 14, 15) LB=2647.939898288 sum_cs=2647.939898288 vol=5.317303e+00
+  child T27 (3, 4, 14, 15) LB=1726.232768109 sum_cs=1726.232768109 vol=1.615415e+00
+  child T28 (3, 4, 5, 15) LB=1013.766786954 sum_cs=1013.766786954 vol=4.275893e+00
+  child T29 (3, 5, 14, 15) LB=2136.635906271 sum_cs=2136.635906271 vol=3.831964e+00
+next_node: (0.9068, -0.9056, 21.6038)
+selection: source=mode4_avg_cs  rank=N/A  snap=interior
+barycentric: (0.353531, 0.107404, 0.284291, 0.254775)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 4 children, 20 checks, 0 inactive, 4 active
+  child T26: active  checks=5/5
+  child T27: active  checks=5/5
+  child T28: active  checks=5/5
+  child T29: active  checks=5/5
+cumulative_inactive: 0/30 simplices
+end: UB=3312.370888248  LB=1013.766786954
+
+=== Iter 9 (early exit: mode4_too_close_to_existing_node) ===
+  no split performed (early exit: mode4_too_close_to_existing_node)
+

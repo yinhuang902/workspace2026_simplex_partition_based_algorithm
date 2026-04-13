@@ -1,0 +1,15 @@
+# debug_ub_mesh_membership.txt — UB point mesh containment check
+# Tests whether UB_node lies inside any simplex of the current mesh
+# 'inside' = barycentric coords all >= -tol, all <= 1+tol
+
+============================================================
+[Iter 1] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
+  UB_global_end  = 4.998135780e+02 (per-scen: 99.962715601)
+  UB_node        = (-0.001183, 0.001183, 0.001183)
+  ub_source      = init
+  inside_mesh    = True
+  simplex_index  = 4
+  tol_used       = 1e-08
+  n_simplices    = 9
+  lambdas        = [5.00295669e-01 3.13489072e-08 1.39229289e-09 4.99704298e-01]
+

@@ -1,0 +1,4 @@
+# debug_Iter0_summary.txt — Iteration 0 summary
+# Per-simplex: LB, avg dual bound, avg c_s Q-value, IPOPT result
+# Plus: current UB, UB source, next chosen simplex
+

@@ -1,3 +1,6 @@
 # simplex_record_split.txt — per-iteration split record
 # selected_simplex LB_pre, UB_pre, children LBs, end LB/UB
 
+=== Iter 1 (early exit: mode4_too_close_to_existing_node) ===
+  no split performed (early exit: mode4_too_close_to_existing_node)
+

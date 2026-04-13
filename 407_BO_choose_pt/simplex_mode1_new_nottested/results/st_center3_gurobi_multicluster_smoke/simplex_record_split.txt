@@ -1,0 +1,1784 @@
+# simplex_record_split.txt — per-iteration split record
+# selected_simplex LB_pre, UB_pre, children LBs, end LB/UB
+
+=== Iter 1 ===
+selected_simplex: T2  LB_pre=928.623357118
+  v3: (-75.0000, 75.0000, 75.0000)
+  v5: (75.0000, -75.0000, 75.0000)
+  v7: (75.0000, 75.0000, 75.0000)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=113.227603847
+children (created 4):
+  child T5 (4, 5, 7, 8) LB=6030.135957040 sum_cs=6030.135957040 vol=1.868455e+05
+  child T6 (3, 4, 7, 8) LB=955.308230241 sum_cs=955.308230241 vol=1.779310e+05
+  child T7 (3, 4, 5, 8) LB=977.502543290 sum_cs=977.502543290 vol=3.560182e+04
+  child T8 (3, 5, 7, 8) LB=3759.285139989 sum_cs=3759.285139989 vol=1.621217e+05
+next_node: (25.1745, -15.6807, 31.7675)
+selection: source=ms  rank=1  snap=interior
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: (0.332170, 0.316322, 0.063292, 0.288216)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 4 children, 20 checks, 0 inactive, 4 active
+  child T5: active  checks=5/5
+  child T6: active  checks=5/5
+  child T7: active  checks=5/5
+  child T8: active  checks=5/5
+cumulative_inactive: 0/9 simplices
+end: UB=3312.370888248  LB=113.227603847
+
+=== Iter 2 ===
+selected_simplex: T6  LB_pre=955.308230241
+  v3: (-75.0000, 75.0000, 75.0000)
+  v8: (25.1745, -15.6807, 31.7675)
+  v7: (75.0000, 75.0000, 75.0000)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=955.308230241
+children (created 2):
+  child T8 (3, 4, 7, 9) LB=956.516251448 sum_cs=956.516251448 vol=1.742904e+05
+  child T9 (3, 4, 8, 9) LB=1000.763366914 sum_cs=1000.763366914 vol=3.640523e+03
+next_node: (26.1940, -13.8254, 32.6521)
+selection: source=ms  rank=2  snap=edge
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: (0.000000, 0.979540, 0.020460, 0.000000)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T8: active  checks=5/5
+  child T9: active  checks=5/5
+cumulative_inactive: 0/10 simplices
+end: UB=3312.370888248  LB=956.516251448
+
+=== Iter 3 ===
+selected_simplex: T8  LB_pre=956.516251448
+  v3: (-75.0000, 75.0000, 75.0000)
+  v9: (26.1940, -13.8254, 32.6521)
+  v7: (75.0000, 75.0000, 75.0000)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=956.516251448
+children (created 3):
+  child T9 (4, 7, 9, 10) LB=6085.510305404 sum_cs=6085.510305404 vol=3.676046e+02
+  child T10 (3, 4, 7, 10) LB=958.422868340 sum_cs=958.422868340 vol=1.723711e+05
+  child T11 (3, 7, 9, 10) LB=3788.603105286 sum_cs=3788.603105286 vol=1.551751e+03
+next_node: (26.4151, -14.1827, 31.7830)
+selection: source=ms  rank=1  snap=face
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: (0.002109, 0.988988, 0.000000, 0.008903)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 3 children, 15 checks, 0 inactive, 3 active
+  child T9: active  checks=5/5
+  child T10: active  checks=5/5
+  child T11: active  checks=5/5
+cumulative_inactive: 0/12 simplices
+end: UB=3312.370888248  LB=958.422868340
+
+=== Iter 4 ===
+selected_simplex: T10  LB_pre=958.422868340
+  v3: (-75.0000, 75.0000, 75.0000)
+  v10: (26.4151, -14.1827, 31.7830)
+  v7: (75.0000, 75.0000, 75.0000)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=958.422868340
+children (created 2):
+  child T11 (3, 4, 7, 11) LB=959.037400573 sum_cs=959.037400573 vol=1.715468e+05
+  child T12 (3, 4, 10, 11) LB=1003.878003939 sum_cs=1003.878003939 vol=8.243143e+02
+next_node: (26.6474, -13.7562, 31.9896)
+selection: source=ms  rank=2  snap=edge
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: (-0.000000, 0.995218, 0.004782, -0.000000)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T11: active  checks=5/5
+  child T12: active  checks=5/5
+cumulative_inactive: 0/13 simplices
+end: UB=3312.370888248  LB=959.037400573
+
+=== Iter 5 ===
+selected_simplex: T11  LB_pre=959.037400573
+  v3: (-75.0000, 75.0000, 75.0000)
+  v11: (26.6474, -13.7562, 31.9896)
+  v7: (75.0000, 75.0000, 75.0000)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=959.037400573
+children (created 2):
+  child T12 (3, 4, 7, 12) LB=959.407984569 sum_cs=959.407984569 vol=1.711400e+05
+  child T13 (3, 7, 11, 12) LB=3789.724997508 sum_cs=3789.724997508 vol=4.068114e+02
+next_node: (26.7621, -13.9014, 31.7359)
+selection: source=ms  rank=1  snap=edge
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: (0.000738, 0.996892, 0.000000, 0.002370)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T12: active  checks=5/5
+  child T13: active  checks=5/5
+cumulative_inactive: 0/14 simplices
+end: UB=3312.370888248  LB=959.407984569
+
+=== Iter 6 ===
+selected_simplex: T12  LB_pre=959.407984569
+  v3: (-75.0000, 75.0000, 75.0000)
+  v12: (26.7621, -13.9014, 31.7359)
+  v7: (75.0000, 75.0000, 75.0000)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=959.407984569
+children (created 4):
+  child T13 (4, 7, 12, 13) LB=6099.347343180 sum_cs=6099.347343180 vol=1.707178e+02
+  child T14 (3, 4, 7, 13) LB=959.873348746 sum_cs=959.873348746 vol=1.708812e+05
+  child T15 (3, 4, 12, 13) LB=1004.871551456 sum_cs=1004.871551456 vol=4.278499e+01
+  child T16 (3, 7, 12, 13) LB=3788.942834871 sum_cs=3788.942834871 vol=4.521567e+01
+next_node: (26.6854, -13.8066, 31.7617)
+selection: source=ms  rank=1  snap=interior
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: (0.000748, 0.999238, 0.000000, 0.000014)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 4 children, 20 checks, 0 inactive, 4 active
+  child T13: active  checks=5/5
+  child T14: active  checks=5/5
+  child T15: active  checks=5/5
+  child T16: active  checks=5/5
+cumulative_inactive: 0/17 simplices
+end: UB=3312.370888248  LB=959.873348746
+
+=== Iter 7 ===
+selected_simplex: T14  LB_pre=959.873348746
+  v3: (-75.0000, 75.0000, 75.0000)
+  v13: (26.6854, -13.8066, 31.7617)
+  v7: (75.0000, 75.0000, 75.0000)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=959.873348746
+children (created 2):
+  child T16 (3, 4, 7, 14) LB=960.023634508 sum_cs=960.023634508 vol=1.707041e+05
+  child T17 (3, 4, 13, 14) LB=1005.328485410 sum_cs=1005.328485410 vol=1.771168e+02
+next_node: (26.7354, -13.7146, 31.8065)
+selection: source=ms  rank=2  snap=edge
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: (-0.000000, 0.998964, 0.001036, -0.000000)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T16: active  checks=5/5
+  child T17: active  checks=5/5
+cumulative_inactive: 0/18 simplices
+end: UB=3312.370888248  LB=960.023634508
+
+=== Iter 8 ===
+selected_simplex: T16  LB_pre=960.023634508
+  v3: (-75.0000, 75.0000, 75.0000)
+  v14: (26.7354, -13.7146, 31.8065)
+  v7: (75.0000, 75.0000, 75.0000)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=960.023634508
+children (created 2):
+  child T17 (4, 7, 14, 15) LB=960.205841670 sum_cs=960.205841670 vol=1.088802e+05
+  child T18 (3, 7, 14, 15) LB=1508.911863064 sum_cs=1508.911863064 vol=6.182392e+04
+next_node: (-20.6745, 20.6745, 20.6745)
+selection: source=ms  rank=3  snap=edge
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: (0.637830, 0.000000, 0.000000, 0.362170)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T17: active  checks=5/5
+  child T18: active  checks=5/5
+cumulative_inactive: 0/19 simplices
+end: UB=3312.370888248  LB=960.205841670
+
+=== Iter 9 ===
+selected_simplex: T17  LB_pre=960.205841670
+  v15: (-20.6745, 20.6745, 20.6745)
+  v14: (26.7354, -13.7146, 31.8065)
+  v7: (75.0000, 75.0000, 75.0000)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=960.205841670
+children (created 3):
+  child T18 (4, 7, 14, 16) LB=2419.752331372 sum_cs=2419.752331372 vol=7.268647e+04
+  child T19 (4, 14, 15, 16) LB=960.205842407 sum_cs=960.205842407 vol=1.113837e+04
+  child T20 (7, 14, 15, 16) LB=960.207047585 sum_cs=960.207047585 vol=2.505536e+04
+next_node: (11.1294, 4.2155, 4.2155)
+selection: source=ms  rank=5  snap=face
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: (0.667582, 0.000000, 0.102299, 0.230119)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 3 children, 15 checks, 0 inactive, 3 active
+  child T18: active  checks=5/5
+  child T19: active  checks=5/5
+  child T20: active  checks=5/5
+cumulative_inactive: 0/21 simplices
+end: UB=3312.370888248  LB=960.205842407
+
+=== Iter 10 ===
+selected_simplex: T19  LB_pre=960.205842407
+  v15: (-20.6745, 20.6745, 20.6745)
+  v14: (26.7354, -13.7146, 31.8065)
+  v16: (11.1294, 4.2155, 4.2155)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=960.205842407
+children (created 3):
+  child T20 (4, 14, 16, 17) LB=2150.961104623 sum_cs=2150.961104623 vol=4.455888e+03
+  child T21 (4, 15, 16, 17) LB=1650.110136078 sum_cs=1650.110136078 vol=4.454786e+03
+  child T22 (4, 14, 15, 17) LB=1005.660979324 sum_cs=1005.660979324 vol=2.227694e+03
+next_node: (4.6479, 3.6288, 21.8349)
+selection: source=c_s  rank=1  snap=face
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: (0.400012, 0.399913, 0.199983, 0.000092)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 3 children, 15 checks, 0 inactive, 3 active
+  child T20: active  checks=5/5
+  child T21: active  checks=5/5
+  child T22: active  checks=5/5
+cumulative_inactive: 0/23 simplices
+end: UB=3312.370888248  LB=960.207047585
+
+=== Iter 11 ===
+selected_simplex: T19  LB_pre=960.207047585
+  v15: (-20.6745, 20.6745, 20.6745)
+  v14: (26.7354, -13.7146, 31.8065)
+  v7: (75.0000, 75.0000, 75.0000)
+  v16: (11.1294, 4.2155, 4.2155)
+UB_pre=3312.370888248  LB_global_pre=960.207047585
+children (created 2):
+  child T22 (7, 14, 16, 18) LB=2385.911912616 sum_cs=2385.911912616 vol=1.252768e+04
+  child T23 (14, 15, 16, 18) LB=960.207048572 sum_cs=960.207048572 vol=1.252768e+04
+next_node: (27.1628, 47.8372, 47.8372)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T22: active  checks=5/5
+  child T23: active  checks=5/5
+cumulative_inactive: 0/24 simplices
+end: UB=3312.370888248  LB=960.207048572
+
+=== Iter 12 ===
+selected_simplex: T23  LB_pre=960.207048572
+  v15: (-20.6745, 20.6745, 20.6745)
+  v14: (26.7354, -13.7146, 31.8065)
+  v18: (27.1628, 47.8372, 47.8372)
+  v16: (11.1294, 4.2155, 4.2155)
+UB_pre=3312.370888248  LB_global_pre=960.207048572
+children (created 2):
+  child T23 (14, 15, 16, 19) LB=960.207047284 sum_cs=960.207047284 vol=6.263840e+03
+  child T24 (14, 15, 18, 19) LB=1250.020454734 sum_cs=1250.020454734 vol=6.263840e+03
+next_node: (19.1461, 26.0264, 26.0264)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T23: active  checks=5/5
+  child T24: active  checks=5/5
+cumulative_inactive: 0/25 simplices
+end: UB=3312.370888248  LB=960.207047284
+
+=== Iter 13 ===
+selected_simplex: T23  LB_pre=960.207047284
+  v15: (-20.6745, 20.6745, 20.6745)
+  v14: (26.7354, -13.7146, 31.8065)
+  v19: (19.1461, 26.0264, 26.0264)
+  v16: (11.1294, 4.2155, 4.2155)
+UB_pre=3312.370888248  LB_global_pre=960.207047284
+children (created 2):
+  child T24 (14, 16, 19, 20) LB=2151.078585356 sum_cs=2151.078585356 vol=3.131920e+03
+  child T25 (15, 16, 19, 20) LB=1809.739627877 sum_cs=1809.739627877 vol=3.131920e+03
+next_node: (3.0305, 3.4799, 26.2405)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T24: active  checks=5/5
+  child T25: active  checks=5/5
+cumulative_inactive: 0/26 simplices
+end: UB=3312.370888248  LB=977.502543290
+
+=== Iter 14 ===
+selected_simplex: T6  LB_pre=977.502543290
+  v3: (-75.0000, 75.0000, 75.0000)
+  v5: (75.0000, -75.0000, 75.0000)
+  v8: (25.1745, -15.6807, 31.7675)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=977.502543290
+children (created 3):
+  child T25 (4, 5, 8, 21) LB=6298.325731849 sum_cs=6298.325731849 vol=8.455879e+02
+  child T26 (3, 4, 8, 21) LB=977.502544000 sum_cs=977.502544000 vol=3.973110e+03
+  child T27 (3, 4, 5, 21) LB=978.546594420 sum_cs=978.546594420 vol=3.078312e+04
+next_node: (28.3557, -20.1469, 37.6190)
+selection: source=ms  rank=2  snap=face
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: (0.023751, 0.111599, 0.864650, 0.000000)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 3 children, 15 checks, 0 inactive, 3 active
+  child T25: active  checks=5/5
+  child T26: active  checks=5/5
+  child T27: active  checks=5/5
+cumulative_inactive: 0/28 simplices
+end: UB=3312.370888248  LB=977.502544000
+
+=== Iter 15 ===
+selected_simplex: T26  LB_pre=977.502544000
+  v3: (-75.0000, 75.0000, 75.0000)
+  v21: (28.3557, -20.1469, 37.6190)
+  v8: (25.1745, -15.6807, 31.7675)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=977.502544000
+children (created 2):
+  child T27 (4, 8, 21, 22) LB=977.502543766 sum_cs=977.502543766 vol=2.544685e+03
+  child T28 (3, 8, 21, 22) LB=1530.289080006 sum_cs=1530.289080006 vol=1.428425e+03
+next_node: (-21.0715, 21.0715, 21.0715)
+selection: source=ms  rank=4  snap=edge
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: (0.640477, -0.000000, 0.000000, 0.359523)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T27: active  checks=5/5
+  child T28: active  checks=5/5
+cumulative_inactive: 0/29 simplices
+end: UB=3312.370888248  LB=977.502543766
+
+=== Iter 16 ===
+selected_simplex: T27  LB_pre=977.502543766
+  v22: (-21.0715, 21.0715, 21.0715)
+  v21: (28.3557, -20.1469, 37.6190)
+  v8: (25.1745, -15.6807, 31.7675)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=977.502543766
+children (created 2):
+  child T28 (4, 8, 21, 23) LB=2144.970559742 sum_cs=2144.970559742 vol=1.944217e+03
+  child T29 (8, 21, 22, 23) LB=977.502544417 sum_cs=977.502544417 vol=6.004682e+02
+next_node: (1.5984, -1.5984, -1.5984)
+selection: source=ms  rank=5  snap=edge
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: (0.764030, 0.000000, -0.000000, 0.235970)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T28: active  checks=5/5
+  child T29: active  checks=5/5
+cumulative_inactive: 0/30 simplices
+end: UB=3312.370888248  LB=977.502544417
+
+=== Iter 17 ===
+selected_simplex: T29  LB_pre=977.502544417
+  v22: (-21.0715, 21.0715, 21.0715)
+  v21: (28.3557, -20.1469, 37.6190)
+  v8: (25.1745, -15.6807, 31.7675)
+  v23: (1.5984, -1.5984, -1.5984)
+UB_pre=3312.370888248  LB_global_pre=977.502544417
+children (created 4):
+  child T29 (8, 21, 23, 24) LB=2048.650167732 sum_cs=2048.650167732 vol=2.380867e+02
+  child T30 (8, 22, 23, 24) LB=1002.302824094 sum_cs=1002.302824094 vol=1.201322e+02
+  child T31 (21, 22, 23, 24) LB=978.537379998 sum_cs=978.537379998 vol=1.200465e+02
+  child T32 (8, 21, 22, 24) LB=1466.952397721 sum_cs=1466.952397721 vol=1.222028e+02
+next_node: (2.6763, 0.8640, 21.9068)
+selection: source=c_s  rank=1  snap=interior
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: (0.396502, 0.200064, 0.199922, 0.203512)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 4 children, 20 checks, 0 inactive, 4 active
+  child T29: active  checks=5/5
+  child T30: active  checks=5/5
+  child T31: active  checks=5/5
+  child T32: active  checks=5/5
+cumulative_inactive: 0/33 simplices
+end: UB=3312.370888248  LB=978.537379998
+
+=== Iter 18 ===
+selected_simplex: T31  LB_pre=978.537379998
+  v22: (-21.0715, 21.0715, 21.0715)
+  v21: (28.3557, -20.1469, 37.6190)
+  v24: (2.6763, 0.8640, 21.9068)
+  v23: (1.5984, -1.5984, -1.5984)
+UB_pre=3312.370888248  LB_global_pre=978.537379998
+children (created 3):
+  child T32 (22, 23, 24, 25) LB=1005.954010980 sum_cs=1005.954010980 vol=1.001293e+02
+  child T33 (21, 22, 23, 25) LB=978.537380469 sum_cs=978.537380469 vol=2.790427e+00
+  child T34 (21, 22, 24, 25) LB=1467.987233191 sum_cs=1467.987233191 vol=1.712680e+01
+next_node: (23.9414, -17.0122, 31.6587)
+selection: source=ms  rank=1  snap=face
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: (0.000000, 0.834087, 0.023245, 0.142668)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 3 children, 15 checks, 0 inactive, 3 active
+  child T32: active  checks=5/5
+  child T33: active  checks=5/5
+  child T34: active  checks=5/5
+cumulative_inactive: 0/35 simplices
+end: UB=3312.370888248  LB=978.537380469
+
+=== Iter 19 ===
+selected_simplex: T33  LB_pre=978.537380469
+  v22: (-21.0715, 21.0715, 21.0715)
+  v21: (28.3557, -20.1469, 37.6190)
+  v25: (23.9414, -17.0122, 31.6587)
+  v23: (1.5984, -1.5984, -1.5984)
+UB_pre=3312.370888248  LB_global_pre=978.537380469
+children (created 4):
+  child T34 (21, 23, 25, 26) LB=2048.318732180 sum_cs=2048.318732180 vol=1.106389e+00
+  child T35 (22, 23, 25, 26) LB=1005.954011033 sum_cs=1005.954011033 vol=5.591538e-01
+  child T36 (21, 22, 23, 26) LB=978.546554298 sum_cs=978.546554298 vol=5.568158e-01
+  child T37 (21, 22, 25, 26) LB=1472.037643737 sum_cs=1472.037643737 vol=5.680680e-01
+next_node: (2.4300, 0.5975, 21.8849)
+selection: source=c_s  rank=1  snap=interior
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: (0.396495, 0.200383, 0.199545, 0.203577)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 4 children, 20 checks, 0 inactive, 4 active
+  child T34: active  checks=5/5
+  child T35: active  checks=5/5
+  child T36: active  checks=5/5
+  child T37: active  checks=5/5
+cumulative_inactive: 0/38 simplices
+end: UB=3312.370888248  LB=978.546554298
+
+=== Iter 20 ===
+selected_simplex: T36  LB_pre=978.546554298
+  v22: (-21.0715, 21.0715, 21.0715)
+  v21: (28.3557, -20.1469, 37.6190)
+  v26: (2.4300, 0.5975, 21.8849)
+  v23: (1.5984, -1.5984, -1.5984)
+UB_pre=3312.370888248  LB_global_pre=978.546554298
+children (created 2):
+  child T37 (22, 23, 26, 27) LB=1166.031566619 sum_cs=1166.031566619 vol=2.784079e-01
+  child T38 (21, 22, 23, 27) LB=978.546553919 sum_cs=978.546553919 vol=2.784079e-01
+next_node: (15.3929, -9.7747, 29.7520)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T37: active  checks=5/5
+  child T38: active  checks=5/5
+cumulative_inactive: 0/39 simplices
+end: UB=3312.370888248  LB=978.546553919
+
+=== Iter 21 ===
+selected_simplex: T38  LB_pre=978.546553919
+  v22: (-21.0715, 21.0715, 21.0715)
+  v21: (28.3557, -20.1469, 37.6190)
+  v27: (15.3929, -9.7747, 29.7520)
+  v23: (1.5984, -1.5984, -1.5984)
+UB_pre=3312.370888248  LB_global_pre=978.546553919
+children (created 2):
+  child T38 (21, 23, 27, 28) LB=2075.352997102 sum_cs=2075.352997102 vol=1.392039e-01
+  child T39 (22, 23, 27, 28) LB=1166.031566033 sum_cs=1166.031566033 vol=1.392039e-01
+next_node: (3.6421, 0.4623, 29.3453)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T38: active  checks=5/5
+  child T39: active  checks=5/5
+cumulative_inactive: 0/40 simplices
+end: UB=3312.370888248  LB=978.546594420
+
+=== Iter 22 ===
+selected_simplex: T26  LB_pre=978.546594420
+  v3: (-75.0000, 75.0000, 75.0000)
+  v5: (75.0000, -75.0000, 75.0000)
+  v21: (28.3557, -20.1469, 37.6190)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=978.546594420
+children (created 2):
+  child T39 (4, 5, 21, 29) LB=1985.845892741 sum_cs=1985.845892741 vol=1.539156e+04
+  child T40 (3, 5, 21, 29) LB=981.504211767 sum_cs=981.504211767 vol=1.539156e+04
+next_node: (0.0000, 0.0000, 0.0000)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T39: active  checks=5/5
+  child T40: active  checks=5/5
+cumulative_inactive: 0/41 simplices
+end: UB=3312.370888248  LB=981.504211767
+
+=== Iter 23 ===
+selected_simplex: T40  LB_pre=981.504211767
+  v3: (-75.0000, 75.0000, 75.0000)
+  v5: (75.0000, -75.0000, 75.0000)
+  v21: (28.3557, -20.1469, 37.6190)
+  v29: (0.0000, 0.0000, 0.0000)
+UB_pre=3312.370888248  LB_global_pre=981.504211767
+children (created 3):
+  child T40 (5, 21, 29, 30) LB=1954.580446644 sum_cs=1954.580446644 vol=1.713470e+03
+  child T41 (3, 5, 29, 30) LB=1005.578986395 sum_cs=1005.578986395 vol=5.673131e+03
+  child T42 (3, 5, 21, 30) LB=2098.546089254 sum_cs=2098.546089254 vol=8.004960e+03
+next_node: (2.1022, 0.9235, 22.2153)
+selection: source=c_s  rank=1  snap=face
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: (0.111325, 0.000003, 0.368586, 0.520086)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 3 children, 15 checks, 0 inactive, 3 active
+  child T40: active  checks=5/5
+  child T41: active  checks=5/5
+  child T42: active  checks=5/5
+cumulative_inactive: 0/43 simplices
+end: UB=3312.370888248  LB=1000.763366914
+
+=== Iter 24 ===
+selected_simplex: T7  LB_pre=1000.763366914
+  v3: (-75.0000, 75.0000, 75.0000)
+  v8: (25.1745, -15.6807, 31.7675)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1000.763366914
+children (created 4):
+  child T42 (4, 8, 9, 31) LB=2476.576194360 sum_cs=2476.576194360 vol=1.287042e+03
+  child T43 (3, 4, 9, 31) LB=1001.968338321 sum_cs=1001.968338321 vol=7.281832e+02
+  child T44 (3, 4, 8, 31) LB=1002.302823502 sum_cs=1002.302823502 vol=7.280083e+02
+  child T45 (3, 8, 9, 31) LB=1996.059631465 sum_cs=1996.059631465 vol=8.972895e+02
+next_node: (2.2441, 2.1283, 20.9132)
+selection: source=c_s  rank=1  snap=interior
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: (0.353532, 0.200022, 0.199974, 0.246473)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 4 children, 20 checks, 0 inactive, 4 active
+  child T42: active  checks=5/5
+  child T43: active  checks=5/5
+  child T44: active  checks=5/5
+  child T45: active  checks=5/5
+cumulative_inactive: 0/46 simplices
+end: UB=3312.370888248  LB=1001.968338321
+
+=== Iter 25 ===
+selected_simplex: T43  LB_pre=1001.968338321
+  v3: (-75.0000, 75.0000, 75.0000)
+  v31: (2.2441, 2.1283, 20.9132)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1001.968338321
+children (created 4):
+  child T45 (4, 9, 31, 32) LB=2469.868170251 sum_cs=2469.868170251 vol=2.574347e+02
+  child T46 (3, 4, 9, 32) LB=1001.971384245 sum_cs=1001.971384245 vol=9.714930e-01
+  child T47 (3, 4, 31, 32) LB=1754.557317709 sum_cs=1754.557317709 vol=2.892135e+02
+  child T48 (3, 9, 31, 32) LB=1988.500437776 sum_cs=1988.500437776 vol=1.805635e+02
+next_node: (2.4891, 2.4292, 20.9138)
+selection: source=c_s  rank=1  snap=interior
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: (0.353530, 0.001334, 0.397171, 0.247964)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 4 children, 20 checks, 0 inactive, 4 active
+  child T45: active  checks=5/5
+  child T46: active  checks=5/5
+  child T47: active  checks=5/5
+  child T48: active  checks=5/5
+cumulative_inactive: 0/49 simplices
+end: UB=3312.370888248  LB=1001.971384245
+
+=== Iter 26 ===
+selected_simplex: T46  LB_pre=1001.971384245
+  v3: (-75.0000, 75.0000, 75.0000)
+  v32: (2.4891, 2.4292, 20.9138)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1001.971384245
+children (created 2):
+  child T48 (3, 4, 9, 33) LB=1001.971383967 sum_cs=1001.971383967 vol=4.857465e-01
+  child T49 (3, 9, 32, 33) LB=1240.330190608 sum_cs=1240.330190608 vol=4.857465e-01
+next_node: (38.7445, -36.2854, -27.0431)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T48: active  checks=5/5
+  child T49: active  checks=5/5
+cumulative_inactive: 0/50 simplices
+end: UB=3312.370888248  LB=1001.971383967
+
+=== Iter 27 ===
+selected_simplex: T48  LB_pre=1001.971383967
+  v3: (-75.0000, 75.0000, 75.0000)
+  v33: (38.7445, -36.2854, -27.0431)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1001.971383967
+children (created 2):
+  child T49 (4, 9, 33, 34) LB=1181.835187299 sum_cs=1181.835187299 vol=2.428733e-01
+  child T50 (3, 4, 9, 34) LB=1001.971387607 sum_cs=1001.971387607 vol=2.428733e-01
+next_node: (-18.1277, 19.3573, 23.9785)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T49: active  checks=5/5
+  child T50: active  checks=5/5
+cumulative_inactive: 0/51 simplices
+end: UB=3312.370888248  LB=1001.971387607
+
+=== Iter 28 ===
+selected_simplex: T50  LB_pre=1001.971387607
+  v3: (-75.0000, 75.0000, 75.0000)
+  v34: (-18.1277, 19.3573, 23.9785)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1001.971387607
+children (created 2):
+  child T50 (3, 4, 9, 35) LB=1001.971387775 sum_cs=1001.971387775 vol=1.214366e-01
+  child T51 (3, 9, 34, 35) LB=1060.153702134 sum_cs=1060.153702134 vol=1.214366e-01
+next_node: (28.4361, -27.8213, -25.5108)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T50: active  checks=5/5
+  child T51: active  checks=5/5
+cumulative_inactive: 0/52 simplices
+end: UB=3312.370888248  LB=1001.971387775
+
+=== Iter 29 ===
+selected_simplex: T50  LB_pre=1001.971387775
+  v3: (-75.0000, 75.0000, 75.0000)
+  v35: (28.4361, -27.8213, -25.5108)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1001.971387775
+children (created 2):
+  child T51 (4, 9, 35, 36) LB=1041.812971197 sum_cs=1041.812971197 vol=6.071831e-02
+  child T52 (3, 4, 9, 36) LB=1001.971387757 sum_cs=1001.971387757 vol=6.071831e-02
+next_node: (-23.2819, 23.5893, 24.7446)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T51: active  checks=5/5
+  child T52: active  checks=5/5
+cumulative_inactive: 0/53 simplices
+end: UB=3312.370888248  LB=1001.971387757
+
+=== Iter 30 ===
+selected_simplex: T52  LB_pre=1001.971387757
+  v3: (-75.0000, 75.0000, 75.0000)
+  v36: (-23.2819, 23.5893, 24.7446)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1001.971387757
+children (created 2):
+  child T52 (3, 4, 9, 37) LB=1001.971388776 sum_cs=1001.971388776 vol=3.035916e-02
+  child T53 (3, 9, 36, 37) LB=1016.455566776 sum_cs=1016.455566776 vol=3.035916e-02
+next_node: (25.8590, -25.7053, -25.1277)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T52: active  checks=5/5
+  child T53: active  checks=5/5
+cumulative_inactive: 0/54 simplices
+end: UB=3312.370888248  LB=1001.971388776
+
+=== Iter 31 ===
+selected_simplex: T52  LB_pre=1001.971388776
+  v3: (-75.0000, 75.0000, 75.0000)
+  v37: (25.8590, -25.7053, -25.1277)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1001.971388776
+children (created 2):
+  child T53 (4, 9, 37, 38) LB=1011.658378023 sum_cs=1011.658378023 vol=1.517958e-02
+  child T54 (3, 4, 9, 38) LB=1001.971387815 sum_cs=1001.971387815 vol=1.517958e-02
+next_node: (-24.5705, 24.6473, 24.9362)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T53: active  checks=5/5
+  child T54: active  checks=5/5
+cumulative_inactive: 0/55 simplices
+end: UB=3312.370888248  LB=1001.971387815
+
+=== Iter 32 ===
+selected_simplex: T54  LB_pre=1001.971387815
+  v3: (-75.0000, 75.0000, 75.0000)
+  v38: (-24.5705, 24.6473, 24.9362)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1001.971387815
+children (created 2):
+  child T54 (3, 4, 9, 39) LB=1001.971387735 sum_cs=1001.971387735 vol=7.589789e-03
+  child T55 (3, 9, 38, 39) LB=1005.613438947 sum_cs=1005.613438947 vol=7.589789e-03
+next_node: (25.2148, -25.1763, -25.0319)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T54: active  checks=5/5
+  child T55: active  checks=5/5
+cumulative_inactive: 0/56 simplices
+end: UB=3312.370888248  LB=1001.971387735
+
+=== Iter 33 ===
+selected_simplex: T54  LB_pre=1001.971387735
+  v3: (-75.0000, 75.0000, 75.0000)
+  v39: (25.2148, -25.1763, -25.0319)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1001.971387735
+children (created 2):
+  child T55 (4, 9, 39, 40) LB=1004.376346220 sum_cs=1004.376346220 vol=3.794895e-03
+  child T56 (3, 4, 9, 40) LB=1001.971387779 sum_cs=1001.971387779 vol=3.794895e-03
+next_node: (-24.8926, 24.9118, 24.9840)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T55: active  checks=5/5
+  child T56: active  checks=5/5
+cumulative_inactive: 0/57 simplices
+end: UB=3312.370888248  LB=1001.971387779
+
+=== Iter 34 ===
+selected_simplex: T56  LB_pre=1001.971387779
+  v3: (-75.0000, 75.0000, 75.0000)
+  v40: (-24.8926, 24.9118, 24.9840)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1001.971387779
+children (created 2):
+  child T56 (3, 4, 9, 41) LB=1001.971387779 sum_cs=1001.971387779 vol=1.897447e-03
+  child T57 (3, 9, 40, 41) LB=1002.908694007 sum_cs=1002.908694007 vol=1.897447e-03
+next_node: (25.0537, -25.0441, -25.0080)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T56: active  checks=5/5
+  child T57: active  checks=5/5
+cumulative_inactive: 0/58 simplices
+end: UB=3312.370888248  LB=1001.971387779
+
+=== Iter 35 ===
+selected_simplex: T56  LB_pre=1001.971387779
+  v3: (-75.0000, 75.0000, 75.0000)
+  v41: (25.0537, -25.0441, -25.0080)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1001.971387779
+children (created 2):
+  child T57 (4, 9, 41, 42) LB=1002.571583532 sum_cs=1002.571583532 vol=9.487236e-04
+  child T58 (3, 4, 9, 42) LB=1001.971387816 sum_cs=1001.971387816 vol=9.487237e-04
+next_node: (-24.9732, 24.9780, 24.9960)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T57: active  checks=5/5
+  child T58: active  checks=5/5
+cumulative_inactive: 0/59 simplices
+end: UB=3312.370888248  LB=1001.971387816
+
+=== Iter 36 ===
+selected_simplex: T58  LB_pre=1001.971387816
+  v3: (-75.0000, 75.0000, 75.0000)
+  v42: (-24.9732, 24.9780, 24.9960)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1001.971387816
+children (created 2):
+  child T58 (4, 9, 42, 43) LB=1002.571582625 sum_cs=1002.571582625 vol=4.743618e-04
+  child T59 (3, 4, 42, 43) LB=1814.569997780 sum_cs=1814.569997780 vol=4.743618e-04
+next_node: (-24.4030, 30.5873, 53.8260)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T58: active  checks=5/5
+  child T59: active  checks=5/5
+cumulative_inactive: 0/60 simplices
+end: UB=3312.370888248  LB=1002.302823502
+
+=== Iter 37 ===
+selected_simplex: T43  LB_pre=1002.302823502
+  v3: (-75.0000, 75.0000, 75.0000)
+  v8: (25.1745, -15.6807, 31.7675)
+  v31: (2.2441, 2.1283, 20.9132)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.302823502
+children (created 3):
+  child T59 (4, 8, 31, 44) LB=2477.473259722 sum_cs=2477.473259722 vol=2.573744e+02
+  child T60 (3, 4, 31, 44) LB=1755.916466809 sum_cs=1755.916466809 vol=2.912000e+02
+  child T61 (3, 8, 31, 44) LB=1988.551529693 sum_cs=1988.551529693 vol=1.794339e+02
+next_node: (2.0402, 1.7573, 20.7364)
+selection: source=c_s  rank=1  snap=face
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: (0.353532, 0.399995, 0.000001, 0.246472)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 3 children, 15 checks, 0 inactive, 3 active
+  child T59: active  checks=5/5
+  child T60: active  checks=5/5
+  child T61: active  checks=5/5
+cumulative_inactive: 0/62 simplices
+end: UB=3312.370888248  LB=1002.302824094
+
+=== Iter 38 ===
+selected_simplex: T28  LB_pre=1002.302824094
+  v22: (-21.0715, 21.0715, 21.0715)
+  v24: (2.6763, 0.8640, 21.9068)
+  v8: (25.1745, -15.6807, 31.7675)
+  v23: (1.5984, -1.5984, -1.5984)
+UB_pre=3312.370888248  LB_global_pre=1002.302824094
+children (created 2):
+  child T61 (8, 23, 24, 45) LB=2032.675403077 sum_cs=2032.675403077 vol=6.006610e+01
+  child T62 (22, 23, 24, 45) LB=1847.760530937 sum_cs=1847.760530937 vol=6.006610e+01
+next_node: (2.0515, 2.6954, 26.4195)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T61: active  checks=5/5
+  child T62: active  checks=5/5
+cumulative_inactive: 0/63 simplices
+end: UB=3312.370888248  LB=1002.571582625
+
+=== Iter 39 ===
+selected_simplex: T56  LB_pre=1002.571582625
+  v43: (-24.4030, 30.5873, 53.8260)
+  v42: (-24.9732, 24.9780, 24.9960)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582625
+children (created 2):
+  child T62 (4, 9, 42, 46) LB=1002.571582769 sum_cs=1002.571582769 vol=2.371809e-04
+  child T63 (9, 42, 43, 46) LB=1151.841172086 sum_cs=1151.841172086 vol=2.371809e-04
+next_node: (25.2985, -22.2063, -10.5870)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T62: active  checks=5/5
+  child T63: active  checks=5/5
+cumulative_inactive: 0/64 simplices
+end: UB=3312.370888248  LB=1002.571582769
+
+=== Iter 40 ===
+selected_simplex: T62  LB_pre=1002.571582769
+  v46: (25.2985, -22.2063, -10.5870)
+  v42: (-24.9732, 24.9780, 24.9960)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582769
+children (created 2):
+  child T63 (4, 42, 46, 47) LB=2055.844927696 sum_cs=2055.844927696 vol=1.185905e-04
+  child T64 (9, 42, 46, 47) LB=1151.804918714 sum_cs=1151.804918714 vol=1.185905e-04
+next_node: (50.5970, -44.4127, -21.1740)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T63: active  checks=5/5
+  child T64: active  checks=5/5
+cumulative_inactive: 0/65 simplices
+end: UB=3312.370888248  LB=1002.571583532
+
+=== Iter 41 ===
+selected_simplex: T55  LB_pre=1002.571583532
+  v42: (-24.9732, 24.9780, 24.9960)
+  v41: (25.0537, -25.0441, -25.0080)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571583532
+children (created 2):
+  child T64 (4, 9, 42, 48) LB=1002.571583222 sum_cs=1002.571583222 vol=4.743618e-04
+  child T65 (9, 41, 42, 48) LB=1002.671984530 sum_cs=1002.671984530 vol=4.743618e-04
+next_node: (50.0268, -50.0220, -50.0040)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T64: active  checks=5/5
+  child T65: active  checks=5/5
+cumulative_inactive: 0/66 simplices
+end: UB=3312.370888248  LB=1002.571583222
+
+=== Iter 42 ===
+selected_simplex: T64  LB_pre=1002.571583222
+  v42: (-24.9732, 24.9780, 24.9960)
+  v48: (50.0268, -50.0220, -50.0040)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571583222
+children (created 2):
+  child T65 (4, 9, 48, 49) LB=3706.007725057 sum_cs=3706.007725057 vol=2.371809e-04
+  child T66 (4, 9, 42, 49) LB=1002.571583353 sum_cs=1002.571583353 vol=2.371809e-04
+next_node: (12.5268, -12.5220, -12.5040)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T65: active  checks=5/5
+  child T66: active  checks=5/5
+cumulative_inactive: 0/67 simplices
+end: UB=3312.370888248  LB=1002.571583353
+
+=== Iter 43 ===
+selected_simplex: T66  LB_pre=1002.571583353
+  v42: (-24.9732, 24.9780, 24.9960)
+  v49: (12.5268, -12.5220, -12.5040)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571583353
+children (created 2):
+  child T66 (4, 9, 42, 50) LB=1002.571582767 sum_cs=1002.571582767 vol=1.185905e-04
+  child T67 (9, 42, 49, 50) LB=1002.599205601 sum_cs=1002.599205601 vol=1.185905e-04
+next_node: (43.7634, -43.7610, -43.7520)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T66: active  checks=5/5
+  child T67: active  checks=5/5
+cumulative_inactive: 0/68 simplices
+end: UB=3312.370888248  LB=1002.571582767
+
+=== Iter 44 ===
+selected_simplex: T66  LB_pre=1002.571582767
+  v42: (-24.9732, 24.9780, 24.9960)
+  v50: (43.7634, -43.7610, -43.7520)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582767
+children (created 2):
+  child T67 (4, 9, 50, 51) LB=3194.496169394 sum_cs=3194.496169394 vol=5.929523e-05
+  child T68 (4, 9, 42, 51) LB=1002.571582900 sum_cs=1002.571582900 vol=5.929523e-05
+next_node: (9.3951, -9.3915, -9.3780)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T67: active  checks=5/5
+  child T68: active  checks=5/5
+cumulative_inactive: 0/69 simplices
+end: UB=3312.370888248  LB=1002.571582900
+
+=== Iter 45 ===
+selected_simplex: T68  LB_pre=1002.571582900
+  v42: (-24.9732, 24.9780, 24.9960)
+  v51: (9.3951, -9.3915, -9.3780)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582900
+children (created 2):
+  child T68 (4, 9, 42, 52) LB=1002.571582574 sum_cs=1002.571582574 vol=2.964763e-05
+  child T69 (9, 42, 51, 52) LB=1002.579254520 sum_cs=1002.579254520 vol=2.964761e-05
+next_node: (42.1976, -42.1958, -42.1890)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T68: active  checks=5/5
+  child T69: active  checks=5/5
+cumulative_inactive: 0/70 simplices
+end: UB=3312.370888248  LB=1002.571582574
+
+=== Iter 46 ===
+selected_simplex: T68  LB_pre=1002.571582574
+  v42: (-24.9732, 24.9780, 24.9960)
+  v52: (42.1976, -42.1958, -42.1890)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582574
+children (created 2):
+  child T69 (4, 9, 52, 53) LB=3071.834250106 sum_cs=3071.834250106 vol=1.482380e-05
+  child T70 (4, 9, 42, 53) LB=1002.571582686 sum_cs=1002.571582686 vol=1.482381e-05
+next_node: (8.6122, -8.6089, -8.5965)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T69: active  checks=5/5
+  child T70: active  checks=5/5
+cumulative_inactive: 0/71 simplices
+end: UB=3312.370888248  LB=1002.571582686
+
+=== Iter 47 ===
+selected_simplex: T70  LB_pre=1002.571582686
+  v42: (-24.9732, 24.9780, 24.9960)
+  v53: (8.6122, -8.6089, -8.5965)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582686
+children (created 2):
+  child T70 (4, 9, 42, 54) LB=1002.571582594 sum_cs=1002.571582594 vol=7.411902e-06
+  child T71 (9, 42, 53, 54) LB=1002.574156674 sum_cs=1002.574156674 vol=7.411909e-06
+next_node: (41.8061, -41.8045, -41.7982)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T70: active  checks=5/5
+  child T71: active  checks=5/5
+cumulative_inactive: 0/72 simplices
+end: UB=3312.370888248  LB=1002.571582594
+
+=== Iter 48 ===
+selected_simplex: T70  LB_pre=1002.571582594
+  v42: (-24.9732, 24.9780, 24.9960)
+  v54: (41.8061, -41.8045, -41.7982)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582594
+children (created 2):
+  child T71 (4, 9, 54, 55) LB=3041.858812940 sum_cs=3041.858812940 vol=3.705951e-06
+  child T72 (4, 9, 42, 55) LB=1002.571582562 sum_cs=1002.571582562 vol=3.705951e-06
+next_node: (8.4165, -8.4132, -8.4011)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T71: active  checks=5/5
+  child T72: active  checks=5/5
+cumulative_inactive: 0/73 simplices
+end: UB=3312.370888248  LB=1002.571582562
+
+=== Iter 49 ===
+selected_simplex: T72  LB_pre=1002.571582562
+  v42: (-24.9732, 24.9780, 24.9960)
+  v55: (8.4165, -8.4132, -8.4011)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582562
+children (created 2):
+  child T72 (4, 9, 42, 56) LB=1002.571582625 sum_cs=1002.571582625 vol=1.852963e-06
+  child T73 (9, 42, 55, 56) LB=1002.572875275 sum_cs=1002.572875275 vol=1.852978e-06
+next_node: (41.7082, -41.7066, -41.7006)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T72: active  checks=5/5
+  child T73: active  checks=5/5
+cumulative_inactive: 0/74 simplices
+end: UB=3312.370888248  LB=1002.571582625
+
+=== Iter 50 ===
+selected_simplex: T72  LB_pre=1002.571582625
+  v42: (-24.9732, 24.9780, 24.9960)
+  v56: (41.7082, -41.7066, -41.7006)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582625
+children (created 2):
+  child T73 (4, 9, 42, 57) LB=1002.571582659 sum_cs=1002.571582659 vol=9.265010e-07
+  child T74 (4, 42, 56, 57) LB=1825.062922424 sum_cs=1825.062922424 vol=9.264865e-07
+next_node: (33.9511, -27.7660, -4.5242)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T73: active  checks=5/5
+  child T74: active  checks=5/5
+cumulative_inactive: 0/75 simplices
+end: UB=3312.370888248  LB=1002.571582659
+
+=== Iter 51 ===
+selected_simplex: T73  LB_pre=1002.571582659
+  v42: (-24.9732, 24.9780, 24.9960)
+  v57: (33.9511, -27.7660, -4.5242)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582659
+children (created 2):
+  child T74 (4, 9, 42, 58) LB=1002.571582588 sum_cs=1002.571582588 vol=4.632360e-07
+  child T75 (9, 42, 57, 58) LB=1092.148380039 sum_cs=1092.148380039 vol=4.632505e-07
+next_node: (54.4756, -51.3830, -39.7621)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T74: active  checks=5/5
+  child T75: active  checks=5/5
+cumulative_inactive: 0/76 simplices
+end: UB=3312.370888248  LB=1002.571582588
+
+=== Iter 52 ===
+selected_simplex: T74  LB_pre=1002.571582588
+  v42: (-24.9732, 24.9780, 24.9960)
+  v58: (54.4756, -51.3830, -39.7621)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582588
+children (created 2):
+  child T75 (4, 9, 58, 59) LB=3875.400125847 sum_cs=3875.400125847 vol=2.316253e-07
+  child T76 (4, 9, 42, 59) LB=1002.571583111 sum_cs=1002.571583111 vol=2.316180e-07
+next_node: (14.7512, -13.2025, -7.3831)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T75: active  checks=5/5
+  child T76: active  checks=5/5
+cumulative_inactive: 0/77 simplices
+end: UB=3312.370888248  LB=1002.571583111
+
+=== Iter 53 ===
+selected_simplex: T76  LB_pre=1002.571583111
+  v42: (-24.9732, 24.9780, 24.9960)
+  v59: (14.7512, -13.2025, -7.3831)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571583111
+children (created 2):
+  child T76 (4, 9, 42, 60) LB=1002.571582599 sum_cs=1002.571582599 vol=1.158041e-07
+  child T77 (9, 42, 59, 60) LB=1026.347828089 sum_cs=1026.347828089 vol=1.158017e-07
+next_node: (44.8756, -44.1013, -41.1915)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T76: active  checks=5/5
+  child T77: active  checks=5/5
+cumulative_inactive: 0/78 simplices
+end: UB=3312.370888248  LB=1002.571582599
+
+=== Iter 54 ===
+selected_simplex: T76  LB_pre=1002.571582599
+  v42: (-24.9732, 24.9780, 24.9960)
+  v60: (44.8756, -44.1013, -41.1915)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582599
+children (created 2):
+  child T77 (4, 9, 60, 61) LB=3229.350721771 sum_cs=3229.350721771 vol=5.790692e-08
+  child T78 (4, 9, 42, 61) LB=1002.571583922 sum_cs=1002.571583922 vol=5.790207e-08
+next_node: (9.9512, -9.5617, -8.0978)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T77: active  checks=5/5
+  child T78: active  checks=5/5
+cumulative_inactive: 0/79 simplices
+end: UB=3312.370888248  LB=1002.571583922
+
+=== Iter 55 ===
+selected_simplex: T78  LB_pre=1002.571583922
+  v42: (-24.9732, 24.9780, 24.9960)
+  v61: (9.9512, -9.5617, -8.0978)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571583922
+children (created 2):
+  child T78 (4, 9, 42, 62) LB=1002.571582604 sum_cs=1002.571582604 vol=2.894861e-08
+  child T79 (9, 42, 61, 62) LB=1008.600919167 sum_cs=1008.600919167 vol=2.894861e-08
+next_node: (42.4756, -42.2808, -41.5489)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T78: active  checks=5/5
+  child T79: active  checks=5/5
+cumulative_inactive: 0/80 simplices
+end: UB=3312.370888248  LB=1002.571582604
+
+=== Iter 56 ===
+selected_simplex: T78  LB_pre=1002.571582604
+  v42: (-24.9732, 24.9780, 24.9960)
+  v62: (42.4756, -42.2808, -41.5489)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582604
+children (created 2):
+  child T79 (4, 9, 62, 63) LB=3080.365734715 sum_cs=3080.365734715 vol=1.447916e-08
+  child T80 (4, 9, 42, 63) LB=1002.571582594 sum_cs=1002.571582594 vol=1.447431e-08
+next_node: (8.7512, -8.6514, -8.2764)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T79: active  checks=5/5
+  child T80: active  checks=5/5
+cumulative_inactive: 0/81 simplices
+end: UB=3312.370888248  LB=1002.571582594
+
+=== Iter 57 ===
+selected_simplex: T80  LB_pre=1002.571582594
+  v42: (-24.9732, 24.9780, 24.9960)
+  v63: (8.7512, -8.6514, -8.2764)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582594
+children (created 2):
+  child T80 (4, 9, 42, 64) LB=1002.571582593 sum_cs=1002.571582593 vol=7.227451e-09
+  child T81 (9, 42, 63, 64) LB=1004.084798823 sum_cs=1004.084798823 vol=7.244428e-09
+next_node: (41.8756, -41.8257, -41.6382)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T80: active  checks=5/5
+  child T81: active  checks=5/5
+cumulative_inactive: 0/82 simplices
+end: UB=3312.370888248  LB=1002.571582593
+
+=== Iter 58 ===
+selected_simplex: T80  LB_pre=1002.571582593
+  v42: (-24.9732, 24.9780, 24.9960)
+  v64: (41.8756, -41.8257, -41.6382)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582593
+children (created 2):
+  child T81 (4, 9, 42, 65) LB=1002.571582659 sum_cs=1002.571582659 vol=3.608875e-09
+  child T82 (4, 42, 64, 65) LB=1822.480710158 sum_cs=1822.480710158 vol=3.623427e-09
+next_node: (34.0348, -27.8255, -4.4931)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T81: active  checks=5/5
+  child T82: active  checks=5/5
+cumulative_inactive: 0/83 simplices
+end: UB=3312.370888248  LB=1002.571582659
+
+=== Iter 59 ===
+selected_simplex: T81  LB_pre=1002.571582659
+  v42: (-24.9732, 24.9780, 24.9960)
+  v65: (34.0348, -27.8255, -4.4931)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582659
+children (created 2):
+  child T82 (4, 9, 65, 66) LB=2480.427739881 sum_cs=2480.427739881 vol=1.806863e-09
+  child T83 (4, 9, 42, 66) LB=1002.571582626 sum_cs=1002.571582626 vol=1.804437e-09
+next_node: (4.5308, -1.4238, 10.2515)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T82: active  checks=5/5
+  child T83: active  checks=5/5
+cumulative_inactive: 0/84 simplices
+end: UB=3312.370888248  LB=1002.571582626
+
+=== Iter 60 ===
+selected_simplex: T83  LB_pre=1002.571582626
+  v42: (-24.9732, 24.9780, 24.9960)
+  v66: (4.5308, -1.4238, 10.2515)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582626
+children (created 2):
+  child T83 (4, 9, 42, 67) LB=1002.571582725 sum_cs=1002.571582725 vol=9.216213e-10
+  child T84 (9, 42, 66, 67) LB=1055.770333345 sum_cs=1055.770333345 vol=8.997934e-10
+next_node: (39.7654, -38.2119, -32.3743)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T83: active  checks=5/5
+  child T84: active  checks=5/5
+cumulative_inactive: 0/85 simplices
+end: UB=3312.370888248  LB=1002.571582725
+
+=== Iter 61 ===
+selected_simplex: T83  LB_pre=1002.571582725
+  v42: (-24.9732, 24.9780, 24.9960)
+  v67: (39.7654, -38.2119, -32.3743)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582725
+children (created 2):
+  child T84 (4, 9, 67, 68) LB=2815.951927023 sum_cs=2815.951927023 vol=4.608106e-10
+  child T85 (4, 9, 42, 68) LB=1002.571582785 sum_cs=1002.571582785 vol=4.608106e-10
+next_node: (7.3961, -6.6170, -3.6891)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T84: active  checks=5/5
+  child T85: active  checks=5/5
+cumulative_inactive: 0/86 simplices
+end: UB=3312.370888248  LB=1002.571582785
+
+=== Iter 62 ===
+selected_simplex: T85  LB_pre=1002.571582785
+  v42: (-24.9732, 24.9780, 24.9960)
+  v68: (7.3961, -6.6170, -3.6891)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582785
+children (created 2):
+  child T85 (4, 9, 42, 69) LB=1002.571582647 sum_cs=1002.571582647 vol=2.231294e-10
+  child T86 (9, 42, 68, 69) LB=1015.005376731 sum_cs=1015.005376731 vol=2.328306e-10
+next_node: (41.1981, -40.8085, -39.3446)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T85: active  checks=5/5
+  child T86: active  checks=5/5
+cumulative_inactive: 0/87 simplices
+end: UB=3312.370888248  LB=1002.571582647
+
+=== Iter 63 ===
+selected_simplex: T85  LB_pre=1002.571582647
+  v42: (-24.9732, 24.9780, 24.9960)
+  v69: (41.1981, -40.8085, -39.3446)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582647
+children (created 2):
+  child T86 (4, 9, 69, 70) LB=2972.115693218 sum_cs=2972.115693218 vol=1.067140e-10
+  child T87 (4, 9, 42, 70) LB=1002.571582595 sum_cs=1002.571582595 vol=1.115647e-10
+next_node: (8.1125, -7.9153, -7.1743)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T86: active  checks=5/5
+  child T87: active  checks=5/5
+cumulative_inactive: 0/88 simplices
+end: UB=3312.370888248  LB=1002.571582595
+
+=== Iter 64 ===
+selected_simplex: T87  LB_pre=1002.571582595
+  v42: (-24.9732, 24.9780, 24.9960)
+  v70: (8.1125, -7.9153, -7.1743)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582595
+children (created 2):
+  child T87 (4, 9, 42, 71) LB=1002.571582586 sum_cs=1002.571582586 vol=5.820766e-11
+  child T88 (9, 42, 70, 71) LB=1005.629476428 sum_cs=1005.629476428 vol=5.578234e-11
+next_node: (41.5562, -41.4576, -41.0871)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T87: active  checks=5/5
+  child T88: active  checks=5/5
+cumulative_inactive: 0/89 simplices
+end: UB=3312.370888248  LB=1002.571582586
+
+=== Iter 65 ===
+selected_simplex: T87  LB_pre=1002.571582586
+  v42: (-24.9732, 24.9780, 24.9960)
+  v71: (41.5562, -41.4576, -41.0871)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582586
+children (created 2):
+  child T88 (4, 9, 71, 72) LB=3016.610508337 sum_cs=3016.610508337 vol=2.425319e-11
+  child T89 (4, 9, 42, 72) LB=1002.571582598 sum_cs=1002.571582598 vol=2.910383e-11
+next_node: (8.2915, -8.2398, -8.0456)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T88: active  checks=5/5
+  child T89: active  checks=5/5
+cumulative_inactive: 0/90 simplices
+end: UB=3312.370888248  LB=1002.571582598
+
+=== Iter 66 ===
+selected_simplex: T89  LB_pre=1002.571582598
+  v42: (-24.9732, 24.9780, 24.9960)
+  v72: (8.2915, -8.2398, -8.0456)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582598
+children (created 2):
+  child T89 (4, 9, 42, 73) LB=1002.571582600 sum_cs=1002.571582600 vol=9.701277e-12
+  child T90 (9, 42, 72, 73) LB=1003.333549763 sum_cs=1003.333549763 vol=9.701277e-12
+next_node: (41.6458, -41.6199, -41.5228)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T89: active  checks=5/5
+  child T90: active  checks=5/5
+cumulative_inactive: 0/91 simplices
+end: UB=3312.370888248  LB=1002.571582600
+
+=== Iter 67 ===
+selected_simplex: T89  LB_pre=1002.571582600
+  v42: (-24.9732, 24.9780, 24.9960)
+  v73: (41.6458, -41.6199, -41.5228)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582600
+children (created 2):
+  child T90 (4, 9, 73, 74) LB=3028.076089046 sum_cs=3028.076089046 vol=7.275958e-12
+  child T91 (4, 9, 42, 74) LB=1002.571582587 sum_cs=1002.571582587 vol=4.850638e-12
+next_node: (8.3363, -8.3210, -8.2634)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T90: active  checks=5/5
+  child T91: active  checks=5/5
+cumulative_inactive: 0/92 simplices
+end: UB=3312.370888248  LB=1002.571582587
+
+=== Iter 68 ===
+selected_simplex: T91  LB_pre=1002.571582587
+  v42: (-24.9732, 24.9780, 24.9960)
+  v74: (8.3363, -8.3210, -8.2634)
+  v9: (26.1940, -13.8254, 32.6521)
+  v4: (75.0000, -75.0000, -75.0000)
+UB_pre=3312.370888248  LB_global_pre=1002.571582587
+children (created 2):
+  child T91 (4, 9, 74, 75) LB=2132.620136367 sum_cs=2132.620136367 vol=2.425319e-12
+  child T92 (4, 42, 74, 75) LB=1610.597418947 sum_cs=1610.597418947 vol=2.425319e-12
+next_node: (0.6104, 5.5763, 28.8241)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T91: active  checks=5/5
+  child T92: active  checks=5/5
+cumulative_inactive: 0/93 simplices
+end: UB=3312.370888248  LB=1002.572875275
+
+=== Iter 69 ===
+selected_simplex: T72  LB_pre=1002.572875275
+  v42: (-24.9732, 24.9780, 24.9960)
+  v55: (8.4165, -8.4132, -8.4011)
+  v9: (26.1940, -13.8254, 32.6521)
+  v56: (41.7082, -41.7066, -41.7006)
+UB_pre=3312.370888248  LB_global_pre=1002.572875275
+children (created 2):
+  child T92 (9, 55, 56, 76) LB=1368.909178351 sum_cs=1368.909178351 vol=9.264865e-07
+  child T93 (9, 42, 56, 76) LB=1002.572875516 sum_cs=1002.572875516 vol=9.264889e-07
+next_node: (-8.2783, 8.2824, 8.2974)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T92: active  checks=5/5
+  child T93: active  checks=5/5
+cumulative_inactive: 0/94 simplices
+end: UB=3312.370888248  LB=1002.572875516
+
+=== Iter 70 ===
+selected_simplex: T93  LB_pre=1002.572875516
+  v42: (-24.9732, 24.9780, 24.9960)
+  v76: (-8.2783, 8.2824, 8.2974)
+  v9: (26.1940, -13.8254, 32.6521)
+  v56: (41.7082, -41.7066, -41.7006)
+UB_pre=3312.370888248  LB_global_pre=1002.572875516
+children (created 2):
+  child T93 (9, 42, 56, 77) LB=1002.572875397 sum_cs=1002.572875397 vol=4.632408e-07
+  child T94 (9, 42, 76, 77) LB=1002.668472547 sum_cs=1002.668472547 vol=4.632445e-07
+next_node: (16.7149, -16.7121, -16.7016)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T93: active  checks=5/5
+  child T94: active  checks=5/5
+cumulative_inactive: 0/95 simplices
+end: UB=3312.370888248  LB=1002.572875397
+
+=== Iter 71 ===
+selected_simplex: T93  LB_pre=1002.572875397
+  v42: (-24.9732, 24.9780, 24.9960)
+  v77: (16.7149, -16.7121, -16.7016)
+  v9: (26.1940, -13.8254, 32.6521)
+  v56: (41.7082, -41.7066, -41.7006)
+UB_pre=3312.370888248  LB_global_pre=1002.572875397
+children (created 2):
+  child T94 (9, 56, 77, 78) LB=1650.204144350 sum_cs=1650.204144350 vol=2.316216e-07
+  child T95 (9, 42, 56, 78) LB=1002.572875660 sum_cs=1002.572875660 vol=2.316204e-07
+next_node: (-4.1291, 4.1329, 4.1472)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T94: active  checks=5/5
+  child T95: active  checks=5/5
+cumulative_inactive: 0/96 simplices
+end: UB=3312.370888248  LB=1002.572875660
+
+=== Iter 72 ===
+selected_simplex: T95  LB_pre=1002.572875660
+  v42: (-24.9732, 24.9780, 24.9960)
+  v78: (-4.1291, 4.1329, 4.1472)
+  v9: (26.1940, -13.8254, 32.6521)
+  v56: (41.7082, -41.7066, -41.7006)
+UB_pre=3312.370888248  LB_global_pre=1002.572875660
+children (created 2):
+  child T95 (9, 42, 56, 79) LB=1002.572875461 sum_cs=1002.572875461 vol=1.158090e-07
+  child T96 (9, 42, 78, 79) LB=1002.649345294 sum_cs=1002.649345294 vol=1.158126e-07
+next_node: (18.7896, -18.7869, -18.7767)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T95: active  checks=5/5
+  child T96: active  checks=5/5
+cumulative_inactive: 0/97 simplices
+end: UB=3312.370888248  LB=1002.572875461
+
+=== Iter 73 ===
+selected_simplex: T95  LB_pre=1002.572875461
+  v42: (-24.9732, 24.9780, 24.9960)
+  v79: (18.7896, -18.7869, -18.7767)
+  v9: (26.1940, -13.8254, 32.6521)
+  v56: (41.7082, -41.7066, -41.7006)
+UB_pre=3312.370888248  LB_global_pre=1002.572875461
+children (created 2):
+  child T96 (9, 56, 79, 80) LB=1732.967665013 sum_cs=1732.967665013 vol=5.790328e-08
+  child T97 (9, 42, 56, 80) LB=1002.572875183 sum_cs=1002.572875183 vol=5.790450e-08
+next_node: (-3.0918, 3.0956, 3.1097)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T96: active  checks=5/5
+  child T97: active  checks=5/5
+cumulative_inactive: 0/98 simplices
+end: UB=3312.370888248  LB=1002.572875183
+
+=== Iter 74 ===
+selected_simplex: T97  LB_pre=1002.572875183
+  v42: (-24.9732, 24.9780, 24.9960)
+  v80: (-3.0918, 3.0956, 3.1097)
+  v9: (26.1940, -13.8254, 32.6521)
+  v56: (41.7082, -41.7066, -41.7006)
+UB_pre=3312.370888248  LB_global_pre=1002.572875183
+children (created 2):
+  child T97 (9, 42, 56, 81) LB=1002.572875615 sum_cs=1002.572875615 vol=2.895831e-08
+  child T98 (9, 42, 80, 81) LB=1002.644993380 sum_cs=1002.644993380 vol=2.894982e-08
+next_node: (19.3082, -19.3055, -19.2954)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T97: active  checks=5/5
+  child T98: active  checks=5/5
+cumulative_inactive: 0/99 simplices
+end: UB=3312.370888248  LB=1002.572875615
+
+=== Iter 75 ===
+selected_simplex: T97  LB_pre=1002.572875615
+  v42: (-24.9732, 24.9780, 24.9960)
+  v81: (19.3082, -19.3055, -19.2954)
+  v9: (26.1940, -13.8254, 32.6521)
+  v56: (41.7082, -41.7066, -41.7006)
+UB_pre=3312.370888248  LB_global_pre=1002.572875615
+children (created 2):
+  child T98 (9, 56, 81, 82) LB=1754.436031879 sum_cs=1754.436031879 vol=1.447794e-08
+  child T99 (9, 42, 56, 82) LB=1002.572875305 sum_cs=1002.572875305 vol=1.447916e-08
+next_node: (-2.8325, 2.8362, 2.8503)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T98: active  checks=5/5
+  child T99: active  checks=5/5
+cumulative_inactive: 0/100 simplices
+end: UB=3312.370888248  LB=1002.572875305
+
+=== Iter 76 ===
+selected_simplex: T99  LB_pre=1002.572875305
+  v42: (-24.9732, 24.9780, 24.9960)
+  v82: (-2.8325, 2.8362, 2.8503)
+  v9: (26.1940, -13.8254, 32.6521)
+  v56: (41.7082, -41.7066, -41.7006)
+UB_pre=3312.370888248  LB_global_pre=1002.572875305
+children (created 2):
+  child T99 (9, 42, 56, 83) LB=1002.572875564 sum_cs=1002.572875564 vol=7.232302e-09
+  child T100 (9, 42, 82, 83) LB=1002.643932043 sum_cs=1002.643932043 vol=7.240790e-09
+next_node: (19.4379, -19.4352, -19.4251)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T99: active  checks=5/5
+  child T100: active  checks=5/5
+cumulative_inactive: 0/101 simplices
+end: UB=3312.370888248  LB=1002.572875564
+
+=== Iter 77 ===
+selected_simplex: T99  LB_pre=1002.572875564
+  v42: (-24.9732, 24.9780, 24.9960)
+  v83: (19.4379, -19.4352, -19.4251)
+  v9: (26.1940, -13.8254, 32.6521)
+  v56: (41.7082, -41.7066, -41.7006)
+UB_pre=3312.370888248  LB_global_pre=1002.572875564
+children (created 2):
+  child T100 (9, 56, 83, 84) LB=1759.851716320 sum_cs=1759.851716320 vol=3.621002e-09
+  child T101 (9, 42, 56, 84) LB=1002.572875268 sum_cs=1002.572875268 vol=3.616151e-09
+next_node: (-2.7676, 2.7714, 2.7854)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T100: active  checks=5/5
+  child T101: active  checks=5/5
+cumulative_inactive: 0/102 simplices
+end: UB=3312.370888248  LB=1002.572875268
+
+=== Iter 78 ===
+selected_simplex: T101  LB_pre=1002.572875268
+  v42: (-24.9732, 24.9780, 24.9960)
+  v84: (-2.7676, 2.7714, 2.7854)
+  v9: (26.1940, -13.8254, 32.6521)
+  v56: (41.7082, -41.7066, -41.7006)
+UB_pre=3312.370888248  LB_global_pre=1002.572875268
+children (created 2):
+  child T101 (9, 42, 56, 85) LB=1002.572875311 sum_cs=1002.572875311 vol=1.810501e-09
+  child T102 (42, 56, 84, 85) LB=1502.226188913 sum_cs=1502.226188913 vol=1.808075e-09
+next_node: (11.7132, -5.5270, 17.7188)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T101: active  checks=5/5
+  child T102: active  checks=5/5
+cumulative_inactive: 0/103 simplices
+end: UB=3312.370888248  LB=1002.572875311
+
+=== Iter 79 ===
+selected_simplex: T101  LB_pre=1002.572875311
+  v42: (-24.9732, 24.9780, 24.9960)
+  v85: (11.7132, -5.5270, 17.7188)
+  v9: (26.1940, -13.8254, 32.6521)
+  v56: (41.7082, -41.7066, -41.7006)
+UB_pre=3312.370888248  LB_global_pre=1002.572875311
+children (created 2):
+  child T102 (9, 42, 56, 86) LB=1002.572875251 sum_cs=1002.572875251 vol=9.094947e-10
+  child T103 (9, 42, 85, 86) LB=1147.289932514 sum_cs=1147.289932514 vol=9.022187e-10
+next_node: (26.7107, -23.6168, -11.9909)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T102: active  checks=5/5
+  child T103: active  checks=5/5
+cumulative_inactive: 0/104 simplices
+end: UB=3312.370888248  LB=1002.572875251
+
+=== Iter 80 ===
+selected_simplex: T102  LB_pre=1002.572875251
+  v42: (-24.9732, 24.9780, 24.9960)
+  v86: (26.7107, -23.6168, -11.9909)
+  v9: (26.1940, -13.8254, 32.6521)
+  v56: (41.7082, -41.7066, -41.7006)
+UB_pre=3312.370888248  LB_global_pre=1002.572875251
+children (created 2):
+  child T103 (9, 56, 86, 87) LB=2080.177844308 sum_cs=2080.177844308 vol=4.523220e-10
+  child T104 (9, 42, 56, 87) LB=1002.572875387 sum_cs=1002.572875387 vol=4.547474e-10
+next_node: (0.8688, 0.6806, 6.5026)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T103: active  checks=5/5
+  child T104: active  checks=5/5
+cumulative_inactive: 0/105 simplices
+end: UB=3312.370888248  LB=1002.572875387
+
+=== Iter 81 ===
+selected_simplex: T104  LB_pre=1002.572875387
+  v42: (-24.9732, 24.9780, 24.9960)
+  v87: (0.8688, 0.6806, 6.5026)
+  v9: (26.1940, -13.8254, 32.6521)
+  v56: (41.7082, -41.7066, -41.7006)
+UB_pre=3312.370888248  LB_global_pre=1002.572875387
+children (created 2):
+  child T104 (9, 42, 56, 88) LB=1002.572875227 sum_cs=1002.572875227 vol=2.231294e-10
+  child T105 (9, 42, 87, 88) LB=1039.044455016 sum_cs=1039.044455016 vol=2.279800e-10
+next_node: (21.2885, -20.5130, -17.5990)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T104: active  checks=5/5
+  child T105: active  checks=5/5
+cumulative_inactive: 0/106 simplices
+end: UB=3312.370888248  LB=1002.572875227
+
+=== Iter 82 ===
+selected_simplex: T104  LB_pre=1002.572875227
+  v42: (-24.9732, 24.9780, 24.9960)
+  v88: (21.2885, -20.5130, -17.5990)
+  v9: (26.1940, -13.8254, 32.6521)
+  v56: (41.7082, -41.7066, -41.7006)
+UB_pre=3312.370888248  LB_global_pre=1002.572875227
+children (created 2):
+  child T105 (9, 56, 88, 89) LB=1835.336529019 sum_cs=1835.336529019 vol=1.103520e-10
+  child T106 (9, 42, 56, 89) LB=1002.572875164 sum_cs=1002.572875164 vol=1.115647e-10
+next_node: (-1.8423, 2.2325, 3.6985)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T105: active  checks=5/5
+  child T106: active  checks=5/5
+cumulative_inactive: 0/107 simplices
+end: UB=3312.370888248  LB=1002.572875164
+
+=== Iter 83 ===
+selected_simplex: T106  LB_pre=1002.572875164
+  v42: (-24.9732, 24.9780, 24.9960)
+  v89: (-1.8423, 2.2325, 3.6985)
+  v9: (26.1940, -13.8254, 32.6521)
+  v56: (41.7082, -41.7066, -41.7006)
+UB_pre=3312.370888248  LB_global_pre=1002.572875164
+children (created 2):
+  child T106 (9, 42, 56, 90) LB=1002.572875401 sum_cs=1002.572875401 vol=6.305830e-11
+  child T107 (9, 42, 89, 90) LB=1011.729285848 sum_cs=1011.729285848 vol=5.456968e-11
+next_node: (19.9330, -19.7371, -19.0010)
+selection: source=collision_edge_midpoint  rank=N/A  snap=N/A
+candidates: ms_valid=5  ms_none=0  cs_valid=1  cs_none=0
+barycentric: N/A
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T106: active  checks=5/5
+  child T107: active  checks=5/5
+cumulative_inactive: 0/108 simplices
+end: UB=3312.370888248  LB=1002.572875401
+

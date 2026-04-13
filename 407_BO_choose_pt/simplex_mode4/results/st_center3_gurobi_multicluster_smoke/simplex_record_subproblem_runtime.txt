@@ -1,0 +1,46 @@
+# simplex_record_subproblem_runtime.txt — per-iteration subproblem runtime
+# ms/cs/Q timing, non-optimal subproblem detection
+
+=== Iter 1 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=0.2385, calls=45, avg=0.0053
+Q:  total_time=0.0244, calls=5, avg=0.0049
+
+=== Iter 2 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=0.3110, calls=60, avg=0.0052
+Q:  total_time=0.0257, calls=5, avg=0.0051
+
+=== Iter 3 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=0.3871, calls=75, avg=0.0052
+Q:  total_time=0.0226, calls=5, avg=0.0045
+
+=== Iter 4 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=0.4702, calls=90, avg=0.0052
+Q:  total_time=0.0245, calls=5, avg=0.0049
+
+=== Iter 5 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=0.5427, calls=105, avg=0.0052
+Q:  total_time=0.0241, calls=5, avg=0.0048
+
+=== Iter 6 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=0.6155, calls=120, avg=0.0051
+Q:  total_time=0.0218, calls=5, avg=0.0044
+
+=== Iter 7 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=0.6903, calls=135, avg=0.0051
+Q:  total_time=0.0251, calls=5, avg=0.0050
+
+=== Iter 8 ===
+ms: total_time=0.0000, calls=0, avg=0.0000
+cs: total_time=0.7671, calls=150, avg=0.0051
+Q:  total_time=0.0239, calls=5, avg=0.0048
+
+=== Iter 9 (early exit: mode4_too_close_to_existing_node) ===
+reason: mode4_too_close_to_existing_node
+

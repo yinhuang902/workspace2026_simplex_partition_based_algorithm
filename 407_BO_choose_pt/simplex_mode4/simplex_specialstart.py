@@ -2749,9 +2749,9 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
         f.write("# Format: [Iter N] scenario=..., point=..., time=...s, status=..., term=..., obj=...\n\n")
 
     # File 8: Iter-0 summary (all simplices overview for first round)
-    dbg_iter0_summary_path = os.path.join(debug_log_dir, "debug_lIter0_summary.txt")
+    dbg_iter0_summary_path = os.path.join(debug_log_dir, "debug_Iter0_summary.txt")
     with open(dbg_iter0_summary_path, "w", encoding="utf-8") as f:
-        f.write("# debug_lIter0_summary.txt — Iteration 0 summary\n")
+        f.write("# debug_Iter0_summary.txt — Iteration 0 summary\n")
         f.write("# Per-simplex: LB, avg dual bound, avg c_s Q-value, IPOPT result\n")
         f.write("# Plus: current UB, UB source, next chosen simplex\n\n")
 
@@ -2808,7 +2808,7 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
         f.write("# cs_val, cs_pt (coordinates), cs_bary (barycentric)\n\n")
 
     # === Initialize per-iteration diagnostic logger ===
-    iter_logger = IterationLogger(path="simplex_result.txt")
+    iter_logger = IterationLogger(path=os.path.join(_csv_output_dir, "simplex_result.txt"))
     # UB provenance tracking state (note: logger also stores this, but we track here for clarity)
     ub_updated_this_iter = False
     ub_source_current = "init"           # FIX-A: start as 'init', not 'unknown'
@@ -2887,6 +2887,76 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
     _saved_box_c_pts = None         # c_s solution points from iter-0 box-CS
     _saved_box_c_vals = None        # c_s values from iter-0 box-CS
     _saved_box_LB = None            # box-level LB from iter-0
+
+    # === Helper: write CSV + detail log for early-exit iterations ===
+    # These breaks happen before the normal end-of-iteration logging block,
+    # so this function writes a partial CSV row and detail entry using
+    # pre-split state (LB_global, UB_global) which are always available.
+    def _write_early_exit_logs(it_num, reason, lb_g, ub_g, lb_rec=None):
+        """Write CSV row and ms_cs_detail entry for an early-exit iteration."""
+        try:
+            _cum = perf_counter() - t_start
+            _n = len(nodes)
+            _lb_ps = lb_g / S
+            _ub_ps = ub_g / S
+            _abs_g = (ub_g - lb_g) / S
+            _rel_g = _abs_g / (abs(_ub_ps) + 1e-16)
+            _lb_e = max(best_lb_ever, lb_g) / S
+            _ub_e = min(best_ub_ever, ub_g) / S
+            _cs_ch = "N/A"
+            if lb_rec is not None:
+                _cs_ch = _format_cs_failure_status(lb_rec.get("c_per_scene"))
+            with open(csv_path, "a", newline="", encoding="utf-8") as _f:
+                _w = csv.writer(_f)
+                _w.writerow([
+                    f"{_cum:.3f}", _n,
+                    f"{_lb_ps:.9f}", f"{_ub_ps:.9f}",
+                    f"{_rel_g*100:.7f}%", f"{_abs_g:.5f}",
+                    f"{_lb_e:.9f}", f"{_ub_e:.9f}",
+                    "N/A", "N/A",
+                    f"early_exit:{reason}",
+                    _cs_ch, "none", "none"
+                ])
+        except Exception as _e_csv:
+            print(f"[WARNING] early-exit CSV write failed: {_e_csv}")
+
+        try:
+            _mscs = [f"=== Iter {it_num} (early exit: {reason}) ==="]
+            if lb_rec is not None:
+                _sel_sid = int(lb_rec.get("simplex_index", -1))
+                _sel_vidxs = lb_rec.get("vert_idx", [])
+                _cs_st = lb_rec.get("cs_status", "?")
+                _ms_st = lb_rec.get("ms_status", "?")
+                _mscs.append(
+                    f"simplex: T{_sel_sid}  verts={tuple(sorted(_sel_vidxs))}  "
+                    f"cs_status={_cs_st}  ms_status={_ms_st}")
+                _mscs.append(f"  LB (per-scen): {lb_g/S:.9f}")
+                _mscs.append(f"  UB (per-scen): {ub_g/S:.9f}")
+            else:
+                _mscs.append(f"  (no LB simplex record available)")
+                _mscs.append(f"  LB (per-scen): {lb_g/S:.9f}")
+                _mscs.append(f"  UB (per-scen): {ub_g/S:.9f}")
+            _mscs.append("")
+            with open(ms_cs_detail_path, "a", encoding="utf-8") as _fmscs:
+                _fmscs.write("\n".join(_mscs) + "\n")
+        except Exception as _e_mscs:
+            print(f"[WARNING] early-exit ms_cs_detail write failed: {_e_mscs}")
+
+        try:
+            _rt = [f"=== Iter {it_num} (early exit: {reason}) ===\n",
+                   f"reason: {reason}\n\n"]
+            with open(runtime_log_path, "a", encoding="utf-8") as _frt:
+                _frt.writelines(_rt)
+        except Exception:
+            pass
+
+        try:
+            _sp = [f"=== Iter {it_num} (early exit: {reason}) ===\n",
+                   f"  no split performed (early exit: {reason})\n\n"]
+            with open(split_log_path, "a", encoding="utf-8") as _fsp:
+                _fsp.writelines(_sp)
+        except Exception:
+            pass
 
     termination_reason = "max_nodes"  # default if loop ends naturally
 
@@ -3216,6 +3286,38 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                     _fdbg.flush()
             except Exception:
                 pass
+            _write_early_exit_logs(it, termination_reason, LB_global, UB_global,
+                                   lb_rec=locals().get('lb_simp_rec'))
+            # Write iter_logger so simplex_result.txt captures this iteration
+            try:
+                _lb_rec = locals().get('lb_simp_rec')
+                ef_info = {
+                    "EF_attempted": False, "EF_enabled": enable_ef_ub,
+                    "time_sec": None, "status": None,
+                    "termination_condition": None, "solver_status": None,
+                    "used_for_UB": False,
+                }
+                ub_info = {"updated_this_iter": ub_updated_this_iter}
+                lb_info = {
+                    "selected_simplex_id": None,
+                    "best_simplex_id_before_split": None,
+                    "best_simplex_id_after_split": None,
+                    "stays_in_selected": None,
+                }
+                ms_agg = {
+                    "status_summary": {}, "fallback_any": False,
+                    "fallback_count": 0, "fallback_scenarios": [],
+                    "fallback_reason_counts": {},
+                }
+                cs_agg = {
+                    "status_summary": {}, "fallback_any": False,
+                    "fallback_count": 0, "fallback_scenarios": [],
+                    "fallback_reason_counts": {},
+                }
+                iter_logger.log_iteration(it, ef_info, ub_info, lb_info, ms_agg, cs_agg)
+            except Exception as _e_log:
+                if verbose:
+                    print(f"[Iter {it}] Warning: iter_logger failed in n_active==0 path: {_e_log}")
             break
             
         # === Per-iter tables: active vs inactive simplices (LB, UB, sum ms, sum c_s) ===
@@ -4615,6 +4717,8 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                 termination_reason = _m4_reason
                 print(f"[mode4 STOP] Terminating: {termination_reason} (iter {it})")
                 selection_reason_hist.append(_m4_reason)
+                _write_early_exit_logs(it, termination_reason, LB_global, UB_global,
+                                       lb_rec=lb_simp_rec)
                 break  # exits the outer while loop at line 2821
 
 
@@ -4871,7 +4975,7 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                     _fi0.write("\n".join(_i0_lines) + "\n")
             except Exception as _e:
                 # Debug log must never crash the algorithm
-                print(f"[debug_lIter0_summary] WARNING: failed to write: {_e}")
+                print(f"[debug_Iter0_summary] WARNING: failed to write: {_e}")
 
         # ------------------------------------------------
         _fallback_used = False
@@ -4939,6 +5043,8 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                 termination_reason = "collision"
                 if verbose:
                     print(f"[Iter {it}] Stop: all edge-midpoint fallbacks exhausted.")
+                _write_early_exit_logs(it, termination_reason, LB_global, UB_global,
+                                       lb_rec=lb_simp_rec)
                 break
 
         if new_node is None:
@@ -4954,6 +5060,8 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                         _fdbg.flush()
                 except Exception:
                     pass
+            _write_early_exit_logs(it, termination_reason, LB_global, UB_global,
+                                   lb_rec=lb_simp_rec)
             break
 
         #==debug, can delete
@@ -5273,6 +5381,8 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                     print(f"[mode4 STOP] Terminating: {termination_reason} "
                           f"(iter {it}): {_subdiv_exc}")
                     selection_reason_hist.append(termination_reason)
+                    _write_early_exit_logs(it, termination_reason, LB_global, UB_global,
+                                           lb_rec=lb_simp_rec)
                     break  # exits the outer while loop
                 else:
                     raise  # re-raise for modes 1/2/3
@@ -6273,27 +6383,9 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
         except Exception:
             pass  # logging must never crash the algorithm
 
-        # === Convergence stopping condition (AFTER end-of-iter) ===
-        if gap_stop_tol is not None and float(gap_stop_tol) > 0.0:
-            gap_rel_end = float(UB_global_end - LB_global_end) / (abs(UB_global_end) + 1e-16)
-            if gap_rel_end <= float(gap_stop_tol):
-                termination_reason = "gap_converged"
-                if verbose:
-                    print(f"[Iter {it}] Stop: UB-LB gap {gap_rel_end:.6e} <= tol {float(gap_stop_tol):.6e}.")
-                break
-
-        # === Time limit stopping condition ===
-        if time_limit is not None and time_limit > 0:
-            elapsed = perf_counter() - t_start
-            if elapsed >= time_limit:
-                termination_reason = "time_limit"
-                if verbose:
-                    print(f"[Iter {it}] Stop: Time limit reached ({elapsed:.2f}s >= {time_limit:.2f}s).")
-                break
-
-        # === Per-iteration diagnostic logging ===
+        # === Per-iteration diagnostic logging (BEFORE stop-condition checks) ===
         try:
-            # EF info: no EF solve in this code path
+            # EF info
             ef_info = {
                 "EF_attempted": ef_iter_info.get("ef_attempted", False),
                 "EF_enabled": enable_ef_ub,
@@ -6307,24 +6399,20 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
             # UB info
             ub_info = {"updated_this_iter": ub_updated_this_iter}
 
-            # LB simplex tracking
-            # LB/UB per user definition: use pre-saved selected_simplex_id (saved BEFORE split)
-            # selected_simplex_id: the simplex chosen for branching/splitting this iteration (before split)
-            # Note: selected_simplex_id was saved when chosen_cand was processed, before the split
+            # LB simplex tracking (safe defaults if variables not yet defined)
+            _lb_rec_end = locals().get('lb_simp_rec_end')
+            _n_children = locals().get('n_children', 0)
+            _new_simp_idx = locals().get('new_simplex_indices', set())
+
             lb_selected_simplex_id = selected_simplex_id if 'selected_simplex_id' in dir() else None
-            
-            # best_simplex_id_before_split: the branching simplex (same as selected)
             lb_best_before_split = lb_selected_simplex_id
-            
-            # best_simplex_id_after_split: computed from lb_simp_rec_end (argmin LB after split/rebuild)
-            lb_best_after_split = tuple(sorted(lb_simp_rec_end["vert_idx"])) if lb_simp_rec_end else None
-            
-            # Check if after-split best LB simplex is a child of the selected (parent) simplex
-            if n_children > 0 and lb_simp_rec_end is not None:
-                stays_in_selected = (lb_simp_rec_end["simplex_index"] in new_simplex_indices)
+            lb_best_after_split = tuple(sorted(_lb_rec_end["vert_idx"])) if _lb_rec_end else None
+
+            if _n_children > 0 and _lb_rec_end is not None:
+                stays_in_selected = (_lb_rec_end["simplex_index"] in _new_simp_idx)
             else:
                 stays_in_selected = None
-            
+
             lb_info = {
                 "selected_simplex_id": lb_selected_simplex_id,
                 "best_simplex_id_before_split": lb_best_before_split,
@@ -6333,7 +6421,6 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
             }
 
             # MS/CS fallback aggregation for the END-OF-ITER global-LB simplex
-            # Use metadata stored in lb_simp_rec_end (post-split argmin LB)
             ms_status_summary = {}
             ms_fallback_scenarios = []
             ms_fallback_reason_counts = {}
@@ -6341,11 +6428,10 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
             cs_fallback_scenarios = []
             cs_fallback_reason_counts = {}
 
-            ms_meta_list = lb_simp_rec_end.get("ms_meta_per_scene", []) if lb_simp_rec_end else []
-            cs_meta_list = lb_simp_rec_end.get("cs_meta_per_scene", []) if lb_simp_rec_end else []
+            ms_meta_list = _lb_rec_end.get("ms_meta_per_scene", []) if _lb_rec_end else []
+            cs_meta_list = _lb_rec_end.get("cs_meta_per_scene", []) if _lb_rec_end else []
 
             for s in range(len(ms_meta_list)):
-                # MS metadata
                 ms_meta = ms_meta_list[s]
                 if ms_meta:
                     st = ms_meta.get("status", "unknown")
@@ -6358,7 +6444,6 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                     ms_status_summary["cached"] = ms_status_summary.get("cached", 0) + 1
 
             for s in range(len(cs_meta_list)):
-                # CS metadata
                 cs_meta = cs_meta_list[s]
                 if cs_meta:
                     st = cs_meta.get("status", "unknown")
@@ -6393,6 +6478,24 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
             # Logging must never crash the algorithm
             if verbose:
                 print(f"[Iter {it}] Warning: diagnostic logging failed: {e}")
+
+        # === Convergence stopping condition (AFTER end-of-iter logging) ===
+        if gap_stop_tol is not None and float(gap_stop_tol) > 0.0:
+            gap_rel_end = float(UB_global_end - LB_global_end) / (abs(UB_global_end) + 1e-16)
+            if gap_rel_end <= float(gap_stop_tol):
+                termination_reason = "gap_converged"
+                if verbose:
+                    print(f"[Iter {it}] Stop: UB-LB gap {gap_rel_end:.6e} <= tol {float(gap_stop_tol):.6e}.")
+                break
+
+        # === Time limit stopping condition ===
+        if time_limit is not None and time_limit > 0:
+            elapsed = perf_counter() - t_start
+            if elapsed >= time_limit:
+                termination_reason = "time_limit"
+                if verbose:
+                    print(f"[Iter {it}] Stop: Time limit reached ({elapsed:.2f}s >= {time_limit:.2f}s).")
+                break
 
         it += 1
 

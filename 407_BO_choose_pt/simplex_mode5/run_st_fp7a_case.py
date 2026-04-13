@@ -108,8 +108,8 @@ def create_model_st_fp7a() -> pyo.ConcreteModel:
     # Variables: xi >= 0, UB from Julia SNGO feasibility reduction for first-stage
     m.x1 = pyo.Var(bounds=(0, 18.22), initialize=0)
     m.x2 = pyo.Var(bounds=(0, 17.41), initialize=0)
-    #m.x3 = pyo.Var(bounds=(0, 28.82), initialize=0)
-    m.x3 = pyo.Var(bounds=(0, 35), initialize=0)
+    m.x3 = pyo.Var(bounds=(0, 28.82), initialize=0)
+    #m.x3 = pyo.Var(bounds=(0, 35), initialize=0)
     m.x4 = pyo.Var(bounds=(0, 25.79), initialize=0)
     m.x5 = pyo.Var(bounds=(0, 19.15), initialize=0)
     m.x6  = pyo.Var(bounds=(0, None), initialize=0)

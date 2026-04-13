@@ -1,0 +1,62 @@
+# debug_Iter0_summary.txt — Iteration 0 summary
+# Per-simplex: LB, avg dual bound, avg c_s Q-value, IPOPT result
+# Plus: current UB, UB source, next chosen simplex
+
+======================================================================
+[Iter 1] SIMPLEX SUMMARY  (eval_mode=deferred first split (iter 1))
+  Number of simplices: 6
+  Number of scenarios: 5
+
+  --- T0 (0, 2, 3, 4) ---
+    cs_status: full    ms_status: none
+    LB: 99.935722493 (per-scen)
+    Avg dual bound (box c_s): 99.935722493
+    Avg c_s point Q-value: 99.962999147 (per-scen), point=(np.float64(0.0014435679716971795), np.float64(0.004260548048261014), np.float64(0.005537439119751486))
+    Volume: 1.066667e+01
+  --- T1 (0, 1, 3, 4) ---
+    cs_status: full    ms_status: none
+    LB: 99.935722493 (per-scen)
+    Avg dual bound (box c_s): 99.935722493
+    Avg c_s point Q-value: 99.962999147 (per-scen), point=(np.float64(0.0014435679716971795), np.float64(0.004260548048261014), np.float64(0.005537439119751486))
+    Volume: 1.066667e+01
+  --- T2 (3, 4, 5, 7)  [SELECTED] ---
+    cs_status: full    ms_status: none
+    LB: 99.952357839 (per-scen)
+    Avg dual bound (box c_s): 99.952357839
+    Avg c_s point Q-value: 99.966656618 (per-scen), point=(np.float64(0.019716218134353713), np.float64(0.011710124415784718), np.float64(0.01857428351609105))
+    Volume: 1.066667e+01
+  --- T3 (3, 4, 6, 7) ---
+    cs_status: full    ms_status: none
+    LB: 99.935722493 (per-scen)
+    Avg dual bound (box c_s): 99.935722493
+    Avg c_s point Q-value: 99.962999147 (per-scen), point=(np.float64(0.0014435679716971795), np.float64(0.004260548048261014), np.float64(0.005537439119751486))
+    Volume: 1.066667e+01
+  --- T4 (2, 3, 4, 6) ---
+    cs_status: full    ms_status: none
+    LB: 99.935722493 (per-scen)
+    Avg dual bound (box c_s): 99.935722493
+    Avg c_s point Q-value: 99.962999147 (per-scen), point=(np.float64(0.0014435679716971795), np.float64(0.004260548048261014), np.float64(0.005537439119751486))
+    Volume: 1.066667e+01
+  --- T5 (1, 3, 4, 5) ---
+    cs_status: full    ms_status: none
+    LB: 99.935722493 (per-scen)
+    Avg dual bound (box c_s): 99.935722493
+    Avg c_s point Q-value: 99.962999147 (per-scen), point=(np.float64(0.0014435679716971795), np.float64(0.004260548048261014), np.float64(0.005537439119751486))
+    Volume: 1.066667e+01
+
+  --- IPOPT EF Result (selected LB simplex only) ---
+    Selected simplex: T2 (3, 4, 5, 7)
+    EF-IPOPT: ok=True, ef_obj(per-scen)=19.992543120, true_obj(per-scen)=99.962715601, status=ok, term=optimal, time=0.071s
+    EF-IPOPT K point: (-0.0011826818870057986, 0.0011826763178341782, 0.0011828072826348605)
+    Barycentric coords: [0.500296, 0.000000, -0.000000, 0.499704]
+
+  --- Current UB ---
+    UB value: 99.962715601 (per-scen)
+    UB point: (-0.0011826818870057986, 0.0011826763178341782, 0.0011828072826348605)
+    UB source: EF_ipopt
+
+  --- Next Chosen Simplex ---
+    Simplex: T2 (3, 4, 5, 7)
+    Scene: -1, source: mode4_avg_cs
+    New point: (0.019716218134353713, 0.011710124415784718, 0.01857428351609105)
+======================================================================

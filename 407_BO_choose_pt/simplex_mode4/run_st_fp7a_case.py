@@ -99,7 +99,7 @@ def addnoise_le(a: float, rng: JuliaMT19937) -> float:
 
 
 # =============================================================================
-# Deterministic base model �?exact translation of Julia st_fp7a
+# Deterministic base model exact translation of Julia st_fp7a
 # =============================================================================
 
 def create_model_st_fp7a() -> pyo.ConcreteModel:
@@ -109,7 +109,7 @@ def create_model_st_fp7a() -> pyo.ConcreteModel:
     m.x1 = pyo.Var(bounds=(0, 18.22), initialize=0)
     m.x2 = pyo.Var(bounds=(0, 17.41), initialize=0)
     m.x3 = pyo.Var(bounds=(0, 28.82), initialize=0)
-    #m.x3 = pyo.Var(bounds=(0, 35), initialize=0)
+    #m.x3 = pyo.Var(bounds=(0, 30), initialize=0)
     m.x4 = pyo.Var(bounds=(0, 25.79), initialize=0)
     m.x5 = pyo.Var(bounds=(0, 19.15), initialize=0)
     m.x6  = pyo.Var(bounds=(0, None), initialize=0)
@@ -224,7 +224,8 @@ def build_models_st_fp7a(
 
 MODE_PARAMS = {
     "smoke": {
-        "nscen": 5,
+        "nscen": 5
+        ,
         "target_nodes": 100,
         "gap_stop_tol": 1e-5,
         "time_limit": 60*2,
