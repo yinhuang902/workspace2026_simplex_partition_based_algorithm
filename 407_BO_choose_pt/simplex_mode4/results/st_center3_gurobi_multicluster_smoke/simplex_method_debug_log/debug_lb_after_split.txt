@@ -196,12 +196,12 @@ primal_matches_trueQ: True
     T8 (3, 5, 7, 8): LB = 2177.900955655
   New global LB: 113.227603847 (from T0 (0, 2, 3, 4))
   Location: OUTSIDE
-  Avg CS point Q-value: 3648.831007648 (per-scen), point=(np.float64(5.047528682930673), np.float64(2.49157830166899), np.float64(23.25815835482767))
+  Avg CS point Q-value: 3648.831007648 (per-scen), point=(5.047528682930673, 2.49157830166899, 23.25815835482767)
   Current UB: 3312.370888248 (per-scen)
   UB point: (1.1707740523304624, 8.613677503789074, 12.675629199404996)
   UB source: EF_ipopt
   UB simplex: (3, 4, 5, 7)
-  EF-IPOPT: ok=True, status=ok, term=optimal, time=0.057s, ef_obj=3312.3708878395937, true_obj(per-scen)=3312.370888248
+  EF-IPOPT: ok=True, status=ok, term=optimal, time=0.053s, ef_obj=3312.3708878395937, true_obj(per-scen)=3312.370888248
 ======================================================================
 
 [Iter 2] Shape check: triggered=0, inactivated=0, passed=0
@@ -218,12 +218,12 @@ primal_matches_trueQ: True
     T11 (3, 5, 8, 9): LB = 2076.415969506
   New global LB: 1003.905602089 (from T10 (3, 4, 5, 9))
   Location: INSIDE
-  Avg CS point Q-value: 3621.502259820 (per-scen), point=(np.float64(1.9395877680192413), np.float64(0.2192362692045151), np.float64(21.841134065317807))
+  Avg CS point Q-value: 3621.502259820 (per-scen), point=(1.9395877680192413, 0.2192362692045151, 21.841134065317807)
   Current UB: 3312.370888248 (per-scen)
   UB point: (1.1707740523304624, 8.613677503789074, 12.675629199404996)
   UB source: init
   UB simplex: None
-  EF-IPOPT: ok=True, status=ok, term=optimal, time=0.059s, ef_obj=3359.615982636988, true_obj(per-scen)=3359.615983606
+  EF-IPOPT: ok=True, status=ok, term=optimal, time=0.044s, ef_obj=3359.615982636988, true_obj(per-scen)=3359.615983606
 ======================================================================
 
 [Iter 3] Shape check: triggered=0, inactivated=0, passed=0
@@ -240,12 +240,12 @@ primal_matches_trueQ: True
     T14 (3, 5, 9, 10): LB = 2103.464304829
   New global LB: 1010.817214899 (from T13 (3, 4, 5, 10))
   Location: INSIDE
-  Avg CS point Q-value: 3641.893570404 (per-scen), point=(np.float64(1.1913668185549695), np.float64(-0.5773754911911254), np.float64(21.67120247571507))
+  Avg CS point Q-value: 3641.893570404 (per-scen), point=(1.1913668185549695, -0.5773754911911254, 21.67120247571507)
   Current UB: 3312.370888248 (per-scen)
   UB point: (1.1707740523304624, 8.613677503789074, 12.675629199404996)
   UB source: init
   UB simplex: None
-  EF-IPOPT: ok=True, status=ok, term=optimal, time=0.058s, ef_obj=3395.0091472517806, true_obj(per-scen)=3395.009148857
+  EF-IPOPT: ok=True, status=ok, term=optimal, time=0.044s, ef_obj=3395.0091472517806, true_obj(per-scen)=3395.009148857
 ======================================================================
 
 [Iter 4] Shape check: triggered=0, inactivated=0, passed=0
@@ -262,12 +262,12 @@ primal_matches_trueQ: True
     T17 (3, 5, 10, 11): LB = 2126.759162517
   New global LB: 1012.920102495 (from T16 (3, 4, 5, 11))
   Location: INSIDE
-  Avg CS point Q-value: 3648.967759907 (per-scen), point=(np.float64(0.9866065883648532), np.float64(-0.8120481566501553), np.float64(21.62286486077263))
+  Avg CS point Q-value: 3648.967759907 (per-scen), point=(0.9866065883648532, -0.8120481566501553, 21.62286486077263)
   Current UB: 3312.370888248 (per-scen)
   UB point: (1.1707740523304624, 8.613677503789074, 12.675629199404996)
   UB source: init
   UB simplex: None
-  EF-IPOPT: ok=True, status=ok, term=optimal, time=0.055s, ef_obj=3407.797799728948, true_obj(per-scen)=3407.797801385
+  EF-IPOPT: ok=True, status=ok, term=optimal, time=0.047s, ef_obj=3407.797799728948, true_obj(per-scen)=3407.797801385
 ======================================================================
 
 [Iter 5] Shape check: triggered=0, inactivated=0, passed=0
@@ -284,12 +284,12 @@ primal_matches_trueQ: True
     T20 (3, 5, 11, 12): LB = 2133.835565402
   New global LB: 1013.529105991 (from T19 (3, 4, 5, 12))
   Location: INSIDE
-  Avg CS point Q-value: 3651.075516340 (per-scen), point=(np.float64(0.9290488151903759), np.float64(-0.8794232010840559), np.float64(21.609122187679326))
+  Avg CS point Q-value: 3651.075516340 (per-scen), point=(0.9290488151903759, -0.8794232010840559, 21.609122187679326)
   Current UB: 3312.370888248 (per-scen)
   UB point: (1.1707740523304624, 8.613677503789074, 12.675629199404996)
   UB source: init
   UB simplex: None
-  EF-IPOPT: ok=True, status=ok, term=optimal, time=0.056s, ef_obj=3411.534643139381, true_obj(per-scen)=3411.534644813
+  EF-IPOPT: ok=True, status=ok, term=optimal, time=0.036s, ef_obj=3411.534643139381, true_obj(per-scen)=3411.534644813
 ======================================================================
 
 [Iter 6] Shape check: triggered=0, inactivated=0, passed=0
@@ -306,12 +306,12 @@ primal_matches_trueQ: True
     T23 (3, 5, 12, 13): LB = 2135.883965942
   New global LB: 1013.703143861 (from T22 (3, 4, 5, 13))
   Location: INSIDE
-  Avg CS point Q-value: 3651.682142422 (per-scen), point=(np.float64(0.9127387145202064), np.float64(-0.8986305711959744), np.float64(21.60521527184499))
+  Avg CS point Q-value: 3651.682142422 (per-scen), point=(0.9127387145202064, -0.8986305711959744, 21.60521527184499)
   Current UB: 3312.370888248 (per-scen)
   UB point: (1.1707740523304624, 8.613677503789074, 12.675629199404996)
   UB source: init
   UB simplex: None
-  EF-IPOPT: ok=True, status=ok, term=optimal, time=0.058s, ef_obj=3412.602780326249, true_obj(per-scen)=3412.602782005
+  EF-IPOPT: ok=True, status=ok, term=optimal, time=0.037s, ef_obj=3412.602780326249, true_obj(per-scen)=3412.602782005
 ======================================================================
 
 [Iter 7] Shape check: triggered=0, inactivated=0, passed=0
@@ -328,12 +328,12 @@ primal_matches_trueQ: True
     T26 (3, 5, 13, 14): LB = 2136.469270278
   New global LB: 1013.752694362 (from T25 (3, 4, 5, 14))
   Location: INSIDE
-  Avg CS point Q-value: 3651.855200191 (per-scen), point=(np.float64(0.9081061875891023), np.float64(-0.9040953678772083), np.float64(21.604104568803223))
+  Avg CS point Q-value: 3651.855200191 (per-scen), point=(0.9081061875891023, -0.9040953678772083, 21.604104568803223)
   Current UB: 3312.370888248 (per-scen)
   UB point: (1.1707740523304624, 8.613677503789074, 12.675629199404996)
   UB source: init
   UB simplex: None
-  EF-IPOPT: ok=True, status=ok, term=optimal, time=0.059s, ef_obj=3412.906852125815, true_obj(per-scen)=3412.906853806
+  EF-IPOPT: ok=True, status=ok, term=optimal, time=0.032s, ef_obj=3412.906852125815, true_obj(per-scen)=3412.906853806
 ======================================================================
 
 [Iter 8] Shape check: triggered=0, inactivated=0, passed=0
@@ -350,12 +350,12 @@ primal_matches_trueQ: True
     T29 (3, 5, 14, 15): LB = 2136.635906271
   New global LB: 1013.766786954 (from T28 (3, 4, 5, 15))
   Location: INSIDE
-  Avg CS point Q-value: 3651.904446804 (per-scen), point=(np.float64(0.9067895562764008), np.float64(-0.905649318226206), np.float64(21.603788779145937))
+  Avg CS point Q-value: 3651.904446804 (per-scen), point=(0.9067895562764008, -0.905649318226206, 21.603788779145937)
   Current UB: 3312.370888248 (per-scen)
   UB point: (1.1707740523304624, 8.613677503789074, 12.675629199404996)
   UB source: init
   UB simplex: None
-  EF-IPOPT: ok=True, status=ok, term=optimal, time=0.060s, ef_obj=3412.993328945812, true_obj(per-scen)=3412.993330626
+  EF-IPOPT: ok=True, status=ok, term=optimal, time=0.034s, ef_obj=3412.993328945812, true_obj(per-scen)=3412.993330626
 ======================================================================
 
 [Iter 9] Shape check: triggered=0, inactivated=0, passed=0

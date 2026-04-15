@@ -1,0 +1,114 @@
+# debug_candidates.txt — per-iteration ms/c_s candidate details
+# Records: simplex vertices, ms points, c_s points, distances to existing nodes
+
+================================================================================
+[Iter 1] LB simplex = T0
+  LB simplex vertices:
+    v0 (node #3): (0.0, 0.0, 0.0, 8.0, 24.0)
+    v1 (node #2): (0.0, 0.0, 0.0, 8.0, 0.0)
+    v2 (node #4): (0.0, 0.0, 8.0, 0.0, 0.0)
+    v3 (node #8): (0.0, 8.0, 0.0, 0.0, 0.0)
+    v4 (node #16): (8.0, 0.0, 0.0, 0.0, 0.0)
+    v5 (node #0): (0.0, 0.0, 0.0, 0.0, 0.0)
+  Existing nodes (32 total):
+    node #0: (0.0, 0.0, 0.0, 0.0, 0.0)
+    node #1: (0.0, 0.0, 0.0, 0.0, 24.0)
+    node #2: (0.0, 0.0, 0.0, 8.0, 0.0)
+    node #3: (0.0, 0.0, 0.0, 8.0, 24.0)
+    node #4: (0.0, 0.0, 8.0, 0.0, 0.0)
+    node #5: (0.0, 0.0, 8.0, 0.0, 24.0)
+    node #6: (0.0, 0.0, 8.0, 8.0, 0.0)
+    node #7: (0.0, 0.0, 8.0, 8.0, 24.0)
+    node #8: (0.0, 8.0, 0.0, 0.0, 0.0)
+    node #9: (0.0, 8.0, 0.0, 0.0, 24.0)
+    node #10: (0.0, 8.0, 0.0, 8.0, 0.0)
+    node #11: (0.0, 8.0, 0.0, 8.0, 24.0)
+    node #12: (0.0, 8.0, 8.0, 0.0, 0.0)
+    node #13: (0.0, 8.0, 8.0, 0.0, 24.0)
+    node #14: (0.0, 8.0, 8.0, 8.0, 0.0)
+    node #15: (0.0, 8.0, 8.0, 8.0, 24.0)
+    node #16: (8.0, 0.0, 0.0, 0.0, 0.0)
+    node #17: (8.0, 0.0, 0.0, 0.0, 24.0)
+    node #18: (8.0, 0.0, 0.0, 8.0, 0.0)
+    node #19: (8.0, 0.0, 0.0, 8.0, 24.0)
+    node #20: (8.0, 0.0, 8.0, 0.0, 0.0)
+    node #21: (8.0, 0.0, 8.0, 0.0, 24.0)
+    node #22: (8.0, 0.0, 8.0, 8.0, 0.0)
+    node #23: (8.0, 0.0, 8.0, 8.0, 24.0)
+    node #24: (8.0, 8.0, 0.0, 0.0, 0.0)
+    node #25: (8.0, 8.0, 0.0, 0.0, 24.0)
+    node #26: (8.0, 8.0, 0.0, 8.0, 0.0)
+    node #27: (8.0, 8.0, 0.0, 8.0, 24.0)
+    node #28: (8.0, 8.0, 8.0, 0.0, 0.0)
+    node #29: (8.0, 8.0, 8.0, 0.0, 24.0)
+    node #30: (8.0, 8.0, 8.0, 8.0, 0.0)
+    node #31: (8.0, 8.0, 8.0, 8.0, 24.0)
+
+  Candidates (10 total):
+    [0] simp=T0, scene=0, source=c_s_fallback, val=1.563900e+04, pt=(6.0, 2.0, 0.0, 0.0, 0.0), dist_to_nodes=2.828427e+00, ok
+    [1] simp=T0, scene=1, source=c_s_fallback, val=1.411500e+04, pt=(0.0, 8.0, 0.0, 0.0, 0.0), dist_to_nodes=0.000000e+00, COLLISION
+    [2] simp=T0, scene=2, source=c_s_fallback, val=1.442700e+04, pt=(0.0, 8.0, 0.0, 0.0, 0.0), dist_to_nodes=0.000000e+00, COLLISION
+    [3] simp=T0, scene=3, source=c_s_fallback, val=1.420847e+04, pt=(0.0, 7.62651973929129, 0.37348026070871043, 0.0, 0.0), dist_to_nodes=5.281808e-01, ok
+    [4] simp=T0, scene=4, source=c_s_fallback, val=1.442700e+04, pt=(0.0, 8.0, 0.0, 0.0, 0.0), dist_to_nodes=0.000000e+00, COLLISION
+    [5] simp=T0, scene=5, source=c_s_fallback, val=1.433816e+04, pt=(0.0, 8.0, 0.0, 0.0, 0.0), dist_to_nodes=0.000000e+00, COLLISION
+    [6] simp=T0, scene=6, source=c_s_fallback, val=1.411500e+04, pt=(0.0, 8.0, 0.0, 0.0, 0.0), dist_to_nodes=0.000000e+00, COLLISION
+    [7] simp=T0, scene=7, source=c_s_fallback, val=1.411500e+04, pt=(0.0, 8.0, 0.0, 0.0, 0.0), dist_to_nodes=0.000000e+00, COLLISION
+    [8] simp=T0, scene=8, source=c_s_fallback, val=1.442700e+04, pt=(0.0, 8.0, 0.0, 0.0, 0.0), dist_to_nodes=0.000000e+00, COLLISION
+    [9] simp=T0, scene=9, source=c_s_fallback, val=1.442700e+04, pt=(0.0, 8.0, 0.0, 0.0, 0.0), dist_to_nodes=0.000000e+00, COLLISION
+
+================================================================================
+[Iter 2] LB simplex = T0
+  LB simplex vertices:
+    v0 (node #3): (0.0, 0.0, 0.0, 8.0, 24.0)
+    v1 (node #1): (0.0, 0.0, 0.0, 0.0, 24.0)
+    v2 (node #4): (0.0, 0.0, 8.0, 0.0, 0.0)
+    v3 (node #8): (0.0, 8.0, 0.0, 0.0, 0.0)
+    v4 (node #16): (8.0, 0.0, 0.0, 0.0, 0.0)
+    v5 (node #0): (0.0, 0.0, 0.0, 0.0, 0.0)
+  Existing nodes (33 total):
+    node #0: (0.0, 0.0, 0.0, 0.0, 0.0)
+    node #1: (0.0, 0.0, 0.0, 0.0, 24.0)
+    node #2: (0.0, 0.0, 0.0, 8.0, 0.0)
+    node #3: (0.0, 0.0, 0.0, 8.0, 24.0)
+    node #4: (0.0, 0.0, 8.0, 0.0, 0.0)
+    node #5: (0.0, 0.0, 8.0, 0.0, 24.0)
+    node #6: (0.0, 0.0, 8.0, 8.0, 0.0)
+    node #7: (0.0, 0.0, 8.0, 8.0, 24.0)
+    node #8: (0.0, 8.0, 0.0, 0.0, 0.0)
+    node #9: (0.0, 8.0, 0.0, 0.0, 24.0)
+    node #10: (0.0, 8.0, 0.0, 8.0, 0.0)
+    node #11: (0.0, 8.0, 0.0, 8.0, 24.0)
+    node #12: (0.0, 8.0, 8.0, 0.0, 0.0)
+    node #13: (0.0, 8.0, 8.0, 0.0, 24.0)
+    node #14: (0.0, 8.0, 8.0, 8.0, 0.0)
+    node #15: (0.0, 8.0, 8.0, 8.0, 24.0)
+    node #16: (8.0, 0.0, 0.0, 0.0, 0.0)
+    node #17: (8.0, 0.0, 0.0, 0.0, 24.0)
+    node #18: (8.0, 0.0, 0.0, 8.0, 0.0)
+    node #19: (8.0, 0.0, 0.0, 8.0, 24.0)
+    node #20: (8.0, 0.0, 8.0, 0.0, 0.0)
+    node #21: (8.0, 0.0, 8.0, 0.0, 24.0)
+    node #22: (8.0, 0.0, 8.0, 8.0, 0.0)
+    node #23: (8.0, 0.0, 8.0, 8.0, 24.0)
+    node #24: (8.0, 8.0, 0.0, 0.0, 0.0)
+    node #25: (8.0, 8.0, 0.0, 0.0, 24.0)
+    node #26: (8.0, 8.0, 0.0, 8.0, 0.0)
+    node #27: (8.0, 8.0, 0.0, 8.0, 24.0)
+    node #28: (8.0, 8.0, 8.0, 0.0, 0.0)
+    node #29: (8.0, 8.0, 8.0, 0.0, 24.0)
+    node #30: (8.0, 8.0, 8.0, 8.0, 0.0)
+    node #31: (8.0, 8.0, 8.0, 8.0, 24.0)
+    node #32: (0.5999999999999999, 7.362651973929128, 0.03734802607087104, 0.0, 0.0)
+
+  Candidates (10 total):
+    [0] simp=T0, scene=0, source=c_s_fallback, val=1.563900e+04, pt=(6.0, 2.0, 0.0, 0.0, 0.0), dist_to_nodes=2.828427e+00, ok
+    [1] simp=T0, scene=1, source=c_s_fallback, val=1.411500e+04, pt=(0.0, 8.0, 0.0, 0.0, 0.0), dist_to_nodes=0.000000e+00, COLLISION
+    [2] simp=T0, scene=2, source=c_s_fallback, val=1.442700e+04, pt=(0.0, 8.0, 0.0, 0.0, 0.0), dist_to_nodes=0.000000e+00, COLLISION
+    [3] simp=T0, scene=3, source=c_s_fallback, val=1.420847e+04, pt=(0.0, 7.62651973929129, 0.37348026070871043, 0.0, 0.0), dist_to_nodes=5.281808e-01, ok
+    [4] simp=T0, scene=4, source=c_s_fallback, val=1.442700e+04, pt=(0.0, 8.0, 0.0, 0.0, 0.0), dist_to_nodes=0.000000e+00, COLLISION
+    [5] simp=T0, scene=5, source=c_s_fallback, val=1.433816e+04, pt=(0.0, 8.0, 0.0, 0.0, 0.0), dist_to_nodes=0.000000e+00, COLLISION
+    [6] simp=T0, scene=6, source=c_s_fallback, val=1.411500e+04, pt=(0.0, 8.0, 0.0, 0.0, 0.0), dist_to_nodes=0.000000e+00, COLLISION
+    [7] simp=T0, scene=7, source=c_s_fallback, val=1.411500e+04, pt=(0.0, 8.0, 0.0, 0.0, 0.0), dist_to_nodes=0.000000e+00, COLLISION
+    [8] simp=T0, scene=8, source=c_s_fallback, val=1.442700e+04, pt=(0.0, 8.0, 0.0, 0.0, 0.0), dist_to_nodes=0.000000e+00, COLLISION
+    [9] simp=T0, scene=9, source=c_s_fallback, val=1.442700e+04, pt=(0.0, 8.0, 0.0, 0.0, 0.0), dist_to_nodes=0.000000e+00, COLLISION
+

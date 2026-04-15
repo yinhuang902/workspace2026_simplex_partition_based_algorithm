@@ -1,0 +1,26 @@
+# simplex_record_split.txt — per-iteration split record
+# selected_simplex LB_pre, UB_pre, children LBs, end LB/UB
+
+=== Iter 1 ===
+selected_simplex: T106  LB_pre=-636.935860387
+  v3: (0.0000, 0.0000, 0.0000, 25.7800, 19.1400)
+  v6: (0.0000, 0.0000, 28.8100, 25.7800, 0.0000)
+  v14: (0.0000, 17.4000, 28.8100, 25.7800, 0.0000)
+  v22: (18.2200, 0.0000, 28.8100, 25.7800, 0.0000)
+  v2: (0.0000, 0.0000, 0.0000, 25.7800, 0.0000)
+  v4: (0.0000, 0.0000, 28.8100, 0.0000, 0.0000)
+UB_pre=-636.899619075  LB_global_pre=-636.992009541
+children (created 2):
+  child T107 (2, 3, 4, 14, 22, 32) LB=-636.934436427 sum_cs=-636.934436427 vol=1.007008e+04
+  child T108 (3, 4, 6, 14, 22, 32) LB=-636.901043051 sum_cs=-636.901043051 vol=2.748636e+04
+next_node: (0.0000, 0.0000, 7.7249, 25.7800, 0.0000)
+selection: source=ms  rank=1  snap=edge
+candidates: ms_valid=5  ms_none=0  cs_valid=5  cs_none=0
+barycentric: (0.000000, 0.268132, 0.000000, 0.000000, 0.731868, 0.000000)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 10 checks, 0 inactive, 2 active
+  child T107: active  checks=5/5
+  child T108: active  checks=5/5
+cumulative_inactive: 0/109 simplices
+end: UB=-636.899619075  LB=-636.992009541
+

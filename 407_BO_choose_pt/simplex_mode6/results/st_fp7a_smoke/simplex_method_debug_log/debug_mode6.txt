@@ -1,0 +1,75 @@
+# debug_mode6.txt — mode6 cluster-aware split diagnostics
+# Per-iteration: search_mode, fallback_used, cluster info, scores, chosen point
+
+================================================================================
+[Iter 1] Mode 6 Split Diagnostics
+  simplex_id: T0
+  search_mode: interior
+  fallback_used: None
+  n_valid_cs: 5/5
+  clusters: [5]
+  cluster_centers: [(0.0, 0.0, 28.816479468312366, 0.0, 0.0)]
+  dispersion: max_pw=0.017602658438168106, var=4.957657345452473e-05, spread=0.0
+  n_sampled: 980
+  n_rejected: 0
+  n_valid_scored: 980
+  chosen_point: (2.977327975650574, 2.4511768119430566, 3.8941867236749323, 9.105599659248316, 3.2017138463011436)
+  score: 0.534204
+  score_breakdown: sep=1.0, cen=0.13512098277845014, qual=0.0016962525573416343, coll=1.0
+  nearest_node: #0 dist=11.099565603434419 type=simplex_vertex
+  cluster_0: size=5, child=0
+
+================================================================================
+[Iter 2] Mode 6 Split Diagnostics
+  simplex_id: T0
+  search_mode: interior
+  fallback_used: None
+  n_valid_cs: 5/5
+  clusters: [5]
+  cluster_centers: [(0.0, 0.0, 28.816479468312366, 0.0, 0.0)]
+  dispersion: max_pw=0.01760265843817166, var=4.9576573454544736e-05, spread=0.0
+  n_sampled: 988
+  n_rejected: 0
+  n_valid_scored: 988
+  chosen_point: (3.366749252550911, 2.5761503388958604, 4.059267000847406, 4.067002493266429, 7.441248788436855)
+  score: 0.534930
+  score_breakdown: sep=1.0, cen=0.1378213392462795, qual=0.001899658169591642, coll=1.0
+  nearest_node: #32 dist=6.599669441561706 type=external_old_node
+  cluster_0: size=5, child=0
+
+================================================================================
+[Iter 3] Mode 6 Split Diagnostics
+  simplex_id: T112
+  search_mode: interior
+  fallback_used: None
+  n_valid_cs: 5/5
+  clusters: [5]
+  cluster_centers: [(0.0, 0.0, 28.816479468312366, 0.0, 0.0)]
+  dispersion: max_pw=0.01760265843817166, var=4.957657345453474e-05, spread=0.0
+  n_sampled: 1012
+  n_rejected: 0
+  n_valid_scored: 1012
+  chosen_point: (3.808234001212461, 3.21549639653734, 5.854893765648288, 0.5489808870899324, 4.3855835816442745)
+  score: 0.533958
+  score_breakdown: sep=1.0, cen=0.1349841530706848, qual=0.0008495349823378054, coll=1.0
+  nearest_node: #33 dist=5.05386124866118 type=simplex_vertex
+  cluster_0: size=5, child=0
+
+================================================================================
+[Iter 4] Mode 6 Split Diagnostics
+  simplex_id: T121
+  search_mode: interior
+  fallback_used: None
+  n_valid_cs: 5/5
+  clusters: [5]
+  cluster_centers: [(0.0, 0.0, 28.816479468312366, 0.0, 0.0)]
+  dispersion: max_pw=0.01760265843817166, var=4.957657345454974e-05, spread=0.0
+  n_sampled: 1011
+  n_rejected: 0
+  n_valid_scored: 1011
+  chosen_point: (1.1736859118174385, 3.993436822807712, 7.534127954903119, 0.7550285352687124, 4.5128141418963335)
+  score: 0.533727
+  score_breakdown: sep=1.0, cen=0.13463355065028032, qual=0.00027550038370672956, coll=1.0
+  nearest_node: #34 dist=3.22870030403955 type=simplex_vertex
+  cluster_0: size=5, child=0
+

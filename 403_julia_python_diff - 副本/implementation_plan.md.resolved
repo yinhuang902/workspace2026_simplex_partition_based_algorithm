@@ -1,0 +1,700 @@
+# Implementation Plan: Julia-Style LP Relaxation Lower Bound
+
+## Decisions & Constraints
+
+| Decision | Choice |
+|----------|--------|
+| Operator scope | Bilinear (`x*y`) and quadratic (`x²`) only — Phase 1 |
+| LB strategy | `LB_final = max(existing_LB, LP_relax_LB)` via explicit `CompositeLowerBounder` |
+| LP solver | Hard-coded Gurobi |
+| EF isolation | Separate LP-relaxation context — does NOT touch the live EF |
+| API design | `CompositeLowerBounder` owns orchestration; `LPRelaxationBounder` has its own `solve()` |
+| Scenario-wise payload | LP relaxation **never** overwrites `lb_problem.subproblem_solutions` |
+| Rebuild strategy | Preprocess once; rebuild LP per node from cached metadata |
+| OA / αBB scope | Only applied to supported bilinear/quadratic structures |
+| Reduced-cost BT | Phase 2 (deferred) |
+| Strong branching | Phase 2 (deferred) |
+
+---
+
+## Julia-to-Python Mechanism Mapping
+
+| Julia Mechanism | Julia Location | Python Equivalent | Match Level |
+|----------------|----------------|-------------------|-------------|
+| `preprocessSto!(P)` / `preprocessex!(Pex)` | `preprocess.jl`, `preprocessex.jl` | `EFRelaxationContext._preprocess_ef()` | Conceptual — Pyomo `generate_standard_repn(quadratic=True)` replaces Julia's MathProgBase AST traversal. **Only bilinear/quadratic `repn.quadratic_vars` are recognized; all other NL forms are detected and rejected.** |
+| `relax(Pex, prex, UB)` — build LP model R with McCormick | `relax.jl:1-336` | `EFRelaxationContext._build_lp_relaxation()` | Close match — same constraints, Pyomo model API |
+| `m.ext[:qbcId]` — bilinear term registry | `relax.jl:46,330` | `PreprocessResult.bilinear_registry` dict | Close match |
+| `updaterelax(Rold, Pex, prex, UB)` — update LP for node | `updaterelax.jl:1-258` | `_rebuild_lp_for_node()` — rebuild LP from cached metadata | Conceptual — Python rebuilds from metadata instead of in-place coefficient mutation |
+| `getRelaxLowerBound(...)` — solve LP + OA loop | `bb.jl:707-806` | `_solve_lp_with_cuts()` | Close match |
+| `addOuterApproximation!(R, prex)` — OA tangent cuts | `updaterelax.jl:370-561` | `_add_oa_cuts()` — **only for `x²` and supported convex/concave quadratic groups** | Close match — scoped to supported structures only |
+| `addaBB!(R, prex)` — αBB perturbation cuts | `updaterelax.jl:288-346` | `_add_abb_cuts()` — **only for indefinite quadratic blocks from preprocessing** | Close match — scoped to supported structures only |
+| `@constraint(m, m.obj.aff <= U)` — UB cap | `relax.jl:42` | Explicit constraint: `obj_expr ≤ UB` | Close match |
+| Combine LP+WS LBs | `bb.jl:490` | `CompositeLowerBounder.solve()` takes max | Close match |
+| `R.redCosts` — reduced-cost BT | `boundT.jl:1565-1608` | Phase 2 | Deferred |
+
+---
+
+## Architecture Overview
+
+```mermaid
+flowchart TB
+    subgraph Init["Initialization (once)"]
+        A1["Subproblems built"] --> A2["EFRelaxationContext created<br>(private EF clone)"]
+        A2 --> A3["_preprocess_ef():<br>Walk EF constraints via<br>generate_standard_repn(quadratic=True)<br>─ identify bilinear/x² terms<br>─ REJECT unsupported NL forms<br>─ classify convexity<br>─ compute αBB α values"]
+        A3 --> A4["Store PreprocessResult<br>(cached metadata)"]
+    end
+
+    subgraph NodeLoop["Per-Node (main B&B loop)"]
+        B1["CompositeLowerBounder.solve()"]
+        
+        B1 --> B2["Step 1: Existing LB<br>DropNonants .solve()<br>→ sets lb_problem.objective<br>→ sets lb_problem.subproblem_solutions<br>(per-scenario payload PRESERVED)"]
+        
+        B2 --> B3["Step 2: LP Relaxation LB<br>LPRelaxationBounder.solve()<br>→ returns lp_relax_lb<br>→ stores diagnostics in<br>lb_problem.lp_relax_diagnostics<br>(NEVER touches subproblem_solutions)"]
+        
+        B3 --> B4["Step 3: Combine<br>final_lb = max(existing_lb, lp_relax_lb)<br>Update lb_problem.objective ONLY<br>if lp_relax_lb > existing_lb"]
+    end
+
+    Init --> NodeLoop
+```
+
+> [!IMPORTANT]
+> **Payload preservation guarantee**: The `CompositeLowerBounder` updates `lb_problem.objective` to `final_lb` but **never** writes to `lb_problem.subproblem_solutions`. The existing per-scenario solutions (objectives, lifted variable values per subproblem) set by `DropNonants` remain fully intact for downstream use by branching (`tree.py:337,351,423,444,495,507`), candidate generation (`compute.py:85,88,176,179,190,272,275`), and solution inheritance (`lower_bounders.py:101-102`).
+
+---
+
+# Phase 1: LP Relaxation Lower Bound Core
+
+## File Plan
+
+```
+snoglode-main-new/snoglode/
+├── relaxation/                              ← NEW package
+│   ├── __init__.py                          ← [NEW] Package init
+│   └── ef_relaxation_context.py             ← [NEW] Core: preprocess + build + update + solve
+├── bounders/
+│   └── composite_lower_bounder.py           ← [NEW] CompositeLowerBounder class
+├── components/
+│   ├── parameters.py                        ← [MODIFY] Add lp_relaxation config
+│   └── node.py                              ← [MODIFY] Add lp_relax_diagnostics field
+├── utils/
+│   └── logging.py                           ← [MODIFY] Add LP relaxation timing + diagnostics
+├── solver.py                                ← [MODIFY] Wire CompositeLowerBounder, update display
+└── __init__.py                              ← [MODIFY] Export new classes
+```
+
+---
+
+### [NEW] `snoglode/relaxation/__init__.py`
+
+```python
+from snoglode.relaxation.ef_relaxation_context import EFRelaxationContext
+```
+
+---
+
+### [NEW] `snoglode/relaxation/ef_relaxation_context.py` (~500 lines)
+
+Contains all LP relaxation machinery. This is the core file.
+
+#### Data Structures
+
+```python
+@dataclass
+class BilinearEntry:
+    """One registered bilinear product w = x * y."""
+    key: Tuple[str, str]         # (x_var_name, y_var_name), lexicographically sorted
+    x_var_name: str
+    y_var_name: str
+    aux_var_name: str            # name of auxiliary variable w in R
+    is_squared: bool             # True if x == y
+
+@dataclass
+class ConvexGroup:
+    """Group of bilinear terms forming a convex (pd=+1) or concave (pd=-1) quadratic form."""
+    bilinear_keys: List[Tuple[str, str]]
+    coefficients: List[float]
+    pd: int                       # +1 = convex, -1 = concave
+
+@dataclass
+class ABBGroup:
+    """Indefinite quadratic form that needs αBB perturbation."""
+    bilinear_keys: List[Tuple[str, str]]
+    coefficients: List[float]
+    alpha_var_names: List[str]
+    alpha_values: List[float]     # computed α = max(0, -λ_min/2)
+
+@dataclass
+class LinearConstraintInfo:
+    """Cached linear constraint from the EF."""
+    name: str
+    expr_data: Dict[str, float]   # var_name → coefficient
+    constant: float
+    lb: Optional[float]
+    ub: Optional[float]
+
+@dataclass
+class LinearizedQuadConstraintInfo:
+    """Quadratic constraint decomposed: linear part + bilinear aux var references."""
+    name: str
+    linear_terms: Dict[str, float]
+    bilinear_terms: List[Tuple[Tuple[str, str], float]]
+    constant: float
+    lb: Optional[float]
+    ub: Optional[float]
+
+@dataclass
+class PreprocessResult:
+    """All metadata extracted from the EF. Computed ONCE, reused at every node."""
+    ef_var_names: List[str]
+    ef_var_bounds: Dict[str, Tuple[float, float]]
+    ef_var_domains: Dict[str, str]
+    bilinear_registry: Dict[Tuple[str, str], BilinearEntry]
+    linear_constraints: List[LinearConstraintInfo]
+    quad_constraints: List[LinearizedQuadConstraintInfo]
+    objective_linear: Dict[str, float]
+    objective_bilinear: List[Tuple[Tuple[str, str], float]]
+    objective_constant: float
+    objective_sense: int
+    convex_groups: List[ConvexGroup]
+    abb_groups: List[ABBGroup]
+    n_unsupported_skipped: int    # count of constraints with unsupported NL forms
+```
+
+#### `EFRelaxationContext` Class
+
+```python
+class EFRelaxationContext:
+    """
+    Self-contained LP relaxation engine for lower bounding.
+    Builds a PRIVATE EF copy — completely isolated from live models.
+    """
+    
+    def __init__(self, subproblems):
+        """
+        1. Clone subproblem models → build independent EF (private copy)
+        2. _preprocess_ef() → extract PreprocessResult (cached metadata)
+        """
+    
+    def solve_node(self, node_state, current_UB, mingap_abs, mingap_rel, max_oa_iters) -> dict:
+        """
+        Returns dict: {
+            "feasible": bool,
+            "lp_relax_lb": float,
+            "n_oa_rounds": int,
+            "n_oa_cuts": int,
+            "n_abb_cuts": int,
+            "lp_status": str,
+            "lp_solution": dict or None
+        }
+        """
+```
+
+#### `_preprocess_ef()` — Scoping & Rejection Rules
+
+> [!WARNING]
+> **Phase 1 only supports constraints/objectives that can be recognized as bilinear/quadratic via Pyomo's `generate_standard_repn(expr, quadratic=True)`.** This function returns a `StandardRepn` with:
+> - `repn.linear_vars` / `repn.linear_coefs` — linear terms
+> - `repn.quadratic_vars` / `repn.quadratic_coefs` — bilinear/quadratic terms
+> - `repn.nonlinear_expr` — residual nonlinear expression (anything not linear or bilinear)
+>
+> **The scoping rule is:**
+> - If `repn.nonlinear_expr is not None` for a constraint → that constraint's nonlinear part is **unsupported** in Phase 1.
+> - When an unsupported constraint is detected:
+>   1. Log a warning: `"Constraint {name} has unsupported nonlinear terms — skipped for LP relaxation"`
+>   2. Increment `preprocess.n_unsupported_skipped`
+>   3. **Do NOT add** this constraint to the LP relaxation (it is simply omitted, which makes the relaxation weaker but still valid — the LP relaxation is a relaxation, so omitting constraints can only weaken the bound, never make it invalid)
+> - If `repn.quadratic_vars` is non-empty AND `repn.nonlinear_expr is None` → fully supported; extract bilinear terms.
+> - If both are empty → purely linear; copy directly.
+
+```python
+def _preprocess_ef(self) -> PreprocessResult:
+    """
+    Walk EF constraints + objective via generate_standard_repn(quadratic=True).
+    
+    For each active constraint:
+      repn = generate_standard_repn(con.body, quadratic=True)
+      
+      CASE 1: repn.nonlinear_expr is not None
+        → UNSUPPORTED. Log warning, skip for LP relaxation. Count in n_unsupported_skipped.
+      
+      CASE 2: repn.quadratic_vars is not empty, repn.nonlinear_expr is None
+        → SUPPORTED QUADRATIC. For each (var1, var2) pair:
+          · Create/reuse BilinearEntry in bilinear_registry
+          · Store (key, coefficient) in LinearizedQuadConstraintInfo
+          · Classify convexity of quadratic form (eigenvalue analysis)
+      
+      CASE 3: both empty
+        → PURELY LINEAR. Store in linear_constraints.
+    
+    Same logic for the objective expression.
+    """
+```
+
+#### `_rebuild_lp_for_node()` — Combines Julia's `relax()` + `updaterelax()`
+
+```python
+def _rebuild_lp_for_node(self, node_state, current_UB):
+    """
+    Build a FRESH Pyomo LP ConcreteModel from cached PreprocessResult +
+    current node bounds + current UB.
+    
+    Steps:
+    1. Create new ConcreteModel R
+    2. Create vars (EF vars + aux vars for bilinear terms)
+       - All domains relaxed to Reals (continuous LP)
+       - First-stage bounds from node_state; second-stage from cached original bounds
+       - Aux var bounds: min/max of corner products
+    3. Add linear constraints (from cached linear_constraints)
+    4. Add McCormick envelopes for each bilinear entry:
+       IF squared: tangent at xL, tangent at xU, secant line
+       ELSE: 4 McCormick inequalities
+    5. Add linearized quadratic constraints (from cached quad_constraints)
+    6. Set linearized objective
+    7. Add UB cap: objective_expression ≤ current_UB
+    8. Store as self._R
+    """
+```
+
+#### `_solve_lp_with_cuts()` — Julia's `getRelaxLowerBound()` at `bb.jl:707-806`
+
+```python
+def _solve_lp_with_cuts(self, max_oa_iters, mingap_abs, mingap_rel, current_UB) -> dict:
+    """
+    Solve LP + iterative OA/αBB strengthening loop.
+    
+    1. Configure Gurobi: Method=1 (dual simplex), Threads=1
+    2. Solve R
+    3. If gap closed → return
+    4. OA loop (up to max_oa_iters):
+       a. n_oa = _add_oa_cuts()   # only for supported quadratic structures
+       b. n_abb = _add_abb_cuts() # only for supported indefinite quadratic blocks
+       c. If n_oa + n_abb == 0 → break
+       d. Re-solve R
+       e. Track improvement; break if no_change_count >= 10
+    5. Return diagnostics dict
+    """
+```
+
+#### `_add_oa_cuts()` — Scoped to Supported Structures Only
+
+> [!IMPORTANT]
+> **OA cuts in Phase 1 are ONLY applied to:**
+> - **Squared terms** (`w = x²`): tangent line cut `w ≥ 2*xv*x - xv²` at the current LP solution point, added when `wv < xv² - σ` (the McCormick relaxation is violated).
+> - **Convex quadratic groups** (`pd == +1`): supporting hyperplane cut at the current solution, added when the relaxation underestimates the convex function by more than σ.
+> - **Concave quadratic groups** (`pd == -1`): overestimator cut at the current solution, same violation check.
+>
+> No OA cuts are generated for exp, log, power, or any other nonlinear operator in Phase 1.
+
+#### `_add_abb_cuts()` — Scoped to Supported Structures Only
+
+> [!IMPORTANT]
+> **αBB cuts in Phase 1 are ONLY applied to:**
+> - **Indefinite quadratic blocks** identified during `_preprocess_ef()` via eigenvalue analysis of the local Hessian. Each `ABBGroup` contains the specific bilinear terms and computed α values.
+>
+> No αBB cuts are generated for non-quadratic nonlinearity in Phase 1.
+
+---
+
+### [NEW] `snoglode/bounders/composite_lower_bounder.py` (~80 lines)
+
+This is the explicit orchestrator that:
+1. Runs the existing lower bound path
+2. Runs the LP relaxation lower bound path
+3. Combines: `final_lb = max(existing, lp_relax)`
+
+```python
+from snoglode.bounders.lower_bounders import AbstractLowerBounder
+from snoglode.relaxation.ef_relaxation_context import EFRelaxationContext
+
+class CompositeLowerBounder:
+    """
+    Orchestrates two lower-bounding pathways:
+      (1) Existing per-scenario LB (DropNonants) → existing_lb
+      (2) LP relaxation of the full EF → lp_relax_lb
+    
+    Final node LB = max(existing_lb, lp_relax_lb).
+    
+    CRITICAL INVARIANT:
+      This class NEVER writes to lb_problem.subproblem_solutions.
+      The existing per-scenario solutions (set by DropNonants in step 1)
+      are left FULLY INTACT for use by:
+        - branching logic (tree.py — inherits subproblem_solutions to children)
+        - candidate generation (compute.py — reads lifted_var_solution)
+        - solution inheritance (lower_bounders.py — uses parent solutions)
+    """
+    
+    def __init__(self,
+                 existing_bounder: AbstractLowerBounder,
+                 subproblems,
+                 max_oa_iters: int = 20):
+        """
+        Parameters:
+          existing_bounder: the existing lower bounder (e.g., DropNonants)
+          subproblems: Subproblems object (used to build private EF clone)
+          max_oa_iters: max OA/αBB strengthening iterations per node
+        """
+        self.existing_bounder = existing_bounder
+        self._lp_context = EFRelaxationContext(subproblems)
+        self._max_oa_iters = max_oa_iters
+    
+    # Expose existing_bounder's attributes for compatibility
+    @property
+    def perform_fbbt(self):
+        return self.existing_bounder.perform_fbbt
+    @perform_fbbt.setter
+    def perform_fbbt(self, value):
+        self.existing_bounder.perform_fbbt = value
+    @property
+    def inhert_solutions(self):
+        return self.existing_bounder.inhert_solutions
+    @inhert_solutions.setter
+    def inhert_solutions(self, value):
+        self.existing_bounder.inhert_solutions = value
+    
+    def solve(self, subproblems, node) -> None:
+        """
+        Orchestrate both LB pathways.
+        
+        Step 1: Run existing LB (DropNonants)
+          → This sets:
+              node.lb_problem.feasible
+              node.lb_problem.objective  (= existing_lb)
+              node.lb_problem.subproblem_solutions  (per-scenario payload)
+          → These per-scenario results are NEVER touched again by this method.
+        
+        Step 2: If existing LB was feasible, run LP relaxation
+          → Returns diagnostics dict (lp_relax_lb, cut counts, etc.)
+          → Stored in: node.lb_problem.lp_relax_diagnostics
+        
+        Step 3: Combine
+          → final_lb = max(existing_lb, lp_relax_lb)
+          → ONLY update node.lb_problem.objective (the scalar LB value)
+          → NEVER touch node.lb_problem.subproblem_solutions
+        """
+        # --- Step 1: Existing LB (unchanged, sets subproblem_solutions) ---
+        self.existing_bounder.solve(subproblems=subproblems, node=node)
+        
+        existing_lb = node.lb_problem.objective
+        existing_feasible = node.lb_problem.feasible
+        
+        # --- Step 2: LP Relaxation LB ---
+        if existing_feasible:
+            lp_result = self._lp_context.solve_node(
+                node_state=node.state,
+                current_UB=...,   # passed via solve() param or stored
+                mingap_abs=...,
+                mingap_rel=...,
+                max_oa_iters=self._max_oa_iters
+            )
+            
+            lp_lb = lp_result["lp_relax_lb"] if lp_result["feasible"] else float("-inf")
+            
+            # --- Step 3: Combine ---
+            final_lb = max(existing_lb, lp_lb)
+            
+            # ONLY update the scalar objective — leave subproblem_solutions intact
+            node.lb_problem.objective = final_lb
+            
+            # Store diagnostics in a SEPARATE field
+            node.lb_problem.lp_relax_diagnostics = {
+                "existing_lb": existing_lb,
+                "lp_relax_lb": lp_lb,
+                "final_lb": final_lb,
+                "lb_source": "lp_relax" if lp_lb > existing_lb else "existing",
+                "lp_relax_feasible": lp_result["feasible"],
+                "n_oa_rounds": lp_result.get("n_oa_rounds", 0),
+                "n_oa_cuts": lp_result.get("n_oa_cuts", 0),
+                "n_abb_cuts": lp_result.get("n_abb_cuts", 0),
+                "lp_status": lp_result.get("lp_status", "N/A"),
+            }
+        else:
+            node.lb_problem.lp_relax_diagnostics = {
+                "existing_lb": existing_lb,
+                "lp_relax_lb": float("-inf"),
+                "final_lb": existing_lb,
+                "lb_source": "existing",
+                "lp_relax_feasible": False,
+                "n_oa_rounds": 0,
+                "n_oa_cuts": 0,
+                "n_abb_cuts": 0,
+                "lp_status": "skipped (existing infeasible)",
+            }
+```
+
+> [!CAUTION]
+> The `CompositeLowerBounder` must receive the current UB somehow. Two options:
+> - **(A)** Add `current_UB` as a parameter to `solve()` — requires modifying the call site in `solver.py`.
+> - **(B)** Store a reference to `tree.metrics` during init so the composite bounder can read `tree.metrics.ub` directly.
+>
+> **Recommendation**: Option (A) — pass `current_UB` explicitly. This keeps the bounder stateless w.r.t. the tree and is more testable. The `dispatch_lb_solve()` in `solver.py` already has access to `self.tree.metrics.ub`.
+
+---
+
+### [MODIFY] `snoglode/components/node.py`
+
+Add `lp_relax_diagnostics` field to `LowerBoundNodeMetrics`:
+
+```python
+class LowerBoundNodeMetrics():
+    def __init__(self) -> None:
+        self.feasible = None
+        self.objective = None
+        self.subproblem_solutions = None
+        self.lp_relax_diagnostics = None   # ← NEW: dict or None
+```
+
+**What `lp_relax_diagnostics` contains** (set by `CompositeLowerBounder`):
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `existing_lb` | `float` | LB from existing DropNonants/WS pathway |
+| `lp_relax_lb` | `float` | LB from LP relaxation (after all OA/αBB rounds) |
+| `final_lb` | `float` | `max(existing_lb, lp_relax_lb)` |
+| `lb_source` | `str` | `"existing"` or `"lp_relax"` — which one was stronger |
+| `lp_relax_feasible` | `bool` | Whether the LP relaxation was feasible |
+| `n_oa_rounds` | `int` | Number of OA/αBB re-solve iterations executed |
+| `n_oa_cuts` | `int` | Total OA cuts added across all rounds |
+| `n_abb_cuts` | `int` | Total αBB cuts added across all rounds |
+| `lp_status` | `str` | Gurobi termination status string |
+
+This field is `None` when LP relaxation is disabled. It is **read-only** from the perspective of branching/candidate-generation code — those subsystems continue to read `lb_problem.subproblem_solutions` as before.
+
+---
+
+### [MODIFY] `snoglode/utils/logging.py`
+
+#### Changes to `IterLogger`
+
+```python
+class IterLogger():
+    def __init__(self, ...):
+        # ... existing fields ...
+        
+        # NEW: LP relaxation timing
+        self.lp_relax = np.zeros(2)          # [start, stop]
+        self.total_lp_relax = 0
+        
+        # NEW: Per-iteration LP relaxation diagnostics (set from node)
+        self._iter_lp_diag = None
+    
+    # NEW timing methods
+    def lp_relax_start(self):
+        self.lp_relax[0] = time.perf_counter()
+    
+    def lp_relax_stop(self):
+        self.lp_relax[1] = time.perf_counter()
+        self.total_lp_relax += self.lp_relax[1] - self.lp_relax[0]
+    
+    # NEW: accept diagnostics dict from the current node
+    def set_lp_relax_diagnostics(self, diagnostics: dict):
+        self._iter_lp_diag = diagnostics
+    
+    def update(self):
+        # ... existing LB/CG/UB/Bound/Branch lines ...
+        
+        # NEW: Write LP relaxation timing
+        if self._iter_lp_diag is not None:
+            lp_start = round(...)
+            lp_end = round(...)
+            if rank == 0:
+                self.logfile.write(f"LP_Relax,{lp_start},{lp_end},\n")
+                d = self._iter_lp_diag
+                self.logfile.write(
+                    f"LP_Relax_Diag,"
+                    f"existing_lb={d['existing_lb']:.8g},"
+                    f"lp_relax_lb={d['lp_relax_lb']:.8g},"
+                    f"final_lb={d['final_lb']:.8g},"
+                    f"source={d['lb_source']},"
+                    f"feasible={d['lp_relax_feasible']},"
+                    f"oa_rounds={d['n_oa_rounds']},"
+                    f"oa_cuts={d['n_oa_cuts']},"
+                    f"abb_cuts={d['n_abb_cuts']}\n"
+                )
+        
+        # Reset per-iter state
+        self._iter_lp_diag = None
+        self.lp_relax.fill(0)
+        # ... existing resets ...
+    
+    def complete(self):
+        # ... existing summary ...
+        
+        # NEW: Add LP relaxation time to summary
+        if rank == 0:
+            self.logfile.write(f"Total time spent on LP relaxation: {round(self.total_lp_relax, 4)}s\n")
+            self.logfile.write(f"Percent time spent on LP relaxation: {round(self.total_lp_relax*100/self.snoglode_total, 4)}%\n")
+```
+
+#### Changes to `MockIterLogger`
+
+```python
+class MockIterLogger():
+    # ... existing pass-through methods ...
+    def lp_relax_start(self): pass                    # NEW
+    def lp_relax_stop(self): pass                     # NEW
+    def set_lp_relax_diagnostics(self, diag): pass    # NEW
+```
+
+**Log file output format** (one LP_Relax block per iteration when active):
+
+```
+k,5
+LB,1.234,2.345,
+LP_Relax,2.345,3.456,
+LP_Relax_Diag,existing_lb=-123.4567,lp_relax_lb=-120.1234,final_lb=-120.1234,source=lp_relax,feasible=True,oa_rounds=4,oa_cuts=12,abb_cuts=3
+CG,3.456,4.567,
+UB,4.567,5.678,
+Bound,5.678,5.789,
+Branch,5.789,5.890,
+```
+
+---
+
+### [MODIFY] `snoglode/solver.py`
+
+#### Changes to `__init__`
+
+```python
+# After existing bounder init (line 66):
+self.lower_bounder = self._params._lower_bounder(self._params._lb_solver)
+
+# If LP relaxation enabled, wrap in CompositeLowerBounder
+if self._params._use_lp_relaxation:
+    from snoglode.bounders.composite_lower_bounder import CompositeLowerBounder
+    self.lower_bounder = CompositeLowerBounder(
+        existing_bounder=self.lower_bounder,
+        subproblems=self.subproblems,
+        max_oa_iters=self._params._lp_relax_max_oa_iters
+    )
+```
+
+#### Changes to `dispatch_lb_solve` (lines 283-304)
+
+```python
+def dispatch_lb_solve(self, current_node: Node) -> None:
+    self.logger.lb_start()
+    
+    # If composite bounder, pass current_UB
+    if self._params._use_lp_relaxation:
+        self.logger.lp_relax_start()
+        self.lower_bounder.solve(
+            subproblems=self.subproblems,
+            node=current_node,
+            current_UB=self.tree.metrics.ub
+        )
+        self.logger.lp_relax_stop()
+        
+        # Pass LP diagnostics to logger
+        if current_node.lb_problem.lp_relax_diagnostics is not None:
+            self.logger.set_lp_relax_diagnostics(
+                current_node.lb_problem.lp_relax_diagnostics
+            )
+    else:
+        self.lower_bounder.solve(
+            subproblems=self.subproblems,
+            node=current_node
+        )
+    
+    self.logger.lb_stop()
+    
+    # MPI sync (unchanged)
+    MPI.COMM_WORLD.barrier()
+    current_node.lb_problem.feasible = \
+        MPI.COMM_WORLD.allreduce(current_node.lb_problem.feasible, op=MPI.PROD)
+    current_node.lb_problem.objective = \
+        MPI.COMM_WORLD.allreduce(current_node.lb_problem.objective, op=MPI.SUM)
+```
+
+#### Changes to `display_status` (lines 442-503)
+
+Add an `LPR` column to the terminal output when LP relaxation is active:
+
+```python
+# In display_status, if LP relaxation is active:
+if self._params._use_lp_relaxation and current_node.lb_problem.lp_relax_diagnostics:
+    d = current_node.lb_problem.lp_relax_diagnostics
+    # Add to outputs list:
+    outputs.append(d["lb_source"][:3])  # "lp_" or "exi"
+    # Add to header list:
+    header.append("LB Src")
+```
+
+---
+
+### [MODIFY] `snoglode/components/parameters.py`
+
+```python
+# In __init__() (after line 87):
+self._use_lp_relaxation = False
+self._lp_relax_max_oa_iters = 20
+
+# New method:
+def enable_lp_relaxation(self, max_oa_iters: int = 20) -> None:
+    """
+    Enable Julia-style LP relaxation lower bound.
+    When enabled, each node computes: LB = max(existing_lb, lp_relaxation_lb)
+    """
+    self._use_lp_relaxation = True
+    self._lp_relax_max_oa_iters = max_oa_iters
+```
+
+---
+
+### [MODIFY] `snoglode/__init__.py`
+
+```python
+from snoglode.bounders.composite_lower_bounder import CompositeLowerBounder
+```
+
+---
+
+## Phase 1 Verification Plan
+
+### Unit Tests
+1. Build a 2-variable bilinear Pyomo model; verify `_preprocess_ef()` extracts correct BilinearEntry
+2. Add a constraint with `sin(x)` → verify it is detected as unsupported and skipped with warning
+3. Build LP relaxation; verify McCormick constraints have correct coefficients at given bounds
+4. Solve LP → verify LB ≤ true optimal
+5. Confirm `lb_problem.subproblem_solutions` is NEVER modified by CompositeLowerBounder
+
+### Integration Test
+- Run PID example with `params.enable_lp_relaxation()`
+- Log comparison: `existing_lb` vs `lp_relax_lb` vs `final_lb` at each node
+- Verify `final_lb ≤ true_optimal` at every node
+- Verify branching/candidate-generation still work (they read `subproblem_solutions`)
+- Verify convergence (gap closes)
+
+### Cross-Validation
+- Run Julia SNGO on same PID instance
+- Compare root-node LP relaxation LB values
+- Compare total node counts
+
+---
+
+# Phase 2: Reduced-Cost BT & Further Enhancements (Deferred)
+
+> [!IMPORTANT]
+> Phase 2 is planned but should NOT be implemented until Phase 1 is stable and validated.
+
+## Phase 2A: Reduced-Cost Bound Tightening
+
+**Julia reference**: `boundT.jl:1565-1608`, called at `bb.jl:662`
+
+#### New file: `snoglode/relaxation/reduced_cost_bt.py` (~50 lines)
+
+After LP relaxation solve:
+1. Read Gurobi reduced costs (`gurobi_persistent` solver or gurobipy model)
+2. For each variable with |μ| ≥ 1e-4: tighten bound using `(UB - LB) / |μ|`
+3. Propagate tightened first-stage bounds back into `node.state` and subproblem models
+
+## Phase 2B: Possible Further Enhancements
+
+| Enhancement | Julia Status | Priority |
+|-------------|-------------|----------|
+| Reduced-cost BT | Active (`boundT.jl:1565`) | **High** |
+| Probing (fix var → solve LP) | Active (`bb.jl:268-401`) | Medium |
+| LP-guided split point (`computeBvalue`) | Active | Medium |
+| RLT cuts (`EqVconstr`) | Active (`relax.jl:332-334`) | Medium |
+| Support for `exp`, `log`, `power` | Active | Low (PID doesn't need) |
+| Strong branching on LP | Commented out in Julia | Low |
+| LP warm-starting between nodes | Active (`R.colVal`) | Medium |

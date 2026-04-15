@@ -1,0 +1,7 @@
+# debug_dual_gt_obj_all.txt — dual > primal violations for ALL simplices and scenarios
+# Scans every simplex after full evaluation, not just the selected one
+
+[Iter 13] CS  T30 (3, 4, 10, 20) scen=1  dual=1.403658016e+02 primal=1.403658006e+02 diff=1.006055726e-06  status=optimal term=optimal
+
+[Iter 22] CS  T48 (3, 4, 10, 29) scen=1  dual=1.403658029e+02 primal=1.403658002e+02 diff=2.704631612e-06  status=optimal term=optimal
+

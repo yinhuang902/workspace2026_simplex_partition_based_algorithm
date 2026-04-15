@@ -1,0 +1,193 @@
+# simplex_debug.txt — ms/cs/Q subproblem failures
+# Fields: simp, scen, type, issue, ok, status, term, val, dual, time
+
+=== ITER-0 BOX-CS PROVENANCE START ===
+
+================================================================================
+[Iter 0] BOX-CS PROVENANCE TRACE  (MS_AGG=sum)
+================================================================================
+   scen       status               term       dual_bound       primal_obj         selected           source valid_lb
+  ----- ------------ ------------------ ---------------- ---------------- ---------------- ---------------- --------
+      0      optimal            optimal   -634.750477678   -634.750477678   -634.750477678       dual_bound     True
+      1      optimal            optimal   -637.501662327   -637.501662327   -637.501662327       dual_bound     True
+      2      optimal            optimal   -637.931154453   -637.931154453   -637.931154453       dual_bound     True
+      3      optimal            optimal   -637.325857652   -637.325857652   -637.325857652       dual_bound     True
+      4      optimal            optimal   -637.450895596   -637.450895596   -637.450895596       dual_bound     True
+
+  --- Aggregation ---
+  Finite CS values:    5/5
+  Non-finite (skipped): 0
+  Aggregation mode:    MS_AGG = 'sum'
+  Formula:             box_LB = sum(finite_cs_vals)
+  box_LB (sum):        -3184.960047705378
+  box_LB (per-scen):   -636.992009541076
+  NOTE: box_LB = sum of per-scenario dual bounds from solve_const_cut_box.
+         Vertex Q-values (fverts) are NOT included in this LB.
+================================================================================
+
+=== ITER-0 BOX-CS PROVENANCE END ===
+
+================================================================================
+=== ITER0 BOX-CS LOWER-BOUND CHECK START ===
+
+--- Scenario 0 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 18.22), (0.0, 17.4), (0.0, 28.81), (0.0, 25.78), (0.0, 19.14)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 18.22), (0.0, 17.4), (0.0, 28.81), (0.0, 25.78), (0.0, 19.14)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): -0.5*x1**2 - 5*x1 - 0.5*x2**2 - 5*x2 - 0.5*x3**2 - 5*x3 - 0.5*x4**2 - 5*x4 - 0.5*x5**2 - 5*x5 - 0.5*x6**2 - 5*x6 - 0.5*x7**2 - 5*x7 - 0.5*x8**2 - 5*x8
+cand_pt returned: (0.0, 0.0, 28.802399174773047, 0.0, 0.0)
+dual_bound: -634.7504776775771
+primal_obj: -634.7504776775771
+selected c_s: -634.7504776775771
+true_Q_at_cand = Q_s(cand_pt) = -634.7504776775769
+selected_minus_trueQ: -2.2737367544323206e-13
+dual_minus_trueQ: -2.2737367544323206e-13
+primal_minus_trueQ: -2.2737367544323206e-13
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 1 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 18.22), (0.0, 17.4), (0.0, 28.81), (0.0, 25.78), (0.0, 19.14)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 18.22), (0.0, 17.4), (0.0, 28.81), (0.0, 25.78), (0.0, 19.14)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): -0.5*x1**2 - 5*x1 - 0.5*x2**2 - 5*x2 - 0.5*x3**2 - 5*x3 - 0.5*x4**2 - 5*x4 - 0.5*x5**2 - 5*x5 - 0.5*x6**2 - 5*x6 - 0.5*x7**2 - 5*x7 - 0.5*x8**2 - 5*x8
+cand_pt returned: (0.0, 0.0, 28.81, 0.0, 0.0)
+dual_bound: -637.5016623268624
+primal_obj: -637.5016623268625
+selected c_s: -637.5016623268624
+true_Q_at_cand = Q_s(cand_pt) = -637.5372973749958
+selected_minus_trueQ: 0.03563504813337204
+dual_minus_trueQ: 0.03563504813337204
+primal_minus_trueQ: 0.03563504813325835
+selected_le_trueQ: False
+dual_le_trueQ: False
+primal_matches_trueQ: False
+WARNING: selected_c_s > true_Q_at_cand by 0.03563504813337204! Lower bound invalid.
+
+--- Scenario 2 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 18.22), (0.0, 17.4), (0.0, 28.81), (0.0, 25.78), (0.0, 19.14)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 18.22), (0.0, 17.4), (0.0, 28.81), (0.0, 25.78), (0.0, 19.14)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): -0.5*x1**2 - 5*x1 - 0.5*x2**2 - 5*x2 - 0.5*x3**2 - 5*x3 - 0.5*x4**2 - 5*x4 - 0.5*x5**2 - 5*x5 - 0.5*x6**2 - 5*x6 - 0.5*x7**2 - 5*x7 - 0.5*x8**2 - 5*x8
+cand_pt returned: (0.0, 0.0, 28.809999999999995, 0.009018138073307187, 0.0)
+dual_bound: -637.9311544534656
+primal_obj: -637.9311544534658
+selected c_s: -637.9311544534656
+true_Q_at_cand = Q_s(cand_pt) = -637.9311544534658
+selected_minus_trueQ: 1.1368683772161603e-13
+dual_minus_trueQ: 1.1368683772161603e-13
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 3 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 18.22), (0.0, 17.4), (0.0, 28.81), (0.0, 25.78), (0.0, 19.14)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 18.22), (0.0, 17.4), (0.0, 28.81), (0.0, 25.78), (0.0, 19.14)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): -0.5*x1**2 - 5*x1 - 0.5*x2**2 - 5*x2 - 0.5*x3**2 - 5*x3 - 0.5*x4**2 - 5*x4 - 0.5*x5**2 - 5*x5 - 0.5*x6**2 - 5*x6 - 0.5*x7**2 - 5*x7 - 0.5*x8**2 - 5*x8
+cand_pt returned: (0.0, 0.0, 28.809999999999995, 0.0, 0.0)
+dual_bound: -637.3258576517701
+primal_obj: -637.32585765177
+selected c_s: -637.3258576517701
+true_Q_at_cand = Q_s(cand_pt) = -637.325945544953
+selected_minus_trueQ: 8.789318292201642e-05
+dual_minus_trueQ: 8.789318292201642e-05
+primal_minus_trueQ: 8.789318303570326e-05
+selected_le_trueQ: False
+dual_le_trueQ: False
+primal_matches_trueQ: False
+WARNING: selected_c_s > true_Q_at_cand by 8.789318292201642e-05! Lower bound invalid.
+
+--- Scenario 4 ---
+Initial simplex bounds (first_vars_list[0]): [(0.0, 18.22), (0.0, 17.4), (0.0, 28.81), (0.0, 25.78), (0.0, 19.14)]
+Bundle _orig_bounds used in solve_const_cut_box: [(0.0, 18.22), (0.0, 17.4), (0.0, 28.81), (0.0, 25.78), (0.0, 19.14)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): -0.5*x1**2 - 5*x1 - 0.5*x2**2 - 5*x2 - 0.5*x3**2 - 5*x3 - 0.5*x4**2 - 5*x4 - 0.5*x5**2 - 5*x5 - 0.5*x6**2 - 5*x6 - 0.5*x7**2 - 5*x7 - 0.5*x8**2 - 5*x8
+cand_pt returned: (0.0, 0.0, 28.81, 0.0, 0.0)
+dual_bound: -637.4508955957027
+primal_obj: -637.4508955957027
+selected c_s: -637.4508955957027
+true_Q_at_cand = Q_s(cand_pt) = -637.450895558205
+selected_minus_trueQ: -3.749767074623378e-08
+dual_minus_trueQ: -3.749767074623378e-08
+primal_minus_trueQ: -3.749767074623378e-08
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+=== ITER0 BOX-CS LOWER-BOUND CHECK END ===
+================================================================================
+
+=== Iter 0 (box-CS provenance) ===
+
+================================================================================
+[Iter 0] ITER-0 LB vs UB PROVENANCE CHECK
+================================================================================
+  box_LB (sum):        -3184.960047705378
+  box_LB (per-scen):   -636.992009541076
+  LB_global (sum):     -3184.960047705378
+  LB_global (per-scen):-636.992009541076
+
+  UB_global (sum):     -3184.498095373317
+  UB_global (per-scen):-636.899619074663
+  UB source:           init
+  UB point:            (0.0000, 0.0000, 28.8100, 0.0000, 0.0000)
+  UB origin iter:      -1
+
+  --- Per-scenario UB (vertex Q-values at UB point) ---
+   scen            Q_val
+      0   -634.259922286
+      1   -637.537297375
+      2   -637.924034609
+      3   -637.325945545
+      4   -637.450895558
+
+  --- Consistency Check ---
+  box_LB - UB_global (sum):     -0.461952332061
+  box_LB - UB_global (per-scen):-0.092390466412
+  OK: box_LB <= UB_global (valid lower bound)
+  active_tol:          1.000000e-08
+  Threshold (UB+tol):  -3184.498095363317
+  box_LB <= threshold: True
+
+================================================================================
+[Iter 0] BOX-CS vs TRUE Q COMPARISON  (evaluate_Q_at on original models)
+================================================================================
+   scen         dual_bnd       primal_obj         selected       trueQ(cpt)    sel-trueQ   dual-trueQ sel<=trueQ dual<=trueQ prim~trueQ
+  ----- ---------------- ---------------- ---------------- ---------------- ------------ ------------ ---------- ----------- ----------
+      0   -634.750477678   -634.750477678   -634.750477678   -634.750477678    -0.000000    -0.000000       True        True       True
+      1   -637.501662327   -637.501662327   -637.501662327   -637.537297375     0.035635     0.035635      False       False      False
+      2   -637.931154453   -637.931154453   -637.931154453   -637.931154453     0.000000     0.000000       True        True       True
+      3   -637.325857652   -637.325857652   -637.325857652   -637.325945545     0.000088     0.000088      False       False      False
+      4   -637.450895596   -637.450895596   -637.450895596   -637.450895558    -0.000000    -0.000000       True        True       True
+
+  --- Box-CS vs True Q Aggregation Summary ---
+  sum(selected)   = -3184.960047705378  (per-scen: -636.992009541076)
+  sum(trueQ)      = -3184.995770609196  (per-scen: -636.999154121839)  [5/5 finite]
+  UB_global       = -3184.498095373317  (per-scen: -636.899619074663)
+  box_LB          = -3184.960047705378  (per-scen: -636.992009541076)
+  box_LB - UB     = -0.461952332061  (per-scen: -0.092390466412)
+  sum(sel) - sum(trueQ) = 0.035722903819
+  # scenarios where selected > trueQ (by > 1e-06): 2/5
+  # scenarios where dual_bnd > trueQ (by > 1e-06): 2/5
+  *** WARNING: 2 scenario(s) have selected > trueQ(cand_pt) ***
+      The box-CS 'dual bound' is NOT a valid lower bound for those scenarios.
+      This explains why box_LB > UB_global.
+================================================================================
+
+=== Iter 1 ===
+  scen=0 type=Q issue=Q_solve_fail ok=? status=warning term=infeasibleOrUnbounded val=-100.0 time=0.0063s
+  scen=1 type=Q issue=Q_solve_fail ok=? status=warning term=infeasibleOrUnbounded val=-100.0 time=0.0064s
+  scen=3 type=Q issue=Q_solve_fail ok=? status=warning term=infeasibleOrUnbounded val=-100.0 time=0.0058s
+  scen=4 type=Q issue=Q_solve_fail ok=? status=warning term=infeasibleOrUnbounded val=-100.0 time=0.0063s

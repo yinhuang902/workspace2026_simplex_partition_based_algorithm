@@ -1,0 +1,387 @@
+# debug_lb_gt_ub.txt — per-simplex LB decomposition for simplices where LB > UB
+# Written after post-split evaluate_all_tetra passes
+
+======================================================================
+[Iter 1] SIMPLEX LB > UB  —  T109 (0, 2, 3, 8, 16, 32)
+  LB = -1.323680960e+03
+  UB = -1.784652031e+03
+  LB - UB = 4.609710718e+02
+  LB / S = -264.736191929
+  UB / S = -356.930406290
+  ms_status = none
+  cs_status = full
+  verts = [(0.0, 0.0, 0.0, 25.79, 19.15), (0.0, 0.0, 0.0, 25.79, 0.0), (2.977327975650574, 2.4511768119430566, 3.8941867236749323, 9.105599659248316, 3.2017138463011436), (0.0, 17.41, 0.0, 0.0, 0.0), (18.22, 0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0, 0.0)]
+  fverts_sum = [-500.0, -500.0, -377.43809134308714, -819.4937293760788, -843.667153051164, -1114.6541985478734]
+  best_scene = None
+  x_ms_best_scene = None
+  ms_per_scene = [inf, inf, inf, inf, inf]
+  c_per_scene  = [-247.4417694941717, -270.8661410302327, -272.95306680730147, -260.37212053320627, -272.04786178233525]
+  LB_terms:
+    min_fverts_sum = -1114.6541985478734
+    LB_linear = inf
+    ms_total = inf
+    c_total_finite = -1323.6809596472474
+    c_total_all = -1323.6809596472474
+    lb_case = some_ms_inf_use_c_only
+  --- scenario 0 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.0594031999935396, 'ok': True, 'dual_bound': -247.4417694941717, 'primal_obj': -247.44176949417167, 'dual_gt_primal': False}
+  --- scenario 1 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.04620979999890551, 'ok': True, 'dual_bound': -270.8661410302327, 'primal_obj': -270.86614103023265, 'dual_gt_primal': False}
+  --- scenario 2 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.04021539998939261, 'ok': True, 'dual_bound': -272.95306680730147, 'primal_obj': -272.9530668073014, 'dual_gt_primal': False}
+  --- scenario 3 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.04809240001486614, 'ok': True, 'dual_bound': -260.37212053320627, 'primal_obj': -260.37212053320627, 'dual_gt_primal': False}
+  --- scenario 4 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.05076090001966804, 'ok': True, 'dual_bound': -272.04786178233525, 'primal_obj': -272.04786178233525, 'dual_gt_primal': False}
+
+
+======================================================================
+[Iter 2] SIMPLEX LB > UB  —  T108 (0, 2, 3, 8, 16, 32)
+  LB = -1.323680960e+03
+  UB = -1.784652031e+03
+  LB - UB = 4.609710718e+02
+  LB / S = -264.736191929
+  UB / S = -356.930406291
+  ms_status = none
+  cs_status = full
+  verts = [(0.0, 0.0, 0.0, 25.79, 19.15), (0.0, 0.0, 0.0, 25.79, 0.0), (2.977327975650574, 2.4511768119430566, 3.8941867236749323, 9.105599659248316, 3.2017138463011436), (0.0, 17.41, 0.0, 0.0, 0.0), (18.22, 0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0, 0.0)]
+  fverts_sum = [-500.0, -500.0, -377.43809134308714, -819.4937293760788, -843.667153051164, -1114.6541985478734]
+  best_scene = None
+  x_ms_best_scene = None
+  ms_per_scene = [inf, inf, inf, inf, inf]
+  c_per_scene  = [-247.4417694941717, -270.8661410302327, -272.95306680730147, -260.37212053320627, -272.04786178233525]
+  LB_terms:
+    min_fverts_sum = -1114.6541985478734
+    LB_linear = inf
+    ms_total = inf
+    c_total_finite = -1323.6809596472474
+    c_total_all = -1323.6809596472474
+    lb_case = some_ms_inf_use_c_only
+  --- scenario 0 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.0594031999935396, 'ok': True, 'dual_bound': -247.4417694941717, 'primal_obj': -247.44176949417167, 'dual_gt_primal': False}
+  --- scenario 1 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.04620979999890551, 'ok': True, 'dual_bound': -270.8661410302327, 'primal_obj': -270.86614103023265, 'dual_gt_primal': False}
+  --- scenario 2 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.04021539998939261, 'ok': True, 'dual_bound': -272.95306680730147, 'primal_obj': -272.9530668073014, 'dual_gt_primal': False}
+  --- scenario 3 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.04809240001486614, 'ok': True, 'dual_bound': -260.37212053320627, 'primal_obj': -260.37212053320627, 'dual_gt_primal': False}
+  --- scenario 4 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.05076090001966804, 'ok': True, 'dual_bound': -272.04786178233525, 'primal_obj': -272.04786178233525, 'dual_gt_primal': False}
+
+======================================================================
+[Iter 2] SIMPLEX LB > UB  —  T114 (0, 1, 3, 8, 16, 33)
+  LB = -1.114575735e+03
+  UB = -1.784652031e+03
+  LB - UB = 6.700762967e+02
+  LB / S = -222.915146951
+  UB / S = -356.930406291
+  ms_status = none
+  cs_status = full
+  verts = [(0.0, 0.0, 0.0, 25.79, 19.15), (0.0, 0.0, 0.0, 0.0, 19.15), (3.366749252550911, 2.5761503388958604, 4.059267000847406, 4.067002493266429, 7.441248788436855), (0.0, 17.41, 0.0, 0.0, 0.0), (18.22, 0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0, 0.0)]
+  fverts_sum = [-500.0, -500.0, -213.3709982843971, -819.4937293760788, -843.667153051164, -1114.6541985478734]
+  best_scene = None
+  x_ms_best_scene = None
+  ms_per_scene = [inf, inf, inf, inf, inf]
+  c_per_scene  = [-220.6331983418367, -223.63260823427515, -224.1254024019536, -222.02986430382202, -224.15466147439577]
+  LB_terms:
+    min_fverts_sum = -1114.6541985478734
+    LB_linear = inf
+    ms_total = inf
+    c_total_finite = -1114.5757347562833
+    c_total_all = -1114.5757347562833
+    lb_case = some_ms_inf_use_c_only
+  --- scenario 0 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.03272550000110641, 'ok': True, 'dual_bound': -220.6331983418367, 'primal_obj': -220.63319834183673, 'dual_gt_primal': False}
+  --- scenario 1 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.03831299999728799, 'ok': True, 'dual_bound': -223.63260823427515, 'primal_obj': -223.63260823427512, 'dual_gt_primal': False}
+  --- scenario 2 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.036108899977989495, 'ok': True, 'dual_bound': -224.1254024019536, 'primal_obj': -224.12540240195364, 'dual_gt_primal': False}
+  --- scenario 3 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.033523499965667725, 'ok': True, 'dual_bound': -222.02986430382202, 'primal_obj': -222.02986430382202, 'dual_gt_primal': False}
+  --- scenario 4 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.03213559999130666, 'ok': True, 'dual_bound': -224.15466147439577, 'primal_obj': -224.15466147439577, 'dual_gt_primal': False}
+
+
+======================================================================
+[Iter 3] SIMPLEX LB > UB  —  T108 (0, 2, 3, 8, 16, 32)
+  LB = -1.323680960e+03
+  UB = -1.784652031e+03
+  LB - UB = 4.609710718e+02
+  LB / S = -264.736191929
+  UB / S = -356.930406291
+  ms_status = none
+  cs_status = full
+  verts = [(0.0, 0.0, 0.0, 25.79, 19.15), (0.0, 0.0, 0.0, 25.79, 0.0), (2.977327975650574, 2.4511768119430566, 3.8941867236749323, 9.105599659248316, 3.2017138463011436), (0.0, 17.41, 0.0, 0.0, 0.0), (18.22, 0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0, 0.0)]
+  fverts_sum = [-500.0, -500.0, -377.43809134308714, -819.4937293760788, -843.667153051164, -1114.6541985478734]
+  best_scene = None
+  x_ms_best_scene = None
+  ms_per_scene = [inf, inf, inf, inf, inf]
+  c_per_scene  = [-247.4417694941717, -270.8661410302327, -272.95306680730147, -260.37212053320627, -272.04786178233525]
+  LB_terms:
+    min_fverts_sum = -1114.6541985478734
+    LB_linear = inf
+    ms_total = inf
+    c_total_finite = -1323.6809596472474
+    c_total_all = -1323.6809596472474
+    lb_case = some_ms_inf_use_c_only
+  --- scenario 0 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.0594031999935396, 'ok': True, 'dual_bound': -247.4417694941717, 'primal_obj': -247.44176949417167, 'dual_gt_primal': False}
+  --- scenario 1 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.04620979999890551, 'ok': True, 'dual_bound': -270.8661410302327, 'primal_obj': -270.86614103023265, 'dual_gt_primal': False}
+  --- scenario 2 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.04021539998939261, 'ok': True, 'dual_bound': -272.95306680730147, 'primal_obj': -272.9530668073014, 'dual_gt_primal': False}
+  --- scenario 3 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.04809240001486614, 'ok': True, 'dual_bound': -260.37212053320627, 'primal_obj': -260.37212053320627, 'dual_gt_primal': False}
+  --- scenario 4 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.05076090001966804, 'ok': True, 'dual_bound': -272.04786178233525, 'primal_obj': -272.04786178233525, 'dual_gt_primal': False}
+
+======================================================================
+[Iter 3] SIMPLEX LB > UB  —  T113 (0, 1, 3, 8, 16, 33)
+  LB = -1.114575735e+03
+  UB = -1.784652031e+03
+  LB - UB = 6.700762967e+02
+  LB / S = -222.915146951
+  UB / S = -356.930406291
+  ms_status = none
+  cs_status = full
+  verts = [(0.0, 0.0, 0.0, 25.79, 19.15), (0.0, 0.0, 0.0, 0.0, 19.15), (3.366749252550911, 2.5761503388958604, 4.059267000847406, 4.067002493266429, 7.441248788436855), (0.0, 17.41, 0.0, 0.0, 0.0), (18.22, 0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0, 0.0)]
+  fverts_sum = [-500.0, -500.0, -213.3709982843971, -819.4937293760788, -843.667153051164, -1114.6541985478734]
+  best_scene = None
+  x_ms_best_scene = None
+  ms_per_scene = [inf, inf, inf, inf, inf]
+  c_per_scene  = [-220.6331983418367, -223.63260823427515, -224.1254024019536, -222.02986430382202, -224.15466147439577]
+  LB_terms:
+    min_fverts_sum = -1114.6541985478734
+    LB_linear = inf
+    ms_total = inf
+    c_total_finite = -1114.5757347562833
+    c_total_all = -1114.5757347562833
+    lb_case = some_ms_inf_use_c_only
+  --- scenario 0 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.03272550000110641, 'ok': True, 'dual_bound': -220.6331983418367, 'primal_obj': -220.63319834183673, 'dual_gt_primal': False}
+  --- scenario 1 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.03831299999728799, 'ok': True, 'dual_bound': -223.63260823427515, 'primal_obj': -223.63260823427512, 'dual_gt_primal': False}
+  --- scenario 2 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.036108899977989495, 'ok': True, 'dual_bound': -224.1254024019536, 'primal_obj': -224.12540240195364, 'dual_gt_primal': False}
+  --- scenario 3 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.033523499965667725, 'ok': True, 'dual_bound': -222.02986430382202, 'primal_obj': -222.02986430382202, 'dual_gt_primal': False}
+  --- scenario 4 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.03213559999130666, 'ok': True, 'dual_bound': -224.15466147439577, 'primal_obj': -224.15466147439577, 'dual_gt_primal': False}
+
+======================================================================
+[Iter 3] SIMPLEX LB > UB  —  T119 (0, 1, 8, 16, 33, 34)
+  LB = -1.114446892e+03
+  UB = -1.784652031e+03
+  LB - UB = 6.702051392e+02
+  LB / S = -222.889378441
+  UB / S = -356.930406291
+  ms_status = none
+  cs_status = full
+  verts = [(3.366749252550911, 2.5761503388958604, 4.059267000847406, 4.067002493266429, 7.441248788436855), (0.0, 0.0, 0.0, 0.0, 19.15), (3.808234001212461, 3.21549639653734, 5.854893765648288, 0.5489808870899324, 4.3855835816442745), (0.0, 17.41, 0.0, 0.0, 0.0), (18.22, 0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0, 0.0)]
+  fverts_sum = [-213.3709982843971, -500.0, -281.09781493356707, -819.4937293760788, -843.667153051164, -1114.6541985478734]
+  best_scene = None
+  x_ms_best_scene = None
+  ms_per_scene = [inf, inf, inf, inf, inf]
+  c_per_scene  = [-220.63084262834695, -223.65248652072958, -224.06398056310184, -221.94492101911712, -224.15466147439577]
+  LB_terms:
+    min_fverts_sum = -1114.6541985478734
+    LB_linear = inf
+    ms_total = inf
+    c_total_finite = -1114.4468922056913
+    c_total_all = -1114.4468922056913
+    lb_case = some_ms_inf_use_c_only
+  --- scenario 0 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.03167559998109937, 'ok': True, 'dual_bound': -220.63084262834695, 'primal_obj': -220.63084262834695, 'dual_gt_primal': False}
+  --- scenario 1 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.035831799963489175, 'ok': True, 'dual_bound': -223.65248652072958, 'primal_obj': -223.65248652072955, 'dual_gt_primal': False}
+  --- scenario 2 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.03942739998456091, 'ok': True, 'dual_bound': -224.06398056310184, 'primal_obj': -224.06398056310184, 'dual_gt_primal': False}
+  --- scenario 3 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.03277699998579919, 'ok': True, 'dual_bound': -221.94492101911712, 'primal_obj': -221.9449210191171, 'dual_gt_primal': False}
+  --- scenario 4 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.040598099993076175, 'ok': True, 'dual_bound': -224.15466147439577, 'primal_obj': -224.15466147439574, 'dual_gt_primal': False}
+
+
+======================================================================
+[Iter 4] SIMPLEX LB > UB  —  T108 (0, 2, 3, 8, 16, 32)
+  LB = -1.323680960e+03
+  UB = -1.784652031e+03
+  LB - UB = 4.609710718e+02
+  LB / S = -264.736191929
+  UB / S = -356.930406291
+  ms_status = none
+  cs_status = full
+  verts = [(0.0, 0.0, 0.0, 25.79, 19.15), (0.0, 0.0, 0.0, 25.79, 0.0), (2.977327975650574, 2.4511768119430566, 3.8941867236749323, 9.105599659248316, 3.2017138463011436), (0.0, 17.41, 0.0, 0.0, 0.0), (18.22, 0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0, 0.0)]
+  fverts_sum = [-500.0, -500.0, -377.43809134308714, -819.4937293760788, -843.667153051164, -1114.6541985478734]
+  best_scene = None
+  x_ms_best_scene = None
+  ms_per_scene = [inf, inf, inf, inf, inf]
+  c_per_scene  = [-247.4417694941717, -270.8661410302327, -272.95306680730147, -260.37212053320627, -272.04786178233525]
+  LB_terms:
+    min_fverts_sum = -1114.6541985478734
+    LB_linear = inf
+    ms_total = inf
+    c_total_finite = -1323.6809596472474
+    c_total_all = -1323.6809596472474
+    lb_case = some_ms_inf_use_c_only
+  --- scenario 0 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.0594031999935396, 'ok': True, 'dual_bound': -247.4417694941717, 'primal_obj': -247.44176949417167, 'dual_gt_primal': False}
+  --- scenario 1 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.04620979999890551, 'ok': True, 'dual_bound': -270.8661410302327, 'primal_obj': -270.86614103023265, 'dual_gt_primal': False}
+  --- scenario 2 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.04021539998939261, 'ok': True, 'dual_bound': -272.95306680730147, 'primal_obj': -272.9530668073014, 'dual_gt_primal': False}
+  --- scenario 3 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.04809240001486614, 'ok': True, 'dual_bound': -260.37212053320627, 'primal_obj': -260.37212053320627, 'dual_gt_primal': False}
+  --- scenario 4 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.05076090001966804, 'ok': True, 'dual_bound': -272.04786178233525, 'primal_obj': -272.04786178233525, 'dual_gt_primal': False}
+
+======================================================================
+[Iter 4] SIMPLEX LB > UB  —  T113 (0, 1, 3, 8, 16, 33)
+  LB = -1.114575735e+03
+  UB = -1.784652031e+03
+  LB - UB = 6.700762967e+02
+  LB / S = -222.915146951
+  UB / S = -356.930406291
+  ms_status = none
+  cs_status = full
+  verts = [(0.0, 0.0, 0.0, 25.79, 19.15), (0.0, 0.0, 0.0, 0.0, 19.15), (3.366749252550911, 2.5761503388958604, 4.059267000847406, 4.067002493266429, 7.441248788436855), (0.0, 17.41, 0.0, 0.0, 0.0), (18.22, 0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0, 0.0)]
+  fverts_sum = [-500.0, -500.0, -213.3709982843971, -819.4937293760788, -843.667153051164, -1114.6541985478734]
+  best_scene = None
+  x_ms_best_scene = None
+  ms_per_scene = [inf, inf, inf, inf, inf]
+  c_per_scene  = [-220.6331983418367, -223.63260823427515, -224.1254024019536, -222.02986430382202, -224.15466147439577]
+  LB_terms:
+    min_fverts_sum = -1114.6541985478734
+    LB_linear = inf
+    ms_total = inf
+    c_total_finite = -1114.5757347562833
+    c_total_all = -1114.5757347562833
+    lb_case = some_ms_inf_use_c_only
+  --- scenario 0 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.03272550000110641, 'ok': True, 'dual_bound': -220.6331983418367, 'primal_obj': -220.63319834183673, 'dual_gt_primal': False}
+  --- scenario 1 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.03831299999728799, 'ok': True, 'dual_bound': -223.63260823427515, 'primal_obj': -223.63260823427512, 'dual_gt_primal': False}
+  --- scenario 2 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.036108899977989495, 'ok': True, 'dual_bound': -224.1254024019536, 'primal_obj': -224.12540240195364, 'dual_gt_primal': False}
+  --- scenario 3 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.033523499965667725, 'ok': True, 'dual_bound': -222.02986430382202, 'primal_obj': -222.02986430382202, 'dual_gt_primal': False}
+  --- scenario 4 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.03213559999130666, 'ok': True, 'dual_bound': -224.15466147439577, 'primal_obj': -224.15466147439577, 'dual_gt_primal': False}
+
+======================================================================
+[Iter 4] SIMPLEX LB > UB  —  T119 (0, 1, 8, 16, 33, 34)
+  LB = -1.114446892e+03
+  UB = -1.784652031e+03
+  LB - UB = 6.702051392e+02
+  LB / S = -222.889378441
+  UB / S = -356.930406291
+  ms_status = none
+  cs_status = full
+  verts = [(3.366749252550911, 2.5761503388958604, 4.059267000847406, 4.067002493266429, 7.441248788436855), (0.0, 0.0, 0.0, 0.0, 19.15), (3.808234001212461, 3.21549639653734, 5.854893765648288, 0.5489808870899324, 4.3855835816442745), (0.0, 17.41, 0.0, 0.0, 0.0), (18.22, 0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0, 0.0)]
+  fverts_sum = [-213.3709982843971, -500.0, -281.09781493356707, -819.4937293760788, -843.667153051164, -1114.6541985478734]
+  best_scene = None
+  x_ms_best_scene = None
+  ms_per_scene = [inf, inf, inf, inf, inf]
+  c_per_scene  = [-220.63084262834695, -223.65248652072958, -224.06398056310184, -221.94492101911712, -224.15466147439577]
+  LB_terms:
+    min_fverts_sum = -1114.6541985478734
+    LB_linear = inf
+    ms_total = inf
+    c_total_finite = -1114.4468922056913
+    c_total_all = -1114.4468922056913
+    lb_case = some_ms_inf_use_c_only
+  --- scenario 0 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.03167559998109937, 'ok': True, 'dual_bound': -220.63084262834695, 'primal_obj': -220.63084262834695, 'dual_gt_primal': False}
+  --- scenario 1 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.035831799963489175, 'ok': True, 'dual_bound': -223.65248652072958, 'primal_obj': -223.65248652072955, 'dual_gt_primal': False}
+  --- scenario 2 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.03942739998456091, 'ok': True, 'dual_bound': -224.06398056310184, 'primal_obj': -224.06398056310184, 'dual_gt_primal': False}
+  --- scenario 3 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.03277699998579919, 'ok': True, 'dual_bound': -221.94492101911712, 'primal_obj': -221.9449210191171, 'dual_gt_primal': False}
+  --- scenario 4 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.040598099993076175, 'ok': True, 'dual_bound': -224.15466147439577, 'primal_obj': -224.15466147439574, 'dual_gt_primal': False}
+
+======================================================================
+[Iter 4] SIMPLEX LB > UB  —  T124 (0, 1, 8, 33, 34, 35)
+  LB = -1.114512862e+03
+  UB = -1.784652031e+03
+  LB - UB = 6.701391697e+02
+  LB / S = -222.902572352
+  UB / S = -356.930406291
+  ms_status = none
+  cs_status = full
+  verts = [(3.366749252550911, 2.5761503388958604, 4.059267000847406, 4.067002493266429, 7.441248788436855), (0.0, 0.0, 0.0, 0.0, 19.15), (1.1736859118174385, 3.993436822807712, 7.534127954903119, 0.7550285352687124, 4.5128141418963335), (0.0, 17.41, 0.0, 0.0, 0.0), (3.808234001212461, 3.21549639653734, 5.854893765648288, 0.5489808870899324, 4.3855835816442745), (0.0, 0.0, 0.0, 0.0, 0.0)]
+  fverts_sum = [-213.3709982843971, -500.0, -375.9159765170551, -819.4937293760788, -281.09781493356707, -1114.6541985478734]
+  best_scene = None
+  x_ms_best_scene = None
+  ms_per_scene = [inf, inf, inf, inf, inf]
+  c_per_scene  = [-220.63061839818533, -223.62620049903396, -224.12540240195406, -221.97597898750533, -224.15466147439577]
+  LB_terms:
+    min_fverts_sum = -1114.6541985478734
+    LB_linear = inf
+    ms_total = inf
+    c_total_finite = -1114.5128617610744
+    c_total_all = -1114.5128617610744
+    lb_case = some_ms_inf_use_c_only
+  --- scenario 0 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.03551439999137074, 'ok': True, 'dual_bound': -220.63061839818533, 'primal_obj': -220.63061839818533, 'dual_gt_primal': False}
+  --- scenario 1 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.03632130002370104, 'ok': True, 'dual_bound': -223.62620049903396, 'primal_obj': -223.62620049903393, 'dual_gt_primal': False}
+  --- scenario 2 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.03025170002365485, 'ok': True, 'dual_bound': -224.12540240195406, 'primal_obj': -224.1254024019541, 'dual_gt_primal': False}
+  --- scenario 3 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.04266470001311973, 'ok': True, 'dual_bound': -221.97597898750533, 'primal_obj': -221.97597898750533, 'dual_gt_primal': False}
+  --- scenario 4 ---
+    ms_meta: cached/None
+    cs_meta: {'status': 'optimal', 'termination_condition': 'optimal', 'solver_status': 'ok', 'used_fallback': False, 'fallback_reason': None, 'time_sec': 0.0398194000008516, 'ok': True, 'dual_bound': -224.15466147439577, 'primal_obj': -224.15466147439577, 'dual_gt_primal': False}
+
+

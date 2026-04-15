@@ -1,0 +1,3 @@
+# debug_mode6.txt — mode6 cluster-aware split diagnostics
+# Per-iteration: search_mode, fallback_used, cluster info, scores, chosen point
+

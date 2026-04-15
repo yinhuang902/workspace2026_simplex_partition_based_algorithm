@@ -1,0 +1,344 @@
+# simplex_debug.txt — ms/cs/Q subproblem failures
+# Fields: simp, scen, type, issue, ok, status, term, val, dual, time
+
+=== ITER-0 BOX-CS PROVENANCE START ===
+
+================================================================================
+[Iter 0] BOX-CS PROVENANCE TRACE  (MS_AGG=sum)
+================================================================================
+   scen       status               term       dual_bound       primal_obj         selected           source valid_lb
+  ----- ------------ ------------------ ---------------- ---------------- ---------------- ---------------- --------
+      0      optimal            optimal     99.979900257     99.979900257     99.979900257       dual_bound     True
+      1      optimal            optimal    123.497431134    123.497431134    123.497431134       dual_bound     True
+
+  --- Aggregation ---
+  Finite CS values:    2/2
+  Non-finite (skipped): 0
+  Aggregation mode:    MS_AGG = 'sum'
+  Formula:             box_LB = sum(finite_cs_vals)
+  box_LB (sum):        223.477331390994
+  box_LB (per-scen):   111.738665695497
+  NOTE: box_LB = sum of per-scenario dual bounds from solve_const_cut_box.
+         Vertex Q-values (fverts) are NOT included in this LB.
+================================================================================
+
+=== ITER-0 BOX-CS PROVENANCE END ===
+
+================================================================================
+=== ITER0 BOX-CS LOWER-BOUND CHECK START ===
+
+--- Scenario 0 ---
+Initial simplex bounds (first_vars_list[0]): [(-75.0, 75.0), (-75.0, 75.0), (-75.0, 75.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(-75.0, 75.0), (-75.0, 75.0), (-75.0, 75.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 1.4*((x1 - c1)**2 + (x2 - c2)**2 + (x3 - c3)**2) + 2.1*((x1 + y1 - (c1 + xi1))**2 + (x2 + y2 - (c2 + xi2))**2 + (x3 + y3 - (c3 + xi3))**2) + 0.55*(y1 
+cand_pt returned: (-29.939060488984275, -30.00392535383329, 10.050128700171143)
+dual_bound: 99.97990025739637
+primal_obj: 99.97990025740026
+selected c_s: 99.97990025739637
+true_Q_at_cand = Q_s(cand_pt) = 99.97990025740026
+selected_minus_trueQ: -3.893774191965349e-12
+dual_minus_trueQ: -3.893774191965349e-12
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+
+--- Scenario 1 ---
+Initial simplex bounds (first_vars_list[0]): [(-75.0, 75.0), (-75.0, 75.0), (-75.0, 75.0)]
+Bundle _orig_bounds used in solve_const_cut_box: [(-75.0, 75.0), (-75.0, 75.0), (-75.0, 75.0)]
+Bounds match EXACTLY: True
+Active objective in solve_const_cut_box: obj_const
+Note: this should represent the surrogate/constant-cut form of Q_s.
+Expression (truncated): 1.4*((x1 - c1)**2 + (x2 - c2)**2 + (x3 - c3)**2) + 2.1*((x1 + y1 - (c1 + xi1))**2 + (x2 + y2 - (c2 + xi2))**2 + (x3 + y3 - (c3 + xi3))**2) + 0.55*(y1 
+cand_pt returned: (25.174527561939954, 42.31929095067687, 31.76754670989908)
+dual_bound: 123.49743113359727
+primal_obj: 123.49743113358183
+selected c_s: 123.49743113359727
+true_Q_at_cand = Q_s(cand_pt) = 123.49743113358183
+selected_minus_trueQ: 1.5447199075424578e-11
+dual_minus_trueQ: 1.5447199075424578e-11
+primal_minus_trueQ: 0.0
+selected_le_trueQ: True
+dual_le_trueQ: True
+primal_matches_trueQ: True
+=== ITER0 BOX-CS LOWER-BOUND CHECK END ===
+================================================================================
+
+=== Iter 0 (box-CS provenance) ===
+
+================================================================================
+[Iter 0] ITER-0 LB vs UB PROVENANCE CHECK
+================================================================================
+  box_LB (sum):        223.477331390994
+  box_LB (per-scen):   111.738665695497
+  LB_global (sum):     223.477331390994
+  LB_global (per-scen):111.738665695497
+
+  UB_global (sum):     71444.578949476330
+  UB_global (per-scen):35722.289474738165
+  UB source:           init
+  UB point:            (-75.0000, 75.0000, 75.0000)
+  UB origin iter:      -1
+
+  --- Per-scenario UB (vertex Q-values at UB point) ---
+   scen            Q_val
+      0  40963.990000011
+      1  30480.588949465
+
+  --- Consistency Check ---
+  box_LB - UB_global (sum):     -71221.101618085333
+  box_LB - UB_global (per-scen):-35610.550809042667
+  OK: box_LB <= UB_global (valid lower bound)
+  active_tol:          1.000000e-08
+  Threshold (UB+tol):  71444.578949486327
+  box_LB <= threshold: True
+
+================================================================================
+[Iter 0] BOX-CS vs TRUE Q COMPARISON  (evaluate_Q_at on original models)
+================================================================================
+   scen         dual_bnd       primal_obj         selected       trueQ(cpt)    sel-trueQ   dual-trueQ sel<=trueQ dual<=trueQ prim~trueQ
+  ----- ---------------- ---------------- ---------------- ---------------- ------------ ------------ ---------- ----------- ----------
+      0     99.979900257     99.979900257     99.979900257     99.979900257    -0.000000    -0.000000       True        True       True
+      1    123.497431134    123.497431134    123.497431134    123.497431134     0.000000     0.000000       True        True       True
+
+  --- Box-CS vs True Q Aggregation Summary ---
+  sum(selected)   = 223.477331390994  (per-scen: 111.738665695497)
+  sum(trueQ)      = 223.477331390982  (per-scen: 111.738665695491)  [2/2 finite]
+  UB_global       = 71444.578949476330  (per-scen: 35722.289474738165)
+  box_LB          = 223.477331390994  (per-scen: 111.738665695497)
+  box_LB - UB     = -71221.101618085333  (per-scen: -35610.550809042667)
+  sum(sel) - sum(trueQ) = 0.000000000012
+  # scenarios where selected > trueQ (by > 1e-06): 0/2
+  # scenarios where dual_bnd > trueQ (by > 1e-06): 0/2
+  OK: all selected values <= trueQ(cand_pt) — box-CS dual bounds look valid per-scenario.
+================================================================================
+
+=== Iter 1 ===
+  simp=T2 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T2 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T5 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T5 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T6 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T6 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T7 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T7 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 2 ===
+  simp=T0 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T0 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T1 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T1 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T2 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T2 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T3 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T3 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T4 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T4 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T2 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T2 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T7 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T7 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T8 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T8 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T9 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T9 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 3 ===
+  simp=T8 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T8 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T9 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T9 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T10 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T10 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T11 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T11 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 4 ===
+  simp=T10 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T10 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T11 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T11 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T12 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T12 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T13 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T13 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 5 ===
+  simp=T10 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T10 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T13 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T13 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T14 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T14 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T15 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T15 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 6 ===
+  simp=T13 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T13 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T15 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T15 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T16 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T16 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T17 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T17 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 7 ===
+  simp=T15 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T15 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T17 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T17 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T18 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T18 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T19 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T19 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 8 ===
+  simp=T18 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T18 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T19 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T19 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T20 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T20 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T21 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T21 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 9 ===
+  simp=T20 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T20 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T21 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T21 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T22 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T22 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T23 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T23 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 10 ===
+  simp=T22 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T22 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T23 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T23 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T24 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T24 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T25 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T25 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 11 ===
+  simp=T24 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T24 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T25 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T25 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T26 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T26 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T27 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T27 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 12 ===
+  simp=T26 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T26 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T27 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T27 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T28 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T28 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T29 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T29 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 13 ===
+  simp=T28 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T28 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T29 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T29 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T30 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T30 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T31 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T31 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 14 ===
+  simp=T30 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T30 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T31 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T31 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T32 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T32 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T33 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T33 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 15 ===
+  simp=T32 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T32 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T33 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T33 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T34 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T34 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T35 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T35 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 16 ===
+  simp=T34 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T34 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T35 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T35 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T36 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T36 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T37 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T37 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 17 ===
+  simp=T36 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T36 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T37 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T37 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T38 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T38 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T39 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T39 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 18 ===
+  simp=T38 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T38 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T39 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T39 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T40 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T40 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T41 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T41 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 19 ===
+  simp=T40 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T40 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T41 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T41 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T42 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T42 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T43 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T43 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 20 ===
+  simp=T42 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T42 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T43 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T43 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T44 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T44 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T45 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T45 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 21 ===
+  simp=T44 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T44 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T45 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T45 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T46 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T46 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T47 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T47 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 22 ===
+  simp=T46 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T46 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T47 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T47 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T48 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T48 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T49 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T49 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 23 ===
+  simp=T48 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T48 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T49 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T49 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T50 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T50 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T51 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T51 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+=== Iter 24 ===
+  simp=T49 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T49 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T51 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T51 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T52 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T52 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T53 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T53 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s

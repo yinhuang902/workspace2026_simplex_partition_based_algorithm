@@ -1,0 +1,58 @@
+# simplex_record_subproblem_runtime.txt — per-iteration subproblem runtime
+# ms/cs/Q timing, non-optimal subproblem detection
+
+=== Iter 1 ===
+ms: total_time=1.0443, calls=60, avg=0.0174
+cs: total_time=15.4960, calls=1130, avg=0.0137
+Q:  total_time=0.2196, calls=20, avg=0.0110
+
+=== Iter 2 ===
+ms: total_time=18.1283, calls=1180, avg=0.0154
+cs: total_time=20.3523, calls=1180, avg=0.0172
+Q:  total_time=0.1418, calls=20, avg=0.0071
+
+=== Iter 3 ===
+ms: total_time=18.9735, calls=1230, avg=0.0154
+cs: total_time=21.1338, calls=1230, avg=0.0172
+Q:  total_time=0.1291, calls=20, avg=0.0065
+
+=== Iter 4 ===
+ms: total_time=19.8515, calls=1280, avg=0.0155
+cs: total_time=21.9232, calls=1280, avg=0.0171
+Q:  total_time=0.1394, calls=20, avg=0.0070
+
+=== Iter 5 ===
+ms: total_time=20.7913, calls=1330, avg=0.0156
+cs: total_time=22.7229, calls=1330, avg=0.0171
+Q:  total_time=0.1392, calls=20, avg=0.0070
+
+=== Iter 6 ===
+ms: total_time=22.0595, calls=1380, avg=0.0160
+cs: total_time=23.4932, calls=1380, avg=0.0170
+Q:  total_time=0.0841, calls=10, avg=0.0084
+
+=== Iter 7 ===
+ms: total_time=23.0177, calls=1420, avg=0.0162
+cs: total_time=24.0623, calls=1420, avg=0.0169
+Q:  total_time=0.0836, calls=10, avg=0.0084
+
+=== Iter 8 ===
+ms: total_time=23.2537, calls=1430, avg=0.0163
+cs: total_time=24.1975, calls=1430, avg=0.0169
+Q:  total_time=0.0905, calls=10, avg=0.0090
+
+=== Iter 9 ===
+ms: total_time=24.2456, calls=1470, avg=0.0165
+cs: total_time=24.7882, calls=1470, avg=0.0169
+Q:  total_time=0.0785, calls=10, avg=0.0078
+
+=== Iter 10 ===
+ms: total_time=24.4303, calls=1480, avg=0.0165
+cs: total_time=24.9352, calls=1480, avg=0.0168
+Q:  total_time=0.0780, calls=10, avg=0.0078
+
+=== Iter 11 ===
+ms: total_time=25.3944, calls=1520, avg=0.0167
+cs: total_time=25.5717, calls=1520, avg=0.0168
+Q:  total_time=0.0739, calls=10, avg=0.0074
+

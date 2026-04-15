@@ -1,0 +1,68 @@
+# debug_ub_mesh_membership.txt — UB point mesh containment check
+# Tests whether UB_node lies inside any simplex of the current mesh
+# 'inside' = barycentric coords all >= -tol, all <= 1+tol
+
+============================================================
+[Iter 1] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
+  UB_global_end  = -1.326722154e+04 (per-scen: -132.672215364)
+  UB_node        = (0.000001, 0.000000, 0.000001, 13.750451, 0.000001)
+  ub_source      = init
+  inside_mesh    = True
+  simplex_index  = 107
+  tol_used       = 1e-08
+  n_simplices    = 109
+  lambdas        = [1.19880010e-08 7.96532875e-01 1.49414179e-08 4.42019182e-09
+ 1.61811897e-08 2.03467078e-01]
+
+[Iter 2] UB CANDIDATE: avgCS_new_simplex
+  point       = (0.000000, 0.000000, 0.000000, 13.756515, 0.000000)
+  obj_value   = -1.326723764e+04 (per-scen: -132.672376377)
+  inside_mesh = True
+  simplex_idx = 108
+  tol_used    = 1e-08
+  n_checked   = 110
+
+============================================================
+[Iter 2] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
+  UB_global_end  = -1.326723764e+04 (per-scen: -132.672376377)
+  UB_node        = (0.000000, 0.000000, 0.000000, 13.756515, 0.000000)
+  ub_source      = avgCS_new_simplex
+  inside_mesh    = True
+  simplex_index  = 108
+  tol_used       = 1e-08
+  n_simplices    = 110
+  lambdas        = [8.97171226e-13 9.00118646e-01 3.26309605e-12 1.02987207e-12
+ 1.80586802e-12 9.98813544e-02]
+
+[Iter 3] UB CANDIDATE: avgCS_new_simplex
+  point       = (0.000000, 0.000000, 0.000000, 7.955175, 0.000000)
+  obj_value   = -1.327683185e+04 (per-scen: -132.768318517)
+  inside_mesh = True
+  simplex_idx = 109
+  tol_used    = 1e-08
+  n_checked   = 111
+
+============================================================
+[Iter 3] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
+  UB_global_end  = -1.327683185e+04 (per-scen: -132.768318517)
+  UB_node        = (0.000000, 0.000000, 0.000000, 7.955175, 0.000000)
+  ub_source      = avgCS_new_simplex
+  inside_mesh    = True
+  simplex_index  = 109
+  tol_used       = 1e-08
+  n_simplices    = 111
+  lambdas        = [9.49085255e-12 5.78284189e-01 1.59259499e-11 3.73714601e-12
+ 1.05182968e-11 4.21715811e-01]
+
+============================================================
+[Iter 4] END-OF-ITERATION UB MESH MEMBERSHIP CHECK
+  UB_global_end  = -1.327683185e+04 (per-scen: -132.768318517)
+  UB_node        = (0.000000, 0.000000, 0.000000, 7.955175, 0.000000)
+  ub_source      = avgCS_new_simplex
+  inside_mesh    = True
+  simplex_index  = 108
+  tol_used       = 1e-08
+  n_simplices    = 116
+  lambdas        = [9.49085255e-12 5.78284189e-01 1.59259499e-11 3.73714601e-12
+ 1.05182968e-11 4.21715811e-01]
+

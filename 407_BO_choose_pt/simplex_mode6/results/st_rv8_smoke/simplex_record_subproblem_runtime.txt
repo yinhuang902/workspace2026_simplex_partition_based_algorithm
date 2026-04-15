@@ -1,0 +1,68 @@
+# simplex_record_subproblem_runtime.txt — per-iteration subproblem runtime
+# ms/cs/Q timing, non-optimal subproblem detection
+
+=== Iter 1 ===
+ms: total_time=0.3786, calls=10, avg=0.0379
+cs: total_time=24.3664, calls=545, avg=0.0447
+Q:  total_time=0.2295, calls=5, avg=0.0459
+
+=== Iter 2 ===
+ms: total_time=18.7841, calls=550, avg=0.0342
+cs: total_time=31.8360, calls=550, avg=0.0579
+Q:  total_time=0.2051, calls=5, avg=0.0410
+
+=== Iter 3 ===
+ms: total_time=18.9847, calls=555, avg=0.0342
+cs: total_time=32.0929, calls=555, avg=0.0578
+Q:  total_time=0.2347, calls=5, avg=0.0469
+
+=== Iter 4 ===
+ms: total_time=19.1534, calls=560, avg=0.0342
+cs: total_time=32.4012, calls=560, avg=0.0579
+Q:  total_time=0.1990, calls=5, avg=0.0398
+
+=== Iter 5 ===
+ms: total_time=19.3703, calls=565, avg=0.0343
+cs: total_time=32.7130, calls=565, avg=0.0579
+Q:  total_time=0.2234, calls=5, avg=0.0447
+
+=== Iter 6 ===
+ms: total_time=19.6018, calls=570, avg=0.0344
+cs: total_time=32.9957, calls=570, avg=0.0579
+Q:  total_time=0.2373, calls=5, avg=0.0475
+
+=== Iter 7 ===
+ms: total_time=19.8565, calls=575, avg=0.0345
+cs: total_time=33.2903, calls=575, avg=0.0579
+Q:  total_time=0.2252, calls=5, avg=0.0450
+
+=== Iter 8 ===
+ms: total_time=20.0561, calls=580, avg=0.0346
+cs: total_time=33.5739, calls=580, avg=0.0579
+Q:  total_time=0.2163, calls=5, avg=0.0433
+
+=== Iter 9 ===
+ms: total_time=20.2551, calls=585, avg=0.0346
+cs: total_time=33.8446, calls=585, avg=0.0579
+Q:  total_time=0.2138, calls=5, avg=0.0428
+
+=== Iter 10 ===
+ms: total_time=20.4983, calls=590, avg=0.0347
+cs: total_time=34.1030, calls=590, avg=0.0578
+Q:  total_time=0.2014, calls=5, avg=0.0403
+
+=== Iter 11 ===
+ms: total_time=20.7331, calls=595, avg=0.0348
+cs: total_time=34.4041, calls=595, avg=0.0578
+Q:  total_time=0.2099, calls=5, avg=0.0420
+
+=== Iter 12 ===
+ms: total_time=20.9459, calls=600, avg=0.0349
+cs: total_time=34.7063, calls=600, avg=0.0578
+Q:  total_time=0.2185, calls=5, avg=0.0437
+
+=== Iter 13 ===
+ms: total_time=21.1981, calls=605, avg=0.0350
+cs: total_time=34.9657, calls=605, avg=0.0578
+Q:  total_time=0.2359, calls=5, avg=0.0472
+

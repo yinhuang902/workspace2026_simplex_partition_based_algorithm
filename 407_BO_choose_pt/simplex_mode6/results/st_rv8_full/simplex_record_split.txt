@@ -1,0 +1,99 @@
+# simplex_record_split.txt — per-iteration split record
+# selected_simplex LB_pre, UB_pre, children LBs, end LB/UB
+
+=== Iter 1 ===
+selected_simplex: T0  LB_pre=-133.360098485
+  v3: (0.0000, 0.0000, 0.0000, 38.8889, 46.8751)
+  v2: (0.0000, 0.0000, 0.0000, 38.8889, 0.0000)
+  v4: (0.0000, 0.0000, 40.5556, 0.0000, 0.0000)
+  v8: (0.0000, 47.2223, 0.0000, 0.0000, 0.0000)
+  v16: (38.3334, 0.0000, 0.0000, 0.0000, 0.0000)
+  v0: (0.0000, 0.0000, 0.0000, 0.0000, 0.0000)
+UB_pre=-132.672215364  LB_global_pre=-133.359819816
+children (created 2):
+  child T107 (0, 3, 4, 8, 16, 32) LB=-133.134921264 sum_cs=-133.134921264 vol=4.950505e+05
+  child T108 (2, 3, 4, 8, 16, 32) LB=-132.830514712 sum_cs=-132.830514712 vol=6.201731e+05
+next_node: (0.0000, 0.0000, 0.0000, 17.2629, 0.0000)
+selection: source=mode4_avg_cs  rank=N/A  snap=edge
+barycentric: (0.000000, 0.443902, 0.000000, 0.000000, 0.000000, 0.556098)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 200 checks, 0 inactive, 2 active
+  child T107: active  checks=100/100
+  child T108: active  checks=100/100
+cumulative_inactive: 0/109 simplices
+end: UB=-132.672215364  LB=-133.359819816
+
+=== Iter 2 ===
+selected_simplex: T107  LB_pre=-133.134921264
+  v3: (0.0000, 0.0000, 0.0000, 38.8889, 46.8751)
+  v32: (0.0000, 0.0000, 0.0000, 17.2629, 0.0000)
+  v4: (0.0000, 0.0000, 40.5556, 0.0000, 0.0000)
+  v8: (0.0000, 47.2223, 0.0000, 0.0000, 0.0000)
+  v16: (38.3334, 0.0000, 0.0000, 0.0000, 0.0000)
+  v0: (0.0000, 0.0000, 0.0000, 0.0000, 0.0000)
+UB_pre=-132.672216547  LB_global_pre=-133.134921264
+children (created 2):
+  child T108 (0, 3, 4, 8, 16, 33) LB=-132.910803536 sum_cs=-132.910803536 vol=4.382732e+05
+  child T109 (3, 4, 8, 16, 32, 33) LB=-132.847648445 sum_cs=-132.847648445 vol=5.677727e+04
+next_node: (0.0000, 0.0000, 0.0000, 15.2830, 0.0000)
+selection: source=mode4_avg_cs  rank=N/A  snap=edge
+barycentric: (0.000000, 0.884902, 0.000461, 0.000000, 0.000000, 0.114637)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 200 checks, 0 inactive, 2 active
+  child T108: active  checks=100/100
+  child T109: active  checks=100/100
+cumulative_inactive: 0/110 simplices
+end: UB=-132.672376377  LB=-132.910803536
+
+=== Iter 3 ===
+selected_simplex: T108  LB_pre=-132.910803536
+  v3: (0.0000, 0.0000, 0.0000, 38.8889, 46.8751)
+  v33: (0.0000, 0.0000, 0.0000, 15.2830, 0.0000)
+  v4: (0.0000, 0.0000, 40.5556, 0.0000, 0.0000)
+  v8: (0.0000, 47.2223, 0.0000, 0.0000, 0.0000)
+  v16: (38.3334, 0.0000, 0.0000, 0.0000, 0.0000)
+  v0: (0.0000, 0.0000, 0.0000, 0.0000, 0.0000)
+UB_pre=-132.672605594  LB_global_pre=-132.910803536
+children (created 2):
+  child T109 (0, 3, 4, 8, 16, 34) LB=-132.836065169 sum_cs=-132.836065169 vol=3.944979e+05
+  child T110 (3, 4, 8, 16, 33, 34) LB=-132.764046171 sum_cs=-132.764046171 vol=4.377532e+04
+next_node: (0.0000, 0.0000, 0.0000, 13.7565, 0.0000)
+selection: source=mode4_avg_cs  rank=N/A  snap=edge
+barycentric: (0.000000, 0.900119, 0.000000, 0.000000, 0.000000, 0.099881)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 2 children, 200 checks, 0 inactive, 2 active
+  child T109: active  checks=100/100
+  child T110: active  checks=100/100
+cumulative_inactive: 0/111 simplices
+end: UB=-132.768318517  LB=-132.847648445
+
+=== Iter 4 ===
+selected_simplex: T108  LB_pre=-132.847648445
+  v3: (0.0000, 0.0000, 0.0000, 38.8889, 46.8751)
+  v32: (0.0000, 0.0000, 0.0000, 17.2629, 0.0000)
+  v4: (0.0000, 0.0000, 40.5556, 0.0000, 0.0000)
+  v8: (0.0000, 47.2223, 0.0000, 0.0000, 0.0000)
+  v16: (38.3334, 0.0000, 0.0000, 0.0000, 0.0000)
+  v33: (0.0000, 0.0000, 0.0000, 15.2830, 0.0000)
+UB_pre=-132.768318517  LB_global_pre=-132.847648445
+children (created 6):
+  child T110 (4, 8, 16, 32, 33, 35) LB=-132.843556164 sum_cs=-132.843556164 vol=0.000000e+00
+  child T111 (3, 4, 8, 16, 33, 35) LB=-132.660176087 sum_cs=-132.660176087 vol=3.952840e+04
+  child T112 (3, 8, 16, 32, 33, 35) LB=-132.847331339 sum_cs=-132.847331339 vol=0.000000e+00
+  child T113 (3, 4, 16, 32, 33, 35) LB=-132.842395538 sum_cs=-132.842395538 vol=0.000000e+00
+  child T114 (3, 4, 8, 32, 33, 35) LB=-132.831024603 sum_cs=-132.831024603 vol=4.047290e+02
+  child T115 (3, 4, 8, 16, 32, 35) LB=-132.656959172 sum_cs=-132.656959172 vol=1.684414e+04
+next_node: (0.2733, 0.0000, 0.0000, 16.5525, 0.0000)
+selection: source=mode4_avg_cs  rank=N/A  snap=sub_face
+barycentric: (0.000000, 0.695691, 0.000354, 0.000378, 0.007123, 0.296453)
+sample_retry_triggered=no  retry_count=0
+fbbt_obbt_tightening: 6 children, 600 checks, 0 inactive, 6 active
+  child T110: active  checks=100/100
+  child T111: active  checks=100/100
+  child T112: active  checks=100/100
+  child T113: active  checks=100/100
+  child T114: active  checks=100/100
+  child T115: active  checks=100/100
+cumulative_inactive: 0/116 simplices
+end: UB=-132.768318517  LB=-132.847331339
+
