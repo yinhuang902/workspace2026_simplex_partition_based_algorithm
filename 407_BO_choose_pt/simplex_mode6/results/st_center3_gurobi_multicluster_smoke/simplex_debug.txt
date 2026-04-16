@@ -154,8 +154,8 @@ primal_matches_trueQ: True
   simp=T11 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T11 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
 === Iter 4 ===
-  simp=T10 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T10 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T3 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T3 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T11 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T11 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T12 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
@@ -163,8 +163,8 @@ primal_matches_trueQ: True
   simp=T13 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T13 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
 === Iter 5 ===
-  simp=T10 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T10 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T4 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T4 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T13 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T13 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T14 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
@@ -172,8 +172,8 @@ primal_matches_trueQ: True
   simp=T15 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T15 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
 === Iter 6 ===
-  simp=T13 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T13 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T8 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T8 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T15 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T15 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T16 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
@@ -181,8 +181,8 @@ primal_matches_trueQ: True
   simp=T17 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T17 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
 === Iter 7 ===
-  simp=T15 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T15 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T10 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T10 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T17 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T17 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T18 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
@@ -199,8 +199,8 @@ primal_matches_trueQ: True
   simp=T21 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T21 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
 === Iter 9 ===
-  simp=T20 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T20 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T18 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T18 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T21 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T21 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T22 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
@@ -208,8 +208,8 @@ primal_matches_trueQ: True
   simp=T23 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T23 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
 === Iter 10 ===
-  simp=T22 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T22 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T17 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T17 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T23 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T23 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T24 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
@@ -217,8 +217,8 @@ primal_matches_trueQ: True
   simp=T25 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T25 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
 === Iter 11 ===
-  simp=T24 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T24 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T21 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T21 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T25 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T25 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T26 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
@@ -226,8 +226,8 @@ primal_matches_trueQ: True
   simp=T27 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T27 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
 === Iter 12 ===
-  simp=T26 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T26 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T19 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T19 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T27 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T27 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T28 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
@@ -235,8 +235,8 @@ primal_matches_trueQ: True
   simp=T29 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T29 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
 === Iter 13 ===
-  simp=T28 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T28 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T1 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T1 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T29 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T29 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T30 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
@@ -244,8 +244,8 @@ primal_matches_trueQ: True
   simp=T31 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T31 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
 === Iter 14 ===
-  simp=T30 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T30 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T18 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T18 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T31 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T31 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T32 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
@@ -253,92 +253,11 @@ primal_matches_trueQ: True
   simp=T33 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T33 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
 === Iter 15 ===
-  simp=T32 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T32 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T21 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
+  simp=T21 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T33 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T33 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T34 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T34 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T35 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
   simp=T35 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-=== Iter 16 ===
-  simp=T34 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T34 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T35 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T35 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T36 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T36 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T37 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T37 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-=== Iter 17 ===
-  simp=T36 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T36 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T37 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T37 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T38 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T38 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T39 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T39 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-=== Iter 18 ===
-  simp=T38 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T38 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T39 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T39 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T40 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T40 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T41 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T41 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-=== Iter 19 ===
-  simp=T40 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T40 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T41 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T41 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T42 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T42 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T43 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T43 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-=== Iter 20 ===
-  simp=T42 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T42 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T43 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T43 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T44 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T44 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T45 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T45 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-=== Iter 21 ===
-  simp=T44 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T44 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T45 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T45 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T46 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T46 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T47 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T47 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-=== Iter 22 ===
-  simp=T46 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T46 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T47 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T47 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T48 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T48 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T49 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T49 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-=== Iter 23 ===
-  simp=T48 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T48 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T49 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T49 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T50 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T50 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T51 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T51 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-=== Iter 24 ===
-  simp=T49 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T49 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T51 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T51 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T52 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T52 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T53 scen=0 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s
-  simp=T53 scen=1 type=ms issue=tightening_ms_skip_cs_ok ok=False status=tightening_ms_skip_cs_ok term=tightening val=inf dual=None time=0.0000s

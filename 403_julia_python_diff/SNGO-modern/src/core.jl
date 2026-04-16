@@ -251,15 +251,17 @@ end
 # ─────────────────────────────────────────────────────────────────────
 
 mutable struct StoSol
-    x::Vector{Vector{Float64}}      # solutions per scenario
+    secondSols::Vector{Vector{Float64}}      # solutions per scenario
+    secondobjVals::Vector{Float64}           # objective per scenario
     LB::Float64
     UB::Float64
-    x_first::Vector{Float64}        # first-stage solution
+    x_first::Vector{Float64}                # first-stage solution
 end
 
-function StoSol(nscen::Int, nfirst::Int)
+function StoSol(nscen::Int, nfirst::Int=0)
     StoSol(
         [Float64[] for _ in 1:nscen],
+        zeros(nscen),
         -1e20,
         1e20,
         zeros(nfirst)
@@ -267,16 +269,49 @@ function StoSol(nscen::Int, nfirst::Int)
 end
 
 # ─────────────────────────────────────────────────────────────────────
-# Helper functions for number classification
+# BranchVarScore — pseudocost branching state
 # ─────────────────────────────────────────────────────────────────────
 
-positiveEven(d) = d > 0 && isinteger(d) && iseven(Int(d))
-negativeEven(d) = d < 0 && isinteger(d) && iseven(Int(d))
-positiveOdd(d) = d > 0 && isinteger(d) && isodd(Int(d))
-negativeOdd(d) = d < 0 && isinteger(d) && isodd(Int(d))
-Odd(d) = isinteger(d) && isodd(Int(d))
-positiveFrac(d) = d > 0 && !isinteger(d)
-negativeFrac(d) = d < 0 && !isinteger(d)
+mutable struct BranchVarScore
+    varId::Vector{Int}          # variable indices to consider
+    score::Vector{Float64}      # current score per variable
+    pcost_left::Vector{Float64} # pseudocost for left branch
+    pcost_right::Vector{Float64}# pseudocost for right branch
+    n_left::Vector{Int}         # count of left probes
+    n_right::Vector{Int}        # count of right probes
+    tried::Vector{Bool}         # whether variable has been tried
+end
+
+function BranchVarScore(varIds::Vector{Int})
+    n = length(varIds)
+    BranchVarScore(
+        copy(varIds),
+        zeros(n),
+        zeros(n),
+        zeros(n),
+        zeros(Int, n),
+        zeros(Int, n),
+        falses(n)
+    )
+end
+
+function updateScore!(vs::BranchVarScore, Pex::ModelWrapper, P::ModelWrapper,
+                      Rsol, WSfirst, WS_status, relaxed_status)
+    for i in 1:length(vs.varId)
+        varId = vs.varId[i]
+        xl = Pex.colLower[varId]
+        xu = Pex.colUpper[varId]
+        range = xu - xl
+        if range <= small_bound_improve
+            vs.score[i] = 0.0
+            continue
+        end
+        vs.score[i] = range * (vs.pcost_left[i] + vs.pcost_right[i]) / 2.0
+    end
+end
+
+# Helper functions for number classification are defined later in this file
+# (see the "Power-type classifiers" section near the end)
 
 # ─────────────────────────────────────────────────────────────────────
 # Expression parsing — classify NL constraints
@@ -367,14 +402,99 @@ end
     parsemonomialcon(expr) -> MonomialVariable
 """
 function ismonomialcon(expr::Expr)
-    # Similar to exponential but with base^(b*x) form
-    return false  # Placeholder — monomials are rare in practice
+    # Detect d^(b*x) form — base is constant, exponent is linear in x
+    try
+        if expr.head == :call && length(expr.args) >= 3
+            lhs = expr.args[2]
+            if isa(lhs, Expr) && _contains_monomial(lhs)
+                return true
+            end
+        end
+    catch
+    end
+    return false
 end
+
+function _contains_monomial(expr::Expr)
+    # Look for ^(constant, linear_in_x) pattern
+    if expr.head == :call && expr.args[1] == :^ && length(expr.args) >= 3
+        base = expr.args[2]
+        exponent = expr.args[3]
+        if isa(base, Number) && isa(exponent, Expr)
+            return true
+        end
+    end
+    if expr.head == :call && expr.args[1] == :-
+        for a in expr.args[2:end]
+            if isa(a, Expr) && _contains_monomial(a)
+                return true
+            end
+        end
+    end
+    return false
+end
+_contains_monomial(x) = false
 
 function parsemonomialcon(expr::Expr)
     op = expr.args[1]
     lhs = expr.args[2]
-    return MonomialVariable(0, 0, op, 1.0, 1.0, [-1, -1, -1])
+    lvarId, nlvarId, b, d = _extract_monomial_params(lhs)
+    # Convert d^(b*x) to exp form: d^(b*x) = exp(b*log(d)*x)
+    if d <= 0
+        error("warning: a^x, a cannot be negative, please reformulate")
+    end
+    b_eff = b * log(d)
+    return ExpVariable(lvarId, nlvarId, op, b_eff, [-1, -1, -1])
+end
+
+function _extract_monomial_params(expr::Expr)
+    lvarId = 0
+    nlvarId = 0
+    b = 1.0
+    d = 1.0
+    _walk_monomial_tree(expr, Ref(lvarId), Ref(nlvarId), Ref(b), Ref(d))
+    return (lvarId, nlvarId, b, d)
+end
+
+function _walk_monomial_tree(expr, lvarId::Ref{Int}, nlvarId::Ref{Int},
+                              b::Ref{Float64}, d::Ref{Float64})
+    if !isa(expr, Expr)
+        return
+    end
+    if expr.head == :ref
+        if lvarId[] == 0
+            lvarId[] = expr.args[2]
+        end
+        return
+    end
+    if expr.head == :call && expr.args[1] == :^
+        base = expr.args[2]
+        exponent = expr.args[3]
+        if isa(base, Number)
+            d[] = Float64(base)
+            # exponent is b*x[nlvarId]
+            if isa(exponent, Expr)
+                if exponent.head == :call && exponent.args[1] == :*
+                    for a in exponent.args[2:end]
+                        if isa(a, Number)
+                            b[] = Float64(a)
+                        elseif isa(a, Expr) && a.head == :ref
+                            nlvarId[] = a.args[2]
+                        end
+                    end
+                elseif exponent.head == :ref
+                    nlvarId[] = exponent.args[2]
+                    b[] = 1.0
+                end
+            end
+            return
+        end
+    end
+    for a in expr.args
+        if isa(a, Expr)
+            _walk_monomial_tree(a, lvarId, nlvarId, b, d)
+        end
+    end
 end
 
 # ─────────────────────────────────────────────────────────────────────
@@ -625,4 +745,264 @@ end
 
 function extractVarsId(vars::Vector{Int})
     return sort(unique(vars))
+end
+
+# ─────────────────────────────────────────────────────────────────────
+# Numeric helpers
+# ─────────────────────────────────────────────────────────────────────
+
+bounded(x) = isfinite(x)
+
+# ─────────────────────────────────────────────────────────────────────
+# Power-type classifiers  (used by relax.jl / updaterelax.jl)
+# f(x) = (b*x)^d  — the relaxation depends on the sign/parity of d
+# ─────────────────────────────────────────────────────────────────────
+
+function positiveFrac(d)
+    return d > 0 && !isinteger(d)
+end
+
+function negativeFrac(d)
+    return d < 0 && !isinteger(d)
+end
+
+function positiveEven(d)
+    return d > 0 && isinteger(d) && iseven(Int(d))
+end
+
+function negativeEven(d)
+    return d < 0 && isinteger(d) && iseven(Int(d))
+end
+
+function positiveOdd(d)
+    return d > 0 && isinteger(d) && isodd(Int(d)) && d != 1
+end
+
+function negativeOdd(d)
+    return d < 0 && isinteger(d) && isodd(Int(d))
+end
+
+function Odd(d)
+    return isinteger(d) && isodd(Int(d))
+end
+
+# ─────────────────────────────────────────────────────────────────────
+# Affine / Quadratic arithmetic  (ported from original core.jl)
+# Operate on AffExprData and QuadExprData using column indices
+# ─────────────────────────────────────────────────────────────────────
+
+function scaleAff(a::AffExprData, c::Float64)
+    a.coeffs .*= c
+    a.constant *= c
+    return a
+end
+
+function addAff(a::AffExprData, b::AffExprData)
+    a.coeffs = [a.coeffs; b.coeffs]
+    a.vars = [a.vars; b.vars]
+    a.constant = a.constant + b.constant
+    return a
+end
+
+function minusAff(a::AffExprData, b::AffExprData)
+    a.coeffs = [a.coeffs; -b.coeffs]
+    a.vars = [a.vars; b.vars]
+    a.constant = a.constant - b.constant
+    return a
+end
+
+function multAff(aff1::AffExprData, aff2::AffExprData, c::Float64)
+    quad = QuadExprData(Int[], Int[], Float64[], AffExprData(Int[], Float64[], 0.0))
+    n1 = length(aff1.coeffs)
+    n2 = length(aff2.coeffs)
+    vars1 = aff1.vars
+    vars2 = aff2.vars
+    coeffs1 = aff1.coeffs
+    coeffs2 = aff2.coeffs
+    con1 = aff1.constant
+    con2 = aff2.constant
+
+    for i in 1:n1
+        for j in 1:n2
+            index = -1
+            for k in 1:length(quad.qcoeffs)
+                if (quad.qvars1[k] == vars1[i] && quad.qvars2[k] == vars2[j]) ||
+                   (quad.qvars1[k] == vars2[j] && quad.qvars2[k] == vars1[i])
+                    index = k
+                    break
+                end
+            end
+            if index != -1
+                quad.qcoeffs[index] += coeffs1[i] * coeffs2[j] * c
+            else
+                if coeffs1[i] * coeffs2[j] * c != 0
+                    push!(quad.qvars1, vars1[i])
+                    push!(quad.qvars2, vars2[j])
+                    push!(quad.qcoeffs, coeffs1[i] * coeffs2[j] * c)
+                end
+            end
+        end
+    end
+    temp = addAff(scaleAff(copy(aff1), c * con2), scaleAff(copy(aff2), c * con1))
+    for i in 1:length(temp.coeffs)
+        if temp.coeffs[i] != 0.0
+            push!(quad.aff.coeffs, temp.coeffs[i])
+            push!(quad.aff.vars, temp.vars[i])
+        end
+    end
+    quad.aff.constant = c * con1 * con2
+    return quad
+end
+
+function addQuad(a::QuadExprData, b::QuadExprData)
+    a.qcoeffs = [a.qcoeffs; b.qcoeffs]
+    a.qvars1 = [a.qvars1; b.qvars1]
+    a.qvars2 = [a.qvars2; b.qvars2]
+    addAff(a.aff, b.aff)
+end
+
+function minusQuad(a::QuadExprData, b::QuadExprData)
+    a.qcoeffs = [a.qcoeffs; -b.qcoeffs]
+    a.qvars1 = [a.qvars1; b.qvars1]
+    a.qvars2 = [a.qvars2; b.qvars2]
+    minusAff(a.aff, b.aff)
+end
+
+# ─────────────────────────────────────────────────────────────────────
+# Binary variable helpers  (for MINLP support)
+# ─────────────────────────────────────────────────────────────────────
+
+function hasBinaryVar(mw::ModelWrapper)
+    for i in 1:mw.numCols
+        if mw.colCat[i] == :Bin
+            return true
+        end
+    end
+    return false
+end
+
+function numBinaryVar(mw::ModelWrapper)
+    n = 0
+    for i in 1:mw.numCols
+        if mw.colCat[i] == :Bin
+            n += 1
+        end
+    end
+    return n
+end
+
+function fixBinaryVar(mw::ModelWrapper)
+    for i in 1:mw.numCols
+        if mw.colCat[i] == :Bin
+            val = mw.colVal[i] >= 0.5 ? 1.0 : 0.0
+            mw.colCat[i] = :Fixed
+            mw.colLower[i] = val
+            mw.colUpper[i] = val
+            mw.colVal[i] = val
+        end
+    end
+    # Also fix binary vars in children (stochastic scenarios)
+    if haskey(mw.ext, :children)
+        for scen in mw.ext[:children]
+            for i in 1:scen.numCols
+                if scen.colCat[i] == :Bin
+                    val = scen.colVal[i] >= 0.5 ? 1.0 : 0.0
+                    scen.colCat[i] = :Fixed
+                    scen.colLower[i] = val
+                    scen.colUpper[i] = val
+                    scen.colVal[i] = val
+                end
+            end
+        end
+    end
+end
+
+function fixVar!(mw::ModelWrapper, col::Int, val::Number)
+    mw.colCat[col] = :Fixed
+    mw.colLower[col] = val
+    mw.colUpper[col] = val
+    mw.colVal[col] = val
+end
+
+# ─────────────────────────────────────────────────────────────────────
+# Solution feasibility / projection
+# ─────────────────────────────────────────────────────────────────────
+
+"""
+    inBounds(mw, sol) -> Bool
+
+Check if solution vector is within the model's variable bounds.
+"""
+function inBounds(mw::ModelWrapper, sol::Vector{Float64})
+    n = min(length(sol), mw.numCols)
+    for i in 1:n
+        if sol[i] < mw.colLower[i] - machine_error ||
+           sol[i] > mw.colUpper[i] + machine_error
+            return false
+        end
+    end
+    return true
+end
+
+"""
+    projection!(colVal, colLower, colUpper)
+
+Project solution onto box bounds in-place.
+"""
+function projection!(colVal::Vector{Float64}, colLower::Vector{Float64},
+                     colUpper::Vector{Float64})
+    for i in 1:length(colVal)
+        colVal[i] = max(colLower[i], min(colUpper[i], colVal[i]))
+    end
+end
+
+"""
+    compute_score(improve_left, improve_right) -> Float64
+
+Pseudocost branching score: product-based scoring.
+"""
+function compute_score(improve_left::Float64, improve_right::Float64)
+    mu = 1e-6
+    return (1 - mu) * min(improve_left, improve_right) + mu * max(improve_left, improve_right)
+end
+
+"""
+    computeBvalue(Pex, P, varId, Rsol, WSfirst, WS_status, relaxed_status) -> Float64
+
+Compute the branching value for a variable.
+"""
+function computeBvalue(Pex::ModelWrapper, P::ModelWrapper, varId::Int,
+                       Rsol::Union{Vector{Float64},Nothing},
+                       WSfirst::Vector{Float64},
+                       WS_status::Symbol, relaxed_status::Symbol)
+    xl = Pex.colLower[varId]
+    xu = Pex.colUpper[varId]
+    bValue = (xl + xu) / 2.0
+
+    if relaxed_status == :Optimal && Rsol !== nothing && varId <= length(Rsol)
+        bValue = Rsol[varId]
+    end
+    if WS_status == :Optimal && varId <= length(WSfirst)
+        bValue = (bValue + WSfirst[varId]) / 2.0
+    end
+
+    # Ensure bValue is strictly interior
+    bValue = max(bValue, xl + machine_error)
+    bValue = min(bValue, xu - machine_error)
+    return bValue
+end
+
+"""
+    getRobjective(mw, status, defaultLB) -> Float64
+
+Get objective value from a solved relaxation model.
+"""
+function getRobjective(mw::ModelWrapper, status::Symbol, defaultLB::Float64)
+    if status == :Optimal
+        return mw.objVal
+    elseif status == :Infeasible
+        return 1e20
+    else
+        return defaultLB
+    end
 end

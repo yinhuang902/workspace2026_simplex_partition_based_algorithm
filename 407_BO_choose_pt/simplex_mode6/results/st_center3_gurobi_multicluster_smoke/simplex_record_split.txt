@@ -9,12 +9,15 @@ selected_simplex: T2  LB_pre=2066.597807293
   v4: (75.0000, -75.0000, -75.0000)
 UB_pre=5371.337581302  LB_global_pre=111.738665695
 children (created 3):
-  child T5 (4, 5, 7, 8) LB=2347.271544468 sum_cs=2347.271544468 vol=2.923163e+05
-  child T6 (3, 4, 7, 8) LB=2066.597809341 sum_cs=2066.597809341 vol=6.607359e+04
-  child T7 (3, 5, 7, 8) LB=2584.293637821 sum_cs=2584.293637821 vol=2.041101e+05
-next_node: (-2.9510, 2.9510, 20.5706)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: (0.519673, 0.117464, 0.000000, 0.362862)
+  child T5 (4, 5, 7, 8) LB=4699.658304624 sum_cs=4699.658304624 vol=2.339870e+05
+  child T6 (3, 4, 5, 8) LB=2806.428580427 sum_cs=2806.428580427 vol=1.205308e+05
+  child T7 (3, 5, 7, 8) LB=5611.524698709 sum_cs=5611.524698709 vol=2.079823e+05
+next_node: (12.6035, 19.5381, 19.5381)
+selection: source=mode7_midpoint  rank=N/A  snap=face
+shape: kappa=0.7071  h=(150.0000, 106.0660, 106.0660, 150.0000)  threshold=0.15  class=good
+face_choice: F_cluster=1 (D=2.9205, S=55.5304)  F_safe=1  used=F_cluster
+face_proximity: D=(124.7930, 2.9205, 43.9947, 108.8587)  top2=(1, 2)  S_top2=(55.5304, 34.0091)
+barycentric: (0.415977, 0.000000, 0.214277, 0.369746)
 sample_retry_triggered=no  retry_count=0
 fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
   child T5: active  checks=2/2
@@ -31,501 +34,364 @@ selected_simplex: T2  LB_pre=2024.228715570
   v4: (75.0000, -75.0000, -75.0000)
 UB_pre=5371.337581302  LB_global_pre=2024.228715570
 children (created 3):
-  child T7 (3, 4, 7, 9) LB=2049.050594534 sum_cs=2049.050594534 vol=1.978452e+04
-  child T8 (3, 4, 6, 9) LB=2024.262695616 sum_cs=2024.262695616 vol=3.437352e+05
-  child T9 (3, 6, 7, 9) LB=11585.818476661 sum_cs=11585.818476661 vol=1.989803e+05
-next_node: (75.0000, 21.9386, 16.6627)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: (-0.000000, 0.035172, 0.611085, 0.353743)
+  child T7 (4, 6, 7, 9) LB=4583.510414628 sum_cs=4583.510414628 vol=2.369688e+05
+  child T8 (3, 4, 6, 9) LB=2663.337453367 sum_cs=2663.337453367 vol=1.166586e+05
+  child T9 (3, 6, 7, 9) LB=5517.300182756 sum_cs=5517.300182756 vol=2.088725e+05
+next_node: (11.8083, 19.3007, 19.3007)
+selection: source=mode7_midpoint  rank=N/A  snap=face
+shape: kappa=0.7071  h=(150.0000, 106.0660, 106.0660, 150.0000)  threshold=0.15  class=good
+face_choice: F_cluster=1 (D=7.4612, S=56.8601)  F_safe=1  used=F_cluster
+face_proximity: D=(126.3834, 7.4612, 40.2641, 106.1228)  top2=(1, 2)  S_top2=(56.8601, 40.8355)
+barycentric: (0.421278, -0.000000, 0.207393, 0.371329)
 sample_retry_triggered=no  retry_count=0
 fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
   child T7: active  checks=2/2
   child T8: active  checks=2/2
   child T9: active  checks=2/2
 cumulative_inactive: 0/10 simplices
-end: UB=5371.337581302  LB=2024.262695616
+end: UB=5371.337581302  LB=2663.337453367
 
 === Iter 3 ===
-selected_simplex: T8  LB_pre=2024.262695616
+selected_simplex: T8  LB_pre=2663.337453367
   v3: (-75.0000, 75.0000, 75.0000)
   v6: (75.0000, 75.0000, -75.0000)
-  v9: (75.0000, 21.9386, 16.6627)
+  v9: (11.8083, 19.3007, 19.3007)
   v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2024.262695616
+UB_pre=5371.337581302  LB_global_pre=2663.337453367
 children (created 3):
-  child T9 (4, 6, 9, 10) LB=7395.747256387 sum_cs=7395.747256387 vol=1.157653e+05
-  child T10 (3, 4, 9, 10) LB=2024.262695898 sum_cs=2024.262695898 vol=2.615038e+04
-  child T11 (3, 4, 6, 10) LB=2032.662900114 sum_cs=2032.662900114 vol=2.018196e+05
-next_node: (24.4821, 43.8457, 29.3365)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: (0.336786, 0.076077, 0.587137, -0.000000)
+  child T9 (4, 6, 9, 10) LB=4039.920563127 sum_cs=4039.920563127 vol=6.021702e+04
+  child T10 (3, 4, 9, 10) LB=2870.510916508 sum_cs=2870.510916508 vol=1.206199e+04
+  child T11 (3, 6, 9, 10) LB=4138.844642892 sum_cs=4138.844642892 vol=4.437964e+04
+next_node: (-2.4272, 17.9365, 2.4272)
+selection: source=mode7_midpoint  rank=N/A  snap=face
+shape: kappa=0.2074  h=(41.1075, 106.0660, 21.9974, 55.0983)  threshold=0.15  class=good
+face_choice: F_cluster=2 (D=16.0677, S=32.8494)  F_safe=2  used=F_cluster
+face_proximity: D=(26.6748, 13.8997, 16.0677, 26.9769)  top2=(1, 2)  S_top2=(28.5839, 32.8494)
+barycentric: (0.516181, 0.103396, -0.000000, 0.380423)
 sample_retry_triggered=no  retry_count=0
 fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
   child T9: active  checks=2/2
   child T10: active  checks=2/2
   child T11: active  checks=2/2
 cumulative_inactive: 0/12 simplices
-end: UB=5371.337581302  LB=2024.262695898
+end: UB=5371.337581302  LB=2786.092116522
 
 === Iter 4 ===
-selected_simplex: T10  LB_pre=2024.262695898
+selected_simplex: T3  LB_pre=2786.092116522
   v3: (-75.0000, 75.0000, 75.0000)
-  v10: (24.4821, 43.8457, 29.3365)
-  v9: (75.0000, 21.9386, 16.6627)
+  v5: (75.0000, -75.0000, 75.0000)
+  v1: (-75.0000, -75.0000, 75.0000)
   v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2024.262695898
+UB_pre=5371.337581302  LB_global_pre=2786.092116522
 children (created 3):
-  child T11 (4, 9, 10, 11) LB=4717.559536619 sum_cs=4717.559536619 vol=6.673394e+03
-  child T12 (3, 4, 9, 11) LB=2047.636724929 sum_cs=2047.636724929 vol=1.307519e+04
-  child T13 (3, 9, 10, 11) LB=5749.899918743 sum_cs=5749.899918743 vol=6.401797e+03
-next_node: (11.4621, 22.7018, 15.4472)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: (0.255193, 0.500000, -0.000000, 0.244807)
+  child T11 (1, 4, 5, 11) LB=6211.634082200 sum_cs=6211.634082200 vol=2.450336e+05
+  child T12 (3, 4, 5, 11) LB=3061.706619029 sum_cs=3061.706619029 vol=1.189287e+05
+  child T13 (1, 3, 5, 11) LB=4287.617440414 sum_cs=4287.617440414 vol=1.985376e+05
+next_node: (-22.0566, -9.6577, 22.0566)
+selection: source=mode7_midpoint  rank=N/A  snap=face
+shape: kappa=0.7071  h=(150.0000, 106.0660, 106.0660, 150.0000)  threshold=0.15  class=good
+face_choice: F_cluster=1 (D=21.9858, S=36.9237)  F_safe=1  used=F_cluster
+face_proximity: D=(130.6846, 21.9858, 33.8579, 90.3404)  top2=(1, 2)  S_top2=(36.9237, 26.4646)
+barycentric: (0.435615, -0.000000, 0.211429, 0.352956)
 sample_retry_triggered=no  retry_count=0
 fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
   child T11: active  checks=2/2
   child T12: active  checks=2/2
   child T13: active  checks=2/2
 cumulative_inactive: 0/14 simplices
-end: UB=5371.337581302  LB=2032.662900114
+end: UB=5371.337581302  LB=2806.428580427
 
 === Iter 5 ===
-selected_simplex: T10  LB_pre=2032.662900114
+selected_simplex: T4  LB_pre=2806.428580427
   v3: (-75.0000, 75.0000, 75.0000)
-  v6: (75.0000, 75.0000, -75.0000)
-  v10: (24.4821, 43.8457, 29.3365)
+  v5: (75.0000, -75.0000, 75.0000)
+  v8: (12.6035, 19.5381, 19.5381)
   v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2032.662900114
+UB_pre=5371.337581302  LB_global_pre=2806.428580427
 children (created 3):
-  child T13 (3, 4, 10, 12) LB=2032.662900100 sum_cs=2032.662900100 vol=8.488617e-12
-  child T14 (3, 4, 6, 12) LB=2162.177712672 sum_cs=2162.177712672 vol=1.758082e+05
-  child T15 (3, 6, 10, 12) LB=8780.390111541 sum_cs=8780.390111541 vol=2.601135e+04
-next_node: (30.9930, 28.5284, 15.8892)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: (0.000000, 0.000000, 0.871116, 0.128884)
+  child T13 (4, 5, 8, 12) LB=4065.766759912 sum_cs=4065.766759912 vol=3.262626e+04
+  child T14 (3, 4, 5, 12) LB=3733.393352380 sum_cs=3733.393352380 vol=6.002022e+04
+  child T15 (3, 5, 8, 12) LB=4325.992014418 sum_cs=4325.992014418 vol=2.788431e+04
+next_node: (3.3254, 12.6800, 12.6800)
+selection: source=mode7_midpoint  rank=N/A  snap=face
+shape: kappa=0.2143  h=(42.5629, 106.0660, 22.7275, 56.8775)  threshold=0.15  class=good
+face_choice: F_cluster=1 (D=2.9205, S=30.8267)  F_safe=2  used=F_cluster
+face_proximity: D=(24.1801, 2.9205, 21.1748, 26.8849)  top2=(1, 2)  S_top2=(30.8267, 22.5930)
+barycentric: (0.270688, -0.000000, 0.497966, 0.231346)
 sample_retry_triggered=no  retry_count=0
 fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
   child T13: active  checks=2/2
   child T14: active  checks=2/2
   child T15: active  checks=2/2
 cumulative_inactive: 0/16 simplices
-end: UB=5371.337581302  LB=2032.662900100
+end: UB=5371.337581302  LB=2870.510916508
 
 === Iter 6 ===
-selected_simplex: T13  LB_pre=2032.662900100
+selected_simplex: T8  LB_pre=2870.510916508
   v3: (-75.0000, 75.0000, 75.0000)
-  v12: (30.9930, 28.5284, 15.8892)
-  v10: (24.4821, 43.8457, 29.3365)
+  v10: (-2.4272, 17.9365, 2.4272)
+  v9: (11.8083, 19.3007, 19.3007)
   v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2032.662900100
+UB_pre=5371.337581302  LB_global_pre=2870.510916508
 children (created 3):
-  child T15 (3, 4, 10, 13) LB=2032.662900055 sum_cs=2032.662900055 vol=4.850638e-12
-  child T16 (3, 4, 12, 13) LB=2162.177712596 sum_cs=2162.177712596 vol=1.697723e-11
-  child T17 (3, 10, 12, 13) LB=7513.346838417 sum_cs=7513.346838417 vol=0.000000e+00
-next_node: (34.6264, 19.9808, 8.3851)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: (0.016381, -0.500000, 1.468750, 0.343750)
+  child T15 (4, 9, 10, 13) LB=3988.482622613 sum_cs=3988.482622613 vol=3.487828e+03
+  child T16 (3, 4, 10, 13) LB=4017.834483205 sum_cs=4017.834483205 vol=5.621299e+03
+  child T17 (3, 9, 10, 13) LB=4240.988994845 sum_cs=4240.988994845 vol=2.952859e+03
+next_node: (2.1767, 12.3211, 12.3211)
+selection: source=mode7_midpoint  rank=N/A  snap=face
+shape: kappa=0.3915  h=(22.9070, 10.9668, 21.9974, 28.0145)  threshold=0.15  class=good
+face_choice: F_cluster=1 (D=0.0000, S=31.3460)  F_safe=1  used=F_cluster
+face_proximity: D=(13.2475, 0.0000, 20.5031, 13.7163)  top2=(1, 0)  S_top2=(31.3460, 23.6504)
+barycentric: (0.289159, -0.000000, 0.466034, 0.244807)
 sample_retry_triggered=no  retry_count=0
 fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
   child T15: active  checks=2/2
   child T16: active  checks=2/2
   child T17: active  checks=2/2
 cumulative_inactive: 0/18 simplices
-end: UB=5371.337581302  LB=2032.662900055
+end: UB=5371.337581302  LB=3061.706619029
 
 === Iter 7 ===
-selected_simplex: T15  LB_pre=2032.662900055
+selected_simplex: T10  LB_pre=3061.706619029
   v3: (-75.0000, 75.0000, 75.0000)
-  v13: (34.6264, 19.9808, 8.3851)
-  v10: (24.4821, 43.8457, 29.3365)
+  v5: (75.0000, -75.0000, 75.0000)
+  v11: (-22.0566, -9.6577, 22.0566)
   v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2032.662900055
+UB_pre=5371.337581302  LB_global_pre=3061.706619029
 children (created 3):
-  child T17 (4, 10, 13, 14) LB=4405.153792275 sum_cs=4405.153792275 vol=2.425319e-12
-  child T18 (3, 4, 10, 14) LB=2032.662900275 sum_cs=2032.662900275 vol=9.701277e-12
-  child T19 (3, 10, 13, 14) LB=4447.060594063 sum_cs=4447.060594063 vol=2.425319e-12
-next_node: (16.5342, 10.7693, 4.9715)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: (0.437500, 0.250000, 1.125000, 0.093750)
+  child T17 (4, 5, 11, 14) LB=3297.393045723 sum_cs=3297.393045723 vol=6.280238e+04
+  child T18 (3, 4, 11, 14) LB=3151.890078450 sum_cs=3151.890078450 vol=1.812052e+04
+  child T19 (3, 5, 11, 14) LB=3209.130869735 sum_cs=3209.130869735 vol=3.800583e+04
+next_node: (-4.2101, 4.2101, 27.0648)
+selection: source=mode7_midpoint  rank=N/A  snap=face
+shape: kappa=0.2114  h=(40.6585, 106.0660, 22.4254, 58.5042)  threshold=0.15  class=good
+face_choice: F_cluster=2 (D=20.6712, S=28.0588)  F_safe=2  used=F_cluster
+face_proximity: D=(22.6528, 21.9858, 20.6712, 18.3580)  top2=(3, 2)  S_top2=(25.1849, 28.0588)
+barycentric: (0.528067, 0.152365, -0.000000, 0.319568)
 sample_retry_triggered=no  retry_count=0
 fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
   child T17: active  checks=2/2
   child T18: active  checks=2/2
   child T19: active  checks=2/2
 cumulative_inactive: 0/20 simplices
-end: UB=5371.337581302  LB=2032.662900275
+end: UB=5371.337581302  LB=3151.890078450
 
 === Iter 8 ===
-selected_simplex: T18  LB_pre=2032.662900275
+selected_simplex: T18  LB_pre=3151.890078450
   v3: (-75.0000, 75.0000, 75.0000)
-  v14: (16.5342, 10.7693, 4.9715)
-  v10: (24.4821, 43.8457, 29.3365)
+  v14: (-4.2101, 4.2101, 27.0648)
+  v11: (-22.0566, -9.6577, 22.0566)
   v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2032.662900275
+UB_pre=5371.337581302  LB_global_pre=3151.890078450
 children (created 3):
-  child T19 (4, 10, 14, 15) LB=3105.488433495 sum_cs=3105.488433495 vol=9.852859e-13
-  child T20 (3, 4, 10, 15) LB=2032.662901049 sum_cs=2032.662901049 vol=4.850638e-12
-  child T21 (3, 10, 14, 15) LB=3115.016351137 sum_cs=3115.016351137 vol=1.333926e-11
-next_node: (7.4882, 6.1636, 3.2647)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: (1.000000, 6.000000, -1.750000, 0.125000)
+  child T19 (3, 4, 11, 15) LB=3803.320471901 sum_cs=3803.320471901 vol=7.943627e+03
+  child T20 (3, 4, 14, 15) LB=3849.694386148 sum_cs=3849.694386148 vol=7.868740e+03
+  child T21 (3, 11, 14, 15) LB=3299.314329365 sum_cs=3299.314329365 vol=2.308156e+03
+next_node: (-1.8702, -11.9015, 11.8892)
+selection: source=mode7_shifted_midpoint  rank=N/A  snap=face
+shape: kappa=0.3819  h=(31.0399, 16.1607, 22.4254, 42.3184)  threshold=0.15  class=good
+face_choice: F_cluster=0 (D=3.3061, S=24.3082)  F_safe=1  used=F_cluster
+face_proximity: D=(3.3061, 14.4394, 20.6712, 3.3103)  top2=(0, 3)  S_top2=(24.3082, 23.1744)
+barycentric: (0.000000, 0.438377, 0.434245, 0.127378)
 sample_retry_triggered=no  retry_count=0
 fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
   child T19: active  checks=2/2
   child T20: active  checks=2/2
   child T21: active  checks=2/2
 cumulative_inactive: 0/22 simplices
-end: UB=5371.337581302  LB=2032.662901049
+end: UB=5371.337581302  LB=3209.130869735
 
 === Iter 9 ===
-selected_simplex: T20  LB_pre=2032.662901049
+selected_simplex: T18  LB_pre=3209.130869735
   v3: (-75.0000, 75.0000, 75.0000)
-  v15: (7.4882, 6.1636, 3.2647)
-  v10: (24.4821, 43.8457, 29.3365)
-  v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2032.662901049
+  v5: (75.0000, -75.0000, 75.0000)
+  v11: (-22.0566, -9.6577, 22.0566)
+  v14: (-4.2101, 4.2101, 27.0648)
+UB_pre=5371.337581302  LB_global_pre=3209.130869735
 children (created 3):
-  child T21 (4, 10, 15, 16) LB=3105.488433490 sum_cs=3105.488433490 vol=4.547474e-13
-  child T22 (3, 4, 10, 16) LB=2032.662900094 sum_cs=2032.662900094 vol=1.212660e-11
-  child T23 (3, 4, 15, 16) LB=2535.068629203 sum_cs=2535.068629203 vol=9.701277e-12
-next_node: (13.9341, 26.7162, 18.0843)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: (0.062500, 0.166667, 0.500000, 0.041667)
+  child T21 (5, 11, 14, 16) LB=3444.817296345 sum_cs=3444.817296345 vol=4.766300e+03
+  child T22 (3, 11, 14, 16) LB=3299.314329325 sum_cs=3299.314329325 vol=3.483172e+03
+  child T23 (3, 5, 14, 16) LB=4040.748403069 sum_cs=4040.748403069 vol=2.975636e+04
+next_node: (-19.8012, -5.0293, 33.5484)
+selection: source=mode7_midpoint  rank=N/A  snap=face
+shape: kappa=0.2106  h=(82.4582, 88.7583, 22.4254, 18.6961)  threshold=0.15  class=good
+face_choice: F_cluster=3 (D=13.7816, S=25.1849)  F_safe=3  used=F_cluster
+face_proximity: D=(13.8438, 8.4294, 22.4254, 13.7816)  top2=(1, 3)  S_top2=(25.1067, 25.1849)
+barycentric: (0.125410, 0.091648, 0.782942, 0.000000)
 sample_retry_triggered=no  retry_count=0
 fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
   child T21: active  checks=2/2
   child T22: active  checks=2/2
   child T23: active  checks=2/2
 cumulative_inactive: 0/24 simplices
-end: UB=5371.337581302  LB=2032.662900094
+end: UB=5371.337581302  LB=3297.393045723
 
 === Iter 10 ===
-selected_simplex: T22  LB_pre=2032.662900094
-  v3: (-75.0000, 75.0000, 75.0000)
-  v16: (13.9341, 26.7162, 18.0843)
-  v10: (24.4821, 43.8457, 29.3365)
+selected_simplex: T17  LB_pre=3297.393045723
+  v14: (-4.2101, 4.2101, 27.0648)
+  v5: (75.0000, -75.0000, 75.0000)
+  v11: (-22.0566, -9.6577, 22.0566)
   v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2032.662900094
+UB_pre=5371.337581302  LB_global_pre=3297.393045723
 children (created 3):
-  child T23 (4, 10, 16, 17) LB=5245.589267042 sum_cs=5245.589267042 vol=5.104804e-13
-  child T24 (3, 4, 10, 17) LB=2032.662900404 sum_cs=2032.662900404 vol=0.000000e+00
-  child T25 (3, 4, 16, 17) LB=2128.692960073 sum_cs=2128.692960073 vol=1.637090e-11
-next_node: (19.2081, 35.2810, 23.7104)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: (0.628906, 11.250000, -5.250000, 0.250000)
+  child T23 (4, 5, 11, 17) LB=5721.151982202 sum_cs=5721.151982202 vol=2.822930e+04
+  child T24 (4, 5, 14, 17) LB=4016.888149564 sum_cs=4016.888149564 vol=2.654167e+04
+  child T25 (5, 11, 14, 17) LB=3444.817296402 sum_cs=3444.817296402 vol=8.031416e+03
+next_node: (-1.6227, -11.7804, 11.8958)
+selection: source=mode7_shifted_midpoint  rank=N/A  snap=face
+shape: kappa=0.1576  h=(21.4704, 107.5786, 22.4254, 136.2572)  threshold=0.15  class=good
+face_choice: F_cluster=1 (D=0.4552, S=24.8688)  F_safe=0  used=F_cluster
+face_proximity: D=(21.3796, 0.4552, 20.6712, 10.6584)  top2=(1, 3)  S_top2=(24.8688, 21.7554)
+barycentric: (0.449494, 0.000000, 0.422622, 0.127884)
 sample_retry_triggered=no  retry_count=0
 fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
   child T23: active  checks=2/2
   child T24: active  checks=2/2
   child T25: active  checks=2/2
 cumulative_inactive: 0/26 simplices
-end: UB=5371.337581302  LB=2032.662900404
+end: UB=5371.337581302  LB=3299.314329325
 
 === Iter 11 ===
-selected_simplex: T24  LB_pre=2032.662900404
+selected_simplex: T21  LB_pre=3299.314329325
   v3: (-75.0000, 75.0000, 75.0000)
-  v17: (19.2081, 35.2810, 23.7104)
-  v10: (24.4821, 43.8457, 29.3365)
-  v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2032.662900404
+  v16: (-19.8012, -5.0293, 33.5484)
+  v11: (-22.0566, -9.6577, 22.0566)
+  v14: (-4.2101, 4.2101, 27.0648)
+UB_pre=5371.337581302  LB_global_pre=3299.314329325
 children (created 3):
-  child T25 (4, 10, 17, 18) LB=4149.873058921 sum_cs=4149.873058921 vol=3.682768e-13
-  child T26 (3, 4, 10, 18) LB=2032.662900445 sum_cs=2032.662900445 vol=1.455192e-11
-  child T27 (3, 10, 17, 18) LB=4779.971727491 sum_cs=4779.971727491 vol=6.063298e-13
-next_node: (8.8251, 18.4194, 12.6341)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: (-0.075694, 0.177778, 0.133333, 0.016667)
+  child T25 (11, 14, 16, 18) LB=3445.092470922 sum_cs=3445.092470922 vol=1.161057e+03
+  child T26 (3, 14, 16, 18) LB=4130.931864024 sum_cs=4130.931864024 vol=1.161057e+03
+  child T27 (3, 11, 16, 18) LB=4938.117759906 sum_cs=4938.117759906 vol=1.161057e+03
+next_node: (-33.7556, 23.1841, 41.3738)
+selection: source=mode7_face_centroid  rank=N/A  snap=face
+shape: kappa=0.0943  h=(86.2329, 8.1346, 10.4676, 18.6961)  threshold=0.15  class=poor
+face_choice: F_cluster=1 (D=0.0000, S=25.8225)  F_safe=1  used=F_safe
+face_proximity: D=(9.1847, 0.0000, 10.4676, 16.7048)  top2=(1, 0)  S_top2=(25.8225, 16.2228)
+barycentric: (0.333333, 0.000000, 0.333333, 0.333333)
 sample_retry_triggered=no  retry_count=0
 fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
   child T25: active  checks=2/2
   child T26: active  checks=2/2
   child T27: active  checks=2/2
 cumulative_inactive: 0/28 simplices
-end: UB=5371.337581302  LB=2032.662900445
+end: UB=5371.337581302  LB=3299.314329365
 
 === Iter 12 ===
-selected_simplex: T26  LB_pre=2032.662900445
+selected_simplex: T19  LB_pre=3299.314329365
   v3: (-75.0000, 75.0000, 75.0000)
-  v18: (8.8251, 18.4194, 12.6341)
-  v10: (24.4821, 43.8457, 29.3365)
-  v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2032.662900445
+  v14: (-4.2101, 4.2101, 27.0648)
+  v11: (-22.0566, -9.6577, 22.0566)
+  v15: (-1.8702, -11.9015, 11.8892)
+UB_pre=5371.337581302  LB_global_pre=3299.314329365
 children (created 3):
-  child T27 (4, 10, 18, 19) LB=3046.090777165 sum_cs=3046.090777165 vol=1.018924e-12
-  child T28 (3, 4, 10, 19) LB=2032.662900115 sum_cs=2032.662900115 vol=2.910383e-11
-  child T29 (3, 10, 18, 19) LB=3185.861396377 sum_cs=3185.861396377 vol=1.212660e-12
-next_node: (3.6336, 9.9887, 7.0960)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: (-0.287109, 4.500000, -1.125000, -0.250000)
+  child T27 (11, 14, 15, 19) LB=3445.092470697 sum_cs=3445.092470697 vol=3.168603e+02
+  child T28 (3, 11, 15, 19) LB=4434.501015699 sum_cs=4434.501015699 vol=9.526255e+02
+  child T29 (3, 14, 15, 19) LB=3843.458685574 sum_cs=3843.458685574 vol=1.038670e+03
+next_node: (-21.9590, 7.6875, 31.3916)
+selection: source=mode7_shifted_midpoint  rank=N/A  snap=face
+shape: kappa=0.1737  h=(31.0399, 7.5548, 9.8738, 5.3904)  threshold=0.15  class=good
+face_choice: F_cluster=3 (D=0.0000, S=25.8225)  F_safe=3  used=F_cluster
+face_proximity: D=(3.3061, 6.7501, 9.8738, 0.0000)  top2=(3, 0)  S_top2=(25.8225, 18.9037)
+barycentric: (0.137279, 0.412721, 0.450000, -0.000000)
 sample_retry_triggered=no  retry_count=0
 fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
   child T27: active  checks=2/2
   child T28: active  checks=2/2
   child T29: active  checks=2/2
 cumulative_inactive: 0/30 simplices
-end: UB=5371.337581302  LB=2032.662900115
+end: UB=5371.337581302  LB=3374.010767562
 
 === Iter 13 ===
-selected_simplex: T28  LB_pre=2032.662900115
+selected_simplex: T1  LB_pre=3374.010767562
   v3: (-75.0000, 75.0000, 75.0000)
-  v19: (3.6336, 9.9887, 7.0960)
-  v10: (24.4821, 43.8457, 29.3365)
+  v1: (-75.0000, -75.0000, 75.0000)
   v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2032.662900115
+  v0: (-75.0000, -75.0000, -75.0000)
+UB_pre=5371.337581302  LB_global_pre=3374.010767562
 children (created 3):
-  child T29 (4, 10, 19, 20) LB=2521.694182700 sum_cs=2521.694182700 vol=5.691080e-13
-  child T30 (3, 4, 10, 20) LB=2032.662900358 sum_cs=2032.662900358 vol=1.455192e-11
-  child T31 (3, 10, 19, 20) LB=2554.148169341 sum_cs=2554.148169341 vol=1.212660e-12
-next_node: (1.0379, 5.7733, 4.3270)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: (0.036892, -1.333333, 0.291667, 0.008681)
+  child T29 (0, 1, 4, 20) LB=5889.096537179 sum_cs=5889.096537179 vol=2.635132e+05
+  child T30 (0, 3, 4, 20) LB=3575.696364732 sum_cs=3575.696364732 vol=9.374722e+04
+  child T31 (0, 1, 3, 20) LB=5117.889039932 sum_cs=5117.889039932 vol=2.052395e+05
+next_node: (-20.2695, -4.7298, 20.2695)
+selection: source=mode7_midpoint  rank=N/A  snap=face
+shape: kappa=0.7071  h=(150.0000, 106.0660, 150.0000, 106.0660)  threshold=0.15  class=good
+face_choice: F_cluster=3 (D=14.0636, S=50.5542)  F_safe=1  used=F_cluster
+face_proximity: D=(140.5404, 28.3225, 99.5166, 14.0636)  top2=(3, 1)  S_top2=(50.5542, 44.1741)
+barycentric: (0.468468, 0.166662, 0.364870, -0.000000)
 sample_retry_triggered=no  retry_count=0
 fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
   child T29: active  checks=2/2
   child T30: active  checks=2/2
   child T31: active  checks=2/2
 cumulative_inactive: 0/32 simplices
-end: UB=5371.337581302  LB=2032.662900358
+end: UB=5371.337581302  LB=3444.817296345
 
 === Iter 14 ===
-selected_simplex: T30  LB_pre=2032.662900358
-  v3: (-75.0000, 75.0000, 75.0000)
-  v20: (1.0379, 5.7733, 4.3270)
-  v10: (24.4821, 43.8457, 29.3365)
-  v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2032.662900358
+selected_simplex: T18  LB_pre=3444.817296345
+  v16: (-19.8012, -5.0293, 33.5484)
+  v5: (75.0000, -75.0000, 75.0000)
+  v11: (-22.0566, -9.6577, 22.0566)
+  v14: (-4.2101, 4.2101, 27.0648)
+UB_pre=5371.337581302  LB_global_pre=3444.817296345
 children (created 3):
-  child T31 (4, 10, 20, 21) LB=2271.840736325 sum_cs=2271.840736325 vol=1.748267e-12
-  child T32 (3, 4, 10, 21) LB=2032.662900494 sum_cs=2032.662900494 vol=9.701277e-12
-  child T33 (3, 10, 20, 21) LB=2279.627039750 sum_cs=2279.627039750 vol=2.425319e-12
-next_node: (-0.2600, 3.6656, 2.9424)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: (-0.137288, 0.666667, -0.057292, -0.126953)
+  child T31 (11, 14, 16, 21) LB=3445.092470725 sum_cs=3445.092470725 vol=1.588767e+03
+  child T32 (5, 14, 16, 21) LB=4276.434829373 sum_cs=4276.434829373 vol=1.588767e+03
+  child T33 (5, 11, 16, 21) LB=5424.193274291 sum_cs=5424.193274291 vol=1.588767e+03
+next_node: (16.2444, -26.8159, 41.3738)
+selection: source=mode7_face_centroid  rank=N/A  snap=face
+shape: kappa=0.0876  h=(10.3411, 117.9993, 12.2350, 18.6961)  threshold=0.15  class=poor
+face_choice: F_cluster=0 (D=0.0000, S=23.2564)  F_safe=0  used=F_safe
+face_proximity: D=(0.0000, 0.4993, 12.2350, 18.6170)  top2=(0, 1)  S_top2=(23.2564, 23.0291)
+barycentric: (0.000000, 0.333333, 0.333333, 0.333333)
 sample_retry_triggered=no  retry_count=0
 fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
   child T31: active  checks=2/2
   child T32: active  checks=2/2
   child T33: active  checks=2/2
 cumulative_inactive: 0/34 simplices
-end: UB=5371.337581302  LB=2032.662900494
+end: UB=5371.337581302  LB=3444.817296402
 
 === Iter 15 ===
-selected_simplex: T32  LB_pre=2032.662900494
-  v3: (-75.0000, 75.0000, 75.0000)
-  v21: (-0.2600, 3.6656, 2.9424)
-  v10: (24.4821, 43.8457, 29.3365)
-  v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2032.662900494
+selected_simplex: T21  LB_pre=3444.817296402
+  v14: (-4.2101, 4.2101, 27.0648)
+  v5: (75.0000, -75.0000, 75.0000)
+  v11: (-22.0566, -9.6577, 22.0566)
+  v17: (-1.6227, -11.7804, 11.8958)
+UB_pre=5371.337581302  LB_global_pre=3444.817296402
 children (created 3):
-  child T33 (4, 10, 21, 22) LB=2150.795629153 sum_cs=2150.795629153 vol=1.263481e-12
-  child T34 (3, 4, 10, 22) LB=2032.662900422 sum_cs=2032.662900422 vol=2.425319e-11
-  child T35 (3, 10, 21, 22) LB=2152.700346253 sum_cs=2152.700346253 vol=1.455192e-11
-next_node: (-0.9090, 2.6117, 2.2502)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: (0.159180, -0.000000, 0.085938, 0.117188)
+  child T33 (5, 11, 17, 22) LB=5005.688551505 sum_cs=5005.688551505 vol=3.602242e+03
+  child T34 (11, 14, 17, 22) LB=3445.092471030 sum_cs=3445.092471030 vol=8.150369e+02
+  child T35 (5, 14, 17, 22) LB=4016.888149768 sum_cs=4016.888149768 vol=3.614137e+03
+next_node: (-4.2027, -10.0687, 29.6756)
+selection: source=mode7_shifted_midpoint  rank=N/A  snap=face
+shape: kappa=0.1620  h=(19.4245, 107.5786, 18.5375, 17.4251)  threshold=0.15  class=good
+face_choice: F_cluster=3 (D=0.0000, S=23.2564)  F_safe=3  used=F_cluster
+face_proximity: D=(19.3423, 0.4552, 18.5375, 0.0000)  top2=(3, 1)  S_top2=(23.2564, 23.0282)
+barycentric: (0.448519, 0.101481, 0.450000, 0.000000)
 sample_retry_triggered=no  retry_count=0
 fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
   child T33: active  checks=2/2
   child T34: active  checks=2/2
   child T35: active  checks=2/2
 cumulative_inactive: 0/36 simplices
-end: UB=5371.337581302  LB=2032.662900422
+end: UB=5371.337581302  LB=3445.092470697
 
-=== Iter 16 ===
-selected_simplex: T34  LB_pre=2032.662900422
-  v3: (-75.0000, 75.0000, 75.0000)
-  v22: (-0.9090, 2.6117, 2.2502)
-  v10: (24.4821, 43.8457, 29.3365)
-  v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2032.662900422
-children (created 3):
-  child T35 (4, 10, 22, 23) LB=2150.795629359 sum_cs=2150.795629359 vol=2.118912e-13
-  child T36 (3, 4, 10, 23) LB=2032.662900344 sum_cs=2032.662900344 vol=2.425319e-12
-  child T37 (3, 4, 22, 23) LB=2807.885124722 sum_cs=2807.885124722 vol=2.182787e-11
-next_node: (11.7866, 23.2287, 15.7933)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: error
-sample_retry_triggered=no  retry_count=0
-fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
-  child T35: active  checks=2/2
-  child T36: active  checks=2/2
-  child T37: active  checks=2/2
-cumulative_inactive: 0/38 simplices
-end: UB=5371.337581302  LB=2032.662900344
+=== Iter 16 (early exit: mode7_no_valid_split_on_chosen_face) ===
+  no split performed (early exit: mode7_no_valid_split_on_chosen_face)
 
-=== Iter 17 ===
-selected_simplex: T36  LB_pre=2032.662900344
-  v3: (-75.0000, 75.0000, 75.0000)
-  v23: (11.7866, 23.2287, 15.7933)
-  v10: (24.4821, 43.8457, 29.3365)
-  v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2032.662900344
-children (created 3):
-  child T37 (4, 10, 23, 24) LB=3355.867642034 sum_cs=3355.867642034 vol=1.050461e-12
-  child T38 (3, 4, 10, 24) LB=2032.662900326 sum_cs=2032.662900326 vol=1.455192e-11
-  child T39 (3, 10, 23, 24) LB=3595.592981145 sum_cs=3595.592981145 vol=1.212660e-12
-next_node: (5.1143, 12.3933, 8.6756)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: error
-sample_retry_triggered=no  retry_count=0
-fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
-  child T37: active  checks=2/2
-  child T38: active  checks=2/2
-  child T39: active  checks=2/2
-cumulative_inactive: 0/40 simplices
-end: UB=5371.337581302  LB=2032.662900326
-
-=== Iter 18 ===
-selected_simplex: T38  LB_pre=2032.662900326
-  v3: (-75.0000, 75.0000, 75.0000)
-  v24: (5.1143, 12.3933, 8.6756)
-  v10: (24.4821, 43.8457, 29.3365)
-  v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2032.662900326
-children (created 3):
-  child T39 (4, 10, 24, 25) LB=3355.867642417 sum_cs=3355.867642417 vol=3.848326e-13
-  child T40 (3, 4, 10, 25) LB=2032.662901955 sum_cs=2032.662901955 vol=1.697723e-11
-  child T41 (3, 4, 24, 25) LB=2441.470400641 sum_cs=2441.470400641 vol=1.818989e-11
-next_node: (14.7982, 28.1195, 19.0060)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: (-0.208984, -2.000000, 2.000000, -0.375000)
-sample_retry_triggered=no  retry_count=0
-fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
-  child T39: active  checks=2/2
-  child T40: active  checks=2/2
-  child T41: active  checks=2/2
-cumulative_inactive: 0/42 simplices
-end: UB=5371.337581302  LB=2032.662901955
-
-=== Iter 19 ===
-selected_simplex: T40  LB_pre=2032.662901955
-  v3: (-75.0000, 75.0000, 75.0000)
-  v25: (14.7982, 28.1195, 19.0060)
-  v10: (24.4821, 43.8457, 29.3365)
-  v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2032.662901955
-children (created 3):
-  child T41 (4, 10, 25, 26) LB=3675.988625656 sum_cs=3675.988625656 vol=6.736922e-13
-  child T42 (3, 4, 10, 26) LB=2032.662900099 sum_cs=2032.662900099 vol=7.275958e-12
-  child T43 (3, 10, 25, 26) LB=4049.053381817 sum_cs=4049.053381817 vol=2.425319e-12
-next_node: (6.6202, 14.8387, 10.2820)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: (-0.033203, 1.000000, -0.187500, -0.046875)
-sample_retry_triggered=no  retry_count=0
-fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
-  child T41: active  checks=2/2
-  child T42: active  checks=2/2
-  child T43: active  checks=2/2
-cumulative_inactive: 0/44 simplices
-end: UB=5371.337581302  LB=2032.662900099
-
-=== Iter 20 ===
-selected_simplex: T42  LB_pre=2032.662900099
-  v3: (-75.0000, 75.0000, 75.0000)
-  v26: (6.6202, 14.8387, 10.2820)
-  v10: (24.4821, 43.8457, 29.3365)
-  v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2032.662900099
-children (created 3):
-  child T43 (4, 10, 26, 27) LB=2819.952164012 sum_cs=2819.952164012 vol=5.592864e-13
-  child T44 (3, 4, 10, 27) LB=2032.662896656 sum_cs=2032.662896656 vol=2.425319e-11
-  child T45 (3, 10, 26, 27) LB=2904.092752046 sum_cs=2904.092752046 vol=9.701277e-12
-next_node: (2.5311, 8.1983, 5.9199)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: (0.102051, -0.000000, 0.250000, 0.066406)
-sample_retry_triggered=no  retry_count=0
-fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
-  child T43: active  checks=2/2
-  child T44: active  checks=2/2
-  child T45: active  checks=2/2
-cumulative_inactive: 0/46 simplices
-end: UB=5371.337581302  LB=2032.662896656
-
-=== Iter 21 ===
-selected_simplex: T44  LB_pre=2032.662896656
-  v3: (-75.0000, 75.0000, 75.0000)
-  v27: (2.5311, 8.1983, 5.9199)
-  v10: (24.4821, 43.8457, 29.3365)
-  v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2032.662896656
-children (created 3):
-  child T45 (4, 10, 27, 28) LB=2414.394517352 sum_cs=2414.394517352 vol=8.928909e-13
-  child T46 (3, 4, 10, 28) LB=2032.662900099 sum_cs=2032.662900099 vol=2.910383e-11
-  child T47 (3, 10, 27, 28) LB=2434.186480387 sum_cs=2434.186480387 vol=1.455192e-11
-next_node: (0.4866, 4.8781, 3.7389)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: error
-sample_retry_triggered=no  retry_count=0
-fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
-  child T45: active  checks=2/2
-  child T46: active  checks=2/2
-  child T47: active  checks=2/2
-cumulative_inactive: 0/48 simplices
-end: UB=5371.337581302  LB=2032.662900099
-
-=== Iter 22 ===
-selected_simplex: T46  LB_pre=2032.662900099
-  v3: (-75.0000, 75.0000, 75.0000)
-  v28: (0.4866, 4.8781, 3.7389)
-  v10: (24.4821, 43.8457, 29.3365)
-  v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2032.662900099
-children (created 3):
-  child T47 (4, 10, 28, 29) LB=2414.394518176 sum_cs=2414.394518176 vol=6.397207e-13
-  child T48 (3, 4, 10, 29) LB=2032.662900139 sum_cs=2032.662900139 vol=2.425319e-12
-  child T49 (3, 4, 28, 29) LB=2713.273774338 sum_cs=2713.273774338 vol=1.455192e-11
-next_node: (12.4843, 24.3619, 16.5377)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: (-0.062500, 1.500000, 1.000000, -0.187500)
-sample_retry_triggered=no  retry_count=0
-fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
-  child T47: active  checks=2/2
-  child T48: active  checks=2/2
-  child T49: active  checks=2/2
-cumulative_inactive: 0/50 simplices
-end: UB=5371.337581302  LB=2032.662900139
-
-=== Iter 23 ===
-selected_simplex: T48  LB_pre=2032.662900139
-  v3: (-75.0000, 75.0000, 75.0000)
-  v29: (12.4843, 24.3619, 16.5377)
-  v10: (24.4821, 43.8457, 29.3365)
-  v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2032.662900139
-children (created 3):
-  child T49 (3, 4, 10, 30) LB=2032.662900037 sum_cs=2032.662900037 vol=2.182787e-11
-  child T50 (3, 4, 29, 30) LB=2160.015667496 sum_cs=2160.015667496 vol=9.701277e-12
-  child T51 (3, 10, 29, 30) LB=6166.112550888 sum_cs=6166.112550888 vol=6.063298e-12
-next_node: (18.4832, 34.1038, 22.9371)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: (-0.442708, 2.250000, -0.666667, -0.291667)
-sample_retry_triggered=no  retry_count=0
-fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
-  child T49: active  checks=2/2
-  child T50: active  checks=2/2
-  child T51: active  checks=2/2
-cumulative_inactive: 0/52 simplices
-end: UB=5371.337581302  LB=2032.662900037
-
-=== Iter 24 ===
-selected_simplex: T49  LB_pre=2032.662900037
-  v3: (-75.0000, 75.0000, 75.0000)
-  v30: (18.4832, 34.1038, 22.9371)
-  v10: (24.4821, 43.8457, 29.3365)
-  v4: (75.0000, -75.0000, -75.0000)
-UB_pre=5371.337581302  LB_global_pre=2032.662900037
-children (created 3):
-  child T51 (3, 4, 10, 31) LB=2032.662902282 sum_cs=2032.662902282 vol=6.669628e-12
-  child T52 (3, 4, 30, 31) LB=2064.469205665 sum_cs=2064.469205665 vol=2.061521e-11
-  child T53 (3, 10, 30, 31) LB=8800.776509001 sum_cs=8800.776509001 vol=2.425319e-12
-next_node: (21.4826, 38.9747, 26.1368)
-selection: source=mode7_face_cluster  rank=N/A  snap=face
-barycentric: (0.040509, 0.203704, 0.703704, 0.027778)
-sample_retry_triggered=no  retry_count=0
-fbbt_obbt_tightening: 3 children, 6 checks, 0 inactive, 3 active
-  child T51: active  checks=2/2
-  child T52: active  checks=2/2
-  child T53: active  checks=2/2
-cumulative_inactive: 0/54 simplices
-end: UB=5371.337581302  LB=2032.662902282
+=== Iter 16 (early exit: mode7_no_valid_split_on_chosen_face) ===
+  simplex: T24 verts=(11, 14, 15, 19)
+  mode7 clustering diagnostics:
+    simplex_edge_lengths=(18.5967, 19.6979, 22.2566, 22.7135, 23.1494, 34.1706)
+    simplex_edge_median=2.248505e+01
+    r_cluster=2.248505e+00 (alpha=0.1)
+    valid_points (n=2):
+      scen 0: (-22.0566, -9.6577, 22.0566)
+      scen 1: (-4.2101, 4.2101, 27.0648)
+    pairwise_distances:
+      (s0, s1): dist=2.314943e+01, connected=No
+    K=2
+    cluster 0: members_scen=[0], size=1, centroid=(-22.0566, -9.6577, 22.0566)
+    cluster 1: members_scen=[1], size=1, centroid=(-4.2101, 4.2101, 27.0648)
+  no split performed (early exit: mode7_no_valid_split_on_chosen_face)
 

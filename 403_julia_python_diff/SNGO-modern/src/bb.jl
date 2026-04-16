@@ -6,7 +6,7 @@ Ported from bb.jl (~1365 lines). Contains:
   - Lower bounding via convex relaxation + WS bound
   - Upper bounding via Ipopt local solve + WSfix global solve
   - Node selection (best-bound)
-  - Branching (max-range variable selection + solution-weighted split point)
+  - Branching (pseudocost branching + solution-weighted split point)
 """
 
 using Printf
@@ -81,121 +81,620 @@ function computeBvalue(xl::Float64, xu::Float64, bValue::Float64,
 end
 
 # ─────────────────────────────────────────────────────────────────────
-# Lower Bound: WS (Wait-and-See)
+# Lower Bound: Relaxation (iterative OA — full version)
 # ─────────────────────────────────────────────────────────────────────
 
 """
-    getWSLowerBound(P, pr_children, optimizer_factory) -> (LB, solutions)
+    getRelaxLowerBound(Rold, Pex, prex, UB, defaultLB; nsolve=20) -> (status, LB, R)
 
-Compute the wait-and-see lower bound by solving each scenario
-independently to global optimality.
+Solve the LP relaxation iteratively:
+  1. Solve LP
+  2. Add OA + aBB cuts at current solution
+  3. Re-solve (up to `nsolve` iterations or until no improvement)
 """
-function getWSLowerBound(P::ModelWrapper, pr_children, optimizer_factory)
-    scenarios = getchildren(P)
-    nscen = length(scenarios)
-    nfirst = P.numCols
-    WS_LB = 0.0
-    solutions = [Float64[] for _ in 1:nscen]
+function getRelaxLowerBound(Rold::ModelWrapper, Pex::ModelWrapper,
+                            prex::PreprocessResult, UB::Float64,
+                            defaultLB::Float64;
+                            relaxBin::Bool=false, nsolve::Int=20)
+    R = updaterelax(Rold, Pex, prex, UB)
+    Rx = copy(R.colVal)
+    no_iter_wo_change = 0
 
-    for (idx, scen) in enumerate(scenarios)
-        status = solve_model!(scen, optimizer_factory)
-
-        if status == :Optimal
-            WS_LB += scen.objVal
-            solutions[idx] = copy(scen.colVal)
-        elseif status == :Infeasible
-            return (Inf, solutions)
-        else
-            # Use a large penalty
-            WS_LB += 1e10
+    if relaxBin
+        hasBin = any(c -> c == :Bin, R.colCat[1:R.numCols])
+        if hasBin
+            for i in 1:R.numCols
+                if R.colCat[i] == :Bin
+                    R.colCat[i] = :Cont
+                end
+            end
         end
     end
 
-    return (WS_LB / nscen, solutions)  # Average over scenarios
-end
+    relaxed_status = solve_model!(R, gurobi_simplex_optimizer())
+    relaxed_LB = getRobjective(R, relaxed_status, defaultLB)
 
-# ─────────────────────────────────────────────────────────────────────
-# Lower Bound: Relaxation
-# ─────────────────────────────────────────────────────────────────────
-
-"""
-    getRelaxLowerBound(R, optimizer_factory) -> (LB, solution, status)
-
-Solve the LP relaxation for a lower bound.
-"""
-function getRelaxLowerBound(R::ModelWrapper, optimizer_factory)
-    status = solve_model!(R, optimizer_factory)
-    if status == :Optimal
-        return (R.objVal, copy(R.colVal), status)
-    elseif status == :Infeasible
-        return (Inf, Float64[], status)
-    else
-        return (-1e20, Float64[], status)
+    if relaxed_status == :Optimal &&
+       ((UB - relaxed_LB) <= mingap ||
+        (UB - relaxed_LB) <= mingap * min(abs(relaxed_LB), abs(UB)))
+        return (relaxed_status, relaxed_LB, R)
     end
+
+    if relaxed_status == :Optimal
+        Rx = copy(R.colVal)
+        for i in 1:nsolve
+            newncon_convex = addOuterApproximation!(R, prex)
+            newncon_aBB = addaBB!(R, prex)
+            addMonomialOA!(R, prex)
+            addPowerOA!(R, prex)
+
+            if (newncon_aBB + newncon_convex) != 0
+                relaxed_status_trial = solve_model!(R, gurobi_simplex_optimizer())
+                old_relaxed_LB = relaxed_LB
+                relaxed_LB_trial = getRobjective(R, relaxed_status_trial, old_relaxed_LB)
+
+                if relaxed_status_trial == :Optimal
+                    Rx = copy(R.colVal)
+                    relaxed_LB = relaxed_LB_trial
+                    if (UB - relaxed_LB) <= mingap ||
+                       (UB - relaxed_LB) <= mingap * min(abs(relaxed_LB), abs(UB))
+                        return (:Optimal, relaxed_LB, R)
+                    end
+                elseif relaxed_status_trial == :Infeasible
+                    relaxed_status = :Infeasible
+                    relaxed_LB = UB
+                    break
+                else
+                    println("warning: relaxation status = ", relaxed_status_trial)
+                    break
+                end
+
+                Limprove = relaxed_LB_trial - old_relaxed_LB
+                if Limprove >= LP_improve_tol
+                    no_iter_wo_change = 0
+                else
+                    no_iter_wo_change += 1
+                end
+                if no_iter_wo_change >= 10
+                    break
+                end
+            else
+                break
+            end
+        end
+    end
+
+    R.colVal = Rx
+    return (relaxed_status, relaxed_LB, R)
 end
 
 # ─────────────────────────────────────────────────────────────────────
-# Upper Bound
+# Lower Bound: WS (Wait-and-See) — full version with SCIP
 # ─────────────────────────────────────────────────────────────────────
 
 """
-    getUpperBound!(P, x_first, optimizer_factory) -> (UB, status)
+    getWSLowerBound(P, parWSSol, UB) -> (WS_status, WS_LB, WSfirst, WSSol)
 
-Fix first-stage variables to `x_first`, solve each scenario to
-global optimality, sum objectives.
+Compute the wait-and-see lower bound by solving each scenario
+  1. Ipopt local solve (warmstart from parent WS solution)
+  2. SCIP global solve per scenario
 """
-function getUpperBound!(P::ModelWrapper, x_first::Vector{Float64},
-                        optimizer_factory)
+function getWSLowerBound(P::ModelWrapper, parWSSol, UB::Float64)
+    nfirst = P.numCols
     scenarios = getchildren(P)
     nscen = length(scenarios)
-    UB = 0.0
+    WS_LB = 0.0
+    WS_status = :Optimal
+    WSSol = StoSol(nscen)
+    WSfirstSol = [Float64[] for _ in 1:nfirst]
+    WSfirst = zeros(nfirst)
 
-    for (idx, scen) in enumerate(scenarios)
-        firstVarsId = scen.ext[:firstVarsId]
-        # Create a copy with fixed first-stage variables
-        scen_fix = copyModel(scen)
-        for i in 1:length(firstVarsId)
-            fvi = firstVarsId[i]
-            if fvi > 0 && i <= length(x_first)
-                scen_fix.colLower[fvi] = x_first[i]
-                scen_fix.colUpper[fvi] = x_first[i]
+    for (idx, scenario) in enumerate(scenarios)
+        # Check if parent solution is still feasible
+        if parWSSol !== nothing && idx <= length(parWSSol.secondSols) &&
+           !isempty(parWSSol.secondSols[idx])
+            secondSol = parWSSol.secondSols[idx]
+            scenario.colVal = copy(secondSol)
+            if inBounds(scenario, secondSol)
+                scenario_LB = parWSSol.secondobjVals[idx]
+                for k in 1:nfirst
+                    varid = scenario.ext[:firstVarsId][k]
+                    if varid != -1
+                        push!(WSfirstSol[k], scenario.colVal[varid])
+                    end
+                end
+                WS_LB += scenario_LB
+                WSSol.secondSols[idx] = secondSol
+                WSSol.secondobjVals[idx] = scenario_LB
+                continue
             end
         end
 
-        status = solve_model!(scen_fix, optimizer_factory)
+        # Local solve with Ipopt
+        scenariocopy = copyModel(scenario)
+        hasBin_local = any(c -> c == :Bin, scenariocopy.colCat[1:scenariocopy.numCols])
+        if hasBin_local
+            fixBinaryVar(scenariocopy)
+        end
+        scenariocopy_status = solve_model!(scenariocopy, ipopt_optimizer())
 
-        if status == :Optimal
-            UB += scen_fix.objVal
+        if scenariocopy_status == :Unbounded ||
+           (scenariocopy_status == :Optimal && scenariocopy.objVal <= -1e10)
+            WS_status = :NotOptimal
+            WS_LB = -1e20
+            break
+        elseif scenariocopy_status == :Optimal && parWSSol === nothing
+            scenario.colVal = copy(scenariocopy.colVal)
+        end
+
+        # Global solve with SCIP
+        if scenariocopy_status == :Optimal
+            scen_solver = scip_optimizer(mingap/2, 100.0)
         else
-            return (Inf, :Infeasible)
+            scen_solver = scip_optimizer(mingap/2, 100.0)
+        end
+        scenario_status = solve_model!(scenario, scen_solver)
+        scenario_LB = scenario.objBound !== nothing ? scenario.objBound : scenario.objVal
+
+        if scenariocopy_status == :Optimal && scenario_status == :Infeasible
+            scenario_status = :Optimal
+            scenario.colVal = copy(scenariocopy.colVal)
+            scenario.objVal = scenariocopy.objVal
+            scenario_LB = scenariocopy.objVal
+        end
+
+        projection!(scenario.colVal, scenario.colLower, scenario.colUpper)
+
+        if scenario_status == :Optimal || scenario_status == :UserLimit
+            for k in 1:nfirst
+                varid = scenario.ext[:firstVarsId][k]
+                if varid != -1
+                    push!(WSfirstSol[k], scenario.colVal[varid])
+                end
+            end
+            WS_LB += scenario_LB
+            WSSol.secondSols[idx] = copy(scenario.colVal)
+            WSSol.secondobjVals[idx] = scenario_LB
+
+            # Early termination: check if already converged
+            currentLB = WS_LB
+            for j in (idx+1):nscen
+                currentLB += haskey(scenarios[j].ext, :objLB) ? scenarios[j].ext[:objLB] : -1e10
+            end
+            if (UB - currentLB) <= mingap || (UB - currentLB) <= mingap * abs(currentLB)
+                WS_status = :Infeasible
+                break
+            end
+        elseif scenario_status == :Infeasible
+            WS_status = :Infeasible
+            break
+        else
+            WS_status = :NotOptimal
+            println("WS: SCIP not optimal for scenario ", idx)
+            error("WS_status NotOptimal")
         end
     end
 
-    return (UB / nscen, :Optimal)
+    if WS_status == :Optimal
+        for k in 1:nfirst
+            if !isempty(WSfirstSol[k])
+                WSfirst[k] = length(WSfirstSol[k]) > 0 ? median(WSfirstSol[k]) : 0.0
+            end
+        end
+    end
+
+    return (WS_status, WS_LB, WSfirst, WSSol)
+end
+
+function median(v::Vector{Float64})
+    isempty(v) && return 0.0
+    sv = sort(v)
+    n = length(sv)
+    if isodd(n)
+        return sv[div(n+1, 2)]
+    else
+        return (sv[div(n, 2)] + sv[div(n, 2) + 1]) / 2.0
+    end
 end
 
 # ─────────────────────────────────────────────────────────────────────
-# Local Upper Bound (NLP)
+# Combined Lower Bound
+# ─────────────────────────────────────────────────────────────────────
+
+function getLowerBound(P::ModelWrapper, parWSSol, Rold, Pex, prex, UB, defaultLB)
+    nfirst = P.numCols
+    relaxed_status, relaxed_LB, R = getRelaxLowerBound(Rold, Pex, prex, UB, defaultLB)
+
+    if relaxed_status == :Optimal &&
+       ((UB - relaxed_LB) <= mingap || (UB - relaxed_LB) / abs(relaxed_LB) <= mingap)
+        return (relaxed_status, relaxed_LB, :NotOptimal, relaxed_status, relaxed_LB,
+                zeros(nfirst), R, nothing)
+    end
+
+    LB = relaxed_LB
+    WS_LB = -1e10
+    WS_status = :NotOptimal
+    WSfirst = zeros(nfirst)
+    WSSol = nothing
+
+    updateStoBoundsFromExtensive!(Pex, P)
+    WS_status, WS_LB, WSfirst, WSSol = getWSLowerBound(P, parWSSol, UB)
+
+    if WS_status == :Infeasible
+        return (:Infeasible, UB, :Infeasible, relaxed_status, relaxed_LB,
+                WSfirst, R, WSSol)
+    end
+    println("WS_status  ", WS_status, "  WS_LB ", WS_LB)
+
+    LB_status = :NotOptimal
+    if WS_status == :Optimal || relaxed_status == :Optimal
+        LB_status = :Optimal
+    end
+    LB = max(relaxed_LB, WS_LB)
+    return (LB_status, LB, WS_status, relaxed_status, relaxed_LB, WSfirst, R, WSSol)
+end
+
+# ─────────────────────────────────────────────────────────────────────
+# Upper Bound — full version (NLP + WSfix)
+# ─────────────────────────────────────────────────────────────────────
+
+function getUpperBound!(Pex::ModelWrapper, prex, PWSfix::ModelWrapper,
+                        P::ModelWrapper, node_LB::Float64,
+                        WS_status::Symbol, WSfirst::Vector{Float64},
+                        level::Int)
+    updateStoBoundsFromSto!(P, PWSfix)
+    nfirst = P.numCols
+    UB = 1e10
+    UB_status = :NotOptimal
+    WSfix_status = :NotOptimal
+
+    # Local NLP solve via Ipopt on each scenario
+    local_status = Ipopt_solve(P)
+    local_UB = 1e10
+    if local_status == :Optimal
+        local_UB = getsumobjectivevalue(P)
+        if local_UB < UB
+            UB_status = local_status
+            UB = local_UB
+        end
+        println("local_UB  ", local_status, "  ", local_UB)
+    end
+
+    # WSfix: fix first-stage and solve each scenario with SCIP
+    if level <= 2 || level % 3 == 0
+        if (local_status == :Optimal || WS_status == :Optimal) &&
+           (UB - node_LB) >= mingap && (UB - node_LB) >= mingap * min(abs(node_LB), abs(UB))
+
+            WSfixfirst = local_status == :Optimal ? copy(P.colVal) : copy(WSfirst)
+            WSfix_UB = 0.0
+            WSfix_status = :Optimal
+            scenariosWSfix = getchildren(PWSfix)
+            scenarios = getchildren(P)
+            nscen = length(scenariosWSfix)
+
+            for (idx, scenarioWSfix) in enumerate(scenariosWSfix)
+                if local_status == :Optimal && idx <= length(scenarios)
+                    scenarioWSfix.colVal = copy(scenarios[idx].colVal)
+                end
+                firstVarsId = scenarioWSfix.ext[:firstVarsId]
+                for k in 1:nfirst
+                    varid = firstVarsId[k]
+                    if varid != -1
+                        val = WSfixfirst[k]
+                        if P.colCat[k] == :Bin
+                            val = val >= 0.5 ? 1.0 : 0.0
+                        end
+                        scenarioWSfix.colCat[varid] = :Fixed
+                        scenarioWSfix.colLower[varid] = val
+                        scenarioWSfix.colUpper[varid] = val
+                        scenarioWSfix.colVal[varid] = val
+                    end
+                end
+
+                scen_solver = scip_optimizer(mingap/2, 100.0)
+                scenarioWSfix_status = solve_model!(scenarioWSfix, scen_solver)
+
+                if local_status == :Optimal && scenarioWSfix_status == :Infeasible &&
+                   idx <= length(scenarios)
+                    scenarioWSfix_status = :Optimal
+                    scenarioWSfix.colVal = copy(scenarios[idx].colVal)
+                    scenarioWSfix.objVal = scenarios[idx].objVal
+                end
+
+                projection!(scenarioWSfix.colVal, scenarioWSfix.colLower, scenarioWSfix.colUpper)
+
+                if scenarioWSfix_status == :Optimal || scenarioWSfix_status == :UserLimit
+                    WSfix_UB += scenarioWSfix.objVal
+                elseif scenarioWSfix_status == :Infeasible
+                    WSfix_status = :Infeasible
+                    break
+                else
+                    WSfix_status = :NotOptimal
+                    println("WSfix: SCIP not optimal for scenario ", idx)
+                    break
+                end
+            end
+
+            if WSfix_status == :Optimal
+                UB_status = WSfix_status
+                if WSfix_UB < UB
+                    UB = WSfix_UB
+                end
+                println("WSfix_status  ", WSfix_status, "  WSfix_UB ", WSfix_UB)
+            end
+        end
+    end
+
+    return UB_status, WSfix_status, UB, local_UB
+end
+
+# ─────────────────────────────────────────────────────────────────────
+# Variable selection — Pseudocost branching
 # ─────────────────────────────────────────────────────────────────────
 
 """
-    getLocalUpperBound(P, optimizer_factory) -> (UB, x_first)
+    SelectVar!(vs, P, Rsol, WSfirst, WS_status, relaxed_status,
+               PWS_child, Pex_child, Rold, prex, UB, node_LB, Pex,
+               FLB, pr_children) -> (bVarId, max_score, exitBranch,
+               child_left_LB, child_right_LB, FLB, node_LB)
 
-Solve the stochastic problem locally with an NLP solver.
+Pseudocost-based variable selection with probing.
 """
-function getLocalUpperBound(P::ModelWrapper, optimizer_factory)
-    # Build extensive form and solve locally
-    Pex = extensiveSimplifiedModel(P)
-    Pnl = copyNLModel(Pex)
-    status = solve_model!(Pnl, optimizer_factory)
+function SelectVar!(vs::BranchVarScore, P::ModelWrapper, Rsol,
+                    WSfirst::Vector{Float64}, WS_status::Symbol,
+                    relaxed_status::Symbol,
+                    PWS_child::ModelWrapper, Pex_child::ModelWrapper,
+                    Rold, prex, UB::Float64, node_LB::Float64,
+                    Pex::ModelWrapper, FLB::Float64,
+                    pr_children, P_child=nothing)
+    node_LB_old = node_LB
+    nfirst = P.numCols
+    exitBranch = false
+    child_left_LB = -1e10
+    child_right_LB = -1e10
+    max_score = 0.0
+    bVarId = vs.varId[1]
+    no_consecutive_updates_wo_change = 0
+    n_rel = 100
+    lambda_consecutive = 8
 
-    if status == :Optimal
-        nfirst = P.numCols
-        x_first = Pnl.colVal[1:nfirst]
-        return (Pnl.objVal, x_first)
-    else
-        return (Inf, zeros(P.numCols))
+    i = 1
+    ninfeasible = 0
+    while i <= length(vs.varId)
+        varId = vs.varId[i]
+        bVarl = Pex.colLower[varId]
+        bVaru = Pex.colUpper[varId]
+
+        if (bVaru - bVarl) <= small_bound_improve
+            i += 1
+            continue
+        end
+
+        bValue = computeBvalue(Pex, P, varId, Rsol, WSfirst, WS_status, relaxed_status)
+
+        # Probe if reliability is low
+        if min(vs.n_right[i], vs.n_left[i]) < n_rel &&
+           no_consecutive_updates_wo_change <= lambda_consecutive
+
+            vs.tried[i] = true
+            updateStoBoundsFromExtensive!(Pex, PWS_child)
+            Pex_child.colLower = copy(Pex.colLower)
+            Pex_child.colUpper = copy(Pex.colUpper)
+            updateFirstBounds!(PWS_child, bVarl, bValue, varId)
+            updateExtensiveFirstBounds!(Pex_child, PWS_child, bVarl, bValue, varId)
+
+            # Probe left child
+            LB_status_left, obj_left, _ = getRelaxLowerBound(Rold, Pex_child, prex, UB, node_LB)
+            improve_left = 0.0
+
+            if LB_status_left == :Optimal
+                if ((UB - obj_left) <= mingap) || ((UB - obj_left) <= mingap * abs(obj_left))
+                    if (UB - obj_left) >= 0 && obj_left <= FLB
+                        FLB = obj_left
+                    end
+                    P.colLower[varId] = bValue
+                    Pex.colLower[varId] = bValue
+                    LB_status_left = :Infeasible
+                end
+                improve_left = max(0.0, obj_left - node_LB_old)
+                nlinfeasibility = bValue - bVarl
+                if nlinfeasibility > 0
+                    vs.pcost_left[i] = (vs.pcost_left[i]*vs.n_left[i] + improve_left/nlinfeasibility) / (vs.n_left[i] + 1)
+                end
+                vs.n_left[i] += 1
+            elseif LB_status_left == :Infeasible
+                P.colLower[varId] = bValue
+                Pex.colLower[varId] = bValue
+                improve_left = max(0.0, UB - node_LB_old)
+            else
+                i += 1
+                continue
+            end
+
+            if LB_status_left == :Infeasible
+                updateStoBoundsFromExtensive!(Pex, P)
+                Sto_fast_feasibility_reduction!(P, pr_children, Pex, prex, Rold, UB, node_LB)
+                updateExtensiveBoundsFromSto!(P, Pex)
+                updateExtensiveBoundsFromSto!(P, Pex_child)
+                updateStoBoundsFromSto!(P, PWS_child)
+            end
+
+            # Probe right child
+            updateStoBoundsFromExtensive!(Pex, PWS_child)
+            Pex_child.colLower = copy(Pex.colLower)
+            Pex_child.colUpper = copy(Pex.colUpper)
+            updateFirstBounds!(PWS_child, bValue, bVaru, varId)
+            updateExtensiveFirstBounds!(Pex_child, PWS_child, bValue, bVaru, varId)
+
+            LB_status_right, obj_right, _ = getRelaxLowerBound(Rold, Pex_child, prex, UB, node_LB)
+            improve_right = 0.0
+
+            if LB_status_right == :Optimal
+                if ((UB - obj_right) <= mingap) || ((UB - obj_right) <= mingap * abs(obj_right))
+                    if (UB - obj_right) >= 0 && obj_right <= FLB
+                        FLB = obj_right
+                    end
+                    Pex.colUpper[varId] = bValue
+                    P.colUpper[varId] = bValue
+                    LB_status_right = :Infeasible
+                    if obj_right >= UB
+                        obj_right = UB
+                    end
+                end
+                improve_right = max(0.0, obj_right - node_LB_old)
+                nlinfeasibility = bVaru - bValue
+                if nlinfeasibility > 0
+                    vs.pcost_right[i] = (vs.pcost_right[i]*vs.n_right[i] + improve_right/nlinfeasibility) / (vs.n_right[i] + 1)
+                end
+                vs.n_right[i] += 1
+            elseif LB_status_right == :Infeasible
+                P.colUpper[varId] = bValue
+                Pex.colUpper[varId] = bValue
+                obj_right = UB
+                improve_right = max(0.0, obj_right - node_LB_old)
+            else
+                i += 1
+                continue
+            end
+
+            if LB_status_right == :Infeasible
+                updateStoBoundsFromExtensive!(Pex, P)
+                Sto_fast_feasibility_reduction!(P, pr_children, Pex, prex, Rold, UB, node_LB)
+                updateExtensiveBoundsFromSto!(P, Pex)
+            end
+
+            # Both infeasible → fathom
+            if LB_status_right == :Infeasible && LB_status_left == :Infeasible
+                exitBranch = true
+                break
+            end
+
+            if (LB_status_right == :Infeasible || LB_status_left == :Infeasible)
+                ninfeasible += 1
+                continue
+            end
+
+            # Update node LB from probing
+            if LB_status_left == :Infeasible && LB_status_right == :Optimal && (obj_right - node_LB) >= 0
+                node_LB = obj_right
+            elseif LB_status_right == :Infeasible && LB_status_left == :Optimal && (obj_left - node_LB) >= 0
+                node_LB = obj_left
+            elseif LB_status_left == :Optimal && LB_status_right == :Optimal &&
+                   (obj_left - node_LB) >= 0 && (obj_right - node_LB) >= 0
+                node_LB = min(obj_left, obj_right)
+            end
+
+            vs.score[i] = compute_score(improve_left, improve_right)
+
+            if vs.score[i] >= max_score
+                max_score = vs.score[i]
+                bVarId = varId
+                if LB_status_left == :Optimal
+                    child_left_LB = obj_left
+                    LB_status_right == :Infeasible && (child_right_LB = child_left_LB)
+                end
+                if LB_status_right == :Optimal
+                    child_right_LB = obj_right
+                    LB_status_left == :Infeasible && (child_left_LB = obj_right)
+                end
+                no_consecutive_updates_wo_change = 0
+            else
+                no_consecutive_updates_wo_change += 1
+            end
+        end  # probing block
+
+        # Check pseudocost score
+        if vs.score[i] >= max_score
+            max_score = vs.score[i]
+            bVarId = varId
+        end
+
+        if no_consecutive_updates_wo_change > lambda_consecutive && max_score > 0
+            break
+        end
+
+        i += 1
+        ninfeasible = 0
     end
+
+    updateStoBoundsFromExtensive!(Pex, P)
+    return bVarId, max_score, exitBranch, child_left_LB, child_right_LB, FLB, node_LB
+end
+
+# ─────────────────────────────────────────────────────────────────────
+# Branch
+# ─────────────────────────────────────────────────────────────────────
+
+function branch!(nodeList, P, Pex, bVarId, bValue, node, node_LB,
+                 WSSol, child_left_LB, child_right_LB,
+                 WS_status, relaxed_status, Rsol, max_score)
+    nfirst = P.numCols
+    hasBin_local = any(c -> c == :Bin, P.colCat[1:nfirst])
+
+    # Create left child
+    xl_left = copy(Pex.colLower)
+    xu_left = copy(Pex.colUpper)
+    bval_left = bValue
+    if P.colCat[bVarId] == :Bin
+        bval_left = 0.0
+    end
+    xu_left[bVarId] = bval_left
+    # Sync first-stage bounds
+    scenarios = getchildren(P)
+    for scen in scenarios
+        firstVarsId = scen.ext[:firstVarsId]
+        if firstVarsId[bVarId] > 0
+            scen.colUpper[firstVarsId[bVarId]] = bval_left
+        end
+    end
+
+    left = Node(nfirst, length(scenarios))
+    left.xlower = xl_left[1:nfirst]
+    left.xupper = xu_left[1:nfirst]
+    left.LB = node_LB
+    left.parent_LB = node_LB
+    if WS_status == :Optimal && WSSol !== nothing
+        left.x_ws = [copy(WSSol.secondSols[i]) for i in 1:length(scenarios)]
+    end
+    if child_left_LB != -1e10 && child_left_LB >= node_LB
+        left.LB = child_left_LB
+    end
+
+    # Create right child
+    xl_right = copy(Pex.colLower)
+    xu_right = copy(Pex.colUpper)
+    bval_right = bValue
+    if P.colCat[bVarId] == :Bin
+        bval_right = 1.0
+    end
+    xl_right[bVarId] = bval_right
+    for scen in scenarios
+        firstVarsId = scen.ext[:firstVarsId]
+        if firstVarsId[bVarId] > 0
+            scen.colLower[firstVarsId[bVarId]] = bval_right
+        end
+    end
+
+    right = Node(nfirst, length(scenarios))
+    right.xlower = xl_right[1:nfirst]
+    right.xupper = xu_right[1:nfirst]
+    right.LB = node_LB
+    right.parent_LB = node_LB
+    if WS_status == :Optimal && WSSol !== nothing
+        right.x_ws = [copy(WSSol.secondSols[i]) for i in 1:length(scenarios)]
+    end
+    if child_right_LB != -1e10 && child_right_LB >= node_LB
+        right.LB = child_right_LB
+    end
+
+    # Copy relaxation solution
+    if relaxed_status == :Optimal && Rsol !== nothing
+        left.x_relax = copy(Rsol)
+        right.x_relax = copy(Rsol)
+    end
+
+    push!(nodeList, left)
+    push!(nodeList, right)
 end
 
 # ─────────────────────────────────────────────────────────────────────
@@ -278,15 +777,14 @@ function branch_bound(P::ModelWrapper; max_iter::Int=5000)
     UB, best_x = multi_start!(P, 3, ipopt_optimizer())
     println("  Initial UB (multi-start): ", UB)
 
-    # Initial LB via relaxation
-    relax_LB, relax_sol, relax_status = getRelaxLowerBound(R, gurobi_lp_optimizer())
-    println("  Initial Relax LB: ", relax_LB)
+    # Initial LB via combined bound
+    hasBin_global = any(c -> c == :Bin, P.colCat[1:nfirst])
 
-    # WS lower bound
-    ws_LB, ws_solutions = getWSLowerBound(P, pr_children, scip_optimizer())
-    println("  Initial WS LB: ", ws_LB)
-
-    LB = max(relax_LB, ws_LB)
+    LB_status, LB, WS_status, relaxed_status, relaxed_LB, WSfirst, R_solved, WSSol =
+        getLowerBound(P, nothing, R, Pex, prex, UB, -1e20)
+    println("  Initial Relax LB: ", relaxed_LB)
+    println("  Initial WS LB: ", LB - relaxed_LB + LB)  # approximation
+    println("  Initial LB: ", LB)
 
     # ── Step 5: FBBT at root ──
     println("\n[5] Root FBBT...")
@@ -301,18 +799,24 @@ function branch_bound(P::ModelWrapper; max_iter::Int=5000)
     bVarsId = prex.branchVarsId
     bVarsIdFirst = filter(v -> v <= nfirst, bVarsId)
 
+    # Initialize BranchVarScore for pseudocost branching
+    vs = BranchVarScore(bVarsIdFirst)
+
+    # Create child copies for probing
+    PWS_child = copyModel(P)
+    Pex_child = copyModel(Pex)
+
     root = Node(nfirst, nscen)
     root.xlower = copy(P.colLower[1:nfirst])
     root.xupper = copy(P.colUpper[1:nfirst])
     root.LB = LB
-    root.x_ws = ws_solutions
-    root.x_relax = relax_sol[1:min(nfirst, length(relax_sol))]
 
     queue = [root]
     best_UB = UB
     best_x_first = copy(best_x)
     niter = 0
-    FLB = -1e20  # fathomed lower bound
+    FLB = -1e20
+    solved_nodes = 0
 
     println("\n[6] Starting Branch-and-Bound...")
     @printf("\n%6s  %14s  %14s  %10s  %6s\n",
@@ -322,6 +826,7 @@ function branch_bound(P::ModelWrapper; max_iter::Int=5000)
     # ── Main BnB Loop ──
     while !isempty(queue) && niter < max_iter
         niter += 1
+        solved_nodes += 1
 
         # Select node (best-bound)
         best_idx = argmin([n.LB for n in queue])
@@ -365,105 +870,63 @@ function branch_bound(P::ModelWrapper; max_iter::Int=5000)
             continue
         end
 
-        # Lower bound: relaxation + WS
-        R_updated = updaterelax(R, Pex, prex, best_UB)
-        node_relax_LB, node_relax_sol, relax_status = getRelaxLowerBound(R_updated, gurobi_lp_optimizer())
+        # Lower bound: combined relaxation + WS
+        node_parWSSol = nothing  # could use node.x_ws
+        LB_status, node_LB, WS_status, relaxed_status, relaxed_LB, WSfirst_node, R_node, WSSol_node =
+            getLowerBound(P, node_parWSSol, R, Pex, prex, best_UB, node.LB)
 
-        # Add OA cuts and re-solve
-        if relax_status == :Optimal
-            nOA = addOuterApproximation!(R_updated, prex)
-            naBB = addaBB!(R_updated, prex)
-            if nOA > 0 || naBB > 0
-                node_relax_LB2, _, _ = getRelaxLowerBound(R_updated, gurobi_lp_optimizer())
-                node_relax_LB = max(node_relax_LB, node_relax_LB2)
-            end
-        end
-
-        # WS bound
-        ws_LB_node, ws_sol_node = getWSLowerBound(P, pr_children, scip_optimizer())
-
-        node_LB = max(node_relax_LB, ws_LB_node, node.LB)
+        node_LB = max(node_LB, node.LB)
 
         # Prune by bound
-        if node_LB >= best_UB - mingap
+        if node_LB >= best_UB - mingap ||
+           (node_LB >= best_UB && (best_UB - node_LB) <= mingap * min(abs(node_LB), abs(best_UB)))
+            FLB = max(FLB, node_LB)
+            continue
+        end
+        if LB_status == :Infeasible
             FLB = max(FLB, node_LB)
             continue
         end
 
-        # Upper bound: find best first-stage point from WS solutions
-        # Median first-stage solution across scenarios
-        x_first_candidate = zeros(nfirst)
-        n_valid = 0
-        for idx in 1:nscen
-            if !isempty(ws_sol_node[idx])
-                firstVarsId = scenarios[idx].ext[:firstVarsId]
-                for i in 1:nfirst
-                    fvi = firstVarsId[i]
-                    if fvi > 0 && fvi <= length(ws_sol_node[idx])
-                        x_first_candidate[i] += ws_sol_node[idx][fvi]
-                    end
-                end
-                n_valid += 1
-            end
-        end
-        if n_valid > 0
-            x_first_candidate ./= n_valid
-            # Clamp to node bounds
-            for i in 1:nfirst
-                x_first_candidate[i] = clamp(x_first_candidate[i],
-                                              node.xlower[i], node.xupper[i])
-            end
+        # Upper bound
+        updateStoBoundsFromSto!(P, PWS_child)
+        UB_status, WSfix_status, node_UB, local_UB =
+            getUpperBound!(Pex, prex, PWS_child, P, node_LB, WS_status, WSfirst_node, niter)
 
-            node_UB, ub_status = getUpperBound!(P, x_first_candidate, scip_optimizer())
-            if ub_status == :Optimal && node_UB < best_UB
-                best_UB = node_UB
-                best_x_first = copy(x_first_candidate)
-            end
+        if node_UB < best_UB
+            best_UB = node_UB
+            best_x_first = copy(P.colVal[1:nfirst])
+            println("  *** New best UB: ", best_UB)
         end
 
-        # Branch: select variable (max range)
-        branch_var = 0
-        max_range = 0.0
-        for i in 1:nfirst
-            range = node.xupper[i] - node.xlower[i]
-            if range > max_range && range > 1e-6
-                max_range = range
-                branch_var = i
-            end
+        # Re-check gap after UB update
+        if (best_UB - node_LB) <= mingap ||
+           (best_UB - node_LB) <= mingap * min(abs(node_LB), abs(best_UB))
+            FLB = max(FLB, node_LB)
+            continue
         end
 
-        if branch_var == 0
-            # No variable to branch — fathom
+        # Variable selection — pseudocost branching with probing
+        Rsol = relaxed_status == :Optimal ? R_node.colVal : nothing
+        bVarId, max_score, exitBranch, child_left_LB, child_right_LB, FLB, node_LB =
+            SelectVar!(vs, P, Rsol, WSfirst_node, WS_status, relaxed_status,
+                       PWS_child, Pex_child, R, prex, best_UB, node_LB, Pex,
+                       FLB, pr_children)
+
+        if exitBranch
             FLB = max(FLB, node_LB)
             continue
         end
 
         # Compute split point
-        bval = computeBvalue(node.xlower[branch_var], node.xupper[branch_var],
-                             best_x_first[branch_var],
-                             node.cat[branch_var])
+        bValue = computeBvalue(Pex.colLower[bVarId], Pex.colUpper[bVarId],
+                               best_x_first[min(bVarId, length(best_x_first))],
+                               P.colCat[bVarId])
 
-        # Create child nodes
-        left = Node(nfirst, nscen)
-        left.xlower = copy(node.xlower)
-        left.xupper = copy(node.xupper)
-        left.xupper[branch_var] = bval
-        left.LB = node_LB
-        left.parent_LB = node_LB
-        left.cat = copy(node.cat)
-        left.x_ws = ws_sol_node
-
-        right = Node(nfirst, nscen)
-        right.xlower = copy(node.xlower)
-        right.xupper = copy(node.xupper)
-        right.xlower[branch_var] = bval
-        right.LB = node_LB
-        right.parent_LB = node_LB
-        right.cat = copy(node.cat)
-        right.x_ws = ws_sol_node
-
-        push!(queue, left)
-        push!(queue, right)
+        # Branch
+        branch!(queue, P, Pex, bVarId, bValue, node, node_LB,
+                WSSol_node, child_left_LB, child_right_LB,
+                WS_status, relaxed_status, Rsol, max_score)
 
         # Print progress
         gap = abs(best_UB - LB) / max(1.0, min(abs(LB), abs(best_UB)))
@@ -484,6 +947,7 @@ function branch_bound(P::ModelWrapper; max_iter::Int=5000)
     gap = abs(best_UB - LB) / max(1.0, min(abs(LB), abs(best_UB)))
     @printf("  Gap:            %14.6f %%\n", gap * 100)
     @printf("  Iterations:     %14d\n", niter)
+    println("  solved nodes:  ", solved_nodes)
     @printf("  Solution time:  %14.2f seconds\n", t_elapsed)
     println("  Best first-stage solution: ", best_x_first)
     println("=" ^ 60)

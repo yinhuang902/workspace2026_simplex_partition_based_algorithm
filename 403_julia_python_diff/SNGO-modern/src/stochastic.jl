@@ -591,3 +591,141 @@ function copyNLModel(P::ModelWrapper)
     # quadratic and NL constraints uniformly
     return copyModel(P)
 end
+
+# ─────────────────────────────────────────────────────────────────────
+# Additional stochastic helpers (ported from original)
+# ─────────────────────────────────────────────────────────────────────
+
+"""
+    Ipopt_solve(P) -> Symbol
+
+Solve each scenario of the stochastic model P independently with Ipopt.
+"""
+function Ipopt_solve(P::ModelWrapper)
+    scenarios = getchildren(P)
+    all_optimal = true
+    for scenario in scenarios
+        scen_copy = copyModel(scenario)
+        status = solve_model!(scen_copy, JuMP.optimizer_with_attributes(
+            Ipopt.Optimizer, "print_level" => 0, "max_cpu_time" => 100.0))
+        if status == :Optimal
+            scenario.colVal = copy(scen_copy.colVal)
+            scenario.objVal = scen_copy.objVal
+        else
+            all_optimal = false
+        end
+    end
+    return all_optimal ? :Optimal : :NotOptimal
+end
+
+"""
+    getsumobjectivevalue(P) -> Float64
+
+Sum objective values across all scenarios.
+"""
+function getsumobjectivevalue(P::ModelWrapper)
+    scenarios = getchildren(P)
+    return sum(s.objVal for s in scenarios)
+end
+
+"""
+    updateStoBoundsFromSto!(P, Q)
+
+Copy bounds from stochastic model P to stochastic model Q for all scenarios.
+"""
+function updateStoBoundsFromSto!(P::ModelWrapper, Q::ModelWrapper)
+    # Copy first-stage bounds
+    nfirst = P.numCols
+    Q.colLower[1:nfirst] = copy(P.colLower[1:nfirst])
+    Q.colUpper[1:nfirst] = copy(P.colUpper[1:nfirst])
+
+    # Copy scenario bounds
+    scenarios_P = getchildren(P)
+    scenarios_Q = getchildren(Q)
+    for (idx, (sp, sq)) in enumerate(zip(scenarios_P, scenarios_Q))
+        sq.colLower = copy(sp.colLower)
+        sq.colUpper = copy(sp.colUpper)
+    end
+end
+
+"""
+    updateStoSolFromExtensive!(Pex, P)
+
+Copy solution from extensive form back to stochastic model scenarios.
+"""
+function updateStoSolFromExtensive!(Pex::ModelWrapper, P::ModelWrapper)
+    scenarios = getchildren(P)
+    nfirst = P.numCols
+    offset = nfirst
+    for scenario in scenarios
+        n_scen = scenario.numCols
+        for i in 1:n_scen
+            if offset + i <= Pex.numCols
+                scenario.colVal[i] = Pex.colVal[offset + i]
+            end
+        end
+        offset += n_scen
+    end
+end
+
+"""
+    updateStoSolFromSto!(P, Q)
+
+Copy solutions from stochastic model P to stochastic model Q.
+"""
+function updateStoSolFromSto!(P::ModelWrapper, Q::ModelWrapper)
+    Q.colVal[1:P.numCols] = copy(P.colVal[1:P.numCols])
+    scenarios_P = getchildren(P)
+    scenarios_Q = getchildren(Q)
+    for (sp, sq) in zip(scenarios_P, scenarios_Q)
+        sq.colVal = copy(sp.colVal)
+    end
+end
+
+"""
+    updateFirstBounds!(P, lb, ub, varId)
+
+Update first-stage bounds in all scenarios for a single variable.
+"""
+function updateFirstBounds!(P::ModelWrapper, lb::Float64, ub::Float64, varId::Int)
+    P.colLower[varId] = lb
+    P.colUpper[varId] = ub
+    scenarios = getchildren(P)
+    for scenario in scenarios
+        firstVarsId = scenario.ext[:firstVarsId]
+        fvi = firstVarsId[varId]
+        if fvi > 0
+            scenario.colLower[fvi] = lb
+            scenario.colUpper[fvi] = ub
+        end
+    end
+end
+
+"""
+    updateExtensiveFirstBounds!(Pex, P, lb, ub, varId)
+
+Update extensive form bounds for a single first-stage variable.
+"""
+function updateExtensiveFirstBounds!(Pex::ModelWrapper, P::ModelWrapper,
+                                      lb::Float64, ub::Float64, varId::Int)
+    Pex.colLower[varId] = lb
+    Pex.colUpper[varId] = ub
+
+    # Update linked variables in extensive form
+    scenarios = getchildren(P)
+    if haskey(Pex.ext, :scenarioOffsets)
+        offsets = Pex.ext[:scenarioOffsets]
+        for (idx, scenario) in enumerate(scenarios)
+            firstVarsId = scenario.ext[:firstVarsId]
+            fvi = firstVarsId[varId]
+            if fvi > 0 && idx <= length(offsets)
+                ex_idx = offsets[idx] + fvi
+                if ex_idx <= Pex.numCols
+                    Pex.colLower[ex_idx] = lb
+                    Pex.colUpper[ex_idx] = ub
+                end
+            end
+        end
+    end
+end
+

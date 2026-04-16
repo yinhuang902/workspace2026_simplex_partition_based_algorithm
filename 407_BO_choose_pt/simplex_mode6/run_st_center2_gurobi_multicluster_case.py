@@ -276,7 +276,7 @@ MODE_PARAMS = {
         "nscen": 2,
         "target_nodes": 100,
         "gap_stop_tol": 1e-5,
-        "time_limit": 60*1,
+        "time_limit": 60*10,
         "enable_ef_ub": True,
         "ef_time_ub": 30.0,
         "plot_every": 1,
@@ -291,6 +291,7 @@ MODE_PARAMS = {
     },
     "full": {
         "nscen": 100,
+
         "target_nodes": 900,
         "gap_stop_tol": 1e-4,
         "time_limit": 60*60*1,

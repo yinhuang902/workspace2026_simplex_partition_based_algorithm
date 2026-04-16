@@ -72,9 +72,9 @@ function preprocessex!(P::ModelWrapper)
     m.linconstrDuals = zeros(length(m.linconstr))
     m.redCosts = zeros(m.numCols)
 
-    # Bilinear term identification — using Dict per column
+    # Bilinear term identification — using Dict keyed by (col1, col2) tuples
     branchVarsId = Int[]
-    qbVarsId = [Dict{Int, Int}() for _ in 1:m.numCols]
+    qbVarsId = Dict{Tuple{Int,Int}, Tuple{Int,Int}}()
     bilinearVars = Int[]
 
     for i in 1:length(P.quadconstr)
@@ -83,18 +83,15 @@ function preprocessex!(P::ModelWrapper)
         for j in 1:length(terms.qvars1)
             v1 = terms.qvars1[j]
             v2 = terms.qvars2[j]
-            if v1 <= length(qbVarsId) && !haskey(qbVarsId[v1], v2)
+            if !haskey(qbVarsId, (v1, v2))
                 push!(branchVarsId, v1)
                 push!(branchVarsId, v2)
                 varname = "bilinear_con$(i)_$(v1)_$(v2)_$(j)"
                 bid = add_variable!(m, -Inf, Inf, :Cont, varname, 0.0)
+                cid = length(m.linconstr) + 1  # placeholder for constraint index
                 push!(bilinearVars, bid)
-                # Extend qbVarsId if needed
-                while length(qbVarsId) < m.numCols
-                    push!(qbVarsId, Dict{Int, Int}())
-                end
-                qbVarsId[v1][v2] = bid
-                qbVarsId[v2][v1] = bid
+                qbVarsId[(v1, v2)] = (bid, cid)
+                qbVarsId[(v2, v1)] = (bid, cid)
             end
         end
     end
@@ -194,8 +191,8 @@ function preprocessex!(P::ModelWrapper)
                 I_idx = findfirst(x -> x == v1, mv.qVarsId)
                 J_idx = findfirst(x -> x == v2, mv.qVarsId)
                 Q[I_idx, J_idx] = mv.terms.qcoeffs[k]
-                if v1 <= length(qbVarsId) && haskey(qbVarsId[v1], v2)
-                    bid = qbVarsId[v1][v2]
+                if haskey(qbVarsId, (v1, v2))
+                    bid = qbVarsId[(v1, v2)][1]
                     push!(mv.bilinearVarsId, bid)
                 end
             end
@@ -215,7 +212,7 @@ function preprocessex!(P::ModelWrapper)
                 for k in 1:C
                     alpha[k] = max(0, min(-lambda_min, sum(abs.(Q_sym[k, :])) - 2*Q_sym[k,k]))
                     varId = mv.qVarsId[k]
-                    if varId > length(qbVarsId) || !haskey(qbVarsId[varId], varId)
+                    if !haskey(qbVarsId, (varId, varId))
                         added_flag = false
                         break
                     end
@@ -268,8 +265,8 @@ function preprocessex!(P::ModelWrapper)
                         accept = true
                         for k in 1:length(aff.vars)
                             varIdinEq = aff.vars[k]
-                            if varId <= length(qbVarsId) && haskey(qbVarsId[varId], varIdinEq)
-                                aff.vars[k] = qbVarsId[varId][varIdinEq]
+                            if haskey(qbVarsId, (varId, varIdinEq))
+                                aff.vars[k] = qbVarsId[(varId, varIdinEq)][1]
                             else
                                 accept = false
                                 break

@@ -4958,7 +4958,7 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
 
 
         # ---------- Mode 7: face-based cluster separation ----------
-        _M7_R_CLUSTER_FRAC = 0.12  # r_cluster = frac * box_diag
+        _M7_R_CLUSTER_ALPHA = 0.10   # r_cluster = alpha * median(all 6 simplex edges)
         _M7_CAND_NODE_TOL_FRAC = 1e-3   # cand_node_tol = frac * box_diag
         _M7_CAND_VERT_TOL_FRAC = 5e-3   # cand_vertex_tol = frac * box_diag
 
@@ -4972,28 +4972,95 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                 _m7_box_lb = np.array([float(v.lb) for v in first_vars_list[0]])
                 _m7_box_ub = np.array([float(v.ub) for v in first_vars_list[0]])
                 _m7_box_diag = float(np.linalg.norm(_m7_box_ub - _m7_box_lb))
-                _m7_r_cluster = _M7_R_CLUSTER_FRAC * _m7_box_diag
                 _m7_cand_node_tol = _M7_CAND_NODE_TOL_FRAC * _m7_box_diag
                 _m7_cand_vert_tol = _M7_CAND_VERT_TOL_FRAC * _m7_box_diag
 
                 # Step 1: collect valid c_s points
                 _m7_cs_raw = lb_simp_rec.get("c_point_per_scene", [])
                 _m7_valid = []
+                _m7_valid_scen = []  # parallel list: scenario index for each valid point
                 for _m7_s, _m7_pt in enumerate(_m7_cs_raw):
                     if _m7_pt is not None:
                         _m7_a = np.asarray(_m7_pt, float)
                         if np.all(np.isfinite(_m7_a)):
                             _m7_valid.append(_m7_a)
+                            _m7_valid_scen.append(_m7_s)
                 _m7_n_valid = len(_m7_valid)
+                _m7_cluster_diag = None  # set below if clustering proceeds
 
                 if verbose:
-                    print(f"[mode7] === Simplex T{lb_simp_rec['simplex_index']} ===")
-                    print(f"[mode7]   valid c_s: {_m7_n_valid}/{len(_m7_cs_raw)}, "
-                          f"r_cluster={_m7_r_cluster:.4e}, box_diag={_m7_box_diag:.4e}")
+                    print(f"[mode7] === Simplex T{lb_simp_rec['simplex_index']} "
+                          f"verts={tuple(sorted(lb_simp_rec.get('vert_idx', [])))} ===")
+                    print(f"[mode7]   valid c_s points (n={_m7_n_valid}/{len(_m7_cs_raw)}):")
+                    for _vi, (_vpt, _vs) in enumerate(zip(_m7_valid, _m7_valid_scen)):
+                        print(f"[mode7]     scen {_vs}: pt={tuple(map(float, _vpt))}")
 
                 _m7_did_cluster_split = False  # track if mode7 produced a point
 
-                if _m7_n_valid >= 2:
+                if _m7_n_valid < 2:
+                    _m7_reason = "mode7_fewer_than_2_valid_cs"
+                    if verbose:
+                        print(f"[mode7] fewer than 2 valid c_s points ({_m7_n_valid}): terminating")
+                elif _m7_n_valid >= 2:
+                    # --- Compute simplex geometry BEFORE clustering (needed for local r_cluster) ---
+                    _m7_verts = np.array(lb_simp_rec["verts"], float)
+                    _m7_vidx = list(lb_simp_rec["vert_idx"])
+                    # _m7_faces[i] = local vertex indices of the face OPPOSITE to local vertex i
+                    _m7_faces = [(1, 2, 3), (0, 2, 3), (0, 1, 3), (0, 1, 2)]
+                    _M7_SHAPE_THRESHOLD = 0.15  # kappa threshold for good/poor shape
+
+                    # --- Helper: compute opposite-face heights and normals ---
+                    def _m7_compute_heights(verts):
+                        """Returns (heights (4,), normals (4,3), face_ref_pts (4,3)).
+                        heights[i] = distance from vertex i to its opposite face.
+                        normals[i] = unit normal of face opposite vertex i.
+                        face_ref_pts[i] = a reference point on face opposite vertex i."""
+                        heights = np.zeros(4)
+                        normals = np.zeros((4, 3))
+                        face_ref = np.zeros((4, 3))
+                        for i in range(4):
+                            fa, fb, fc = _m7_faces[i]
+                            v0 = verts[fa]
+                            e1 = verts[fb] - v0
+                            e2 = verts[fc] - v0
+                            n = np.cross(e1, e2)
+                            n_len = np.linalg.norm(n)
+                            if n_len < 1e-20:
+                                heights[i] = 0.0
+                                normals[i] = 0.0
+                            else:
+                                n_hat = n / n_len
+                                normals[i] = n_hat
+                                heights[i] = abs(float(n_hat @ (verts[i] - v0)))
+                            face_ref[i] = v0
+                        return heights, normals, face_ref
+
+                    _m7_heights, _m7_normals, _m7_face_refs = _m7_compute_heights(_m7_verts)
+                    _m7_h_min = float(np.min(_m7_heights))
+                    _m7_h_max = float(np.max(_m7_heights))
+                    _m7_kappa = _m7_h_min / _m7_h_max if _m7_h_max > 1e-30 else 0.0
+                    _m7_shape_good = (_m7_kappa >= _M7_SHAPE_THRESHOLD)
+                    _m7_i_safe = int(np.argmin(_m7_heights))  # vertex with min height
+
+                    # --- Compute local r_cluster from median of all 6 simplex edge lengths ---
+                    _m7_edge_pairs = [(0,1),(0,2),(0,3),(1,2),(1,3),(2,3)]
+                    _m7_edge_lengths = sorted([
+                        float(np.linalg.norm(_m7_verts[a] - _m7_verts[b]))
+                        for a, b in _m7_edge_pairs
+                    ])
+                    _m7_simplex_scale = 0.5 * (_m7_edge_lengths[2] + _m7_edge_lengths[3])  # median of 6
+                    _m7_r_cluster = _M7_R_CLUSTER_ALPHA * _m7_simplex_scale
+                    _m7_r_cluster = max(_m7_r_cluster, 1e-10 * _m7_box_diag)  # lower clamp: avoid numerical noise
+
+                    if verbose:
+                        _h_str = ", ".join(f"h{i}={_m7_heights[i]:.4f}" for i in range(4))
+                        print(f"[mode7]   heights: {_h_str}")
+                        print(f"[mode7]   shape: kappa={_m7_kappa:.4f}, threshold={_M7_SHAPE_THRESHOLD}, "
+                              f"class={'good' if _m7_shape_good else 'poor'}")
+                        _el_str = ", ".join(f"{e:.4f}" for e in _m7_edge_lengths)
+                        print(f"[mode7]   simplex_edge_lengths=({_el_str})")
+                        print(f"[mode7]   simplex_edge_median={_m7_simplex_scale:.4f}")
+                        print(f"[mode7]   r_cluster={_m7_r_cluster:.4e} (alpha={_M7_R_CLUSTER_ALPHA})")
                     # Step 2: distance-threshold clustering (union-find)
                     _m7_parent = list(range(_m7_n_valid))
 
@@ -5008,10 +5075,21 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                         if ra != rb:
                             _m7_parent[ra] = rb
 
+                    # Compute and log pairwise distances
+                    _m7_pw_dists = []
                     for _i7 in range(_m7_n_valid):
                         for _j7 in range(_i7 + 1, _m7_n_valid):
-                            if np.linalg.norm(_m7_valid[_i7] - _m7_valid[_j7]) <= _m7_r_cluster:
+                            _pw_d = float(np.linalg.norm(_m7_valid[_i7] - _m7_valid[_j7]))
+                            _pw_conn = (_pw_d <= _m7_r_cluster)
+                            _m7_pw_dists.append((_m7_valid_scen[_i7], _m7_valid_scen[_j7], _pw_d, _pw_conn))
+                            if _pw_conn:
                                 _m7_union(_i7, _j7)
+
+                    if verbose:
+                        print(f"[mode7]   pairwise distances:")
+                        for _si, _sj, _pd, _pc in _m7_pw_dists:
+                            print(f"[mode7]     (s{_si}, s{_sj}): dist={_pd:.4e}, "
+                                  f"connected={'Yes' if _pc else 'No'} (r_cluster={_m7_r_cluster:.4e})")
 
                     # Build clusters
                     _m7_clusters = {}
@@ -5031,11 +5109,37 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                         _m7_sizes.append(len(_cl))
 
                     if verbose:
-                        print(f"[mode7]   clusters: K={_m7_K}, sizes={_m7_sizes}")
-                        for _ci, (_mu, _sz) in enumerate(zip(_m7_centroids, _m7_sizes)):
-                            print(f"[mode7]   cluster {_ci}: size={_sz}, center={tuple(map(float, _mu))}")
+                        print(f"[mode7]   clusters found: K={_m7_K}, sizes={_m7_sizes}")
+                        for _ci, (_cl, _mu, _sz) in enumerate(zip(_m7_cluster_list, _m7_centroids, _m7_sizes)):
+                            _mem_scens = [_m7_valid_scen[j] for j in _cl]
+                            print(f"[mode7]     cluster {_ci}: members_scen={_mem_scens}, size={_sz}, "
+                                  f"centroid={tuple(map(float, _mu))}")
 
-                    if _m7_K >= 2:
+                    # Build reusable diagnostic text block for logging
+                    _diag_lines = []
+                    _diag_lines.append(f"  mode7 clustering diagnostics:")
+                    _el_diag = ", ".join(f"{e:.4f}" for e in _m7_edge_lengths)
+                    _diag_lines.append(f"    simplex_edge_lengths=({_el_diag})")
+                    _diag_lines.append(f"    simplex_edge_median={_m7_simplex_scale:.6e}")
+                    _diag_lines.append(f"    r_cluster={_m7_r_cluster:.6e} (alpha={_M7_R_CLUSTER_ALPHA})")
+                    _diag_lines.append(f"    valid_points (n={_m7_n_valid}):")
+                    for _vi, (_vpt, _vs) in enumerate(zip(_m7_valid, _m7_valid_scen)):
+                        _diag_lines.append(f"      scen {_vs}: {_fmt_point(_vpt)}")
+                    _diag_lines.append(f"    pairwise_distances:")
+                    for _si, _sj, _pd, _pc in _m7_pw_dists:
+                        _diag_lines.append(f"      (s{_si}, s{_sj}): dist={_pd:.6e}, connected={'Yes' if _pc else 'No'}")
+                    _diag_lines.append(f"    K={_m7_K}")
+                    for _ci, (_cl, _mu, _sz) in enumerate(zip(_m7_cluster_list, _m7_centroids, _m7_sizes)):
+                        _mem_scens = [_m7_valid_scen[j] for j in _cl]
+                        _diag_lines.append(f"    cluster {_ci}: members_scen={_mem_scens}, size={_sz}, "
+                                           f"centroid={_fmt_point(_mu)}")
+                    _m7_cluster_diag = "\n".join(_diag_lines)
+
+                    if _m7_K < 2:
+                        _m7_reason = "mode7_single_cluster"
+                        if verbose:
+                            print(f"[mode7] only {_m7_K} cluster(s): no separation structure, terminating")
+                    elif _m7_K >= 2:
                         # Step 3: select best pair by score = w_i * w_j * ||mu_i - mu_j||
                         _m7_best_pair_score = -1.0
                         _m7_pair = (0, 1)
@@ -5054,60 +5158,108 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                             print(f"[mode7]   best pair: clusters {_m7_pair}, "
                                   f"score={_m7_best_pair_score:.4e}")
 
-                        # Step 4: two-stage face-based split
-                        _m7_verts = np.array(lb_simp_rec["verts"], float)
-                        _m7_vidx = list(lb_simp_rec["vert_idx"])
-                        _m7_faces = [(0, 1, 2), (0, 1, 3), (0, 2, 3), (1, 2, 3)]
+                        # Step 4: shape-controlled face-based split
+                        # (verts, faces, heights, kappa, F_safe already computed before clustering)
                         _m7_parent_vol = float(lb_simp_rec.get("volume", 0.0))
                         _m7_vol_floor = 1e-4 * (_m7_box_diag ** 3) / 6.0
                         _M7_BARY_MIN = 0.05  # tuning parameter
                         _M7_SHIFT_ALPHA = 0.3  # blend factor for shifted midpoint
                         _m7_eps = 1e-8 * _m7_box_diag
 
-                        # --- Helper 1: score a face ---
-                        def _m7_score_face(fa, fb, fc):
-                            """Returns (score, prox, sep, proj1, proj2) or None on degenerate."""
+                        # --- Compute F_cluster (two-stage: proximity primary, separation secondary) ---
+                        # Stage 1: cluster-weighted face proximity D_i
+                        _m7_D = np.full(4, float('inf'))
+                        for i in range(4):
+                            if np.linalg.norm(_m7_normals[i]) < 1e-20:
+                                continue  # degenerate face
+                            d_sum = 0.0
+                            for _ck in range(len(_m7_centroids)):
+                                d_k = abs(float(_m7_normals[i] @ (_m7_centroids[_ck] - _m7_face_refs[i])))
+                                d_sum += _m7_sizes[_ck] * d_k
+                            _m7_D[i] = d_sum
+
+                        # Shortlist top-2 by D_i ascending (closest first)
+                        _m7_face_rank = np.argsort(_m7_D)  # ascending
+                        _m7_top2 = [int(_m7_face_rank[0]), int(_m7_face_rank[1])]
+
+                        if verbose:
+                            _d_str = ", ".join(f"face{i}={_m7_D[i]:.4f}" for i in range(4))
+                            print(f"[mode7]   face proximity D: {_d_str}")
+                            print(f"[mode7]   top-2 faces: face{_m7_top2[0]} (D={_m7_D[_m7_top2[0]]:.4f}), "
+                                  f"face{_m7_top2[1]} (D={_m7_D[_m7_top2[1]]:.4f})")
+
+                        # Stage 2: projected dominant-cluster separation S_i on top-2 faces
+                        def _m7_proj_to_face(mu, fa, fb, fc):
+                            """Project point mu onto the triangle (verts[fa], verts[fb], verts[fc]).
+                            Returns the clamped-barycentric projection on the face."""
                             v0 = _m7_verts[fa]
                             e1 = _m7_verts[fb] - v0
                             e2 = _m7_verts[fc] - v0
-                            # Face normal (3D cross product)
-                            n = np.cross(e1, e2)
-                            n_len = np.linalg.norm(n)
-                            if n_len < 1e-20:
-                                return None  # degenerate face
-                            n_hat = n / n_len
-
-                            # Proximity: sum w_k / (d_k + eps)
-                            prox = 0.0
-                            for _ck in range(len(_m7_centroids)):
-                                d_k = abs(float(n_hat @ (_m7_centroids[_ck] - v0)))
-                                prox += _m7_sizes[_ck] / (d_k + _m7_eps)
-
-                            # Projected separation: project mu1, mu2 onto face
                             G = np.array([[e1 @ e1, e1 @ e2],
                                           [e2 @ e1, e2 @ e2]])
                             det_G = G[0, 0] * G[1, 1] - G[0, 1] * G[1, 0]
                             if abs(det_G) < 1e-20:
                                 return None
+                            r = mu - v0
+                            b = np.array([r @ e1, r @ e2])
+                            uv = np.array([(G[1, 1] * b[0] - G[0, 1] * b[1]) / det_G,
+                                           (-G[1, 0] * b[0] + G[0, 0] * b[1]) / det_G])
+                            lam = np.array([1.0 - uv[0] - uv[1], uv[0], uv[1]])
+                            lam = np.clip(lam, 0.0, None)
+                            s = lam.sum()
+                            if s > 0:
+                                lam /= s
+                            return lam[0] * v0 + lam[1] * _m7_verts[fb] + lam[2] * _m7_verts[fc]
 
-                            def _proj_to_face(mu):
-                                r = mu - v0
-                                b = np.array([r @ e1, r @ e2])
-                                uv = np.array([(G[1, 1] * b[0] - G[0, 1] * b[1]) / det_G,
-                                               (-G[1, 0] * b[0] + G[0, 0] * b[1]) / det_G])
-                                lam = np.array([1.0 - uv[0] - uv[1], uv[0], uv[1]])
-                                lam = np.clip(lam, 0.0, None)
-                                s = lam.sum()
-                                if s > 0:
-                                    lam /= s
-                                return lam[0] * v0 + lam[1] * _m7_verts[fb] + lam[2] * _m7_verts[fc]
+                        _m7_S = {}  # face_idx -> (separation, proj1, proj2)
+                        for _fi in _m7_top2:
+                            _fa, _fb, _fc = _m7_faces[_fi]
+                            p1 = _m7_proj_to_face(_m7_mu1, _fa, _fb, _fc)
+                            p2 = _m7_proj_to_face(_m7_mu2, _fa, _fb, _fc)
+                            if p1 is not None and p2 is not None:
+                                _m7_S[_fi] = (float(np.linalg.norm(p1 - p2)), p1, p2)
+                            else:
+                                _m7_S[_fi] = (0.0, None, None)
 
-                            p1 = _proj_to_face(_m7_mu1)
-                            p2 = _proj_to_face(_m7_mu2)
-                            sep = float(np.linalg.norm(p1 - p2))
-                            return (prox * sep, prox, sep, p1, p2)
+                        if verbose:
+                            for _fi in _m7_top2:
+                                print(f"[mode7]   projected sep: face{_fi} S={_m7_S[_fi][0]:.4f}")
 
-                        # --- Helper 2: validate a face candidate ---
+                        # Pick the face with larger S among top-2; tie-break by smaller D
+                        _f_a, _f_b = _m7_top2[0], _m7_top2[1]
+                        _s_a, _s_b = _m7_S[_f_a][0], _m7_S[_f_b][0]
+                        if _s_a > _s_b:
+                            _m7_f_cluster = _f_a
+                        elif _s_b > _s_a:
+                            _m7_f_cluster = _f_b
+                        else:
+                            # Equal separation: prefer smaller D (closer face)
+                            _m7_f_cluster = _f_a if _m7_D[_f_a] <= _m7_D[_f_b] else _f_b
+
+                        if verbose:
+                            print(f"[mode7]   F_cluster=face{_m7_f_cluster} "
+                                  f"(D={_m7_D[_m7_f_cluster]:.4f}, S={_m7_S[_m7_f_cluster][0]:.4f}), "
+                                  f"F_safe=face{_m7_i_safe}")
+
+                        # --- Choose face: shape override ---
+                        if _m7_shape_good:
+                            _m7_chosen_face = _m7_f_cluster
+                            _m7_face_reason = "F_cluster"
+                        else:
+                            _m7_chosen_face = _m7_i_safe
+                            _m7_face_reason = "F_safe"
+
+                        if verbose:
+                            print(f"[mode7]   chosen face: face{_m7_chosen_face} ({_m7_face_reason}, "
+                                  f"shape={'good' if _m7_shape_good else 'poor'})")
+
+                        # --- Check for degenerate chosen face ---
+                        if _m7_heights[_m7_chosen_face] < 1e-20:
+                            _m7_reason = "mode7_chosen_face_degenerate"
+                            if verbose:
+                                print(f"[mode7] chosen face{_m7_chosen_face} is degenerate: terminating")
+
+                        # --- Helper: validate a face candidate ---
                         def _m7_validate_candidate(cand, fa, fb, fc):
                             """Returns (ok, reason, bary). bary is face-barycentric coords."""
                             cand = np.asarray(cand, float)
@@ -5145,50 +5297,51 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                                 return (False, f"child_vol={min_child_vol:.3e}<floor={_m7_vol_floor:.3e}", bary)
                             return (True, f"ok dn={dn:.3e} dv={dv:.3e} bary=({bary[0]:.3f},{bary[1]:.3f},{bary[2]:.3f})", bary)
 
-                        # === Stage A: score and rank all 4 faces ===
-                        _m7_face_scores = []
-                        for _fi, (_fa, _fb, _fc) in enumerate(_m7_faces):
-                            result = _m7_score_face(_fa, _fb, _fc)
-                            if result is None:
-                                _m7_face_scores.append((_fi, 0.0, 0.0, 0.0, None, None))
-                            else:
-                                sc, prx, sep, p1, p2 = result
-                                _m7_face_scores.append((_fi, sc, prx, sep, p1, p2))
-
-                        # Rank by score descending
-                        _m7_face_scores.sort(key=lambda x: -x[1])
-
-                        if verbose:
-                            print(f"[mode7]   face scores (prox * sep):")
-                            for _fi, _sc, _prx, _sep, _, _ in _m7_face_scores:
-                                _fverts = tuple(_m7_vidx[j] for j in _m7_faces[_fi])
-                                _best_tag = " <-- best" if _fi == _m7_face_scores[0][0] else ""
-                                print(f"[mode7]     face {_fi} {_fverts}: "
-                                      f"prox={_prx:.4f} sep={_sep:.4f} score={_sc:.4f}{_best_tag}")
-
-                        # === Stage B: try candidates on ranked faces ===
-                        for _rank, (_fi, _fsc, _fprx, _fsep, _fp1, _fp2) in enumerate(_m7_face_scores):
-                            if _m7_did_cluster_split:
-                                break
-                            if _fp1 is None or _fp2 is None:
-                                continue  # degenerate face
-                            _fa, _fb, _fc = _m7_faces[_fi]
+                        # === Try candidates on the single chosen face ===
+                        if _m7_reason is None:  # not already terminated
+                            _fa, _fb, _fc = _m7_faces[_m7_chosen_face]
                             _face_centroid = (_m7_verts[_fa] + _m7_verts[_fb] + _m7_verts[_fc]) / 3.0
                             _face_verts_global = (_m7_vidx[_fa], _m7_vidx[_fb], _m7_vidx[_fc])
 
-                            # Build candidate list: midpoint, shifted midpoint, centroid
-                            _midpt = 0.5 * (_fp1 + _fp2)
-                            _shifted = _midpt + _M7_SHIFT_ALPHA * (_face_centroid - _midpt)
-                            _candidates = [
-                                ("midpoint", _midpt),
-                                ("shifted_midpoint", _shifted),
-                                ("face_centroid", _face_centroid),
-                            ]
+                            # Get projected cluster centroids on chosen face
+                            _chosen_S_data = _m7_S.get(_m7_chosen_face, None)
+                            if _chosen_S_data is None:
+                                # Chosen face was not in top-2 (can happen if F_safe != top-2);
+                                # compute projection now
+                                _fp1 = _m7_proj_to_face(_m7_mu1, _fa, _fb, _fc)
+                                _fp2 = _m7_proj_to_face(_m7_mu2, _fa, _fb, _fc)
+                            else:
+                                _, _fp1, _fp2 = _chosen_S_data
+
+                            # Build candidate list depending on shape classification
+                            if _m7_shape_good and _fp1 is not None and _fp2 is not None:
+                                # Good shape: prioritize cluster separation
+                                _midpt = 0.5 * (_fp1 + _fp2)
+                                _shifted = _midpt + _M7_SHIFT_ALPHA * (_face_centroid - _midpt)
+                                _candidates = [
+                                    ("midpoint", _midpt),
+                                    ("shifted_midpoint", _shifted),
+                                    ("face_centroid", _face_centroid),
+                                ]
+                            elif _fp1 is not None and _fp2 is not None:
+                                # Poor shape: prioritize geometric centrality
+                                _midpt = 0.5 * (_fp1 + _fp2)
+                                _shifted = _midpt + _M7_SHIFT_ALPHA * (_face_centroid - _midpt)
+                                _candidates = [
+                                    ("face_centroid", _face_centroid),
+                                    ("midpoint", _midpt),
+                                    ("shifted_midpoint", _shifted),
+                                ]
+                            else:
+                                # Projection failed; only try centroid
+                                _candidates = [
+                                    ("face_centroid", _face_centroid),
+                                ]
 
                             for _cname, _cpt in _candidates:
-                                _ok, _reason, _bary = _m7_validate_candidate(_cpt, _fa, _fb, _fc)
+                                _ok, _reason_v, _bary = _m7_validate_candidate(_cpt, _fa, _fb, _fc)
                                 if verbose:
-                                    print(f"[mode7]   face {_fi} candidate={_cname}: {_reason}")
+                                    print(f"[mode7]   face{_m7_chosen_face} candidate={_cname}: {_reason_v}")
                                 if _ok:
                                     _m7_chosen_pt = tuple(map(float, _cpt))
                                     new_node = _m7_chosen_pt
@@ -5207,52 +5360,14 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                                     if verbose:
                                         print(f"Chosen node (MODE7) {_m7_chosen_pt} "
                                               f"face={_face_verts_global} type={_cname} "
-                                              f"face_rank={_rank+1}/4 face_score={_fsc:.4f}")
+                                              f"face={_m7_face_reason} kappa={_m7_kappa:.4f}")
                                     break  # accept this candidate
 
-                # Fallback: avg_cs (same as mode4)
-                if not _m7_did_cluster_split and new_node is None:
-                    if verbose:
-                        _fb_reason = "no_lb_simplex" if lb_simp_rec is None \
-                            else "fewer_than_2_cs" if _m7_n_valid < 2 \
-                            else "single_cluster" if _m7_K < 2 \
-                            else "no_valid_face_candidate"
-                        print(f"[mode7] Falling back to avg_cs ({_fb_reason})")
+                            # No valid candidate on chosen face → terminate
+                            if not _m7_did_cluster_split:
+                                _m7_reason = "mode7_no_valid_split_on_chosen_face"
 
-                    if lb_simp_rec is not None:
-                        _m7_fb_pts = []
-                        for _pt in lb_simp_rec.get("c_point_per_scene", []):
-                            if _pt is not None:
-                                _a = np.asarray(_pt, float)
-                                if np.all(np.isfinite(_a)):
-                                    _m7_fb_pts.append(_a)
-                        if _m7_fb_pts:
-                            _m7_avg = np.mean(_m7_fb_pts, axis=0)
-                            if np.all(np.isfinite(_m7_avg)):
-                                try:
-                                    cand_pt_pert, loc_type, loc_info = _snap_feature(_m7_avg, lb_simp_rec)
-                                    if loc_type != "vertex" and min_dist_to_nodes(cand_pt_pert, nodes) >= min_dist:
-                                        new_node = cand_pt_pert
-                                        chosen_ms = float('nan')
-                                        chosen_cand = {
-                                            "simplex_index": lb_simp_rec["simplex_index"],
-                                            "scene": -1,
-                                            "cand_ms": float('nan'),
-                                            "cand_pt": cand_pt_pert,
-                                            "_rec": lb_simp_rec,
-                                            "loc_type": loc_type,
-                                            "loc_info": loc_info,
-                                            "pt_source": "mode7_fallback_avg_cs",
-                                        }
-                                        if verbose:
-                                            print(f"[mode7 fallback] avg_cs: "
-                                                  f"{tuple(map(float, cand_pt_pert))} (loc={loc_type})")
-                                except Exception as _m7_fb_exc:
-                                    if verbose:
-                                        print(f"[mode7 fallback] snap failed: {_m7_fb_exc}")
-
-                    if new_node is None:
-                        _m7_reason = "mode7_all_fallbacks_exhausted"
+                # (no fallback — mode7 terminates cleanly if no valid split point)
 
             # Mode 7 termination
             if _m7_reason is not None:
@@ -5261,6 +5376,29 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                 selection_reason_hist.append(_m7_reason)
                 _write_early_exit_logs(it, termination_reason, LB_global, UB_global,
                                        lb_rec=lb_simp_rec)
+                # --- Mode 7 detailed clustering diagnostics on early exit ---
+                try:
+                    _m7_exit_lines = []
+                    _m7_exit_lines.append(f"=== Iter {it} (early exit: {_m7_reason}) ===")
+                    if lb_simp_rec is not None:
+                        _sel_sid = int(lb_simp_rec.get("simplex_index", -1))
+                        _sel_vidxs = tuple(sorted(lb_simp_rec.get("vert_idx", [])))
+                        _m7_exit_lines.append(f"  simplex: T{_sel_sid} verts={_sel_vidxs}")
+                    if _m7_cluster_diag is not None:
+                        _m7_exit_lines.append(_m7_cluster_diag)
+                    _m7_exit_lines.append(f"  no split performed (early exit: {_m7_reason})")
+                    _m7_exit_lines.append("")
+                    _m7_exit_text = "\n".join(_m7_exit_lines) + "\n"
+                    # Write to simplex_record_split.txt
+                    with open(split_log_path, "a", encoding="utf-8") as _f:
+                        _f.write(_m7_exit_text)
+                    # Write to simplex_record_ms_cs_detail.txt
+                    with open(ms_cs_detail_path, "a", encoding="utf-8") as _f:
+                        _f.write(_m7_exit_text)
+                    if verbose:
+                        print(_m7_exit_text)
+                except Exception as _e_m7_exit:
+                    print(f"[WARNING] mode7 early-exit diag write failed: {_e_m7_exit}")
                 break
 
 
@@ -6579,6 +6717,19 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                 _split_lines.append(f"selection: source={_sel_src}  rank={_sel_rank}  snap={_sel_loc}\n")
             except (NameError, Exception):
                 _split_lines.append("selection: N/A\n")
+            # Mode 7 shape diagnostics
+            try:
+                if POINT_SELECT_MODE == 7 and '_m7_kappa' in dir():
+                    _h_vals = ", ".join(f"{_m7_heights[i]:.4f}" for i in range(4))
+                    _shape_cls = "good" if _m7_shape_good else "poor"
+                    _split_lines.append(f"shape: kappa={_m7_kappa:.4f}  h=({_h_vals})  threshold={_M7_SHAPE_THRESHOLD}  class={_shape_cls}\n")
+                    _d_vals = ", ".join(f"{_m7_D[i]:.4f}" for i in range(4))
+                    _t2_str = f"({_m7_top2[0]}, {_m7_top2[1]})"
+                    _s_t2 = ", ".join(f"{_m7_S[fi][0]:.4f}" for fi in _m7_top2)
+                    _split_lines.append(f"face_choice: F_cluster={_m7_f_cluster} (D={_m7_D[_m7_f_cluster]:.4f}, S={_m7_S[_m7_f_cluster][0]:.4f})  F_safe={_m7_i_safe}  used={_m7_face_reason}\n")
+                    _split_lines.append(f"face_proximity: D=({_d_vals})  top2={_t2_str}  S_top2=({_s_t2})\n")
+            except (NameError, Exception):
+                pass
             # Log None-point counts
             try:
                 _split_lines.append(f"candidates: ms_valid={len(ms_cands)}  ms_none={_ms_none_count}  cs_valid={len(cs_cands)}  cs_none={_cs_none_count}\n")
