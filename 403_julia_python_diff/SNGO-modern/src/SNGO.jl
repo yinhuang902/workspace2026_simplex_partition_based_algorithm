@@ -13,6 +13,9 @@ using LinearAlgebra
 using Random
 using Printf
 using Distributions
+using Ipopt
+using Gurobi
+using SCIP
 
 # Compatibility layer for column-indexed JuMP model access
 include("compat.jl")

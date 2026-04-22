@@ -606,6 +606,7 @@ function fast_feasibility_reduction_inner!(P::ModelWrapper, pr, U::Float64=1e20)
         end
 
         # Propagate through quadratic constraints via MultiVariable
+        # (distributed backward: legacy boundT.jl:1133-1170)
         if !isempty(P.quadconstr) && !isempty(pr.multiVariable_list)
             for i in 1:length(P.quadconstr)
                 i > length(pr.multiVariable_list) && break
@@ -614,10 +615,32 @@ function fast_feasibility_reduction_inner!(P::ModelWrapper, pr, U::Float64=1e20)
                 ub = con.sense == :(>=) ? 1e20 : 0.0
 
                 mv_con = pr.multiVariable_list[i]
-                for mv in mv_con.mvs
-                    s_min, s_max = multiVariableForward(mv, P)
-                    multiVariableBackward!(mv, P, s_min, s_max, lb, ub)
+                mvs = mv_con.mvs
+                nmw = length(mvs)
+
+                # Forward: compute interval for each MV + remaining affine
+                mv_sum_min = Vector{Float64}(undef, nmw + 1)
+                mv_sum_max = Vector{Float64}(undef, nmw + 1)
+                for j in 1:nmw
+                    mv_sum_min[j], mv_sum_max[j] = multiVariableForward(mvs[j], P)
                 end
+                mv_sum_min[nmw+1], mv_sum_max[nmw+1] = Interval_cal(mv_con.aff, P)
+
+                # Distribute constraint bounds across all component intervals
+                mv_lb = copy(mv_sum_min)
+                mv_ub = copy(mv_sum_max)
+                status = linearBackward!(mv_lb, mv_ub, lb, ub)
+                if status == :infeasible
+                    return false
+                end
+
+                # Backward: tighten each MV with its distributed bounds
+                for j in 1:nmw
+                    multiVariableBackward!(mvs[j], P, mv_sum_min[j], mv_sum_max[j], mv_lb[j], mv_ub[j])
+                end
+
+                # Backward: tighten remaining affine variables
+                AffineBackward!(mv_con.aff, P, mv_lb[end], mv_ub[end])
             end
         end
     end

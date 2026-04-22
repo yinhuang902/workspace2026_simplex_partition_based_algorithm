@@ -15,12 +15,28 @@ function relax(P::ModelWrapper, pr::PreprocessResult, U::Float64=1e10,
     qbcId = pr.qbVarsId
     n = P.numCols
 
+    # Extend model storage for bilinear auxiliary variables created during
+    # preprocessing (their column IDs exceed P.numCols).
+    if isa(qbcId, Dict) && !isempty(qbcId)
+        max_bid = maximum(v[1] for v in values(qbcId))
+        if max_bid > m.numCols
+            n_new = max_bid - m.numCols
+            append!(m.colLower, fill(-Inf, n_new))
+            append!(m.colUpper, fill(Inf, n_new))
+            append!(m.colVal, zeros(n_new))
+            append!(m.colCat, fill(:Cont, n_new))
+            append!(m.colNames, ["bilinear_aux_$i" for i in (m.numCols+1):max_bid])
+            append!(m.colNamesIJulia, ["bilinear_aux_$i" for i in (m.numCols+1):max_bid])
+            m.numCols = max_bid
+        end
+    end
+
     # Set initial values
     if initialValue !== nothing
         m.colVal[1:length(initialValue)] = copy(initialValue)
     end
 
-    # Update McCormick bounds for bilinear variables
+    # Add McCormick envelope constraints and set bounds for bilinear variables
     if isa(qbcId, Dict)
         for (key, value) in qbcId
             xid = key[1]
@@ -29,7 +45,6 @@ function relax(P::ModelWrapper, pr::PreprocessResult, U::Float64=1e10,
                 continue  # Process each pair once
             end
             bid = value[1]
-            cid = value[2]
             xl = P.colLower[xid]; xu = P.colUpper[xid]
             yl = P.colLower[yid]; yu = P.colUpper[yid]
 
@@ -40,6 +55,25 @@ function relax(P::ModelWrapper, pr::PreprocessResult, U::Float64=1e10,
             end
             if initialValue !== nothing && length(initialValue) == n
                 m.colVal[bid] = m.colVal[xid] * m.colVal[yid]
+            end
+
+            # McCormick envelope constraints (matching preprocess.jl)
+            # w >= xl*y + yl*x - xl*yl  (underestimator 1)
+            aff1 = AffExprData([bid, xid, yid], [1.0, -yl, -xl], -(-xl*yl))
+            push!(m.linconstr, LinearConstraintData(aff1, -xl*yl, Inf))
+
+            # w >= xu*y + yu*x - xu*yu  (underestimator 2)
+            aff2 = AffExprData([bid, xid, yid], [1.0, -yu, -xu], -(-xu*yu))
+            push!(m.linconstr, LinearConstraintData(aff2, -xu*yu, Inf))
+
+            # w <= xl*y + yu*x - xl*yu  (overestimator 1)
+            aff3 = AffExprData([bid, xid, yid], [1.0, -yu, -xl], -(-xl*yu))
+            push!(m.linconstr, LinearConstraintData(aff3, -Inf, -xl*yu))
+
+            # w <= xu*y + yl*x - xu*yl  (overestimator 2) — only if x != y
+            if xid != yid
+                aff4 = AffExprData([bid, xid, yid], [1.0, -yl, -xu], -(-xu*yl))
+                push!(m.linconstr, LinearConstraintData(aff4, -Inf, -xu*yl))
             end
         end
     end

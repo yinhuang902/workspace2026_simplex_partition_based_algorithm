@@ -23,9 +23,10 @@ const probing_improve = 0.1
 const sigma_violation = 1e-3
 const local_obj_improve = 1e-2
 const mingap = 1e-2
-const default_lower_bound_value = -1e4
-const default_upper_bound_value = 1e4
+const default_lower_bound_value = -1e8
+const default_upper_bound_value = 1e8
 const debug = false
+const LP_improve_tol = min(1e-2, mingap)
 
 # Global flags
 hasBin = false
@@ -101,7 +102,7 @@ function MultiVariable()
         Int[],              # qVarsId
         Int[],              # bilinearVarsId
         Int[],              # bilinearVars
-        zeros(0,0),         # Q
+        zeros(0, 0),         # Q
         0,                  # pd
         Float64[]           # alpha
     )
@@ -134,7 +135,7 @@ function Base.copy(mvc::MultiVariableCon)
     )
 end
 
-function copy(mvc::MultiVariableCon, P::ModelWrapper)
+function copy_with_model(mvc::MultiVariableCon, P::ModelWrapper)
     # Same as copy but doesn't need model remapping since we use column indices
     MultiVariableCon(
         [copy(mv) for mv in mvc.mvs],
@@ -162,7 +163,7 @@ end
 function PreprocessResult()
     PreprocessResult(
         Int[],                              # branchVarsId
-        Dict{Tuple{Int,Int}, Any}(),        # qbVarsId
+        Dict{Tuple{Int,Int},Any}(),        # qbVarsId
         LinearConstraintData[],             # EqVconstr
         MultiVariableCon[],                 # multiVariable_list
         MultiVariable[],                    # multiVariable_convex
@@ -229,7 +230,7 @@ function VarSelector(nfirst::Int; mu::Float64=0.15)
 end
 
 function updateScore!(vs::VarSelector, varId::Int, parent_LB::Float64,
-                      left_LB::Float64, right_LB::Float64)
+    left_LB::Float64, right_LB::Float64)
     down_delta = max(left_LB - parent_LB, 0.0)
     up_delta = max(right_LB - parent_LB, 0.0)
     vs.down_improvement[varId] += down_delta
@@ -296,7 +297,7 @@ function BranchVarScore(varIds::Vector{Int})
 end
 
 function updateScore!(vs::BranchVarScore, Pex::ModelWrapper, P::ModelWrapper,
-                      Rsol, WSfirst, WS_status, relaxed_status)
+    Rsol, WSfirst, WS_status, relaxed_status)
     for i in 1:length(vs.varId)
         varId = vs.varId[i]
         xl = Pex.colLower[varId]
@@ -457,7 +458,7 @@ function _extract_monomial_params(expr::Expr)
 end
 
 function _walk_monomial_tree(expr, lvarId::Ref{Int}, nlvarId::Ref{Int},
-                              b::Ref{Float64}, d::Ref{Float64})
+    b::Ref{Float64}, d::Ref{Float64})
     if !isa(expr, Expr)
         return
     end
@@ -620,7 +621,7 @@ function _extract_power_params(expr::Expr)
 end
 
 function _walk_power_tree(expr, lvarId::Ref{Int}, nlvarId::Ref{Int},
-                          b::Ref{Float64}, d::Ref{Float64})
+    b::Ref{Float64}, d::Ref{Float64})
     if !isa(expr, Expr)
         return
     end
@@ -706,7 +707,7 @@ function factorable!(mw::ModelWrapper)
 
     # New objective: just minimize/maximize objective_value
     mw.obj = QuadExprData(Int[], Int[], Float64[],
-                          AffExprData([obj_col], [1.0], 0.0))
+        AffExprData([obj_col], [1.0], 0.0))
 
     # Set default bounds for unbounded variables
     for i in 1:mw.numCols
@@ -950,7 +951,7 @@ end
 Project solution onto box bounds in-place.
 """
 function projection!(colVal::Vector{Float64}, colLower::Vector{Float64},
-                     colUpper::Vector{Float64})
+    colUpper::Vector{Float64})
     for i in 1:length(colVal)
         colVal[i] = max(colLower[i], min(colUpper[i], colVal[i]))
     end
@@ -972,9 +973,9 @@ end
 Compute the branching value for a variable.
 """
 function computeBvalue(Pex::ModelWrapper, P::ModelWrapper, varId::Int,
-                       Rsol::Union{Vector{Float64},Nothing},
-                       WSfirst::Vector{Float64},
-                       WS_status::Symbol, relaxed_status::Symbol)
+    Rsol::Union{Vector{Float64},Nothing},
+    WSfirst::Vector{Float64},
+    WS_status::Symbol, relaxed_status::Symbol)
     xl = Pex.colLower[varId]
     xu = Pex.colUpper[varId]
     bValue = (xl + xu) / 2.0

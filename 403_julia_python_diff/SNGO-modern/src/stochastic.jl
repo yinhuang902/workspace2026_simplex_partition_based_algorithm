@@ -530,13 +530,25 @@ end
 """
     updateExtensiveBoundsFromSto!(P, Pex)
 
-Copy first-stage bounds from the stochastic model to the extensive form.
+Copy first-stage bounds AND all scenario bounds from the stochastic model
+to the extensive form via v_map.  (Restores old core.jl:511-528 behavior.)
 """
 function updateExtensiveBoundsFromSto!(P::ModelWrapper, Pex::ModelWrapper)
-    for i in 1:P.numCols
-        if i <= Pex.numCols
-            Pex.colLower[i] = P.colLower[i]
-            Pex.colUpper[i] = P.colUpper[i]
+    # First-stage bounds
+    for i in 1:min(P.numCols, Pex.numCols)
+        Pex.colLower[i] = P.colLower[i]
+        Pex.colUpper[i] = P.colUpper[i]
+    end
+    # Scenario (second-stage) bounds via v_map
+    if haskey(Pex.ext, :v_map)
+        for (idx, scenario) in enumerate(getchildren(P))
+            idx > length(Pex.ext[:v_map]) && break
+            v_map = Pex.ext[:v_map][idx]
+            for j in 1:min(length(v_map), scenario.numCols)
+                v_map[j] <= Pex.numCols || continue
+                Pex.colLower[v_map[j]] = scenario.colLower[j]
+                Pex.colUpper[v_map[j]] = scenario.colUpper[j]
+            end
         end
     end
 end
@@ -544,24 +556,36 @@ end
 """
     updateStoBoundsFromExtensive!(Pex, P)
 
-Copy first-stage bounds from the extensive form back to the stochastic model.
+Copy first-stage bounds AND all scenario bounds from the extensive form
+back to the stochastic model via v_map.  (Restores old core.jl:531-548 behavior.)
 """
 function updateStoBoundsFromExtensive!(Pex::ModelWrapper, P::ModelWrapper)
-    for i in 1:P.numCols
-        if i <= Pex.numCols
-            P.colLower[i] = Pex.colLower[i]
-            P.colUpper[i] = Pex.colUpper[i]
-        end
+    # First-stage bounds
+    for i in 1:min(P.numCols, Pex.numCols)
+        P.colLower[i] = Pex.colLower[i]
+        P.colUpper[i] = Pex.colUpper[i]
     end
-    # Also update scenarios
-    scenarios = getchildren(P)
-    for scenario in scenarios
-        firstVarsId = scenario.ext[:firstVarsId]
-        for i in 1:P.numCols
-            fvi = firstVarsId[i]
-            if fvi > 0
-                scenario.colLower[fvi] = P.colLower[i]
-                scenario.colUpper[fvi] = P.colUpper[i]
+    # Scenario bounds via v_map (full copy-back)
+    if haskey(Pex.ext, :v_map)
+        for (idx, scenario) in enumerate(getchildren(P))
+            idx > length(Pex.ext[:v_map]) && break
+            v_map = Pex.ext[:v_map][idx]
+            for j in 1:min(length(v_map), scenario.numCols)
+                v_map[j] <= Pex.numCols || continue
+                scenario.colLower[j] = Pex.colLower[v_map[j]]
+                scenario.colUpper[j] = Pex.colUpper[v_map[j]]
+            end
+        end
+    else
+        # Fallback: first-stage only via firstVarsId
+        for scenario in getchildren(P)
+            firstVarsId = scenario.ext[:firstVarsId]
+            for i in 1:P.numCols
+                fvi = firstVarsId[i]
+                if fvi > 0
+                    scenario.colLower[fvi] = P.colLower[i]
+                    scenario.colUpper[fvi] = P.colUpper[i]
+                end
             end
         end
     end

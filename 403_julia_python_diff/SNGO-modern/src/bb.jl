@@ -169,6 +169,99 @@ function getRelaxLowerBound(Rold::ModelWrapper, Pex::ModelWrapper,
 end
 
 # ─────────────────────────────────────────────────────────────────────
+# Lower Bound: Relaxation + Reduced-Cost BT (ported from old bb.jl:646-703)
+# ─────────────────────────────────────────────────────────────────────
+
+"""
+    getRelaxLowerBoundBT!(P, pr_children, Rold, Pex, prex, UB, defaultLB; nsolve=20)
+        -> (status, LB, R, reduction_first)
+
+Solve the LP relaxation, then tighten bounds via:
+  1. Copy R's bounds back to Pex
+  2. Reduced-cost bound tightening
+  3. FBBT on relaxation model
+  4. Sync back to stochastic form
+  5. Compute volume-reduction fraction
+  6. If significant reduction, run Sto FBBT pass
+"""
+function getRelaxLowerBoundBT!(P, pr_children, Rold, Pex, prex, UB, defaultLB; nsolve::Int=20)
+    nfirst = P.numCols
+    xlold = copy(Pex.colLower)
+    xuold = copy(Pex.colUpper)
+
+    # Step 1: solve relaxation (reuses existing getRelaxLowerBound)
+    relaxed_status, relaxed_LB, R = getRelaxLowerBound(Rold, Pex, prex, UB, defaultLB;
+                                                        relaxBin=true, nsolve=nsolve)
+
+    if relaxed_status == :Optimal &&
+       ((UB - relaxed_LB) <= mingap || (UB - relaxed_LB) / abs(relaxed_LB) <= mingap)
+        return (relaxed_status, relaxed_LB, R, 0.0)
+    end
+    if relaxed_status == :Infeasible
+        return (:Infeasible, UB, R, 0.0)
+    end
+
+    if relaxed_status == :Optimal
+        # Step 2: copy tightened bounds from R back to Pex
+        n = min(length(Pex.colLower), length(R.colLower))
+        Pex.colLower[1:n] .= R.colLower[1:n]
+        Pex.colUpper[1:n] .= R.colUpper[1:n]
+
+        # Step 3: reduced-cost bound tightening
+        reduced_cost_BT!(Pex, prex, R, UB, relaxed_LB)
+
+        # Step 4: FBBT on relaxation model
+        fb = fast_feasibility_reduction!(R, nothing, UB)
+        if !fb
+            return (:Infeasible, UB, R, 0.0)
+        end
+
+        # Step 5: copy bounds back again after FBBT
+        n2 = min(length(Pex.colLower), length(R.colLower))
+        Pex.colLower[1:n2] .= R.colLower[1:n2]
+        Pex.colUpper[1:n2] .= R.colUpper[1:n2]
+
+        # Step 6: sync back to stochastic form
+        updateStoBoundsFromExtensive!(Pex, P)
+    end
+
+    # Step 7: compute volume reduction (over all variables)
+    left_all = 1.0
+    for i in 1:length(Pex.colLower)
+        if (xuold[i] + Pex.colLower[i] - xlold[i] - Pex.colUpper[i]) > small_bound_improve
+            denom = xuold[i] - xlold[i]
+            if denom > 0
+                left_all *= (Pex.colUpper[i] - Pex.colLower[i]) / denom
+            end
+        end
+    end
+    reduction_all = 1.0 - left_all
+
+    # Step 8: if significant reduction, run additional Sto FBBT + compute first-stage reduction
+    reduction_first = 0.0
+    if reduction_all > 0.1
+        feasible = Sto_fast_feasibility_reduction!(P, pr_children, Pex, prex, Rold, UB, relaxed_LB)
+        if !feasible
+            return (:Infeasible, UB, R, 0.0)
+        end
+        updateExtensiveBoundsFromSto!(P, Pex)
+
+        left_first = 1.0
+        for i in 1:nfirst
+            if (xuold[i] + Pex.colLower[i] - xlold[i] - Pex.colUpper[i]) > small_bound_improve
+                denom = xuold[i] - xlold[i]
+                if denom > 0
+                    left_first *= (Pex.colUpper[i] - Pex.colLower[i]) / denom
+                end
+            end
+        end
+        reduction_first = 1.0 - left_first
+    end
+
+    return (relaxed_status, relaxed_LB, R, reduction_first)
+end
+
+# ─────────────────────────────────────────────────────────────────────
 # Lower Bound: WS (Wait-and-See) — full version with SCIP
 # ─────────────────────────────────────────────────────────────────────
 
@@ -768,6 +861,7 @@ function branch_bound(P::ModelWrapper; max_iter::Int=5000)
     # ── Step 3: Initial relaxation ──
     println("\n[3] Building initial relaxation...")
     R = relax(Pex, prex)
+    Roriginal = copyModel(R)    # (2.7) keep clean copy for per-node reset
     println("  Relaxation: ", R.numCols, " vars, ", length(R.linconstr), " constrs")
 
     # ── Step 4: Initial bounds ──
@@ -777,21 +871,15 @@ function branch_bound(P::ModelWrapper; max_iter::Int=5000)
     UB, best_x = multi_start!(P, 3, ipopt_optimizer())
     println("  Initial UB (multi-start): ", UB)
 
-    # Initial LB via combined bound
+    # (2.4a) No pre-loop getLowerBound — old code computes first LB inside the main loop
     hasBin_global = any(c -> c == :Bin, P.colCat[1:nfirst])
 
-    LB_status, LB, WS_status, relaxed_status, relaxed_LB, WSfirst, R_solved, WSSol =
-        getLowerBound(P, nothing, R, Pex, prex, UB, -1e20)
-    println("  Initial Relax LB: ", relaxed_LB)
-    println("  Initial WS LB: ", LB - relaxed_LB + LB)  # approximation
-    println("  Initial LB: ", LB)
-
-    # ── Step 5: FBBT at root ──
+    # ── Step 5: Pre-loop FBBT (old bb.jl:119) ──
     println("\n[5] Root FBBT...")
-    feasible = Sto_fast_feasibility_reduction!(P, pr_children, Pex, prex, R, UB, LB)
+    feasible = Sto_fast_feasibility_reduction!(P, pr_children, Pex, prex, nothing, UB)
     if !feasible
         println("  Root node infeasible!")
-        return (LB, UB, Inf, 0)
+        return (-1e10, UB, Inf, 0)
     end
     updateStoFirstBounds!(P)
 
@@ -806,16 +894,17 @@ function branch_bound(P::ModelWrapper; max_iter::Int=5000)
     PWS_child = copyModel(P)
     Pex_child = copyModel(Pex)
 
+    # (2.4a) root.LB = -1e10, matching old code (old bb.jl:170)
     root = Node(nfirst, nscen)
     root.xlower = copy(P.colLower[1:nfirst])
     root.xupper = copy(P.colUpper[1:nfirst])
-    root.LB = LB
+    root.LB = -1e10
 
     queue = [root]
     best_UB = UB
     best_x_first = copy(best_x)
     niter = 0
-    FLB = -1e20
+    FLB = UB    # (2.4a) old code: FLB = UB (old bb.jl:187)
     solved_nodes = 0
 
     println("\n[6] Starting Branch-and-Bound...")
@@ -863,27 +952,68 @@ function branch_bound(P::ModelWrapper; max_iter::Int=5000)
         end
         updateExtensiveBoundsFromSto!(P, Pex)
 
-        # FBBT on this node
-        feasible = Sto_fast_feasibility_reduction!(P, pr_children, Pex, prex, R, best_UB, LB)
-        if !feasible
-            FLB = max(FLB, node.LB)
-            continue
-        end
+        # (2.7) Reset relaxation model from clean copy (old bb.jl:219)
+        Rold = copyModel(Roriginal)
 
-        # Lower bound: combined relaxation + WS
-        node_parWSSol = nothing  # could use node.x_ws
-        LB_status, node_LB, WS_status, relaxed_status, relaxed_LB, WSfirst_node, R_node, WSSol_node =
-            getLowerBound(P, node_parWSSol, R, Pex, prex, best_UB, node.LB)
+        # ── Iterative BT + Relax (old bb.jl:249-432) ──
+        reduction_relax = 1.0
+        node_LB = node.LB
+        relaxed_status = :Optimal
+        relaxed_LB = node.LB
+        R_node = Rold
+        feasible = true
 
-        node_LB = max(node_LB, node.LB)
+        while reduction_relax >= 0.1
+            reduction_relax = 0.0
 
-        # Prune by bound
-        if node_LB >= best_UB - mingap ||
-           (node_LB >= best_UB && (best_UB - node_LB) <= mingap * min(abs(node_LB), abs(best_UB)))
+            # FBBT+OBBT (old bb.jl:256: Sto_medium_feasibility_reduction)
+            feasible = Sto_medium_feasibility_reduction(
+                P, pr_children, Pex, prex, Rold, best_UB, LB,
+                prex.branchVarsId, gurobi_simplex_optimizer())
+            updateExtensiveBoundsFromSto!(P, Pex)
+            if !feasible
+                node_LB = best_UB
+                break
+            end
+
+            # Relaxation LB with reduced-cost BT (old bb.jl:408)
+            relaxed_status, relaxed_LB, R_node, reduction_relax =
+                getRelaxLowerBoundBT!(P, pr_children, Rold, Pex, prex, best_UB, node.LB)
+            node_LB = max(node_LB, relaxed_LB)
+
+            # Convergence check within inner loop (old bb.jl:414-425)
+            if relaxed_status == :Optimal
+                if (best_UB - relaxed_LB) <= mingap ||
+                   (best_UB - relaxed_LB) <= mingap * min(abs(best_UB), abs(relaxed_LB))
+                    if (best_UB - relaxed_LB) >= 0 && relaxed_LB <= FLB
+                        FLB = relaxed_LB
+                    end
+                    relaxed_status = :Infeasible
+                end
+            end
+            relaxed_status == :Infeasible && break
+        end  # while reduction_relax
+
+        # Fathom if infeasible (old bb.jl:436-439)
+        if !feasible || relaxed_status == :Infeasible
             FLB = max(FLB, node_LB)
             continue
         end
-        if LB_status == :Infeasible
+
+        # WS lower bound — computed AFTER the inner loop (old bb.jl:441+)
+        WS_status = :NotOptimal
+        WSfirst_node = zeros(nfirst)
+        WSSol_node = nothing
+        updateStoBoundsFromExtensive!(Pex, P)
+        WS_status, WS_LB, WSfirst_node, WSSol_node = getWSLowerBound(P, nothing, best_UB)
+        if WS_status == :Optimal
+            node_LB = max(node_LB, WS_LB)
+        end
+
+        # Prune by bound
+        node_LB = max(node_LB, node.LB)
+        if node_LB >= best_UB - mingap ||
+           (node_LB >= best_UB && (best_UB - node_LB) <= mingap * min(abs(node_LB), abs(best_UB)))
             FLB = max(FLB, node_LB)
             continue
         end
@@ -910,7 +1040,7 @@ function branch_bound(P::ModelWrapper; max_iter::Int=5000)
         Rsol = relaxed_status == :Optimal ? R_node.colVal : nothing
         bVarId, max_score, exitBranch, child_left_LB, child_right_LB, FLB, node_LB =
             SelectVar!(vs, P, Rsol, WSfirst_node, WS_status, relaxed_status,
-                       PWS_child, Pex_child, R, prex, best_UB, node_LB, Pex,
+                       PWS_child, Pex_child, Rold, prex, best_UB, node_LB, Pex,
                        FLB, pr_children)
 
         if exitBranch
@@ -918,10 +1048,10 @@ function branch_bound(P::ModelWrapper; max_iter::Int=5000)
             continue
         end
 
-        # Compute split point
-        bValue = computeBvalue(Pex.colLower[bVarId], Pex.colUpper[bVarId],
-                               best_x_first[min(bVarId, length(best_x_first))],
-                               P.colCat[bVarId])
+        # (2.5) Compute split point using 6-arg computeBvalue (old bb.jl:541)
+        Rsol_branch = relaxed_status == :Optimal ? R_node.colVal : nothing
+        bValue = computeBvalue(Pex, P, bVarId, Rsol_branch, WSfirst_node,
+                               WS_status, relaxed_status)
 
         # Branch
         branch!(queue, P, Pex, bVarId, bValue, node, node_LB,
