@@ -4623,18 +4623,53 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                     handle_collision(candidate_pt, dummy_ci, stage_note="mode3")
 
 
-        # ---------- Mode 4: simple average of valid cs points from LB-best simplex ----------
+        # ---------- Mode 4: avg_cs → individual c_s → individual ms from LB-best simplex ----------
         if POINT_SELECT_MODE == 4 and (not stop_due_to_collision):
-            _m4_reason = None  # termination reason (set → termination_reason + break)
+            _m4_reason = None  # termination reason (set only when ALL phases exhausted)
+
+            # --- Helper: validate a single candidate point ---
+            # Returns (ok, cand_pt_pert, loc_type, loc_info, reject_reason_str)
+            # Uses the same checks as the original avg_cs path:
+            #   1. Point coords must be finite
+            #   2. snap_to_feature must succeed
+            #   3. loc_type must not be "vertex"
+            #   4. min_dist_to_nodes must be >= min_dist
+            def _m4_try_point(raw_pt, rec, label):
+                pt_arr = np.asarray(raw_pt, float)
+                if not np.all(np.isfinite(pt_arr)):
+                    if verbose:
+                        print(f"[mode4] {label}: non-finite coords → skip")
+                    return False, None, None, None, f"{label}_nonfinite"
+                try:
+                    _cpt, _lt, _li = _snap_feature(pt_arr, rec)
+                except Exception as _exc:
+                    if verbose:
+                        print(f"[mode4] {label}: snap_to_feature raised: {_exc} → skip")
+                    return False, None, None, None, f"{label}_snap_failed"
+                if _lt == "vertex":
+                    if verbose:
+                        print(f"[mode4] {label}: snapped to vertex → skip")
+                    return False, None, None, None, f"{label}_vertex"
+                _d = min_dist_to_nodes(_cpt, nodes)
+                if _d < min_dist:
+                    if verbose:
+                        _X = np.asarray(nodes, float)
+                        _P = np.asarray(_cpt, float)
+                        _dists = np.linalg.norm(_X - _P, axis=1)
+                        _j = int(np.argmin(_dists))
+                        print(f"[mode4] {label}: too close to node #{_j} "
+                              f"at dist={float(_dists[_j]):.3e} < {min_dist:g} → skip")
+                    return False, None, None, None, f"{label}_too_close"
+                return True, _cpt, _lt, _li, None
 
             # Step 1: identify the LB-best simplex record
             if lb_simp_rec is None:
                 _m4_reason = "mode4_no_lb_simplex"
             else:
-                # Step 2: read per-scenario cs points from the LB-best simplex
-                _m4_cs_pts_raw = lb_simp_rec.get("c_point_per_scene", [])
+                _m4_accepted = False  # set True when any phase succeeds
 
-                # Step 3: collect valid cs points (exist and all coords finite)
+                # --- Phase 1: try avg_cs (average of all valid per-scenario c_s points) ---
+                _m4_cs_pts_raw = lb_simp_rec.get("c_point_per_scene", [])
                 _m4_valid_pts = []
                 for _m4_s, _m4_pt in enumerate(_m4_cs_pts_raw):
                     if _m4_pt is not None:
@@ -4646,73 +4681,132 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                     print(f"[mode4] LB-best simplex T{lb_simp_rec['simplex_index']}: "
                           f"{len(_m4_valid_pts)}/{len(_m4_cs_pts_raw)} valid cs points")
 
-                if len(_m4_valid_pts) == 0:
-                    _m4_reason = "mode4_no_valid_avg_cs"
-                else:
-                    # Step 4: compute simple arithmetic average
+                if _m4_valid_pts:
                     avg_cs = np.mean(_m4_valid_pts, axis=0)
-
-                    if not np.all(np.isfinite(avg_cs)):
-                        _m4_reason = "mode4_avg_cs_nonfinite"
+                    if verbose:
+                        print(f"[mode4] Phase 1: trying avg_cs = {tuple(map(float, avg_cs))}")
+                    _ok, _cpt, _lt, _li, _rej = _m4_try_point(avg_cs, lb_simp_rec, "avg_cs")
+                    if _ok:
+                        new_node = _cpt
+                        chosen_ms = float('nan')
+                        chosen_cand = {
+                            "simplex_index": lb_simp_rec["simplex_index"],
+                            "scene": -1,
+                            "cand_ms": float('nan'),
+                            "cand_pt": _cpt,
+                            "_rec": lb_simp_rec,
+                            "loc_type": _lt,
+                            "loc_info": _li,
+                            "pt_source": "mode4_avg_cs",
+                        }
+                        _m4_accepted = True
                         if verbose:
-                            print(f"[mode4] avg_cs={tuple(map(float, avg_cs))} contains non-finite values")
-                    else:
+                            print(
+                                f"Chosen node (MODE4/avg_cs) {tuple(map(float, _cpt))} "
+                                f"avg_cs from {len(_m4_valid_pts)} scenes "
+                                f"(simp T{lb_simp_rec['simplex_index']}, loc={_lt})"
+                            )
+
+                # --- Phase 2: try individual c_s points sorted by Q value (ascending) ---
+                if not _m4_accepted:
+                    _cs_vals = lb_simp_rec.get("c_per_scene", [])
+                    _cs_pts = lb_simp_rec.get("c_point_per_scene", [])
+                    _cs_candidates = []
+                    for _s in range(len(_cs_vals)):
+                        _cv = _cs_vals[_s] if _s < len(_cs_vals) else None
+                        _cp = _cs_pts[_s] if _s < len(_cs_pts) else None
+                        if (_cp is not None and _cv is not None
+                                and math.isfinite(float(_cv))):
+                            _cs_candidates.append((_s, float(_cv), _cp))
+                    _cs_candidates.sort(key=lambda x: x[1])  # ascending by Q value
+
+                    if verbose:
+                        print(f"[mode4] Phase 2: trying {len(_cs_candidates)} individual c_s points "
+                              f"(sorted by Q value ascending)")
+
+                    for _rank, (_s, _cv, _cp) in enumerate(_cs_candidates, start=1):
+                        _label = f"cs_scene{_s}"
                         if verbose:
-                            print(f"[mode4] raw avg_cs (before snap) = {tuple(map(float, avg_cs))}")
-
-                        # Step 5: snap/feature-attraction using existing machinery
-                        try:
-                            cand_pt_pert, loc_type, loc_info = _snap_feature(avg_cs, lb_simp_rec)
-                        except Exception as _m4_snap_exc:
-                            _m4_reason = "mode4_snap_failed"
+                            print(f"[mode4] Phase 2 #{_rank}: scene {_s}, c_val={_cv:.6e}, "
+                                  f"pt={tuple(map(float, _cp))}")
+                        _ok, _cpt, _lt, _li, _rej = _m4_try_point(_cp, lb_simp_rec, _label)
+                        if _ok:
+                            new_node = _cpt
+                            chosen_ms = _cv
+                            chosen_cand = {
+                                "simplex_index": lb_simp_rec["simplex_index"],
+                                "scene": _s,
+                                "cand_ms": _cv,
+                                "cand_pt": _cpt,
+                                "_rec": lb_simp_rec,
+                                "loc_type": _lt,
+                                "loc_info": _li,
+                                "pt_source": "mode4_cs_individual",
+                            }
+                            _m4_accepted = True
                             if verbose:
-                                print(f"[mode4] snap_to_feature raised: {_m4_snap_exc}")
-                            cand_pt_pert, loc_type, loc_info = None, None, None
+                                print(
+                                    f"Chosen node (MODE4/cs) {tuple(map(float, _cpt))} "
+                                    f"c_s scene {_s}, c_val={_cv:.6e} "
+                                    f"(rank #{_rank}/{len(_cs_candidates)}, "
+                                    f"simp T{lb_simp_rec['simplex_index']}, loc={_lt})"
+                                )
+                            break
 
-                        if _m4_reason is None:
+                # --- Phase 3: try individual ms points sorted by ms value (ascending) ---
+                if not _m4_accepted:
+                    _ms_vals = lb_simp_rec.get("ms_per_scene", [])
+                    _ms_pts = lb_simp_rec.get("xms_per_scene", [])
+                    _ms_candidates = []
+                    for _s in range(len(_ms_vals)):
+                        _mv = _ms_vals[_s] if _s < len(_ms_vals) else None
+                        _mp = _ms_pts[_s] if _s < len(_ms_pts) else None
+                        if (_mp is not None and _mv is not None
+                                and math.isfinite(float(_mv))):
+                            _ms_candidates.append((_s, float(_mv), _mp))
+                    _ms_candidates.sort(key=lambda x: x[1])  # ascending by ms value
+
+                    if verbose:
+                        print(f"[mode4] Phase 3: trying {len(_ms_candidates)} individual ms points "
+                              f"(sorted by ms value ascending)")
+
+                    for _rank, (_s, _mv, _mp) in enumerate(_ms_candidates, start=1):
+                        _label = f"ms_scene{_s}"
+                        if verbose:
+                            print(f"[mode4] Phase 3 #{_rank}: scene {_s}, ms_val={_mv:.6e}, "
+                                  f"pt={tuple(map(float, _mp))}")
+                        _ok, _cpt, _lt, _li, _rej = _m4_try_point(_mp, lb_simp_rec, _label)
+                        if _ok:
+                            new_node = _cpt
+                            chosen_ms = _mv
+                            chosen_cand = {
+                                "simplex_index": lb_simp_rec["simplex_index"],
+                                "scene": _s,
+                                "cand_ms": _mv,
+                                "cand_pt": _cpt,
+                                "_rec": lb_simp_rec,
+                                "loc_type": _lt,
+                                "loc_info": _li,
+                                "pt_source": "mode4_ms_individual",
+                            }
+                            _m4_accepted = True
                             if verbose:
-                                print(f"[mode4] snapped point = {tuple(map(float, cand_pt_pert))}, "
-                                      f"loc_type = {loc_type}")
+                                print(
+                                    f"Chosen node (MODE4/ms) {tuple(map(float, _cpt))} "
+                                    f"ms scene {_s}, ms_val={_mv:.6e} "
+                                    f"(rank #{_rank}/{len(_ms_candidates)}, "
+                                    f"simp T{lb_simp_rec['simplex_index']}, loc={_lt})"
+                                )
+                            break
 
-                            # Step 6a: reject if snapping returned vertex (semantic)
-                            if loc_type == "vertex":
-                                _m4_reason = "mode4_too_close_to_vertex"
-                                if verbose:
-                                    print(f"[mode4] snapped to vertex (loc_type) → terminating")
-                            # Step 6b: reject if too close to any existing node (geometric)
-                            elif min_dist_to_nodes(cand_pt_pert, nodes) < min_dist:
-                                _m4_reason = "mode4_too_close_to_existing_node"
-                                if verbose:
-                                    X = np.asarray(nodes, float)
-                                    P = np.asarray(cand_pt_pert, float)
-                                    dists = np.linalg.norm(X - P, axis=1)
-                                    j_star = int(np.argmin(dists))
-                                    d_star = float(dists[j_star])
-                                    print(f"[mode4] snapped point too close to node #{j_star} "
-                                          f"at dist={d_star:.3e} < {min_dist:g}")
-                            else:
-                                # Step 7: accept — fill chosen_cand/new_node
-                                new_node = cand_pt_pert
-                                chosen_ms = float('nan')  # not an ms quantity
-                                chosen_cand = {
-                                    "simplex_index": lb_simp_rec["simplex_index"],
-                                    "scene": -1,
-                                    "cand_ms": float('nan'),  # not ms; NaN to avoid confusion
-                                    "cand_pt": cand_pt_pert,
-                                    "_rec": lb_simp_rec,
-                                    "loc_type": loc_type,
-                                    "loc_info": loc_info,
-                                    "pt_source": "mode4_avg_cs",
-                                }
-                                if verbose:
-                                    print(
-                                        f"Chosen node (MODE4) {tuple(map(float, cand_pt_pert))} "
-                                        f"avg_cs from {len(_m4_valid_pts)} scenes "
-                                        f"(simp T{lb_simp_rec['simplex_index']}, "
-                                        f"loc={loc_type})"
-                                    )
+                # --- All phases exhausted ---
+                if not _m4_accepted:
+                    _m4_reason = "mode4_all_candidates_exhausted"
+                    if verbose:
+                        print(f"[mode4] All candidate phases exhausted — "
+                              f"no valid split point found")
 
-            # Mode 4 termination: any failure → set termination_reason, break outer while
+            # Mode 4 termination: only when ALL phases exhausted or no LB simplex
             if _m4_reason is not None:
                 termination_reason = _m4_reason
                 print(f"[mode4 STOP] Terminating: {termination_reason} (iter {it})")
@@ -5103,6 +5197,47 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
             # Use the actual chosen point (new_node) if available, otherwise fallback to cand_pt
             pt_to_plot = new_node if new_node is not None else cand_pt
 
+            # Build candidate_points for 3D visualization
+            _plot_cands = []
+            if lb_simp_rec is not None:
+                # Per-scenario MS points (purple)
+                _ms_vals_plot = lb_simp_rec.get("ms_per_scene", [])
+                _ms_pts_plot = lb_simp_rec.get("xms_per_scene", [])
+                for _s in range(len(_ms_vals_plot)):
+                    _mp = _ms_pts_plot[_s] if _s < len(_ms_pts_plot) else None
+                    if _mp is not None:
+                        _plot_cands.append({
+                            "source": "ms",
+                            "pt": _mp,
+                            "value": _ms_vals_plot[_s],
+                            "scene": _s,
+                        })
+                # Per-scenario CS points (green)
+                _cs_vals_plot = lb_simp_rec.get("c_per_scene", [])
+                _cs_pts_plot = lb_simp_rec.get("c_point_per_scene", [])
+                for _s in range(len(_cs_vals_plot)):
+                    _cp = _cs_pts_plot[_s] if _s < len(_cs_pts_plot) else None
+                    if _cp is not None:
+                        _plot_cands.append({
+                            "source": "cs",
+                            "pt": _cp,
+                            "value": _cs_vals_plot[_s],
+                            "scene": _s,
+                        })
+                # avg_cs point (blue)
+                _avg_cs_pts_plot = [
+                    pt for pt in lb_simp_rec.get("c_point_per_scene", [])
+                    if pt is not None and all(math.isfinite(v) for v in pt)
+                ]
+                if _avg_cs_pts_plot:
+                    _avg_cs_pt_plot = tuple(float(x) for x in np.mean(_avg_cs_pts_plot, axis=0))
+                    _plot_cands.append({
+                        "source": "avg_cs",
+                        "pt": _avg_cs_pt_plot,
+                        "value": None,
+                        "scene": "all",
+                    })
+
             plot_iteration_plotly(
                 it,
                 nodes,
@@ -5117,6 +5252,7 @@ def run_pid_simplex_3d(base_bundles, ms_bundles, model_list, first_vars_list,
                 LB_global=LB_global,
                 output_dir=plot_output_dir,
                 axis_labels=axis_labels,
+                candidate_points=_plot_cands if _plot_cands else None,
             )
 
         _phases["6_candidate_selection"] = perf_counter() - _t_phase

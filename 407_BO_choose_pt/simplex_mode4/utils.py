@@ -486,7 +486,8 @@ def plot_iteration_plotly(iter_id, nodes, tri, active_mask,
                           UB_global=None,
                           LB_global=None,
                           output_dir=None,
-                          axis_labels=None):
+                          axis_labels=None,
+                          candidate_points=None):
 
 
     import numpy as np
@@ -581,6 +582,62 @@ def plot_iteration_plotly(iter_id, nodes, tri, active_mask,
         ))
 
 
+    # ========== Candidate split points (MS=purple, CS=green, avg_cs=blue) ==========
+    if candidate_points is not None:
+        import math as _math
+        # Separate candidates by type
+        _ms_x, _ms_y, _ms_z, _ms_hover = [], [], [], []
+        _cs_x, _cs_y, _cs_z, _cs_hover = [], [], [], []
+        _avg_x, _avg_y, _avg_z, _avg_hover = [], [], [], []
+        for _cp in candidate_points:
+            _pt = _cp.get("pt")
+            if _pt is None:
+                continue
+            _arr = np.asarray(_pt, float)
+            if _arr.shape != (3,) or not np.all(np.isfinite(_arr)):
+                continue
+            _src = _cp.get("source", "")
+            _val = _cp.get("value")
+            _scn = _cp.get("scene", "")
+            _val_str = f"{float(_val):.6e}" if _val is not None and _math.isfinite(float(_val)) else "N/A"
+            _htxt = f"{_src}<br>scene={_scn}<br>val={_val_str}"
+            if _src.startswith("ms"):
+                _ms_x.append(float(_arr[0])); _ms_y.append(float(_arr[1])); _ms_z.append(float(_arr[2]))
+                _ms_hover.append(_htxt)
+            elif _src.startswith("avg_cs"):
+                _avg_x.append(float(_arr[0])); _avg_y.append(float(_arr[1])); _avg_z.append(float(_arr[2]))
+                _avg_hover.append(_htxt)
+            elif _src.startswith("cs"):
+                _cs_x.append(float(_arr[0])); _cs_y.append(float(_arr[1])); _cs_z.append(float(_arr[2]))
+                _cs_hover.append(_htxt)
+
+        if _ms_x:
+            fig.add_trace(go.Scatter3d(
+                x=_ms_x, y=_ms_y, z=_ms_z,
+                mode='markers',
+                marker=dict(size=5, color="purple", symbol="diamond", opacity=0.85),
+                name='MS candidates',
+                hoverinfo="text",
+                hovertext=_ms_hover,
+            ))
+        if _cs_x:
+            fig.add_trace(go.Scatter3d(
+                x=_cs_x, y=_cs_y, z=_cs_z,
+                mode='markers',
+                marker=dict(size=5, color="green", symbol="diamond", opacity=0.85),
+                name='CS candidates',
+                hoverinfo="text",
+                hovertext=_cs_hover,
+            ))
+        if _avg_x:
+            fig.add_trace(go.Scatter3d(
+                x=_avg_x, y=_avg_y, z=_avg_z,
+                mode='markers',
+                marker=dict(size=7, color="blue", symbol="diamond", opacity=0.95),
+                name='avg_cs candidate',
+                hoverinfo="text",
+                hovertext=_avg_hover,
+            ))
 
 
     def _is_same_point(a, b, atol=1e-6):
@@ -588,107 +645,140 @@ def plot_iteration_plotly(iter_id, nodes, tri, active_mask,
             return False
         return np.linalg.norm(np.asarray(a, float) - np.asarray(b, float)) <= float(atol)
 
-    if tri is not None:
-        legend_mesh_added = False
-        legend_edge_added = False
+    # ---- Helper: build hover text for a simplex record ----
+    def _simp_hover(r):
+        sid = r["simplex_index"]
+        qtxt = ""
+        if "quality" in r and r["quality"] is not None:
+            try:
+                qtxt = f"<br>q={float(r['quality']):.3e}"
+            except Exception:
+                qtxt = ""
+        return (f"simp={sid}"
+                f"<br>LB={float(r['LB']):.6f}"
+                f"<br>UB={float(r['UB']):.6f}"
+                f"<br>ms={float(r['ms']):.3e}"
+                f"<br>vol={float(r['volume']):.3e}"
+                f"{qtxt}")
 
+    I_TET = [0, 0, 0, 1]
+    J_TET = [1, 1, 2, 2]
+    K_TET = [2, 3, 3, 3]
+    TET_EDGES = [(0,1), (0,2), (0,3), (1,2), (1,3), (2,3)]
+
+    if per_tet:
+        # ========== LAYER 1: Background — ALL simplices (light context) ==========
+        legend_bg_mesh = False
+        legend_bg_edge = False
         for r in per_tet:
             sid = r["simplex_index"]
-            if not active_mask.get(sid, False):
-                continue
-
             verts = np.array(r["verts"], dtype=float)
+            txt = _simp_hover(r)
 
-            # current simplex is the global lb simplex
-            is_lb_simp = (sid in highlight_simplices)
-
-            if is_lb_simp:
-                # global lb simplex color: lightcoral
-                mesh_color   = "lightcoral"   
-                edge_color   = "lightcoral"
-                edge_width   = 5
-                mesh_opacity = 0.65
-            else:
-                # other active simplex color: light grey
-                mesh_color   = "lightgray"
-                edge_color   = "gray"
-                edge_width   = 1.0
-                mesh_opacity = 0.25
-
-
-            I = [0, 0, 0, 1]
-            J = [1, 1, 2, 2]
-            K = [2, 3, 3, 3]
-
-            qtxt = ""
-            if "quality" in r and r["quality"] is not None:
-                try:
-                    qtxt = f"<br>q={float(r['quality']):.3e}"
-                except Exception:
-                    qtxt = ""
-            txt = (f"simp={sid}"
-                   f"<br>LB={float(r['LB']):.6f}"
-                   f"<br>UB={float(r['UB']):.6f}"
-                   f"<br>ms={float(r['ms']):.3e}"
-                   f"<br>vol={float(r['volume']):.3e}"
-                   f"{qtxt}")
-            
             fig.add_trace(go.Mesh3d(
                 x=verts[:, 0], y=verts[:, 1], z=verts[:, 2],
-                i=I, j=J, k=K,
-                color=mesh_color,
-                opacity=mesh_opacity,
+                i=I_TET, j=J_TET, k=K_TET,
+                color="rgb(220,220,220)",
+                opacity=0.08,
                 showscale=False,
-                name="active simplex",
-                showlegend=(not legend_mesh_added),
+                name="all simplex",
+                showlegend=(not legend_bg_mesh),
                 hoverinfo="text",
                 hovertext=txt,
-                # Optional: Use hovertemplate to control the format.
-                # hovertemplate=txt + "<extra></extra>",
             ))
-            legend_mesh_added = True
+            legend_bg_mesh = True
 
-
-            edges = [(0,1), (0,2), (0,3), (1,2), (1,3), (2,3)]
-            for (a, b) in edges:
+            for (a, b) in TET_EDGES:
                 pa, pb = verts[a], verts[b]
                 fig.add_trace(go.Scatter3d(
                     x=[pa[0], pb[0]],
                     y=[pa[1], pb[1]],
                     z=[pa[2], pb[2]],
                     mode='lines',
-                    line=dict(width=edge_width, color=edge_color),
-                    name='active edge',
-                    showlegend=(not legend_edge_added)
+                    line=dict(width=0.8, color="rgba(180,180,180,0.35)"),
+                    name='mesh edge',
+                    showlegend=(not legend_bg_edge),
                 ))
-            legend_edge_added = True
+            legend_bg_edge = True
 
-            
-            '''
-            cx, cy, cz = np.mean(verts, axis=0)
-            qtxt = ""
-            if "quality" in r and r["quality"] is not None:
-                try:
-                    qtxt = f"<br>q={float(r['quality']):.3e}"
-                except Exception:
-                    qtxt = ""
-            txt = (f"simp={sid}"
-                   f"<br>LB={float(r['LB']):.6f}"
-                   f"<br>UB={float(r['UB']):.6f}"
-                   f"<br>ms={float(r['ms']):.3e}"
-                   f"<br>vol={float(r['volume']):.3e}"
-                   f"{qtxt}")
+        # ========== LAYER 2: Active simplices (stronger overlay) ==========
+        legend_act_mesh = False
+        legend_act_edge = False
+        for r in per_tet:
+            sid = r["simplex_index"]
+            if not active_mask.get(sid, False):
+                continue
+            if sid in highlight_simplices:
+                continue  # will be drawn in layer 3
 
-            fig.add_trace(go.Scatter3d(
-                x=[cx], y=[cy], z=[cz],
-                mode='markers',
-                marker=dict(size=1, opacity=0.0),
-                text=[txt], hoverinfo="text",
-                name="tetra info",
-                showlegend=False
+            verts = np.array(r["verts"], dtype=float)
+            txt = _simp_hover(r)
+
+            fig.add_trace(go.Mesh3d(
+                x=verts[:, 0], y=verts[:, 1], z=verts[:, 2],
+                i=I_TET, j=J_TET, k=K_TET,
+                color="lightgray",
+                opacity=0.25,
+                showscale=False,
+                name="active simplex",
+                showlegend=(not legend_act_mesh),
+                hoverinfo="text",
+                hovertext=txt,
             ))
-            '''
-            
+            legend_act_mesh = True
+
+            for (a, b) in TET_EDGES:
+                pa, pb = verts[a], verts[b]
+                fig.add_trace(go.Scatter3d(
+                    x=[pa[0], pb[0]],
+                    y=[pa[1], pb[1]],
+                    z=[pa[2], pb[2]],
+                    mode='lines',
+                    line=dict(width=1.5, color="gray"),
+                    name='active edge',
+                    showlegend=(not legend_act_edge),
+                ))
+            legend_act_edge = True
+
+        # ========== LAYER 3: Highlighted simplices (strongest overlay) ==========
+        legend_hl_mesh = False
+        legend_hl_edge = False
+        for r in per_tet:
+            sid = r["simplex_index"]
+            if sid not in highlight_simplices:
+                continue
+
+            verts = np.array(r["verts"], dtype=float)
+            txt = _simp_hover(r)
+
+            fig.add_trace(go.Mesh3d(
+                x=verts[:, 0], y=verts[:, 1], z=verts[:, 2],
+                i=I_TET, j=J_TET, k=K_TET,
+                color="lightcoral",
+                opacity=0.65,
+                showscale=False,
+                name="LB simplex",
+                showlegend=(not legend_hl_mesh),
+                hoverinfo="text",
+                hovertext=txt,
+            ))
+            legend_hl_mesh = True
+
+            for (a, b) in TET_EDGES:
+                pa, pb = verts[a], verts[b]
+                fig.add_trace(go.Scatter3d(
+                    x=[pa[0], pb[0]],
+                    y=[pa[1], pb[1]],
+                    z=[pa[2], pb[2]],
+                    mode='lines',
+                    line=dict(width=5, color="lightcoral"),
+                    name='LB edge',
+                    showlegend=(not legend_hl_edge),
+                ))
+            legend_hl_edge = True
+
+        # (Layer 4 removed: CS points now plotted via candidate_points parameter)
+
 
     # Axis labels: use provided labels or default to generic x1/x2/x3
     if axis_labels is None:
@@ -746,11 +836,10 @@ def plot_iteration_plotly(iter_id, nodes, tri, active_mask,
 
     # Save as HTML and open in browser (works in .py scripts, not just Jupyter)
     if output_dir is not None:
-        import os, webbrowser
+        import os
         os.makedirs(output_dir, exist_ok=True)
         html_path = os.path.join(output_dir, f"simplex_iter_{iter_id}.html")
         fig.write_html(html_path)
-        webbrowser.open(f"file:///{os.path.abspath(html_path)}")
         print(f"[Plot] Saved: {html_path}")
     else:
         try:

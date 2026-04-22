@@ -175,7 +175,9 @@ def all_vars_center3_gurobi(m: pyo.ConcreteModel) -> List[pyo.Var]:
 # Two interior target clusters for first-stage optima
 _CLUSTER_BASES = [
     (-30.0, -30.0, 10.0),
-    (28.0, 40, 34.0),
+    #(28.0, 40, 34.0),
+    (-30.0, -30.0, 10.0),
+    #(-31.0, -31.0, 11.0),
 ]
 
 # Small cluster-dependent objective offsets so that different clusters
@@ -207,6 +209,18 @@ _PARAM_BASE = [
     ("shift2", -1.00, "sym", 3.0),
     ("shift3", 1.50, "sym", 3.0),
     ("cap_rhs", 22.0, "pos", 0.20),
+]
+_PARAM_BASE = [
+    ("c1",     0.00, "sym", 1.0),
+    ("c2",     0.00, "sym", 1.0),
+    ("c3",     0.00, "sym", 1.0),
+    ("xi1",    0.00, "sym", 2.0),
+    ("xi2",    0.00, "sym", 2.0),
+    ("xi3",    0.00, "sym", 2.0),
+    ("shift1", 2.00, "sym", 0.5),
+    ("shift2", -1.00, "sym", 0.5),
+    ("shift3", 1.50, "sym", 0.5),
+    ("cap_rhs", 22.0, "pos", 0.05),
 ]
 
 
@@ -276,7 +290,7 @@ MODE_PARAMS = {
         "nscen": 2,
         "target_nodes": 100,
         "gap_stop_tol": 1e-5,
-        "time_limit": 60*10,
+        "time_limit": 60*1,
         "enable_ef_ub": True,
         "ef_time_ub": 30.0,
         "plot_every": 1,

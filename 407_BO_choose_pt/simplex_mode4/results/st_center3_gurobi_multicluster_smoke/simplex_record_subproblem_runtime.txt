@@ -3,44 +3,24 @@
 
 === Iter 1 ===
 ms: total_time=0.0000, calls=0, avg=0.0000
-cs: total_time=0.2713, calls=45, avg=0.0060
-Q:  total_time=0.0295, calls=5, avg=0.0059
+cs: total_time=0.0787, calls=18, avg=0.0044
+Q:  total_time=0.0084, calls=2, avg=0.0042
 
 === Iter 2 ===
 ms: total_time=0.0000, calls=0, avg=0.0000
-cs: total_time=0.4127, calls=60, avg=0.0069
-Q:  total_time=0.0367, calls=5, avg=0.0073
+cs: total_time=0.1003, calls=22, avg=0.0046
+Q:  total_time=0.0081, calls=2, avg=0.0040
 
 === Iter 3 ===
 ms: total_time=0.0000, calls=0, avg=0.0000
-cs: total_time=0.5073, calls=75, avg=0.0068
-Q:  total_time=0.0343, calls=5, avg=0.0069
+cs: total_time=0.1260, calls=28, avg=0.0045
+Q:  total_time=0.0101, calls=2, avg=0.0050
 
 === Iter 4 ===
 ms: total_time=0.0000, calls=0, avg=0.0000
-cs: total_time=0.6102, calls=90, avg=0.0068
-Q:  total_time=0.0345, calls=5, avg=0.0069
+cs: total_time=0.1348, calls=30, avg=0.0045
+Q:  total_time=0.0091, calls=2, avg=0.0045
 
-=== Iter 5 ===
-ms: total_time=0.0000, calls=0, avg=0.0000
-cs: total_time=0.7235, calls=105, avg=0.0069
-Q:  total_time=0.0241, calls=5, avg=0.0048
-
-=== Iter 6 ===
-ms: total_time=0.0000, calls=0, avg=0.0000
-cs: total_time=0.7784, calls=120, avg=0.0065
-Q:  total_time=0.0230, calls=5, avg=0.0046
-
-=== Iter 7 ===
-ms: total_time=0.0000, calls=0, avg=0.0000
-cs: total_time=0.8574, calls=135, avg=0.0064
-Q:  total_time=0.0205, calls=5, avg=0.0041
-
-=== Iter 8 ===
-ms: total_time=0.0000, calls=0, avg=0.0000
-cs: total_time=0.9408, calls=150, avg=0.0063
-Q:  total_time=0.0267, calls=5, avg=0.0053
-
-=== Iter 9 (early exit: mode4_too_close_to_existing_node) ===
+=== Iter 5 (early exit: mode4_too_close_to_existing_node) ===
 reason: mode4_too_close_to_existing_node
 

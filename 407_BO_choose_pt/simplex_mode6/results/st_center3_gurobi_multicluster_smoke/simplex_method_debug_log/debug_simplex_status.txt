@@ -3,426 +3,129 @@
 # Counts: total, inherited, materialized(full), newly_materialized
 
 [Iter 0] 6 simplices: 0 full, 0 inherited, 6 other
-  T0 (0, 2, 3, 4): LB/S=111.738665695  [none]  ms=none  cs=full
-  T1 (0, 1, 3, 4): LB/S=111.738665695  [none]  ms=none  cs=full
-  T2 (3, 4, 5, 7): LB/S=111.738665695  [none]  ms=none  cs=full
-  T3 (3, 4, 6, 7): LB/S=111.738665695  [none]  ms=none  cs=full
-  T4 (2, 3, 4, 6): LB/S=111.738665695  [none]  ms=none  cs=full
-  T5 (1, 3, 4, 5): LB/S=111.738665695  [none]  ms=none  cs=full
+  T0 (0, 2, 3, 4): LB/S=117.227603847  [none]  ms=none  cs=full
+  T1 (0, 1, 3, 4): LB/S=117.227603847  [none]  ms=none  cs=full
+  T2 (3, 4, 5, 7): LB/S=117.227603847  [none]  ms=none  cs=full
+  T3 (3, 4, 6, 7): LB/S=117.227603847  [none]  ms=none  cs=full
+  T4 (2, 3, 4, 6): LB/S=117.227603847  [none]  ms=none  cs=full
+  T5 (1, 3, 4, 5): LB/S=117.227603847  [none]  ms=none  cs=full
 
 [Iter 1] 6 simplices: 0 full, 0 inherited, 6 other
-  T0 (0, 2, 3, 4): LB/S=111.738665695  [none]  ms=none  cs=full
-  T1 (0, 1, 3, 4): LB/S=111.738665695  [none]  ms=none  cs=full
-  T2 (3, 4, 5, 7): LB/S=111.738665695  [none]  ms=none  cs=full
-  T3 (3, 4, 6, 7): LB/S=111.738665695  [none]  ms=none  cs=full
-  T4 (2, 3, 4, 6): LB/S=111.738665695  [none]  ms=none  cs=full
-  T5 (1, 3, 4, 5): LB/S=111.738665695  [none]  ms=none  cs=full
+  T0 (0, 2, 3, 4): LB/S=117.227603847  [none]  ms=none  cs=full
+  T1 (0, 1, 3, 4): LB/S=117.227603847  [none]  ms=none  cs=full
+  T2 (3, 4, 5, 7): LB/S=117.227603847  [none]  ms=none  cs=full
+  T3 (3, 4, 6, 7): LB/S=117.227603847  [none]  ms=none  cs=full
+  T4 (2, 3, 4, 6): LB/S=117.227603847  [none]  ms=none  cs=full
+  T5 (1, 3, 4, 5): LB/S=117.227603847  [none]  ms=none  cs=full
 
   >> After materialize: 0 full, 0 inherited, 0 newly materialized this iter
   >> Selected for split: T2
 
 [Iter 2] 8 simplices: 0 full, 0 inherited, 8 other
-  T0 (0, 2, 3, 4): LB/S=111.738665695  [none]  ms=none  cs=full
-  T1 (0, 1, 3, 4): LB/S=111.738665695  [none]  ms=none  cs=full
-  T2 (3, 4, 6, 7): LB/S=111.738665695  [none]  ms=none  cs=full
-  T3 (2, 3, 4, 6): LB/S=111.738665695  [none]  ms=none  cs=full
-  T4 (1, 3, 4, 5): LB/S=111.738665695  [none]  ms=none  cs=full
-  T5 (4, 5, 7, 8): LB/S=4699.658304624  [none]  ms=none  cs=full
-  T6 (3, 4, 5, 8): LB/S=2806.428580427  [none]  ms=none  cs=full
-  T7 (3, 5, 7, 8): LB/S=5611.524698709  [none]  ms=none  cs=full
-
-  >> After materialize: 0 full, 0 inherited, 0 newly materialized this iter
-  >> Selected for split: T2
-
-[Iter 3] 10 simplices: 0 full, 0 inherited, 10 other
-  T0 (0, 2, 3, 4): LB/S=4173.089145637  [none]  ms=none  cs=full
-  T1 (0, 1, 3, 4): LB/S=3374.010767562  [none]  ms=none  cs=full
-  T2 (2, 3, 4, 6): LB/S=3747.223714499  [none]  ms=none  cs=full
-  T3 (1, 3, 4, 5): LB/S=2786.092116522  [none]  ms=none  cs=full
-  T4 (4, 5, 7, 8): LB/S=4699.658304624  [none]  ms=none  cs=full
-  T5 (3, 4, 5, 8): LB/S=2806.428580427  [none]  ms=none  cs=full
-  T6 (3, 5, 7, 8): LB/S=5611.524698709  [none]  ms=none  cs=full
-  T7 (4, 6, 7, 9): LB/S=4583.510414628  [none]  ms=none  cs=full
-  T8 (3, 4, 6, 9): LB/S=2663.337453367  [none]  ms=none  cs=full
-  T9 (3, 6, 7, 9): LB/S=5517.300182756  [none]  ms=none  cs=full
-
-  >> After materialize: 0 full, 0 inherited, 0 newly materialized this iter
-  >> Selected for split: T8
-
-[Iter 4] 12 simplices: 0 full, 0 inherited, 12 other
-  T0 (0, 2, 3, 4): LB/S=4173.089145637  [none]  ms=none  cs=full
-  T1 (0, 1, 3, 4): LB/S=3374.010767562  [none]  ms=none  cs=full
-  T2 (2, 3, 4, 6): LB/S=3747.223714499  [none]  ms=none  cs=full
-  T3 (1, 3, 4, 5): LB/S=2786.092116522  [none]  ms=none  cs=full
-  T4 (4, 5, 7, 8): LB/S=4699.658304624  [none]  ms=none  cs=full
-  T5 (3, 4, 5, 8): LB/S=2806.428580427  [none]  ms=none  cs=full
-  T6 (3, 5, 7, 8): LB/S=5611.524698709  [none]  ms=none  cs=full
-  T7 (4, 6, 7, 9): LB/S=4583.510414628  [none]  ms=none  cs=full
-  T8 (3, 6, 7, 9): LB/S=5517.300182756  [none]  ms=none  cs=full
-  T9 (4, 6, 9, 10): LB/S=4039.920563127  [none]  ms=none  cs=full
-  T10 (3, 4, 9, 10): LB/S=2870.510916508  [none]  ms=none  cs=full
-  T11 (3, 6, 9, 10): LB/S=4138.844642892  [none]  ms=none  cs=full
-
-  >> After materialize: 0 full, 0 inherited, 0 newly materialized this iter
-  >> Selected for split: T3
-
-[Iter 5] 14 simplices: 0 full, 0 inherited, 14 other
-  T0 (0, 2, 3, 4): LB/S=4173.089145637  [none]  ms=none  cs=full
-  T1 (0, 1, 3, 4): LB/S=3374.010767562  [none]  ms=none  cs=full
-  T2 (2, 3, 4, 6): LB/S=3747.223714499  [none]  ms=none  cs=full
-  T3 (4, 5, 7, 8): LB/S=4699.658304624  [none]  ms=none  cs=full
-  T4 (3, 4, 5, 8): LB/S=2806.428580427  [none]  ms=none  cs=full
-  T5 (3, 5, 7, 8): LB/S=5611.524698709  [none]  ms=none  cs=full
-  T6 (4, 6, 7, 9): LB/S=4583.510414628  [none]  ms=none  cs=full
-  T7 (3, 6, 7, 9): LB/S=5517.300182756  [none]  ms=none  cs=full
-  T8 (4, 6, 9, 10): LB/S=4039.920563127  [none]  ms=none  cs=full
-  T9 (3, 4, 9, 10): LB/S=2870.510916508  [none]  ms=none  cs=full
-  T10 (3, 6, 9, 10): LB/S=4138.844642892  [none]  ms=none  cs=full
-  T11 (1, 4, 5, 11): LB/S=6211.634082200  [none]  ms=none  cs=full
-  T12 (3, 4, 5, 11): LB/S=3061.706619029  [none]  ms=none  cs=full
-  T13 (1, 3, 5, 11): LB/S=4287.617440414  [none]  ms=none  cs=full
+  T0 (0, 2, 3, 4): LB/S=117.227603847  [none]  ms=none  cs=full
+  T1 (0, 1, 3, 4): LB/S=117.227603847  [none]  ms=none  cs=full
+  T2 (3, 4, 6, 7): LB/S=117.227603847  [none]  ms=none  cs=full
+  T3 (2, 3, 4, 6): LB/S=117.227603847  [none]  ms=none  cs=full
+  T4 (1, 3, 4, 5): LB/S=117.227603847  [none]  ms=none  cs=full
+  T5 (4, 5, 7, 8): LB/S=2796.698767080  [none]  ms=none  cs=full
+  T6 (3, 4, 7, 8): LB/S=1360.557626666  [none]  ms=none  cs=full
+  T7 (3, 5, 7, 8): LB/S=2603.339025198  [none]  ms=none  cs=full
 
   >> After materialize: 0 full, 0 inherited, 0 newly materialized this iter
   >> Selected for split: T4
 
-[Iter 6] 16 simplices: 0 full, 0 inherited, 16 other
-  T0 (0, 2, 3, 4): LB/S=4173.089145637  [none]  ms=none  cs=full
-  T1 (0, 1, 3, 4): LB/S=3374.010767562  [none]  ms=none  cs=full
-  T2 (2, 3, 4, 6): LB/S=3747.223714499  [none]  ms=none  cs=full
-  T3 (4, 5, 7, 8): LB/S=4699.658304624  [none]  ms=none  cs=full
-  T4 (3, 5, 7, 8): LB/S=5611.524698709  [none]  ms=none  cs=full
-  T5 (4, 6, 7, 9): LB/S=4583.510414628  [none]  ms=none  cs=full
-  T6 (3, 6, 7, 9): LB/S=5517.300182756  [none]  ms=none  cs=full
-  T7 (4, 6, 9, 10): LB/S=4039.920563127  [none]  ms=none  cs=full
-  T8 (3, 4, 9, 10): LB/S=2870.510916508  [none]  ms=none  cs=full
-  T9 (3, 6, 9, 10): LB/S=4138.844642892  [none]  ms=none  cs=full
-  T10 (1, 4, 5, 11): LB/S=6211.634082200  [none]  ms=none  cs=full
-  T11 (3, 4, 5, 11): LB/S=3061.706619029  [none]  ms=none  cs=full
-  T12 (1, 3, 5, 11): LB/S=4287.617440414  [none]  ms=none  cs=full
-  T13 (4, 5, 8, 12): LB/S=4065.766759912  [none]  ms=none  cs=full
-  T14 (3, 4, 5, 12): LB/S=3733.393352380  [none]  ms=none  cs=full
-  T15 (3, 5, 8, 12): LB/S=4325.992014418  [none]  ms=none  cs=full
+[Iter 3] 10 simplices: 0 full, 0 inherited, 10 other
+  T0 (0, 2, 3, 4): LB/S=2295.869378089  [none]  ms=none  cs=full
+  T1 (0, 1, 3, 4): LB/S=2570.283790535  [none]  ms=none  cs=full
+  T2 (3, 4, 6, 7): LB/S=1406.928724583  [none]  ms=none  cs=full
+  T3 (2, 3, 4, 6): LB/S=1974.915628552  [none]  ms=none  cs=full
+  T4 (4, 5, 7, 8): LB/S=2796.698767080  [none]  ms=none  cs=full
+  T5 (3, 4, 7, 8): LB/S=1360.557626666  [none]  ms=none  cs=full
+  T6 (3, 5, 7, 8): LB/S=2603.339025198  [none]  ms=none  cs=full
+  T7 (1, 4, 5, 9): LB/S=2902.031891938  [none]  ms=none  cs=full
+  T8 (1, 3, 4, 9): LB/S=1563.173034379  [none]  ms=none  cs=full
+  T9 (1, 3, 5, 9): LB/S=2591.227688236  [none]  ms=none  cs=full
 
   >> After materialize: 0 full, 0 inherited, 0 newly materialized this iter
-  >> Selected for split: T8
+  >> Selected for split: T5
+
+[Iter 4] 12 simplices: 0 full, 0 inherited, 12 other
+  T0 (0, 2, 3, 4): LB/S=2295.869378089  [none]  ms=none  cs=full
+  T1 (0, 1, 3, 4): LB/S=2570.283790535  [none]  ms=none  cs=full
+  T2 (3, 4, 6, 7): LB/S=1406.928724583  [none]  ms=none  cs=full
+  T3 (2, 3, 4, 6): LB/S=1974.915628552  [none]  ms=none  cs=full
+  T4 (4, 5, 7, 8): LB/S=2796.698767080  [none]  ms=none  cs=full
+  T5 (3, 5, 7, 8): LB/S=2603.339025198  [none]  ms=none  cs=full
+  T6 (1, 4, 5, 9): LB/S=2902.031891938  [none]  ms=none  cs=full
+  T7 (1, 3, 4, 9): LB/S=1563.173034379  [none]  ms=none  cs=full
+  T8 (1, 3, 5, 9): LB/S=2591.227688236  [none]  ms=none  cs=full
+  T9 (4, 7, 8, 10): LB/S=1972.013733070  [none]  ms=none  cs=full
+  T10 (3, 4, 8, 10): LB/S=1502.908822640  [none]  ms=none  cs=full
+  T11 (3, 7, 8, 10): LB/S=2104.304595631  [none]  ms=none  cs=full
+
+  >> After materialize: 0 full, 0 inherited, 0 newly materialized this iter
+  >> Selected for split: T2
+
+[Iter 5] 14 simplices: 0 full, 0 inherited, 14 other
+  T0 (0, 2, 3, 4): LB/S=2295.869378089  [none]  ms=none  cs=full
+  T1 (0, 1, 3, 4): LB/S=2570.283790535  [none]  ms=none  cs=full
+  T2 (2, 3, 4, 6): LB/S=1974.915628552  [none]  ms=none  cs=full
+  T3 (4, 5, 7, 8): LB/S=2796.698767080  [none]  ms=none  cs=full
+  T4 (3, 5, 7, 8): LB/S=2603.339025198  [none]  ms=none  cs=full
+  T5 (1, 4, 5, 9): LB/S=2902.031891938  [none]  ms=none  cs=full
+  T6 (1, 3, 4, 9): LB/S=1563.173034379  [none]  ms=none  cs=full
+  T7 (1, 3, 5, 9): LB/S=2591.227688236  [none]  ms=none  cs=full
+  T8 (4, 7, 8, 10): LB/S=1972.013733070  [none]  ms=none  cs=full
+  T9 (3, 4, 8, 10): LB/S=1502.908822640  [none]  ms=none  cs=full
+  T10 (3, 7, 8, 10): LB/S=2104.304595631  [none]  ms=none  cs=full
+  T11 (4, 6, 7, 11): LB/S=2336.359500316  [none]  ms=none  cs=full
+  T12 (3, 4, 6, 11): LB/S=1581.071624587  [none]  ms=none  cs=full
+  T13 (3, 6, 7, 11): LB/S=2357.433501525  [none]  ms=none  cs=full
+
+  >> After materialize: 0 full, 0 inherited, 0 newly materialized this iter
+  >> Selected for split: T9
+
+[Iter 6] 16 simplices: 0 full, 0 inherited, 16 other
+  T0 (0, 2, 3, 4): LB/S=2295.869378089  [none]  ms=none  cs=full
+  T1 (0, 1, 3, 4): LB/S=2570.283790535  [none]  ms=none  cs=full
+  T2 (2, 3, 4, 6): LB/S=1974.915628552  [none]  ms=none  cs=full
+  T3 (4, 5, 7, 8): LB/S=2796.698767080  [none]  ms=none  cs=full
+  T4 (3, 5, 7, 8): LB/S=2603.339025198  [none]  ms=none  cs=full
+  T5 (1, 4, 5, 9): LB/S=2902.031891938  [none]  ms=none  cs=full
+  T6 (1, 3, 4, 9): LB/S=1563.173034379  [none]  ms=none  cs=full
+  T7 (1, 3, 5, 9): LB/S=2591.227688236  [none]  ms=none  cs=full
+  T8 (4, 7, 8, 10): LB/S=1972.013733070  [none]  ms=none  cs=full
+  T9 (3, 7, 8, 10): LB/S=2104.304595631  [none]  ms=none  cs=full
+  T10 (4, 6, 7, 11): LB/S=2336.359500316  [none]  ms=none  cs=full
+  T11 (3, 4, 6, 11): LB/S=1581.071624587  [none]  ms=none  cs=full
+  T12 (3, 6, 7, 11): LB/S=2357.433501525  [none]  ms=none  cs=full
+  T13 (4, 8, 10, 12): LB/S=2073.958460660  [none]  ms=none  cs=full
+  T14 (3, 4, 10, 12): LB/S=2114.550763759  [none]  ms=none  cs=full
+  T15 (3, 8, 10, 12): LB/S=2119.999101565  [none]  ms=none  cs=full
+
+  >> After materialize: 0 full, 0 inherited, 0 newly materialized this iter
+  >> Selected for split: T6
 
 [Iter 7] 18 simplices: 0 full, 0 inherited, 18 other
-  T0 (0, 2, 3, 4): LB/S=4173.089145637  [none]  ms=none  cs=full
-  T1 (0, 1, 3, 4): LB/S=3374.010767562  [none]  ms=none  cs=full
-  T2 (2, 3, 4, 6): LB/S=3747.223714499  [none]  ms=none  cs=full
-  T3 (4, 5, 7, 8): LB/S=4699.658304624  [none]  ms=none  cs=full
-  T4 (3, 5, 7, 8): LB/S=5611.524698709  [none]  ms=none  cs=full
-  T5 (4, 6, 7, 9): LB/S=4583.510414628  [none]  ms=none  cs=full
-  T6 (3, 6, 7, 9): LB/S=5517.300182756  [none]  ms=none  cs=full
-  T7 (4, 6, 9, 10): LB/S=4039.920563127  [none]  ms=none  cs=full
-  T8 (3, 6, 9, 10): LB/S=4138.844642892  [none]  ms=none  cs=full
-  T9 (1, 4, 5, 11): LB/S=6211.634082200  [none]  ms=none  cs=full
-  T10 (3, 4, 5, 11): LB/S=3061.706619029  [none]  ms=none  cs=full
-  T11 (1, 3, 5, 11): LB/S=4287.617440414  [none]  ms=none  cs=full
-  T12 (4, 5, 8, 12): LB/S=4065.766759912  [none]  ms=none  cs=full
-  T13 (3, 4, 5, 12): LB/S=3733.393352380  [none]  ms=none  cs=full
-  T14 (3, 5, 8, 12): LB/S=4325.992014418  [none]  ms=none  cs=full
-  T15 (4, 9, 10, 13): LB/S=3988.482622613  [none]  ms=none  cs=full
-  T16 (3, 4, 10, 13): LB/S=4017.834483205  [none]  ms=none  cs=full
-  T17 (3, 9, 10, 13): LB/S=4240.988994845  [none]  ms=none  cs=full
+  T0 (0, 2, 3, 4): LB/S=2295.869378089  [none]  ms=none  cs=full
+  T1 (0, 1, 3, 4): LB/S=2570.283790535  [none]  ms=none  cs=full
+  T2 (2, 3, 4, 6): LB/S=1974.915628552  [none]  ms=none  cs=full
+  T3 (4, 5, 7, 8): LB/S=2796.698767080  [none]  ms=none  cs=full
+  T4 (3, 5, 7, 8): LB/S=2603.339025198  [none]  ms=none  cs=full
+  T5 (1, 4, 5, 9): LB/S=2902.031891938  [none]  ms=none  cs=full
+  T6 (1, 3, 5, 9): LB/S=2591.227688236  [none]  ms=none  cs=full
+  T7 (4, 7, 8, 10): LB/S=1972.013733070  [none]  ms=none  cs=full
+  T8 (3, 7, 8, 10): LB/S=2104.304595631  [none]  ms=none  cs=full
+  T9 (4, 6, 7, 11): LB/S=2336.359500316  [none]  ms=none  cs=full
+  T10 (3, 4, 6, 11): LB/S=1581.071624587  [none]  ms=none  cs=full
+  T11 (3, 6, 7, 11): LB/S=2357.433501525  [none]  ms=none  cs=full
+  T12 (4, 8, 10, 12): LB/S=2073.958460660  [none]  ms=none  cs=full
+  T13 (3, 4, 10, 12): LB/S=2114.550763759  [none]  ms=none  cs=full
+  T14 (3, 8, 10, 12): LB/S=2119.999101565  [none]  ms=none  cs=full
+  T15 (1, 4, 9, 13): LB/S=2373.890197794  [none]  ms=none  cs=full
+  T16 (1, 3, 4, 13): LB/S=2136.839406679  [none]  ms=none  cs=full
+  T17 (1, 3, 9, 13): LB/S=2483.142495432  [none]  ms=none  cs=full
 
   >> After materialize: 0 full, 0 inherited, 0 newly materialized this iter
   >> Selected for split: T10
-
-[Iter 8] 20 simplices: 0 full, 0 inherited, 20 other
-  T0 (0, 2, 3, 4): LB/S=4173.089145637  [none]  ms=none  cs=full
-  T1 (0, 1, 3, 4): LB/S=3374.010767562  [none]  ms=none  cs=full
-  T2 (2, 3, 4, 6): LB/S=3747.223714499  [none]  ms=none  cs=full
-  T3 (4, 5, 7, 8): LB/S=4699.658304624  [none]  ms=none  cs=full
-  T4 (3, 5, 7, 8): LB/S=5611.524698709  [none]  ms=none  cs=full
-  T5 (4, 6, 7, 9): LB/S=4583.510414628  [none]  ms=none  cs=full
-  T6 (3, 6, 7, 9): LB/S=5517.300182756  [none]  ms=none  cs=full
-  T7 (4, 6, 9, 10): LB/S=4039.920563127  [none]  ms=none  cs=full
-  T8 (3, 6, 9, 10): LB/S=4138.844642892  [none]  ms=none  cs=full
-  T9 (1, 4, 5, 11): LB/S=6211.634082200  [none]  ms=none  cs=full
-  T10 (1, 3, 5, 11): LB/S=4287.617440414  [none]  ms=none  cs=full
-  T11 (4, 5, 8, 12): LB/S=4065.766759912  [none]  ms=none  cs=full
-  T12 (3, 4, 5, 12): LB/S=3733.393352380  [none]  ms=none  cs=full
-  T13 (3, 5, 8, 12): LB/S=4325.992014418  [none]  ms=none  cs=full
-  T14 (4, 9, 10, 13): LB/S=3988.482622613  [none]  ms=none  cs=full
-  T15 (3, 4, 10, 13): LB/S=4017.834483205  [none]  ms=none  cs=full
-  T16 (3, 9, 10, 13): LB/S=4240.988994845  [none]  ms=none  cs=full
-  T17 (4, 5, 11, 14): LB/S=3297.393045723  [none]  ms=none  cs=full
-  T18 (3, 4, 11, 14): LB/S=3151.890078450  [none]  ms=none  cs=full
-  T19 (3, 5, 11, 14): LB/S=3209.130869735  [none]  ms=none  cs=full
-
-  >> After materialize: 0 full, 0 inherited, 0 newly materialized this iter
-  >> Selected for split: T18
-
-[Iter 9] 22 simplices: 0 full, 0 inherited, 22 other
-  T0 (0, 2, 3, 4): LB/S=4173.089145637  [none]  ms=none  cs=full
-  T1 (0, 1, 3, 4): LB/S=3374.010767562  [none]  ms=none  cs=full
-  T2 (2, 3, 4, 6): LB/S=3747.223714499  [none]  ms=none  cs=full
-  T3 (4, 5, 7, 8): LB/S=4699.658304624  [none]  ms=none  cs=full
-  T4 (3, 5, 7, 8): LB/S=5611.524698709  [none]  ms=none  cs=full
-  T5 (4, 6, 7, 9): LB/S=4583.510414628  [none]  ms=none  cs=full
-  T6 (3, 6, 7, 9): LB/S=5517.300182756  [none]  ms=none  cs=full
-  T7 (4, 6, 9, 10): LB/S=4039.920563127  [none]  ms=none  cs=full
-  T8 (3, 6, 9, 10): LB/S=4138.844642892  [none]  ms=none  cs=full
-  T9 (1, 4, 5, 11): LB/S=6211.634082200  [none]  ms=none  cs=full
-  T10 (1, 3, 5, 11): LB/S=4287.617440414  [none]  ms=none  cs=full
-  T11 (4, 5, 8, 12): LB/S=4065.766759912  [none]  ms=none  cs=full
-  T12 (3, 4, 5, 12): LB/S=3733.393352380  [none]  ms=none  cs=full
-  T13 (3, 5, 8, 12): LB/S=4325.992014418  [none]  ms=none  cs=full
-  T14 (4, 9, 10, 13): LB/S=3988.482622613  [none]  ms=none  cs=full
-  T15 (3, 4, 10, 13): LB/S=4017.834483205  [none]  ms=none  cs=full
-  T16 (3, 9, 10, 13): LB/S=4240.988994845  [none]  ms=none  cs=full
-  T17 (4, 5, 11, 14): LB/S=3297.393045723  [none]  ms=none  cs=full
-  T18 (3, 5, 11, 14): LB/S=3209.130869735  [none]  ms=none  cs=full
-  T19 (3, 4, 11, 15): LB/S=3803.320471901  [none]  ms=none  cs=full
-  T20 (3, 4, 14, 15): LB/S=3849.694386148  [none]  ms=none  cs=full
-  T21 (3, 11, 14, 15): LB/S=3299.314329365  [none]  ms=none  cs=full
-
-  >> After materialize: 0 full, 0 inherited, 0 newly materialized this iter
-  >> Selected for split: T18
-
-[Iter 10] 24 simplices: 0 full, 0 inherited, 24 other
-  T0 (0, 2, 3, 4): LB/S=4173.089145637  [none]  ms=none  cs=full
-  T1 (0, 1, 3, 4): LB/S=3374.010767562  [none]  ms=none  cs=full
-  T2 (2, 3, 4, 6): LB/S=3747.223714499  [none]  ms=none  cs=full
-  T3 (4, 5, 7, 8): LB/S=4699.658304624  [none]  ms=none  cs=full
-  T4 (3, 5, 7, 8): LB/S=5611.524698709  [none]  ms=none  cs=full
-  T5 (4, 6, 7, 9): LB/S=4583.510414628  [none]  ms=none  cs=full
-  T6 (3, 6, 7, 9): LB/S=5517.300182756  [none]  ms=none  cs=full
-  T7 (4, 6, 9, 10): LB/S=4039.920563127  [none]  ms=none  cs=full
-  T8 (3, 6, 9, 10): LB/S=4138.844642892  [none]  ms=none  cs=full
-  T9 (1, 4, 5, 11): LB/S=6211.634082200  [none]  ms=none  cs=full
-  T10 (1, 3, 5, 11): LB/S=4287.617440414  [none]  ms=none  cs=full
-  T11 (4, 5, 8, 12): LB/S=4065.766759912  [none]  ms=none  cs=full
-  T12 (3, 4, 5, 12): LB/S=3733.393352380  [none]  ms=none  cs=full
-  T13 (3, 5, 8, 12): LB/S=4325.992014418  [none]  ms=none  cs=full
-  T14 (4, 9, 10, 13): LB/S=3988.482622613  [none]  ms=none  cs=full
-  T15 (3, 4, 10, 13): LB/S=4017.834483205  [none]  ms=none  cs=full
-  T16 (3, 9, 10, 13): LB/S=4240.988994845  [none]  ms=none  cs=full
-  T17 (4, 5, 11, 14): LB/S=3297.393045723  [none]  ms=none  cs=full
-  T18 (3, 4, 11, 15): LB/S=3803.320471901  [none]  ms=none  cs=full
-  T19 (3, 4, 14, 15): LB/S=3849.694386148  [none]  ms=none  cs=full
-  T20 (3, 11, 14, 15): LB/S=3299.314329365  [none]  ms=none  cs=full
-  T21 (5, 11, 14, 16): LB/S=3444.817296345  [none]  ms=none  cs=full
-  T22 (3, 11, 14, 16): LB/S=3299.314329325  [none]  ms=none  cs=full
-  T23 (3, 5, 14, 16): LB/S=4040.748403069  [none]  ms=none  cs=full
-
-  >> After materialize: 0 full, 0 inherited, 0 newly materialized this iter
-  >> Selected for split: T17
-
-[Iter 11] 26 simplices: 0 full, 0 inherited, 26 other
-  T0 (0, 2, 3, 4): LB/S=4173.089145637  [none]  ms=none  cs=full
-  T1 (0, 1, 3, 4): LB/S=3374.010767562  [none]  ms=none  cs=full
-  T2 (2, 3, 4, 6): LB/S=3747.223714499  [none]  ms=none  cs=full
-  T3 (4, 5, 7, 8): LB/S=4699.658304624  [none]  ms=none  cs=full
-  T4 (3, 5, 7, 8): LB/S=5611.524698709  [none]  ms=none  cs=full
-  T5 (4, 6, 7, 9): LB/S=4583.510414628  [none]  ms=none  cs=full
-  T6 (3, 6, 7, 9): LB/S=5517.300182756  [none]  ms=none  cs=full
-  T7 (4, 6, 9, 10): LB/S=4039.920563127  [none]  ms=none  cs=full
-  T8 (3, 6, 9, 10): LB/S=4138.844642892  [none]  ms=none  cs=full
-  T9 (1, 4, 5, 11): LB/S=6211.634082200  [none]  ms=none  cs=full
-  T10 (1, 3, 5, 11): LB/S=4287.617440414  [none]  ms=none  cs=full
-  T11 (4, 5, 8, 12): LB/S=4065.766759912  [none]  ms=none  cs=full
-  T12 (3, 4, 5, 12): LB/S=3733.393352380  [none]  ms=none  cs=full
-  T13 (3, 5, 8, 12): LB/S=4325.992014418  [none]  ms=none  cs=full
-  T14 (4, 9, 10, 13): LB/S=3988.482622613  [none]  ms=none  cs=full
-  T15 (3, 4, 10, 13): LB/S=4017.834483205  [none]  ms=none  cs=full
-  T16 (3, 9, 10, 13): LB/S=4240.988994845  [none]  ms=none  cs=full
-  T17 (3, 4, 11, 15): LB/S=3803.320471901  [none]  ms=none  cs=full
-  T18 (3, 4, 14, 15): LB/S=3849.694386148  [none]  ms=none  cs=full
-  T19 (3, 11, 14, 15): LB/S=3299.314329365  [none]  ms=none  cs=full
-  T20 (5, 11, 14, 16): LB/S=3444.817296345  [none]  ms=none  cs=full
-  T21 (3, 11, 14, 16): LB/S=3299.314329325  [none]  ms=none  cs=full
-  T22 (3, 5, 14, 16): LB/S=4040.748403069  [none]  ms=none  cs=full
-  T23 (4, 5, 11, 17): LB/S=5721.151982202  [none]  ms=none  cs=full
-  T24 (4, 5, 14, 17): LB/S=4016.888149564  [none]  ms=none  cs=full
-  T25 (5, 11, 14, 17): LB/S=3444.817296402  [none]  ms=none  cs=full
-
-  >> After materialize: 0 full, 0 inherited, 0 newly materialized this iter
-  >> Selected for split: T21
-
-[Iter 12] 28 simplices: 0 full, 0 inherited, 28 other
-  T0 (0, 2, 3, 4): LB/S=4173.089145637  [none]  ms=none  cs=full
-  T1 (0, 1, 3, 4): LB/S=3374.010767562  [none]  ms=none  cs=full
-  T2 (2, 3, 4, 6): LB/S=3747.223714499  [none]  ms=none  cs=full
-  T3 (4, 5, 7, 8): LB/S=4699.658304624  [none]  ms=none  cs=full
-  T4 (3, 5, 7, 8): LB/S=5611.524698709  [none]  ms=none  cs=full
-  T5 (4, 6, 7, 9): LB/S=4583.510414628  [none]  ms=none  cs=full
-  T6 (3, 6, 7, 9): LB/S=5517.300182756  [none]  ms=none  cs=full
-  T7 (4, 6, 9, 10): LB/S=4039.920563127  [none]  ms=none  cs=full
-  T8 (3, 6, 9, 10): LB/S=4138.844642892  [none]  ms=none  cs=full
-  T9 (1, 4, 5, 11): LB/S=6211.634082200  [none]  ms=none  cs=full
-  T10 (1, 3, 5, 11): LB/S=4287.617440414  [none]  ms=none  cs=full
-  T11 (4, 5, 8, 12): LB/S=4065.766759912  [none]  ms=none  cs=full
-  T12 (3, 4, 5, 12): LB/S=3733.393352380  [none]  ms=none  cs=full
-  T13 (3, 5, 8, 12): LB/S=4325.992014418  [none]  ms=none  cs=full
-  T14 (4, 9, 10, 13): LB/S=3988.482622613  [none]  ms=none  cs=full
-  T15 (3, 4, 10, 13): LB/S=4017.834483205  [none]  ms=none  cs=full
-  T16 (3, 9, 10, 13): LB/S=4240.988994845  [none]  ms=none  cs=full
-  T17 (3, 4, 11, 15): LB/S=3803.320471901  [none]  ms=none  cs=full
-  T18 (3, 4, 14, 15): LB/S=3849.694386148  [none]  ms=none  cs=full
-  T19 (3, 11, 14, 15): LB/S=3299.314329365  [none]  ms=none  cs=full
-  T20 (5, 11, 14, 16): LB/S=3444.817296345  [none]  ms=none  cs=full
-  T21 (3, 5, 14, 16): LB/S=4040.748403069  [none]  ms=none  cs=full
-  T22 (4, 5, 11, 17): LB/S=5721.151982202  [none]  ms=none  cs=full
-  T23 (4, 5, 14, 17): LB/S=4016.888149564  [none]  ms=none  cs=full
-  T24 (5, 11, 14, 17): LB/S=3444.817296402  [none]  ms=none  cs=full
-  T25 (11, 14, 16, 18): LB/S=3445.092470922  [none]  ms=none  cs=full
-  T26 (3, 14, 16, 18): LB/S=4130.931864024  [none]  ms=none  cs=full
-  T27 (3, 11, 16, 18): LB/S=4938.117759906  [none]  ms=none  cs=full
-
-  >> After materialize: 0 full, 0 inherited, 0 newly materialized this iter
-  >> Selected for split: T19
-
-[Iter 13] 30 simplices: 0 full, 0 inherited, 30 other
-  T0 (0, 2, 3, 4): LB/S=4173.089145637  [none]  ms=none  cs=full
-  T1 (0, 1, 3, 4): LB/S=3374.010767562  [none]  ms=none  cs=full
-  T2 (2, 3, 4, 6): LB/S=3747.223714499  [none]  ms=none  cs=full
-  T3 (4, 5, 7, 8): LB/S=4699.658304624  [none]  ms=none  cs=full
-  T4 (3, 5, 7, 8): LB/S=5611.524698709  [none]  ms=none  cs=full
-  T5 (4, 6, 7, 9): LB/S=4583.510414628  [none]  ms=none  cs=full
-  T6 (3, 6, 7, 9): LB/S=5517.300182756  [none]  ms=none  cs=full
-  T7 (4, 6, 9, 10): LB/S=4039.920563127  [none]  ms=none  cs=full
-  T8 (3, 6, 9, 10): LB/S=4138.844642892  [none]  ms=none  cs=full
-  T9 (1, 4, 5, 11): LB/S=6211.634082200  [none]  ms=none  cs=full
-  T10 (1, 3, 5, 11): LB/S=4287.617440414  [none]  ms=none  cs=full
-  T11 (4, 5, 8, 12): LB/S=4065.766759912  [none]  ms=none  cs=full
-  T12 (3, 4, 5, 12): LB/S=3733.393352380  [none]  ms=none  cs=full
-  T13 (3, 5, 8, 12): LB/S=4325.992014418  [none]  ms=none  cs=full
-  T14 (4, 9, 10, 13): LB/S=3988.482622613  [none]  ms=none  cs=full
-  T15 (3, 4, 10, 13): LB/S=4017.834483205  [none]  ms=none  cs=full
-  T16 (3, 9, 10, 13): LB/S=4240.988994845  [none]  ms=none  cs=full
-  T17 (3, 4, 11, 15): LB/S=3803.320471901  [none]  ms=none  cs=full
-  T18 (3, 4, 14, 15): LB/S=3849.694386148  [none]  ms=none  cs=full
-  T19 (5, 11, 14, 16): LB/S=3444.817296345  [none]  ms=none  cs=full
-  T20 (3, 5, 14, 16): LB/S=4040.748403069  [none]  ms=none  cs=full
-  T21 (4, 5, 11, 17): LB/S=5721.151982202  [none]  ms=none  cs=full
-  T22 (4, 5, 14, 17): LB/S=4016.888149564  [none]  ms=none  cs=full
-  T23 (5, 11, 14, 17): LB/S=3444.817296402  [none]  ms=none  cs=full
-  T24 (11, 14, 16, 18): LB/S=3445.092470922  [none]  ms=none  cs=full
-  T25 (3, 14, 16, 18): LB/S=4130.931864024  [none]  ms=none  cs=full
-  T26 (3, 11, 16, 18): LB/S=4938.117759906  [none]  ms=none  cs=full
-  T27 (11, 14, 15, 19): LB/S=3445.092470697  [none]  ms=none  cs=full
-  T28 (3, 11, 15, 19): LB/S=4434.501015699  [none]  ms=none  cs=full
-  T29 (3, 14, 15, 19): LB/S=3843.458685574  [none]  ms=none  cs=full
-
-  >> After materialize: 0 full, 0 inherited, 0 newly materialized this iter
-  >> Selected for split: T1
-
-[Iter 14] 32 simplices: 0 full, 0 inherited, 32 other
-  T0 (0, 2, 3, 4): LB/S=4173.089145637  [none]  ms=none  cs=full
-  T1 (2, 3, 4, 6): LB/S=3747.223714499  [none]  ms=none  cs=full
-  T2 (4, 5, 7, 8): LB/S=4699.658304624  [none]  ms=none  cs=full
-  T3 (3, 5, 7, 8): LB/S=5611.524698709  [none]  ms=none  cs=full
-  T4 (4, 6, 7, 9): LB/S=4583.510414628  [none]  ms=none  cs=full
-  T5 (3, 6, 7, 9): LB/S=5517.300182756  [none]  ms=none  cs=full
-  T6 (4, 6, 9, 10): LB/S=4039.920563127  [none]  ms=none  cs=full
-  T7 (3, 6, 9, 10): LB/S=4138.844642892  [none]  ms=none  cs=full
-  T8 (1, 4, 5, 11): LB/S=6211.634082200  [none]  ms=none  cs=full
-  T9 (1, 3, 5, 11): LB/S=4287.617440414  [none]  ms=none  cs=full
-  T10 (4, 5, 8, 12): LB/S=4065.766759912  [none]  ms=none  cs=full
-  T11 (3, 4, 5, 12): LB/S=3733.393352380  [none]  ms=none  cs=full
-  T12 (3, 5, 8, 12): LB/S=4325.992014418  [none]  ms=none  cs=full
-  T13 (4, 9, 10, 13): LB/S=3988.482622613  [none]  ms=none  cs=full
-  T14 (3, 4, 10, 13): LB/S=4017.834483205  [none]  ms=none  cs=full
-  T15 (3, 9, 10, 13): LB/S=4240.988994845  [none]  ms=none  cs=full
-  T16 (3, 4, 11, 15): LB/S=3803.320471901  [none]  ms=none  cs=full
-  T17 (3, 4, 14, 15): LB/S=3849.694386148  [none]  ms=none  cs=full
-  T18 (5, 11, 14, 16): LB/S=3444.817296345  [none]  ms=none  cs=full
-  T19 (3, 5, 14, 16): LB/S=4040.748403069  [none]  ms=none  cs=full
-  T20 (4, 5, 11, 17): LB/S=5721.151982202  [none]  ms=none  cs=full
-  T21 (4, 5, 14, 17): LB/S=4016.888149564  [none]  ms=none  cs=full
-  T22 (5, 11, 14, 17): LB/S=3444.817296402  [none]  ms=none  cs=full
-  T23 (11, 14, 16, 18): LB/S=3445.092470922  [none]  ms=none  cs=full
-  T24 (3, 14, 16, 18): LB/S=4130.931864024  [none]  ms=none  cs=full
-  T25 (3, 11, 16, 18): LB/S=4938.117759906  [none]  ms=none  cs=full
-  T26 (11, 14, 15, 19): LB/S=3445.092470697  [none]  ms=none  cs=full
-  T27 (3, 11, 15, 19): LB/S=4434.501015699  [none]  ms=none  cs=full
-  T28 (3, 14, 15, 19): LB/S=3843.458685574  [none]  ms=none  cs=full
-  T29 (0, 1, 4, 20): LB/S=5889.096537179  [none]  ms=none  cs=full
-  T30 (0, 3, 4, 20): LB/S=3575.696364732  [none]  ms=none  cs=full
-  T31 (0, 1, 3, 20): LB/S=5117.889039932  [none]  ms=none  cs=full
-
-  >> After materialize: 0 full, 0 inherited, 0 newly materialized this iter
-  >> Selected for split: T18
-
-[Iter 15] 34 simplices: 0 full, 0 inherited, 34 other
-  T0 (0, 2, 3, 4): LB/S=4173.089145637  [none]  ms=none  cs=full
-  T1 (2, 3, 4, 6): LB/S=3747.223714499  [none]  ms=none  cs=full
-  T2 (4, 5, 7, 8): LB/S=4699.658304624  [none]  ms=none  cs=full
-  T3 (3, 5, 7, 8): LB/S=5611.524698709  [none]  ms=none  cs=full
-  T4 (4, 6, 7, 9): LB/S=4583.510414628  [none]  ms=none  cs=full
-  T5 (3, 6, 7, 9): LB/S=5517.300182756  [none]  ms=none  cs=full
-  T6 (4, 6, 9, 10): LB/S=4039.920563127  [none]  ms=none  cs=full
-  T7 (3, 6, 9, 10): LB/S=4138.844642892  [none]  ms=none  cs=full
-  T8 (1, 4, 5, 11): LB/S=6211.634082200  [none]  ms=none  cs=full
-  T9 (1, 3, 5, 11): LB/S=4287.617440414  [none]  ms=none  cs=full
-  T10 (4, 5, 8, 12): LB/S=4065.766759912  [none]  ms=none  cs=full
-  T11 (3, 4, 5, 12): LB/S=3733.393352380  [none]  ms=none  cs=full
-  T12 (3, 5, 8, 12): LB/S=4325.992014418  [none]  ms=none  cs=full
-  T13 (4, 9, 10, 13): LB/S=3988.482622613  [none]  ms=none  cs=full
-  T14 (3, 4, 10, 13): LB/S=4017.834483205  [none]  ms=none  cs=full
-  T15 (3, 9, 10, 13): LB/S=4240.988994845  [none]  ms=none  cs=full
-  T16 (3, 4, 11, 15): LB/S=3803.320471901  [none]  ms=none  cs=full
-  T17 (3, 4, 14, 15): LB/S=3849.694386148  [none]  ms=none  cs=full
-  T18 (3, 5, 14, 16): LB/S=4040.748403069  [none]  ms=none  cs=full
-  T19 (4, 5, 11, 17): LB/S=5721.151982202  [none]  ms=none  cs=full
-  T20 (4, 5, 14, 17): LB/S=4016.888149564  [none]  ms=none  cs=full
-  T21 (5, 11, 14, 17): LB/S=3444.817296402  [none]  ms=none  cs=full
-  T22 (11, 14, 16, 18): LB/S=3445.092470922  [none]  ms=none  cs=full
-  T23 (3, 14, 16, 18): LB/S=4130.931864024  [none]  ms=none  cs=full
-  T24 (3, 11, 16, 18): LB/S=4938.117759906  [none]  ms=none  cs=full
-  T25 (11, 14, 15, 19): LB/S=3445.092470697  [none]  ms=none  cs=full
-  T26 (3, 11, 15, 19): LB/S=4434.501015699  [none]  ms=none  cs=full
-  T27 (3, 14, 15, 19): LB/S=3843.458685574  [none]  ms=none  cs=full
-  T28 (0, 1, 4, 20): LB/S=5889.096537179  [none]  ms=none  cs=full
-  T29 (0, 3, 4, 20): LB/S=3575.696364732  [none]  ms=none  cs=full
-  T30 (0, 1, 3, 20): LB/S=5117.889039932  [none]  ms=none  cs=full
-  T31 (11, 14, 16, 21): LB/S=3445.092470725  [none]  ms=none  cs=full
-  T32 (5, 14, 16, 21): LB/S=4276.434829373  [none]  ms=none  cs=full
-  T33 (5, 11, 16, 21): LB/S=5424.193274291  [none]  ms=none  cs=full
-
-  >> After materialize: 0 full, 0 inherited, 0 newly materialized this iter
-  >> Selected for split: T21
-
-[Iter 16] 36 simplices: 0 full, 0 inherited, 36 other
-  T0 (0, 2, 3, 4): LB/S=4173.089145637  [none]  ms=none  cs=full
-  T1 (2, 3, 4, 6): LB/S=3747.223714499  [none]  ms=none  cs=full
-  T2 (4, 5, 7, 8): LB/S=4699.658304624  [none]  ms=none  cs=full
-  T3 (3, 5, 7, 8): LB/S=5611.524698709  [none]  ms=none  cs=full
-  T4 (4, 6, 7, 9): LB/S=4583.510414628  [none]  ms=none  cs=full
-  T5 (3, 6, 7, 9): LB/S=5517.300182756  [none]  ms=none  cs=full
-  T6 (4, 6, 9, 10): LB/S=4039.920563127  [none]  ms=none  cs=full
-  T7 (3, 6, 9, 10): LB/S=4138.844642892  [none]  ms=none  cs=full
-  T8 (1, 4, 5, 11): LB/S=6211.634082200  [none]  ms=none  cs=full
-  T9 (1, 3, 5, 11): LB/S=4287.617440414  [none]  ms=none  cs=full
-  T10 (4, 5, 8, 12): LB/S=4065.766759912  [none]  ms=none  cs=full
-  T11 (3, 4, 5, 12): LB/S=3733.393352380  [none]  ms=none  cs=full
-  T12 (3, 5, 8, 12): LB/S=4325.992014418  [none]  ms=none  cs=full
-  T13 (4, 9, 10, 13): LB/S=3988.482622613  [none]  ms=none  cs=full
-  T14 (3, 4, 10, 13): LB/S=4017.834483205  [none]  ms=none  cs=full
-  T15 (3, 9, 10, 13): LB/S=4240.988994845  [none]  ms=none  cs=full
-  T16 (3, 4, 11, 15): LB/S=3803.320471901  [none]  ms=none  cs=full
-  T17 (3, 4, 14, 15): LB/S=3849.694386148  [none]  ms=none  cs=full
-  T18 (3, 5, 14, 16): LB/S=4040.748403069  [none]  ms=none  cs=full
-  T19 (4, 5, 11, 17): LB/S=5721.151982202  [none]  ms=none  cs=full
-  T20 (4, 5, 14, 17): LB/S=4016.888149564  [none]  ms=none  cs=full
-  T21 (11, 14, 16, 18): LB/S=3445.092470922  [none]  ms=none  cs=full
-  T22 (3, 14, 16, 18): LB/S=4130.931864024  [none]  ms=none  cs=full
-  T23 (3, 11, 16, 18): LB/S=4938.117759906  [none]  ms=none  cs=full
-  T24 (11, 14, 15, 19): LB/S=3445.092470697  [none]  ms=none  cs=full
-  T25 (3, 11, 15, 19): LB/S=4434.501015699  [none]  ms=none  cs=full
-  T26 (3, 14, 15, 19): LB/S=3843.458685574  [none]  ms=none  cs=full
-  T27 (0, 1, 4, 20): LB/S=5889.096537179  [none]  ms=none  cs=full
-  T28 (0, 3, 4, 20): LB/S=3575.696364732  [none]  ms=none  cs=full
-  T29 (0, 1, 3, 20): LB/S=5117.889039932  [none]  ms=none  cs=full
-  T30 (11, 14, 16, 21): LB/S=3445.092470725  [none]  ms=none  cs=full
-  T31 (5, 14, 16, 21): LB/S=4276.434829373  [none]  ms=none  cs=full
-  T32 (5, 11, 16, 21): LB/S=5424.193274291  [none]  ms=none  cs=full
-  T33 (5, 11, 17, 22): LB/S=5005.688551505  [none]  ms=none  cs=full
-  T34 (11, 14, 17, 22): LB/S=3445.092471030  [none]  ms=none  cs=full
-  T35 (5, 14, 17, 22): LB/S=4016.888149768  [none]  ms=none  cs=full
-
-  >> After materialize: 0 full, 0 inherited, 0 newly materialized this iter
-  >> Selected for split: T24
 

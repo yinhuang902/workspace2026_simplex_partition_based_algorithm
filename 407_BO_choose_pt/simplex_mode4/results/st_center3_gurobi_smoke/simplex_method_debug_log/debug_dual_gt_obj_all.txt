@@ -1,3 +1,0 @@
-# debug_dual_gt_obj_all.txt — dual > primal violations for ALL simplices and scenarios
-# Scans every simplex after full evaluation, not just the selected one
-

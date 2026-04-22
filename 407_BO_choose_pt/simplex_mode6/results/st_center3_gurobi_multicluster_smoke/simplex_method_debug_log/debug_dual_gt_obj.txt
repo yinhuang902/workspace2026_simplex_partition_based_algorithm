@@ -1,4 +1,11 @@
 # debug_dual_gt_obj.txt — subproblems where dual_bound > primal_obj
 # Format: [Iter N] [MS/CS] simplex_idx=..., verts=..., scenario=..., dual_bound=..., primal_obj=..., gap=...
 
-[Iter 5] [CS] simplex_idx=4, verts=(3, 4, 5, 8), scenario=1, dual_bound=1714.0700560903497, primal_obj=1714.0700560565863, gap=3.376339918759186e-08
+[Iter 1] [CS] simplex_idx=2, verts=(3, 4, 5, 7), scenario=0, dual_bound=413.2684624130152, primal_obj=413.2684623277309, gap=8.528428452336811e-08
+[Iter 2] [CS] simplex_idx=4, verts=(1, 3, 4, 5), scenario=0, dual_bound=413.26846234971345, primal_obj=413.268462320942, gap=2.877146698665456e-08
+[Iter 4] [CS] simplex_idx=2, verts=(3, 4, 6, 7), scenario=0, dual_bound=407.37030714544835, primal_obj=407.37030712777363, gap=1.7674722130323062e-08
+[Iter 4] [CS] simplex_idx=2, verts=(3, 4, 6, 7), scenario=3, dual_bound=726.9570088817909, primal_obj=726.9570088518951, gap=2.989577296830248e-08
+[Iter 6] [CS] simplex_idx=6, verts=(1, 3, 4, 9), scenario=1, dual_bound=1115.9856165174951, primal_obj=1115.985616468925, gap=4.857020030613057e-08
+[Iter 6] [CS] simplex_idx=6, verts=(1, 3, 4, 9), scenario=4, dual_bound=2060.775592810187, primal_obj=2060.7755927889184, gap=2.1268533600959927e-08
+[Iter 7] [CS] simplex_idx=10, verts=(3, 4, 6, 11), scenario=0, dual_bound=407.37030596714885, primal_obj=407.37030586487896, gap=1.022698938868416e-07
+[Iter 7] [CS] simplex_idx=10, verts=(3, 4, 6, 11), scenario=3, dual_bound=726.9570099385655, primal_obj=726.9570099221684, gap=1.63971662914264e-08

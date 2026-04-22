@@ -5,58 +5,58 @@
 ======================================================================
 [Iter 1] SIMPLEX SUMMARY  (eval_mode=deferred first split (iter 1))
   Number of simplices: 6
-  Number of scenarios: 2
+  Number of scenarios: 5
 
   --- T0 (0, 2, 3, 4) ---
     cs_status: full    ms_status: none
-    LB: 111.738665695 (per-scen)
-    Avg dual bound (box c_s): 111.738665695
-    Avg c_s point Q-value: 5371.577487907 (per-scen), point=(np.float64(-2.3822664635221606), np.float64(6.157682798421792), np.float64(20.90883770503511))
+    LB: 117.227603847 (per-scen)
+    Avg dual bound (box c_s): 117.227603847
+    Avg c_s point Q-value: 3317.135843896 (per-scen), point=(0.8256321357575246, 8.268535587337634, 12.330487282685578)
     Volume: 5.625000e+05
   --- T1 (0, 1, 3, 4) ---
     cs_status: full    ms_status: none
-    LB: 111.738665695 (per-scen)
-    Avg dual bound (box c_s): 111.738665695
-    Avg c_s point Q-value: 5371.577487907 (per-scen), point=(np.float64(-2.3822664635221606), np.float64(6.157682798421792), np.float64(20.90883770503511))
+    LB: 117.227603847 (per-scen)
+    Avg dual bound (box c_s): 117.227603847
+    Avg c_s point Q-value: 3317.135843896 (per-scen), point=(0.8256321357575246, 8.268535587337634, 12.330487282685578)
     Volume: 5.625000e+05
   --- T2 (3, 4, 5, 7)  [SELECTED] ---
     cs_status: full    ms_status: none
-    LB: 2066.597807293 (per-scen)
-    Avg dual bound (box c_s): 2066.597807293
-    Avg c_s point Q-value: 6460.666497609 (per-scen), point=(np.float64(12.603479997669254), np.float64(18.505493196566867), np.float64(20.570630281941625))
+    LB: 932.623357118 (per-scen)
+    Avg dual bound (box c_s): 932.623357118
+    Avg c_s point Q-value: 3652.831007648 (per-scen), point=(5.047528682930735, 2.4915783016670003, 23.258158354828165)
     Volume: 5.625000e+05
   --- T3 (3, 4, 6, 7) ---
     cs_status: full    ms_status: none
-    LB: 111.738665695 (per-scen)
-    Avg dual bound (box c_s): 111.738665695
-    Avg c_s point Q-value: 5371.577487907 (per-scen), point=(np.float64(-2.3822664635221606), np.float64(6.157682798421792), np.float64(20.90883770503511))
+    LB: 117.227603847 (per-scen)
+    Avg dual bound (box c_s): 117.227603847
+    Avg c_s point Q-value: 3317.135843896 (per-scen), point=(0.8256321357575246, 8.268535587337634, 12.330487282685578)
     Volume: 5.625000e+05
   --- T4 (2, 3, 4, 6) ---
     cs_status: full    ms_status: none
-    LB: 111.738665695 (per-scen)
-    Avg dual bound (box c_s): 111.738665695
-    Avg c_s point Q-value: 5371.577487907 (per-scen), point=(np.float64(-2.3822664635221606), np.float64(6.157682798421792), np.float64(20.90883770503511))
+    LB: 117.227603847 (per-scen)
+    Avg dual bound (box c_s): 117.227603847
+    Avg c_s point Q-value: 3317.135843896 (per-scen), point=(0.8256321357575246, 8.268535587337634, 12.330487282685578)
     Volume: 5.625000e+05
   --- T5 (1, 3, 4, 5) ---
     cs_status: full    ms_status: none
-    LB: 111.738665695 (per-scen)
-    Avg dual bound (box c_s): 111.738665695
-    Avg c_s point Q-value: 5371.577487907 (per-scen), point=(np.float64(-2.3822664635221606), np.float64(6.157682798421792), np.float64(20.90883770503511))
+    LB: 117.227603847 (per-scen)
+    Avg dual bound (box c_s): 117.227603847
+    Avg c_s point Q-value: 3317.135843896 (per-scen), point=(0.8256321357575246, 8.268535587337634, 12.330487282685578)
     Volume: 5.625000e+05
 
   --- IPOPT EF Result (selected LB simplex only) ---
     Selected simplex: T2 (3, 4, 5, 7)
-    EF-IPOPT: ok=True, ef_obj(per-scen)=2685.668781790, true_obj(per-scen)=5371.337581302, status=ok, term=optimal, time=0.067s
-    EF-IPOPT K point: (-2.231110097079451, 6.30883916530196, 21.059994071382626)
-    Barycentric coords: [0.514874, 0.098341, 0.027185, 0.359600]
+    EF-IPOPT: ok=True, ef_obj(per-scen)=663.274177568, true_obj(per-scen)=3316.370888248, status=ok, term=optimal, time=0.049s
+    EF-IPOPT K point: (1.1707740523304646, 8.613677503789074, 12.675629199404996)
+    Barycentric coords: [0.492195, 0.027080, 0.065230, 0.415496]
 
   --- Current UB ---
-    UB value: 5371.337581302 (per-scen)
-    UB point: (-2.231110097079451, 6.30883916530196, 21.059994071382626)
+    UB value: 3316.370888248 (per-scen)
+    UB point: (1.1707740523304646, 8.613677503789074, 12.675629199404996)
     UB source: EF_ipopt
 
   --- Next Chosen Simplex ---
     Simplex: T2 (3, 4, 5, 7)
     Scene: -1, source: mode7_midpoint
-    New point: (12.603479997669252, 19.538061739254264, 19.538061739254264)
+    New point: (0.7332244715878833, -0.7332244715878833, 28.01883060881059)
 ======================================================================

@@ -6,351 +6,222 @@
 === Iter 1 ===
 simplex: T2  verts=(3, 4, 5, 7)  cs_status=full  ms_status=none
 
-  MS per scenario (2 scenarios):
+  MS per scenario (5 scenarios):
     s=0  ms=inf  pt=None  bary=N/A
     s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
 
-  CS per scenario (2 scenarios):
-    s=0  cs=3.898787e+03  pt=(0.032432, -0.032432, 4.097842)  bary=(0.499784, 0.027535, 0.000000, 0.472681)
-    s=1  cs=2.344085e+02  pt=(25.174528, 37.043419, 37.043419)  bary=(0.332170, 0.000000, 0.414786, 0.253044)
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637830, -0.000000, 0.000000, 0.362170)
+    s=1  cs=1.234974e+02  pt=(25.174528, -15.680709, 31.767547)  bary=(0.332170, 0.316322, 0.063292, 0.288216)
+    s=2  cs=3.213423e+03  pt=(11.129425, 4.215469, 4.215469)  bary=(0.425804, 0.000000, 0.102299, 0.471897)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, 0.000000, 0.000000, 0.359523)
+    s=4  cs=1.277911e+02  pt=(30.679700, -17.822879, 38.561766)  bary=(0.295469, 0.375898, 0.085712, 0.242922)
   UB candidates (avgMS/avgCS/csScene points from new children):
-    child T5  type=avgCS  pt=(27.313591, 17.504886, 17.504886)  Q_sum=1.616050e+04  Q_per_scen=8080.252244694
-    child T5  type=csScene_s0  pt=(25.173005, 0.493754, 0.493754)  Q_sum=1.555623e+04  Q_per_scen=7778.114718839
-    child T5  type=csScene_s1  pt=(29.454177, 34.516017, 34.516017)  Q_sum=2.377534e+04  Q_per_scen=11887.668915855
-    child T6  type=avgCS  pt=(3.325439, 11.647383, 13.712521)  Q_sum=1.120702e+04  Q_per_scen=5603.511955327
-    child T6  type=csScene_s0  pt=(0.032432, -0.032432, 4.097842)  Q_sum=1.251470e+04  Q_per_scen=6257.348956921
-    child T6  type=csScene_s1  pt=(6.618445, 23.327199, 23.327200)  Q_sum=1.302490e+04  Q_per_scen=6512.448787209
-    child T7  type=avgCS  pt=(19.486400, 25.388413, 32.268020)  Q_sum=1.729149e+04  Q_per_scen=8645.743949653
-    child T7  type=csScene_s0  pt=(13.798273, 13.733408, 27.492622)  Q_sum=1.304880e+04  Q_per_scen=6524.400948731
-    child T7  type=csScene_s1  pt=(25.174528, 37.043419, 37.043419)  Q_sum=2.375102e+04  Q_per_scen=11875.508598206
-  current UB (per-scen): 5371.337581302
+    child T5  type=avgCS  pt=(16.964986, -7.584919, 28.360037)  Q_sum=2.429083e+04  Q_per_scen=4858.166784379
+    child T5  type=csScene_s0  pt=(0.733224, -0.733224, 28.018831)  Q_sum=1.983103e+04  Q_per_scen=3966.205665558
+    child T5  type=csScene_s1  pt=(25.174528, -15.680709, 31.767547)  Q_sum=3.226567e+04  Q_per_scen=6453.134860981
+    child T5  type=csScene_s2  pt=(27.504255, -2.954560, 15.433209)  Q_sum=2.537842e+04  Q_per_scen=5075.683212655
+    child T5  type=csScene_s3  pt=(0.733224, -0.733224, 28.018831)  Q_sum=1.983103e+04  Q_per_scen=3966.205665528
+    child T5  type=csScene_s4  pt=(30.679700, -17.822879, 38.561766)  Q_sum=3.994785e+04  Q_per_scen=7989.569979670
+    child T6  type=avgCS  pt=(2.305336, 8.360320, 16.711572)  Q_sum=1.677295e+04  Q_per_scen=3354.590369939
+    child T6  type=csScene_s0  pt=(-20.674490, 20.674490, 20.674490)  Q_sum=2.344491e+04  Q_per_scen=4688.981489731
+    child T6  type=csScene_s1  pt=(19.445033, -3.418651, 18.089209)  Q_sum=2.176266e+04  Q_per_scen=4352.532946144
+    child T6  type=csScene_s2  pt=(11.129425, 4.215469, 4.215469)  Q_sum=1.847638e+04  Q_per_scen=3695.275176270
+    child T6  type=csScene_s3  pt=(-21.071520, 21.071520, 21.071520)  Q_sum=2.378592e+04  Q_per_scen=4757.183664203
+    child T6  type=csScene_s4  pt=(22.698233, -0.741230, 19.507169)  Q_sum=2.278560e+04  Q_per_scen=4557.119086010
+    child T7  type=avgCS  pt=(4.095523, 0.811711, 38.700699)  Q_sum=2.458512e+04  Q_per_scen=4917.024657732
+    child T7  type=csScene_s0  pt=(-15.642526, 15.642526, 38.177541)  Q_sum=2.678566e+04  Q_per_scen=5357.131666780
+    child T7  type=csScene_s1  pt=(20.381273, -15.253096, 40.448188)  Q_sum=3.431533e+04  Q_per_scen=6863.065621448
+    child T7  type=csScene_s2  pt=(5.527139, 4.155349, 31.051461)  Q_sum=2.059206e+04  Q_per_scen=4118.411717673
+    child T7  type=csScene_s3  pt=(-17.029945, 17.029945, 39.038228)  Q_sum=2.798045e+04  Q_per_scen=5596.090237599
+    child T7  type=csScene_s4  pt=(27.241672, -17.516168, 44.788077)  Q_sum=4.172008e+04  Q_per_scen=8344.015908257
+  current UB (per-scen): 3316.370888248
 
 === Iter 2 ===
-simplex: T2  verts=(3, 4, 6, 7)  cs_status=full  ms_status=none
+simplex: T4  verts=(1, 3, 4, 5)  cs_status=full  ms_status=none
 
-  MS per scenario (2 scenarios):
+  MS per scenario (5 scenarios):
     s=0  ms=inf  pt=None  bary=N/A
     s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
 
-  CS per scenario (2 scenarios):
-    s=0  cs=3.924960e+03  pt=(-1.557895, 1.557895, 1.557895)  bary=(0.510386, 0.000000, 0.000000, 0.489614)
-    s=1  cs=1.234974e+02  pt=(25.174528, 42.319291, 31.767547)  bary=(0.332170, 0.070345, 0.379614, 0.217871)
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637830, -0.000000, -0.000000, 0.362170)
+    s=1  cs=1.935305e+02  pt=(20.427618, -20.427618, 30.723227)  bary=(0.363816, 0.341006, 0.000000, 0.295178)
+    s=2  cs=3.440699e+03  pt=(1.598435, -1.598435, -1.598435)  bary=(0.489344, -0.000000, 0.000000, 0.510656)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, 0.000000, 0.000000, 0.359523)
+    s=4  cs=2.562275e+02  pt=(24.251290, -24.251290, 37.147515)  bary=(0.338325, 0.409325, 0.000000, 0.252350)
   UB candidates (avgMS/avgCS/csScene points from new children):
-    child T7  type=avgCS  pt=(27.475589, 18.267372, 16.149949)  Q_sum=1.628281e+04  Q_per_scen=8141.405634734
-    child T7  type=csScene_s0  pt=(24.314341, 0.637975, 0.637975)  Q_sum=1.534064e+04  Q_per_scen=7670.321575791
-    child T7  type=csScene_s1  pt=(30.636838, 35.896769, 31.661923)  Q_sum=2.408903e+04  Q_per_scen=12044.516694816
-    child T8  type=avgCS  pt=(3.253579, 17.936536, 8.107983)  Q_sum=1.208711e+04  Q_per_scen=6043.553923941
-    child T8  type=csScene_s0  pt=(-1.557895, 1.557895, 1.557895)  Q_sum=1.290876e+04  Q_per_scen=6454.377795752
-    child T8  type=csScene_s1  pt=(8.065052, 34.315176, 14.658072)  Q_sum=1.547661e+04  Q_per_scen=7738.307121517
-    child T9  type=avgCS  pt=(18.491421, 30.809974, 25.534102)  Q_sum=1.740805e+04  Q_per_scen=8704.023154837
-    child T9  type=csScene_s0  pt=(11.808315, 19.300658, 19.300658)  Q_sum=1.285490e+04  Q_per_scen=6427.447614643
-    child T9  type=csScene_s1  pt=(25.174528, 42.319291, 31.767547)  Q_sum=2.459305e+04  Q_per_scen=12296.523192983
-  current UB (per-scen): 5371.337581302
+    child T7  type=avgCS  pt=(11.902649, -11.902649, 26.532351)  Q_sum=2.384705e+04  Q_per_scen=4769.409247123
+    child T7  type=csScene_s0  pt=(0.733224, -0.733224, 27.404188)  Q_sum=1.963762e+04  Q_per_scen=3927.523548258
+    child T7  type=csScene_s1  pt=(20.427618, -20.427618, 30.723227)  Q_sum=3.211280e+04  Q_per_scen=6422.560230000
+    child T7  type=csScene_s2  pt=(13.367889, -13.367889, 9.982635)  Q_sum=2.299798e+04  Q_per_scen=4599.595647658
+    child T7  type=csScene_s3  pt=(0.733224, -0.733225, 27.404188)  Q_sum=1.963762e+04  Q_per_scen=3927.523557255
+    child T7  type=csScene_s4  pt=(24.251290, -24.251290, 37.147515)  Q_sum=3.919523e+04  Q_per_scen=7839.046242066
+    child T8  type=avgCS  pt=(-4.522617, 4.183150, 14.431430)  Q_sum=1.714986e+04  Q_per_scen=3429.972348226
+    child T8  type=csScene_s0  pt=(-20.674490, 20.674490, 20.674490)  Q_sum=2.344491e+04  Q_per_scen=4688.981489613
+    child T8  type=csScene_s1  pt=(9.000351, -10.086556, 15.593370)  Q_sum=2.077749e+04  Q_per_scen=4155.497691602
+    child T8  type=csScene_s2  pt=(1.598435, -1.598435, -1.598435)  Q_sum=1.985962e+04  Q_per_scen=3971.924297279
+    child T8  type=csScene_s3  pt=(-21.071520, 21.071520, 21.071520)  Q_sum=2.378592e+04  Q_per_scen=4757.183656347
+    child T8  type=csScene_s4  pt=(8.534140, -9.145268, 16.416206)  Q_sum=2.041359e+04  Q_per_scen=4082.717677113
+    child T9  type=avgCS  pt=(1.817205, -1.817205, 36.788338)  Q_sum=2.380044e+04  Q_per_scen=4760.087117324
+    child T9  type=csScene_s0  pt=(-15.696696, 15.696696, 37.729847)  Q_sum=2.655979e+04  Q_per_scen=5311.958727861
+    child T9  type=csScene_s1  pt=(18.161383, -18.161383, 38.573481)  Q_sum=3.372586e+04  Q_per_scen=6745.171312955
+    child T9  type=csScene_s2  pt=(0.733224, -0.733224, 27.404188)  Q_sum=1.963762e+04  Q_per_scen=3927.523546786
+    child T9  type=csScene_s3  pt=(-17.065007, 17.065006, 38.589784)  Q_sum=2.773767e+04  Q_per_scen=5547.534372476
+    child T9  type=csScene_s4  pt=(22.953118, -22.953118, 41.644390)  Q_sum=4.035707e+04  Q_per_scen=8071.413788130
+  current UB (per-scen): 3316.370888248
 
 === Iter 3 ===
-simplex: T8  verts=(3, 4, 6, 9)  cs_status=full  ms_status=none
+simplex: T5  verts=(3, 4, 7, 8)  cs_status=full  ms_status=none
 
-  MS per scenario (2 scenarios):
+  MS per scenario (5 scenarios):
     s=0  ms=inf  pt=None  bary=N/A
     s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
 
-  CS per scenario (2 scenarios):
-    s=0  cs=3.924960e+03  pt=(-1.557895, 1.557895, 1.557895)  bary=(0.510386, 0.000000, 0.000000, 0.489614)
-    s=1  cs=1.401715e+03  pt=(8.065052, 34.315176, 14.658072)  bary=(0.138516, 0.131047, 0.730436, 0.000000)
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637830, 0.000000, 0.000000, 0.362170)
+    s=1  cs=8.511318e+02  pt=(19.445033, -3.418651, 18.089209)  bary=(0.000000, 0.748046, 0.106843, 0.145111)
+    s=2  cs=3.213423e+03  pt=(11.129425, 4.215469, 4.215469)  bary=(0.425804, 0.000000, 0.102299, 0.471897)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, 0.000000, 0.000000, 0.359523)
+    s=4  cs=1.539828e+03  pt=(22.698233, -0.741230, 19.507169)  bary=(0.000000, 0.704242, 0.146380, 0.149378)
   UB candidates (avgMS/avgCS/csScene points from new children):
-    child T9  type=avgCS  pt=(11.237110, 15.156359, 3.277884)  Q_sum=1.305797e+04  Q_per_scen=6528.987341887
-    child T9  type=csScene_s0  pt=(6.442860, 7.289724, -6.442860)  Q_sum=1.438048e+04  Q_per_scen=7190.238961940
-    child T9  type=csScene_s1  pt=(16.031360, 23.022994, 12.998628)  Q_sum=1.417186e+04  Q_per_scen=7085.929123771
-    child T10  type=avgCS  pt=(2.176707, 12.321142, 12.321142)  Q_sum=1.127126e+04  Q_per_scen=5635.631555094
-    child T10  type=csScene_s0  pt=(-1.557895, 1.557895, 1.557895)  Q_sum=1.290876e+04  Q_per_scen=6454.377795527
-    child T10  type=csScene_s1  pt=(5.911309, 23.084389, 23.084389)  Q_sum=1.287414e+04  Q_per_scen=6437.070537042
-    child T11  type=avgCS  pt=(2.818925, 26.125856, 8.542637)  Q_sum=1.318673e+04  Q_per_scen=6593.366301468
-    child T11  type=csScene_s0  pt=(-2.427202, 17.936536, 2.427202)  Q_sum=1.271707e+04  Q_per_scen=6358.533576863
-    child T11  type=csScene_s1  pt=(8.065052, 34.315177, 14.658072)  Q_sum=1.547661e+04  Q_per_scen=7738.307127793
-  current UB (per-scen): 5371.337581302
+    child T9  type=avgCS  pt=(10.694264, 5.857544, 14.208796)  Q_sum=1.762770e+04  Q_per_scen=3525.540333470
+    child T9  type=csScene_s0  pt=(0.099314, 14.616065, 14.616065)  Q_sum=1.702004e+04  Q_per_scen=3404.007802583
+    child T9  type=csScene_s1  pt=(19.445033, -3.418651, 18.089209)  Q_sum=2.176266e+04  Q_per_scen=4352.532949119
+    child T9  type=csScene_s2  pt=(11.129425, 4.215469, 4.215469)  Q_sum=1.847638e+04  Q_per_scen=3695.275176288
+    child T9  type=csScene_s3  pt=(0.099314, 14.616065, 14.616065)  Q_sum=1.702004e+04  Q_per_scen=3404.007804232
+    child T9  type=csScene_s4  pt=(22.698233, -0.741230, 19.507169)  Q_sum=2.278560e+04  Q_per_scen=4557.119085872
+    child T10  type=avgCS  pt=(-2.712317, 5.285354, 15.454298)  Q_sum=1.692277e+04  Q_per_scen=3384.553228704
+    child T10  type=csScene_s0  pt=(-20.674490, 20.674490, 20.674490)  Q_sum=2.344491e+04  Q_per_scen=4688.981489545
+    child T10  type=csScene_s1  pt=(9.680532, -9.680532, 15.607612)  Q_sum=2.073418e+04  Q_per_scen=4146.835774293
+    child T10  type=csScene_s2  pt=(9.516720, 3.348466, 3.348466)  Q_sum=1.842745e+04  Q_per_scen=3685.490774871
+    child T10  type=csScene_s3  pt=(-21.071520, 21.071520, 21.071520)  Q_sum=2.378592e+04  Q_per_scen=4757.183662954
+    child T10  type=csScene_s4  pt=(8.987175, -8.987175, 16.569400)  Q_sum=2.043514e+04  Q_per_scen=4087.028914316
+    child T11  type=avgCS  pt=(-2.560630, 15.240624, 25.802843)  Q_sum=1.902318e+04  Q_per_scen=3804.635201228
+    child T11  type=csScene_s0  pt=(-12.838089, 25.018441, 25.018441)  Q_sum=2.285959e+04  Q_per_scen=4571.918077230
+    child T11  type=csScene_s1  pt=(5.374532, 3.999729, 30.954922)  Q_sum=2.054765e+04  Q_per_scen=4109.530470398
+    child T11  type=csScene_s2  pt=(0.099314, 14.616065, 14.616065)  Q_sum=1.702004e+04  Q_per_scen=3404.007811048
+    child T11  type=csScene_s3  pt=(-13.652918, 25.673608, 25.673608)  Q_sum=2.348792e+04  Q_per_scen=4697.583635107
+    child T11  type=csScene_s4  pt=(8.214012, 6.895276, 32.751178)  Q_sum=2.159127e+04  Q_per_scen=4318.253364333
+  current UB (per-scen): 3316.370888248
 
 === Iter 4 ===
-simplex: T3  verts=(1, 3, 4, 5)  cs_status=full  ms_status=none
+simplex: T2  verts=(3, 4, 6, 7)  cs_status=full  ms_status=none
 
-  MS per scenario (2 scenarios):
+  MS per scenario (5 scenarios):
     s=0  ms=inf  pt=None  bary=N/A
     s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
 
-  CS per scenario (2 scenarios):
-    s=0  cs=4.073703e+02  pt=(-19.994595, -27.887770, 19.994595)  bary=(0.314082, -0.000000, 0.319216, 0.366703)
-    s=1  cs=5.164814e+03  pt=(-8.572382, 8.572382, 39.664973)  bary=(0.557149, 0.207284, 0.000000, 0.235567)
+  CS per scenario (5 scenarios):
+    s=0  cs=4.073703e+02  pt=(-19.994595, 22.112228, 19.994595)  bary=(0.633297, 0.014118, -0.000000, 0.352585)
+    s=1  cs=2.366175e+03  pt=(25.174528, 8.043419, 8.043419)  bary=(0.332170, 0.000000, 0.221453, 0.446377)
+    s=2  cs=2.393495e+02  pt=(17.394373, 33.468547, -17.394373)  bary=(0.384038, 0.339086, 0.000000, 0.276876)
+    s=3  cs=7.269570e+02  pt=(-18.924374, 25.448358, 18.924374)  bary=(0.626162, 0.043493, 0.000000, 0.330344)
+    s=4  cs=3.294791e+03  pt=(30.679700, 10.369443, 10.369443)  bary=(0.295469, 0.000000, 0.273661, 0.430870)
   UB candidates (avgMS/avgCS/csScene points from new children):
-    child T11  type=avgCS  pt=(-11.946555, -24.885111, 25.978146)  Q_sum=1.639446e+04  Q_per_scen=8197.227787047
-    child T11  type=csScene_s0  pt=(-19.994595, -27.887774, 19.994595)  Q_sum=1.949027e+04  Q_per_scen=9745.136915038
-    child T11  type=csScene_s1  pt=(-3.898515, -21.882448, 31.961698)  Q_sum=1.475529e+04  Q_per_scen=7377.645769803
-    child T12  type=avgCS  pt=(-11.518485, -3.098287, 27.064780)  Q_sum=1.174451e+04  Q_per_scen=5872.256954625
-    child T12  type=csScene_s0  pt=(-14.464588, -14.768956, 14.464588)  Q_sum=1.488330e+04  Q_per_scen=7441.650863366
-    child T12  type=csScene_s1  pt=(-8.572382, 8.572382, 39.664973)  Q_sum=1.251470e+04  Q_per_scen=6257.348956995
-    child T13  type=avgCS  pt=(-20.414784, -6.363671, 44.852463)  Q_sum=1.500584e+04  Q_per_scen=7502.920534793
-    child T13  type=csScene_s0  pt=(-28.211737, -17.254274, 28.211737)  Q_sum=1.765470e+04  Q_per_scen=8827.350976166
-    child T13  type=csScene_s1  pt=(-12.617832, 4.526932, 61.493189)  Q_sum=1.850241e+04  Q_per_scen=9251.203726018
-  current UB (per-scen): 5371.337581302
+    child T11  type=avgCS  pt=(18.043591, 16.578501, 7.395183)  Q_sum=2.053175e+04  Q_per_scen=4106.349018612
+    child T11  type=csScene_s0  pt=(4.233815, 15.413160, 15.413160)  Q_sum=1.730290e+04  Q_per_scen=3460.580305733
+    child T11  type=csScene_s1  pt=(25.174528, 8.043419, 8.043419)  Q_sum=2.287638e+04  Q_per_scen=4575.276163688
+    child T11  type=csScene_s2  pt=(25.896095, 33.653324, -12.263267)  Q_sum=3.555649e+04  Q_per_scen=7111.298089452
+    child T11  type=csScene_s3  pt=(4.233815, 15.413160, 15.413160)  Q_sum=1.730290e+04  Q_per_scen=3460.580306192
+    child T11  type=csScene_s4  pt=(30.679700, 10.369443, 10.369443)  Q_sum=2.603969e+04  Q_per_scen=5207.937578243
+    child T12  type=avgCS  pt=(1.286232, 17.391360, 5.490452)  Q_sum=1.786499e+04  Q_per_scen=3572.997449040
+    child T12  type=csScene_s0  pt=(-19.994595, 22.112230, 19.994595)  Q_sum=2.340721e+04  Q_per_scen=4681.442765574
+    child T12  type=csScene_s1  pt=(14.170063, 2.718289, 2.718289)  Q_sum=1.960294e+04  Q_per_scen=3920.587134030
+    child T12  type=csScene_s2  pt=(17.394373, 33.468547, -17.394373)  Q_sum=3.464008e+04  Q_per_scen=6928.016911869
+    child T12  type=csScene_s3  pt=(-18.924374, 25.448358, 18.924374)  Q_sum=2.382505e+04  Q_per_scen=4765.009557302
+    child T12  type=csScene_s4  pt=(13.785691, 3.209375, 3.209375)  Q_sum=1.935302e+04  Q_per_scen=3870.603328683
+    child T13  type=avgCS  pt=(4.396010, 26.761094, 16.604485)  Q_sum=2.044670e+04  Q_per_scen=4089.340892224
+    child T13  type=csScene_s0  pt=(-10.801832, 26.720538, 26.720538)  Q_sum=2.347424e+04  Q_per_scen=4694.848660115
+    child T13  type=csScene_s1  pt=(8.271321, 18.812838, 18.812838)  Q_sum=1.877938e+04  Q_per_scen=3755.876111105
+    child T13  type=csScene_s2  pt=(23.567171, 37.557339, -11.221575)  Q_sum=3.606519e+04  Q_per_scen=7213.037369688
+    child T13  type=csScene_s3  pt=(-11.271757, 28.581123, 26.576991)  Q_sum=2.427935e+04  Q_per_scen=4855.869160937
+    child T13  type=csScene_s4  pt=(12.215146, 22.133634, 22.133634)  Q_sum=2.113443e+04  Q_per_scen=4226.885210366
+  current UB (per-scen): 3316.370888248
 
 === Iter 5 ===
-simplex: T4  verts=(3, 4, 5, 8)  cs_status=full  ms_status=none
+simplex: T9  verts=(3, 4, 8, 10)  cs_status=full  ms_status=none
 
-  MS per scenario (2 scenarios):
+  MS per scenario (5 scenarios):
     s=0  ms=inf  pt=None  bary=N/A
     s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
 
-  CS per scenario (2 scenarios):
-    s=0  cs=3.898787e+03  pt=(0.032432, -0.032432, 4.097842)  bary=(0.499784, 0.027535, -0.000000, 0.472681)
-    s=1  cs=1.714070e+03  pt=(6.618445, 23.327199, 23.327200)  bary=(0.068320, 0.000000, 0.931680, 0.000000)
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637830, -0.000000, 0.000000, 0.362170)
+    s=1  cs=1.083839e+03  pt=(9.680532, -9.680532, 15.607612)  bary=(-0.000000, 0.879525, 0.000000, 0.120475)
+    s=2  cs=3.219389e+03  pt=(9.516720, 3.348466, 3.348466)  bary=(0.000000, 0.000000, 0.874268, 0.125732)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, 0.000000, -0.000000, 0.359523)
+    s=4  cs=2.012912e+03  pt=(8.987175, -8.987175, 16.569400)  bary=(0.000000, 0.888861, 0.000000, 0.111139)
   UB candidates (avgMS/avgCS/csScene points from new children):
-    child T13  type=avgCS  pt=(12.360869, 10.730850, 10.730851)  Q_sum=1.216996e+04  Q_per_scen=6084.977766893
-    child T13  type=csScene_s0  pt=(12.118259, 1.923639, 1.923639)  Q_sum=1.318348e+04  Q_per_scen=6591.737967949
-    child T13  type=csScene_s1  pt=(12.603480, 19.538062, 19.538062)  Q_sum=1.303422e+04  Q_per_scen=6517.110091574
-    child T14  type=avgCS  pt=(-1.386108, 7.153842, 17.091146)  Q_sum=1.081635e+04  Q_per_scen=5408.174934289
-    child T14  type=csScene_s0  pt=(0.032432, -0.032432, 4.097842)  Q_sum=1.251470e+04  Q_per_scen=6257.348956974
-    child T14  type=csScene_s1  pt=(-2.804648, 14.340116, 30.084450)  Q_sum=1.159857e+04  Q_per_scen=5799.282686693
-    child T15  type=avgCS  pt=(6.283860, 16.398698, 19.144270)  Q_sum=1.173181e+04  Q_per_scen=5865.905711769
-    child T15  type=csScene_s0  pt=(5.949275, 9.470197, 14.961341)  Q_sum=1.122498e+04  Q_per_scen=5612.488211053
-    child T15  type=csScene_s1  pt=(6.618445, 23.327199, 23.327199)  Q_sum=1.302490e+04  Q_per_scen=6512.448798253
-  current UB (per-scen): 5371.337581302
+    child T13  type=avgCS  pt=(4.380158, 0.828365, 13.805242)  Q_sum=1.730253e+04  Q_per_scen=3460.506967959
+    child T13  type=csScene_s0  pt=(-3.930290, 8.542029, 17.269577)  Q_sum=1.705148e+04  Q_per_scen=3410.296388645
+    child T13  type=csScene_s1  pt=(9.680532, -9.680532, 15.607612)  Q_sum=2.073418e+04  Q_per_scen=4146.835774619
+    child T13  type=csScene_s2  pt=(9.516720, 3.348466, 3.348466)  Q_sum=1.842745e+04  Q_per_scen=3685.490774888
+    child T13  type=csScene_s3  pt=(-2.353348, 10.919037, 16.231154)  Q_sum=1.688678e+04  Q_per_scen=3377.356776459
+    child T13  type=csScene_s4  pt=(8.987175, -8.987175, 16.569400)  Q_sum=2.043514e+04  Q_per_scen=4087.028914317
+    child T14  type=avgCS  pt=(-4.622248, 7.195285, 11.629568)  Q_sum=1.696534e+04  Q_per_scen=3393.068904868
+    child T14  type=csScene_s0  pt=(-20.674490, 20.674490, 20.674490)  Q_sum=2.344491e+04  Q_per_scen=4688.981489664
+    child T14  type=csScene_s1  pt=(4.733638, -4.733638, 6.324590)  Q_sum=1.897157e+04  Q_per_scen=3794.314223578
+    child T14  type=csScene_s2  pt=(9.516720, 3.348466, 3.348466)  Q_sum=1.842745e+04  Q_per_scen=3685.490775973
+    child T14  type=csScene_s3  pt=(-21.071520, 21.071520, 21.071520)  Q_sum=2.378592e+04  Q_per_scen=4757.183663595
+    child T14  type=csScene_s4  pt=(4.384414, -4.384414, 6.728772)  Q_sum=1.880207e+04  Q_per_scen=3760.413525822
+    child T15  type=avgCS  pt=(-6.222885, 10.861280, 25.081681)  Q_sum=1.874372e+04  Q_per_scen=3748.743030260
+    child T15  type=csScene_s0  pt=(-16.709706, 19.053694, 27.559804)  Q_sum=2.310493e+04  Q_per_scen=4620.986037295
+    child T15  type=csScene_s1  pt=(0.733224, -0.733224, 28.018831)  Q_sum=1.983103e+04  Q_per_scen=3966.205665559
+    child T15  type=csScene_s2  pt=(0.099314, 14.616065, 14.616065)  Q_sum=1.702004e+04  Q_per_scen=3404.007804232
+    child T15  type=csScene_s3  pt=(-15.970482, 22.103088, 27.194877)  Q_sum=2.350311e+04  Q_per_scen=4700.622340866
+    child T15  type=csScene_s4  pt=(0.733224, -0.733224, 28.018831)  Q_sum=1.983103e+04  Q_per_scen=3966.205665566
+  current UB (per-scen): 3316.370888248
 
 === Iter 6 ===
-simplex: T8  verts=(3, 4, 9, 10)  cs_status=full  ms_status=none
+simplex: T6  verts=(1, 3, 4, 9)  cs_status=full  ms_status=none
 
-  MS per scenario (2 scenarios):
+  MS per scenario (5 scenarios):
     s=0  ms=inf  pt=None  bary=N/A
     s=1  ms=inf  pt=None  bary=N/A
+    s=2  ms=inf  pt=None  bary=N/A
+    s=3  ms=inf  pt=None  bary=N/A
+    s=4  ms=inf  pt=None  bary=N/A
 
-  CS per scenario (2 scenarios):
-    s=0  cs=3.924960e+03  pt=(-1.557895, 1.557895, 1.557895)  bary=(0.510386, 0.000000, 0.000000, 0.489614)
-    s=1  cs=1.816062e+03  pt=(5.911309, 23.084389, 23.084389)  bary=(0.067931, 0.000000, 0.932069, 0.000000)
+  CS per scenario (5 scenarios):
+    s=0  cs=4.132685e+02  pt=(-20.674490, 20.674490, 20.674490)  bary=(0.637830, -0.000000, 0.000000, 0.362170)
+    s=1  cs=1.115986e+03  pt=(9.000351, -10.086556, 15.593370)  bary=(0.000000, 0.874058, 0.007241, 0.118701)
+    s=2  cs=3.440699e+03  pt=(1.598435, -1.598435, -1.598435)  bary=(0.489344, -0.000000, 0.000000, 0.510656)
+    s=3  cs=7.851363e+02  pt=(-21.071520, 21.071520, 21.071520)  bary=(0.640477, 0.000000, 0.000000, 0.359523)
+    s=4  cs=2.060776e+03  pt=(8.534140, -9.145268, 16.416206)  bary=(0.000000, 0.886732, 0.004074, 0.109194)
   UB candidates (avgMS/avgCS/csScene points from new children):
-    child T15  type=avgCS  pt=(11.227622, 10.734031, 10.508810)  Q_sum=1.204011e+04  Q_per_scen=6020.054175211
-    child T15  type=csScene_s0  pt=(10.646927, 2.167406, 1.716963)  Q_sum=1.307577e+04  Q_per_scen=6537.884756833
-    child T15  type=csScene_s1  pt=(11.808316, 19.300657, 19.300657)  Q_sum=1.285490e+04  Q_per_scen=6427.447640939
-    child T16  type=avgCS  pt=(-4.677552, 10.989663, 10.989663)  Q_sum=1.131963e+04  Q_per_scen=5659.814916001
-    child T16  type=csScene_s0  pt=(-1.557895, 1.557895, 1.557895)  Q_sum=1.290876e+04  Q_per_scen=6454.377795752
-    child T16  type=csScene_s1  pt=(-7.797209, 20.421431, 20.421431)  Q_sum=1.172420e+04  Q_per_scen=5862.101049239
-    child T17  type=avgCS  pt=(3.552141, 18.302696, 16.645729)  Q_sum=1.170627e+04  Q_per_scen=5853.133183985
-    child T17  type=csScene_s0  pt=(1.192973, 13.521003, 10.207068)  Q_sum=1.146603e+04  Q_per_scen=5733.016139744
-    child T17  type=csScene_s1  pt=(5.911309, 23.084389, 23.084389)  Q_sum=1.287414e+04  Q_per_scen=6437.070535733
-  current UB (per-scen): 5371.337581302
-
-=== Iter 7 ===
-simplex: T10  verts=(3, 4, 5, 11)  cs_status=full  ms_status=none
-
-  MS per scenario (2 scenarios):
-    s=0  ms=inf  pt=None  bary=N/A
-    s=1  ms=inf  pt=None  bary=N/A
-
-  CS per scenario (2 scenarios):
-    s=0  cs=9.585993e+02  pt=(-14.464588, -14.768956, 14.464588)  bary=(0.000000, 0.000000, 0.921777, 0.078223)
-    s=1  cs=5.164814e+03  pt=(-8.572382, 8.572382, 39.664973)  bary=(0.557149, 0.207284, 0.000000, 0.235567)
-  UB candidates (avgMS/avgCS/csScene points from new children):
-    child T17  type=avgCS  pt=(-9.169747, -5.447026, 20.866108)  Q_sum=1.184394e+04  Q_per_scen=5921.969496970
-    child T17  type=csScene_s0  pt=(-14.464588, -14.768956, 14.464588)  Q_sum=1.488330e+04  Q_per_scen=7441.650864332
-    child T17  type=csScene_s1  pt=(-3.874905, 3.874905, 27.267628)  Q_sum=1.093515e+04  Q_per_scen=5467.576330487
-    child T18  type=avgCS  pt=(-13.107266, -1.509507, 23.317478)  Q_sum=1.174945e+04  Q_per_scen=5874.725816941
-    child T18  type=csScene_s0  pt=(-14.464588, -14.768956, 14.464588)  Q_sum=1.488330e+04  Q_per_scen=7441.650863878
-    child T18  type=csScene_s1  pt=(-11.749943, 11.749943, 32.170369)  Q_sum=1.176326e+04  Q_per_scen=5881.627605142
-    child T19  type=avgCS  pt=(-15.314509, -0.542656, 30.860804)  Q_sum=1.209776e+04  Q_per_scen=6048.882394899
-    child T19  type=csScene_s0  pt=(-22.056636, -9.657694, 22.056636)  Q_sum=1.454552e+04  Q_per_scen=7272.760309992
-    child T19  type=csScene_s1  pt=(-8.572382, 8.572382, 39.664973)  Q_sum=1.251470e+04  Q_per_scen=6257.348957076
-  current UB (per-scen): 5371.337581302
-
-=== Iter 8 ===
-simplex: T18  verts=(3, 4, 11, 14)  cs_status=full  ms_status=none
-
-  MS per scenario (2 scenarios):
-    s=0  ms=inf  pt=None  bary=N/A
-    s=1  ms=inf  pt=None  bary=N/A
-
-  CS per scenario (2 scenarios):
-    s=0  cs=9.585993e+02  pt=(-14.464588, -14.768956, 14.464588)  bary=(0.000000, 0.000000, 0.921777, 0.078223)
-    s=1  cs=5.345181e+03  pt=(-11.749943, 11.749943, 32.170369)  bary=(0.106510, 0.893490, 0.000000, 0.000000)
-  UB candidates (avgMS/avgCS/csScene points from new children):
-    child T19  type=avgCS  pt=(-17.504455, 2.887683, 17.504455)  Q_sum=1.226680e+04  Q_per_scen=6133.399887758
-    child T19  type=csScene_s0  pt=(-14.464588, -14.768956, 14.464588)  Q_sum=1.488330e+04  Q_per_scen=7441.650863795
-    child T19  type=csScene_s1  pt=(-20.544321, 20.544321, 20.544321)  Q_sum=1.290876e+04  Q_per_scen=6454.377795209
-    child T20  type=avgCS  pt=(-6.853535, -0.024172, 22.067283)  Q_sum=1.109114e+04  Q_per_scen=5545.570439044
-    child T20  type=csScene_s0  pt=(-1.957128, -11.798287, 11.964198)  Q_sum=1.310795e+04  Q_per_scen=6553.975033551
-    child T20  type=csScene_s1  pt=(-11.749943, 11.749943, 32.170369)  Q_sum=1.176326e+04  Q_per_scen=5881.627605443
-    child T21  type=avgCS  pt=(-16.903289, 1.046124, 27.113502)  Q_sum=1.205051e+04  Q_per_scen=6025.255169680
-    child T21  type=csScene_s0  pt=(-22.056636, -9.657694, 22.056636)  Q_sum=1.454552e+04  Q_per_scen=7272.760306062
-    child T21  type=csScene_s1  pt=(-11.749943, 11.749943, 32.170369)  Q_sum=1.176326e+04  Q_per_scen=5881.627605153
-  current UB (per-scen): 5371.337581302
-
-=== Iter 9 ===
-simplex: T18  verts=(3, 5, 11, 14)  cs_status=full  ms_status=none
-
-  MS per scenario (2 scenarios):
-    s=0  ms=inf  pt=None  bary=N/A
-    s=1  ms=inf  pt=None  bary=N/A
-
-  CS per scenario (2 scenarios):
-    s=0  cs=1.253448e+03  pt=(-22.056636, -9.657694, 22.056636)  bary=(0.000000, 0.000000, 1.000000, -0.000000)
-    s=1  cs=5.164814e+03  pt=(-8.572382, 8.572382, 39.664973)  bary=(0.167889, 0.094970, -0.000000, 0.737141)
-  UB candidates (avgMS/avgCS/csScene points from new children):
-    child T21  type=avgCS  pt=(-12.965770, -2.891395, 24.662132)  Q_sum=1.185894e+04  Q_per_scen=5929.468971008
-    child T21  type=csScene_s0  pt=(-22.056636, -9.657694, 22.056636)  Q_sum=1.454552e+04  Q_per_scen=7272.760308005
-    child T21  type=csScene_s1  pt=(-3.874905, 3.874905, 27.267628)  Q_sum=1.093515e+04  Q_per_scen=5467.576330658
-    child T22  type=avgCS  pt=(-16.903289, 1.046124, 27.113502)  Q_sum=1.205051e+04  Q_per_scen=6025.255171359
-    child T22  type=csScene_s0  pt=(-22.056636, -9.657694, 22.056636)  Q_sum=1.454552e+04  Q_per_scen=7272.760310035
-    child T22  type=csScene_s1  pt=(-11.749943, 11.749943, 32.170369)  Q_sum=1.176326e+04  Q_per_scen=5881.627605162
-    child T23  type=avgCS  pt=(-14.186774, 1.771534, 36.606695)  Q_sum=1.235824e+04  Q_per_scen=6179.120392478
-    child T23  type=csScene_s0  pt=(-19.801166, -5.029314, 33.548418)  Q_sum=1.337743e+04  Q_per_scen=6688.712953911
-    child T23  type=csScene_s1  pt=(-8.572382, 8.572382, 39.664973)  Q_sum=1.251470e+04  Q_per_scen=6257.348957942
-  current UB (per-scen): 5371.337581302
-
-=== Iter 10 ===
-simplex: T17  verts=(4, 5, 11, 14)  cs_status=full  ms_status=none
-
-  MS per scenario (2 scenarios):
-    s=0  ms=inf  pt=None  bary=N/A
-    s=1  ms=inf  pt=None  bary=N/A
-
-  CS per scenario (2 scenarios):
-    s=0  cs=9.585993e+02  pt=(-14.464588, -14.768956, 14.464588)  bary=(0.000000, 0.000000, 0.921777, 0.078223)
-    s=1  cs=5.636187e+03  pt=(-3.874905, 3.874905, 27.267628)  bary=(0.995768, 0.004232, -0.000000, 0.000000)
-  UB candidates (avgMS/avgCS/csScene points from new children):
-    child T23  type=avgCS  pt=(-4.829271, -15.926812, 15.827463)  Q_sum=1.375738e+04  Q_per_scen=6878.690272790
-    child T23  type=csScene_s0  pt=(-14.464588, -14.768956, 14.464588)  Q_sum=1.488330e+04  Q_per_scen=7441.650863841
-    child T23  type=csScene_s1  pt=(4.806045, -17.084669, 17.190337)  Q_sum=1.359146e+04  Q_per_scen=6795.730514592
-    child T24  type=avgCS  pt=(-2.748821, -3.952765, 19.581705)  Q_sum=1.132305e+04  Q_per_scen=5661.526177410
-    child T24  type=csScene_s0  pt=(-1.622738, -11.780435, 11.895782)  Q_sum=1.309625e+04  Q_per_scen=6548.122630574
-    child T24  type=csScene_s1  pt=(-3.874905, 3.874905, 27.267628)  Q_sum=1.093515e+04  Q_per_scen=5467.576331021
-    child T25  type=avgCS  pt=(-12.965770, -2.891395, 24.662132)  Q_sum=1.185894e+04  Q_per_scen=5929.468968598
-    child T25  type=csScene_s0  pt=(-22.056636, -9.657694, 22.056636)  Q_sum=1.454552e+04  Q_per_scen=7272.760298956
-    child T25  type=csScene_s1  pt=(-3.874905, 3.874905, 27.267628)  Q_sum=1.093515e+04  Q_per_scen=5467.576328292
-  current UB (per-scen): 5371.337581302
-
-=== Iter 11 ===
-simplex: T21  verts=(3, 11, 14, 16)  cs_status=full  ms_status=none
-
-  MS per scenario (2 scenarios):
-    s=0  ms=inf  pt=None  bary=N/A
-    s=1  ms=inf  pt=None  bary=N/A
-
-  CS per scenario (2 scenarios):
-    s=0  cs=1.253448e+03  pt=(-22.056636, -9.657694, 22.056636)  bary=(0.000000, 0.000000, 1.000000, 0.000000)
-    s=1  cs=5.345181e+03  pt=(-11.749943, 11.749943, 32.170369)  bary=(0.106510, 0.000000, 0.000000, 0.893490)
-  UB candidates (avgMS/avgCS/csScene points from new children):
-    child T25  type=avgCS  pt=(-13.133367, -2.723798, 24.560708)  Q_sum=1.186168e+04  Q_per_scen=5930.840540159
-    child T25  type=csScene_s0  pt=(-22.056636, -9.657694, 22.056636)  Q_sum=1.454552e+04  Q_per_scen=7272.760309690
-    child T25  type=csScene_s1  pt=(-4.210099, 4.210099, 27.064780)  Q_sum=1.092324e+04  Q_per_scen=5461.619638866
-    child T26  type=avgCS  pt=(-15.775555, 3.360315, 32.859393)  Q_sum=1.208521e+04  Q_per_scen=6042.603050495
-    child T26  type=csScene_s0  pt=(-19.801166, -5.029314, 33.548418)  Q_sum=1.337743e+04  Q_per_scen=6688.712952569
-    child T26  type=csScene_s1  pt=(-11.749943, 11.749943, 32.170369)  Q_sum=1.176326e+04  Q_per_scen=5881.627605157
-    child T27  type=avgCS  pt=(-27.111253, 5.156161, 31.269481)  Q_sum=1.388152e+04  Q_per_scen=6940.762434910
-    child T27  type=csScene_s0  pt=(-22.056636, -9.657694, 22.056636)  Q_sum=1.454552e+04  Q_per_scen=7272.760310016
-    child T27  type=csScene_s1  pt=(-32.165871, 19.970017, 40.482326)  Q_sum=1.656996e+04  Q_per_scen=8284.979248929
-  current UB (per-scen): 5371.337581302
-
-=== Iter 12 ===
-simplex: T19  verts=(3, 11, 14, 15)  cs_status=full  ms_status=none
-
-  MS per scenario (2 scenarios):
-    s=0  ms=inf  pt=None  bary=N/A
-    s=1  ms=inf  pt=None  bary=N/A
-
-  CS per scenario (2 scenarios):
-    s=0  cs=1.253448e+03  pt=(-22.056636, -9.657694, 22.056636)  bary=(-0.000000, 0.000000, 1.000000, 0.000000)
-    s=1  cs=5.345181e+03  pt=(-11.749943, 11.749943, 32.170369)  bary=(0.106510, 0.893490, 0.000000, 0.000000)
-  UB candidates (avgMS/avgCS/csScene points from new children):
-    child T27  type=avgCS  pt=(-13.133367, -2.723798, 24.560708)  Q_sum=1.186168e+04  Q_per_scen=5930.840539071
-    child T27  type=csScene_s0  pt=(-22.056636, -9.657694, 22.056636)  Q_sum=1.454552e+04  Q_per_scen=7272.760306383
-    child T27  type=csScene_s1  pt=(-4.210099, 4.210099, 27.064780)  Q_sum=1.092324e+04  Q_per_scen=5461.619638799
-    child T28  type=avgCS  pt=(-22.712833, 1.994103, 26.249624)  Q_sum=1.298212e+04  Q_per_scen=6491.060267540
-    child T28  type=csScene_s0  pt=(-22.056636, -9.657694, 22.056636)  Q_sum=1.454552e+04  Q_per_scen=7272.760308826
-    child T28  type=csScene_s1  pt=(-23.369031, 13.645900, 30.442613)  Q_sum=1.310795e+04  Q_per_scen=6553.975172814
-    child T29  type=avgCS  pt=(-7.519889, 0.616345, 22.718872)  Q_sum=1.108157e+04  Q_per_scen=5540.783449625
-    child T29  type=csScene_s0  pt=(-3.289836, -10.517252, 13.267375)  Q_sum=1.277993e+04  Q_per_scen=6389.966333651
-    child T29  type=csScene_s1  pt=(-11.749943, 11.749943, 32.170369)  Q_sum=1.176326e+04  Q_per_scen=5881.627606695
-  current UB (per-scen): 5371.337581302
-
-=== Iter 13 ===
-simplex: T1  verts=(0, 1, 3, 4)  cs_status=full  ms_status=none
-
-  MS per scenario (2 scenarios):
-    s=0  ms=inf  pt=None  bary=N/A
-    s=1  ms=inf  pt=None  bary=N/A
-
-  CS per scenario (2 scenarios):
-    s=0  cs=9.997990e+01  pt=(-29.939061, -30.003925, 10.050129)  bary=(0.299974, 0.267027, 0.300406, 0.132593)
-    s=1  cs=6.648042e+03  pt=(-20.544321, 20.544321, 20.544321)  bary=(0.636962, 0.000000, 0.363038, 0.000000)
-  UB candidates (avgMS/avgCS/csScene points from new children):
-    child T29  type=avgCS  pt=(-25.104259, -17.366864, 15.159793)  Q_sum=1.796461e+04  Q_per_scen=8982.303107441
-    child T29  type=csScene_s0  pt=(-29.939060, -30.003925, 10.050129)  Q_sum=2.486411e+04  Q_per_scen=12432.053021419
-    child T29  type=csScene_s1  pt=(-20.269458, -4.729802, 20.269458)  Q_sum=1.342386e+04  Q_per_scen=6711.931483486
-    child T30  type=avgCS  pt=(-25.030476, 1.189004, 11.298554)  Q_sum=1.472516e+04  Q_per_scen=7362.579429392
-    child T30  type=csScene_s0  pt=(-29.516631, -18.166313, 2.052786)  Q_sum=2.235363e+04  Q_per_scen=11176.816655042
-    child T30  type=csScene_s1  pt=(-20.544321, 20.544321, 20.544321)  Q_sum=1.290876e+04  Q_per_scen=6454.377793888
-    child T31  type=avgCS  pt=(-35.004835, -5.285748, 21.763207)  Q_sum=1.747668e+04  Q_per_scen=8738.338448414
-    child T31  type=csScene_s0  pt=(-36.339803, -25.363004, 9.856548)  Q_sum=2.543677e+04  Q_per_scen=12718.386391818
-    child T31  type=csScene_s1  pt=(-33.669866, 14.791508, 33.669866)  Q_sum=1.570895e+04  Q_per_scen=7854.474290898
-  current UB (per-scen): 5371.337581302
-
-=== Iter 14 ===
-simplex: T18  verts=(5, 11, 14, 16)  cs_status=full  ms_status=none
-
-  MS per scenario (2 scenarios):
-    s=0  ms=inf  pt=None  bary=N/A
-    s=1  ms=inf  pt=None  bary=N/A
-
-  CS per scenario (2 scenarios):
-    s=0  cs=1.253448e+03  pt=(-22.056636, -9.657694, 22.056636)  bary=(0.000000, 0.000000, 1.000000, 0.000000)
-    s=1  cs=5.636187e+03  pt=(-3.874905, 3.874905, 27.267628)  bary=(0.000000, 0.004232, -0.000000, 0.995768)
-  UB candidates (avgMS/avgCS/csScene points from new children):
-    child T31  type=avgCS  pt=(-13.133367, -2.723798, 24.560708)  Q_sum=1.186168e+04  Q_per_scen=5930.840540113
-    child T31  type=csScene_s0  pt=(-22.056636, -9.657694, 22.056636)  Q_sum=1.454552e+04  Q_per_scen=7272.760309739
-    child T31  type=csScene_s1  pt=(-4.210099, 4.210099, 27.064780)  Q_sum=1.092324e+04  Q_per_scen=5461.619638810
-    child T32  type=avgCS  pt=(-11.838035, -0.577205, 30.408024)  Q_sum=1.169888e+04  Q_per_scen=5849.439198927
-    child T32  type=csScene_s0  pt=(-19.801166, -5.029314, 33.548418)  Q_sum=1.337743e+04  Q_per_scen=6688.712954111
-    child T32  type=csScene_s1  pt=(-3.874904, 3.874904, 27.267629)  Q_sum=1.093515e+04  Q_per_scen=5467.576352312
-    child T33  type=avgCS  pt=(-12.438566, -12.475203, 29.645753)  Q_sum=1.327603e+04  Q_per_scen=6638.015004658
-    child T33  type=csScene_s0  pt=(-22.056636, -9.657694, 22.056636)  Q_sum=1.454552e+04  Q_per_scen=7272.760309023
-    child T33  type=csScene_s1  pt=(-2.820496, -15.292712, 37.234870)  Q_sum=1.368225e+04  Q_per_scen=6841.124298388
-  current UB (per-scen): 5371.337581302
-
-=== Iter 15 ===
-simplex: T21  verts=(5, 11, 14, 17)  cs_status=full  ms_status=none
-
-  MS per scenario (2 scenarios):
-    s=0  ms=inf  pt=None  bary=N/A
-    s=1  ms=inf  pt=None  bary=N/A
-
-  CS per scenario (2 scenarios):
-    s=0  cs=1.253448e+03  pt=(-22.056636, -9.657694, 22.056636)  bary=(0.000000, 0.000000, 1.000000, 0.000000)
-    s=1  cs=5.636187e+03  pt=(-3.874905, 3.874905, 27.267628)  bary=(0.995768, 0.004232, 0.000000, -0.000000)
-  UB candidates (avgMS/avgCS/csScene points from new children):
-    child T33  type=avgCS  pt=(-13.129674, -9.863215, 25.866135)  Q_sum=1.284837e+04  Q_per_scen=6424.184971303
-    child T33  type=csScene_s0  pt=(-22.056636, -9.657694, 22.056636)  Q_sum=1.454552e+04  Q_per_scen=7272.760303022
-    child T33  type=csScene_s1  pt=(-4.202713, -10.068736, 29.675634)  Q_sum=1.221794e+04  Q_per_scen=6108.970081496
-    child T34  type=avgCS  pt=(-13.133367, -2.723798, 24.560708)  Q_sum=1.186168e+04  Q_per_scen=5930.840533787
-    child T34  type=csScene_s0  pt=(-22.056636, -9.657694, 22.056636)  Q_sum=1.454552e+04  Q_per_scen=7272.760288835
-    child T34  type=csScene_s1  pt=(-4.210099, 4.210099, 27.064780)  Q_sum=1.092324e+04  Q_per_scen=5461.619638799
-    child T35  type=avgCS  pt=(-2.748822, -3.952765, 19.581705)  Q_sum=1.132305e+04  Q_per_scen=5661.526175197
-    child T35  type=csScene_s0  pt=(-1.622738, -11.780435, 11.895782)  Q_sum=1.309625e+04  Q_per_scen=6548.122628933
-    child T35  type=csScene_s1  pt=(-3.874905, 3.874905, 27.267628)  Q_sum=1.093515e+04  Q_per_scen=5467.576328284
-  current UB (per-scen): 5371.337581302
-
-=== Iter 16 (early exit: mode7_no_valid_split_on_chosen_face) ===
-simplex: T24  verts=(11, 14, 15, 19)  cs_status=full  ms_status=none
-  LB (per-scen): 3445.092470697
-  UB (per-scen): 5371.337581302
-
-=== Iter 16 (early exit: mode7_no_valid_split_on_chosen_face) ===
-  simplex: T24 verts=(11, 14, 15, 19)
-  mode7 clustering diagnostics:
-    simplex_edge_lengths=(18.5967, 19.6979, 22.2566, 22.7135, 23.1494, 34.1706)
-    simplex_edge_median=2.248505e+01
-    r_cluster=2.248505e+00 (alpha=0.1)
-    valid_points (n=2):
-      scen 0: (-22.0566, -9.6577, 22.0566)
-      scen 1: (-4.2101, 4.2101, 27.0648)
-    pairwise_distances:
-      (s0, s1): dist=2.314943e+01, connected=No
-    K=2
-    cluster 0: members_scen=[0], size=1, centroid=(-22.0566, -9.6577, 22.0566)
-    cluster 1: members_scen=[1], size=1, centroid=(-4.2101, 4.2101, 27.0648)
-  no split performed (early exit: mode7_no_valid_split_on_chosen_face)
+    child T15  type=avgCS  pt=(2.384363, -2.723829, 14.661829)  Q_sum=1.793387e+04  Q_per_scen=3586.774500833
+    child T15  type=csScene_s0  pt=(-6.035042, 6.035042, 18.575068)  Q_sum=1.751434e+04  Q_per_scen=3502.868032793
+    child T15  type=csScene_s1  pt=(9.000351, -10.086556, 15.593370)  Q_sum=2.077749e+04  Q_per_scen=4155.497675589
+    child T15  type=csScene_s2  pt=(6.457408, -6.457408, 4.149433)  Q_sum=1.996183e+04  Q_per_scen=3992.365486575
+    child T15  type=csScene_s3  pt=(-6.035042, 6.035042, 18.575068)  Q_sum=1.751434e+04  Q_per_scen=3502.868033170
+    child T15  type=csScene_s4  pt=(8.534140, -9.145268, 16.416206)  Q_sum=2.041359e+04  Q_per_scen=4082.717698104
+    child T16  type=avgCS  pt=(-7.427512, 4.517859, 11.526535)  Q_sum=1.756015e+04  Q_per_scen=3512.030270785
+    child T16  type=csScene_s0  pt=(-20.674490, 20.674490, 20.674490)  Q_sum=2.344491e+04  Q_per_scen=4688.981489515
+    child T16  type=csScene_s1  pt=(1.830851, -8.732852, 8.423870)  Q_sum=1.991746e+04  Q_per_scen=3983.491929425
+    child T16  type=csScene_s2  pt=(1.598435, -1.598435, -1.598435)  Q_sum=1.985962e+04  Q_per_scen=3971.924297034
+    child T16  type=csScene_s3  pt=(-21.071520, 21.071520, 21.071520)  Q_sum=2.378592e+04  Q_per_scen=4757.183663786
+    child T16  type=csScene_s4  pt=(1.179165, -8.825428, 9.061230)  Q_sum=1.989696e+04  Q_per_scen=3979.392631241
+    child T17  type=avgCS  pt=(-8.219044, 8.219044, 26.108629)  Q_sum=1.926757e+04  Q_per_scen=3853.513763712
+    child T17  type=csScene_s0  pt=(-17.785779, 17.785779, 28.189146)  Q_sum=2.343185e+04  Q_per_scen=4686.370376320
+    child T17  type=csScene_s1  pt=(0.733224, -0.733224, 27.404188)  Q_sum=1.963762e+04  Q_per_scen=3927.523546806
+    child T17  type=csScene_s2  pt=(-6.035042, 6.035042, 18.575068)  Q_sum=1.751434e+04  Q_per_scen=3502.868032501
+    child T17  type=csScene_s3  pt=(-18.740850, 18.740850, 28.970555)  Q_sum=2.424907e+04  Q_per_scen=4849.813425857
+    child T17  type=csScene_s4  pt=(0.733224, -0.733224, 27.404188)  Q_sum=1.963762e+04  Q_per_scen=3927.523547042
+  current UB (per-scen): 3316.370888248
 
