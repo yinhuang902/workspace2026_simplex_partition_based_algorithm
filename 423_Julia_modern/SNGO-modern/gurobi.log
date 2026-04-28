@@ -1,0 +1,20 @@
+
+Gurobi 12.0.3 (win64, gurobi_cl) logging started Thu Apr 23 16:06:45 2026
+
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2689754
+Set parameter LogFile to value "gurobi.log"
+Using license file C:\gurobi\gurobi.lic
+Academic license 2689754 - for non-commercial use only - registered to yi___@math.ubc.ca
+
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (win64 - Windows 11+.0 (26200.2))
+Copyright (c) 2025, Gurobi Optimization, LLC
+
+Error reading LP format file failed_relax.lp at line 5618
+Unrecognized constraint RHS or sense
+Neighboring tokens: " <= -80 x1 - 80 x2 - 80 x3 - "
+
+
+Error 10012: Unable to read file
+

@@ -1,0 +1,31 @@
+================================================================================
+SNGO-Modern Run Log: read_str4.jl_20260423_184143
+================================================================================
+Timestamp:        20260423_184143
+Test Name:        read_str4.jl
+Working Dir:      C:\Users\Administrator\OneDrive\Desktop\workspace2026_simplex_partition_based_algorithm\403_julia_python_diff\SNGO-modern
+Julia Version:    1.12.6
+--------------------------------------------------------------------------------
+Solver Constants:
+  machine_error:             1.0e-10
+  small_bound_improve:       0.0001
+  large_bound_improve:       0.1
+  probing_improve:           0.0001
+  sigma_violation:           1.0e-8
+  local_obj_improve:         0.01
+  mingap:                    0.01
+  default_lower_bound_value: -1.0e8
+  default_upper_bound_value: 1.0e8
+--------------------------------------------------------------------------------
+Problem Setup:
+  Scenarios:                 100
+  First-stage Vars (nfirst): 5
+  Noise param (nparam):      5
+  Noise limits (rdl,rdu):    0.0, 2.0
+  Additive limits (adl,adu): -10.0, 10.0
+--------------------------------------------------------------------------------
+Model Sizes:
+  Extensive Variables:       1605
+  Extensive Lin Constrs:     1000
+  Relaxation Variables:      3110
+  Relaxation Constraints:    5516

@@ -1,0 +1,59 @@
+================================================================================
+SNGO-Modern Run Log: test_2_1_7.jl_20260423_165223
+================================================================================
+Timestamp:        20260423_165223
+Test Name:        test_2_1_7.jl
+Working Dir:      C:\Users\Administrator\OneDrive\Desktop\workspace2026_simplex_partition_based_algorithm\403_julia_python_diff\SNGO-modern
+Julia Version:    1.12.6
+--------------------------------------------------------------------------------
+Solver Constants:
+  machine_error:             1.0e-10
+  small_bound_improve:       0.0001
+  large_bound_improve:       0.1
+  probing_improve:           0.0001
+  sigma_violation:           1.0e-8
+  local_obj_improve:         0.01
+  mingap:                    0.01
+  default_lower_bound_value: -1.0e8
+  default_upper_bound_value: 1.0e8
+--------------------------------------------------------------------------------
+Problem Setup:
+  Scenarios:                 100
+  First-stage Vars (nfirst): 5
+  Noise param (nparam):      5
+  Noise limits (rdl,rdu):    0.0, 2.0
+  Additive limits (adl,adu): -10.0, 10.0
+--------------------------------------------------------------------------------
+Model Sizes:
+  Extensive Variables:       1605
+  Extensive Lin Constrs:     1000
+  Relaxation Variables:      3110
+  Relaxation Constraints:    5516
+--------------------------------------------------------------------------------
+Root Node Diagnostics:
+  Initial UB (Multi-start):  -415489.9690346848
+  FBBT Feasible:             false
+  Relaxation Status:         Optimal
+  Relaxation LB:             -1.0e10
+  Wait-and-See (WS) Status:  NotOptimal
+  Wait-and-See (WS) LB:      NaN
+  Local UB:                  NaN
+  WSfix UB:                  NaN
+  Final Root Node LB:        -415489.9690346848
+  Root Event Note / Term:    fathomed_fbbt
+--------------------------------------------------------------------------------
+Iterations:
+  Iter |    Time(s) |    Lower Bound |    Upper Bound |     Gap(%) |  Nodes | Branching (Id,Val) | Note
+     1 |      14.07 | -10000000000.0000 |   -415489.9690 | 2406696.9735 |      0 |               none | fathomed_fbbt
+--------------------------------------------------------------------------------
+Final Results Block:
+  Final Lower Bound:         -419644.8687250317
+  Final Upper Bound:         -415489.9690346848
+  Final Gap:                 1.0000000000000004 %
+  Iterations:                1
+  Solved Nodes:              1
+  Total Time:                14.329999923706055 seconds
+  Termination Reason:        all_nodes_solved
+  LB Postprocessed:          true
+  Best First-Stage Sol:      [-9.999898277053983e-9, -9.999838677047242e-9, 1.149597643327604, -9.999751678396076e-9, -9.99993767400109e-9]
+================================================================================
